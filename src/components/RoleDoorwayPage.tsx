@@ -110,7 +110,13 @@ export function RoleDoorwayPage({ page }: { page: RoleDoorway }) {
             <p>{page.intro}</p>
           </div>
           <figure className="role-doorway-photo">
-            <img src={page.image} alt={page.imageAlt} fetchPriority="high" />
+            <img
+              src={page.image}
+              alt={page.imageAlt}
+              fetchPriority="high"
+              style={{ objectPosition: page.imagePosition }}
+              data-mobile-position={page.imagePositionMobile}
+            />
           </figure>
         </div>
 
