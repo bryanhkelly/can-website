@@ -23,6 +23,37 @@ function Nav({active}:{active:string}) {
 }
 function List({items}:{items:string[]}) { return <ul className="deep-list">{items.map(i=><li key={i}>{i}</li>)}</ul> }
 
+const CURRENT_FLORIDA_FOCUS = [
+  {
+    name: 'Wauchula / Hardee County',
+    status: 'In development',
+    why: 'Hardee County combines unusually limited private-school supply with substantial homeschool growth and an existing homeschool community that has demonstrated demand for a more structured model.',
+    model: 'A locally anchored Learning Hub built with an existing homeschool community, with the potential to grow into a larger CAN Academy as enrollment and local capacity develop.',
+    evaluating: ['Family willingness to enroll', 'Local partner readiness', 'Sustainable launch size', 'Facility and transportation fit', 'Scholarship and operating readiness'],
+  },
+  {
+    name: 'Okeechobee',
+    status: 'In development',
+    why: 'Okeechobee represents the rural-access side of the Florida opportunity: scholarship availability, limited Christian secondary-school supply, and a need for a model that does not depend on a conventional large campus.',
+    model: 'A locally anchored academy or learning hub that can share academic capabilities across the CAN network.',
+    evaluating: ['Family demand', 'Trusted local anchor', 'Facility fit', 'Transportation realities', 'Sustainable staffing and operations'],
+  },
+  {
+    name: 'Parrish / North Manatee',
+    status: 'In development',
+    why: 'Parrish tests a different Florida thesis: a rapidly growing community where Christian secondary-school capacity may not be keeping pace with population growth and family demand.',
+    model: 'A partner-hosted academy or secondary pathway designed to add capacity without waiting for a traditional campus build.',
+    evaluating: ['Growth-driven family demand', 'Partner capacity', 'Existing school supply', 'Facility availability', 'Launch economics'],
+  },
+  {
+    name: 'Belle Glade',
+    status: 'Exploring partnerships',
+    why: 'CAN research identifies meaningful educational need, but the strategy does not support imposing a school model from outside the community. Progress depends on a deeply trusted local organization able to anchor the work.',
+    model: 'To be determined with a credible local church, school, or community organization.',
+    evaluating: ['Trusted local partner', 'Community fit', 'Family demand', 'Appropriate model', 'Facility and operating readiness'],
+  },
+] as const
+
 export function FloridaDeepPage(){
   const sections=[
     {n:'01',title:'Funding that follows families',body:"Florida's scholarship programs can substantially reduce the amount families must pay directly for private education. This does not guarantee enrollment or financial viability, but it creates an unusually strong environment for testing an affordable church-anchored model."},
@@ -73,11 +104,25 @@ export function FloridaSelectionPage(){
 
 export function FloridaMarketsPage(){
  return <article className="deep-page">
-  <header className="deep-page-hero"><p className="destination-eyebrow">Five markets, different questions</p><h1 className="editorial-heading">The five markets are not five identical campus opportunities.</h1><div className="deep-page-intro"><p>Together, the markets create a research portfolio. Each tests a different expression of the CAN model and should be evaluated on its own terms.</p></div></header>
+  <header className="deep-page-hero"><p className="destination-eyebrow">Florida markets</p><h1 className="editorial-heading">Different communities call for different CAN models.</h1><div className="deep-page-intro"><p>Florida is not one market. CAN is focusing current development work on communities where scholarship access, limited Christian secondary-school supply, local demand, and partner potential intersect in different ways.</p></div></header>
   <Nav active="/florida/markets"/>
   <div className="deep-page-body">
-   <section className="florida-market-list">{markets.map(m=><article key={m.slug}><div><h2><Link to={m.route}>{m.name}</Link></h2><p>{m.thesis}</p><small>{m.status}</small></div><dl><div><dt>Research role</dt><dd>{m.researchRole}</dd></div><div><dt>Opportunity</dt><dd>{m.opportunity}</dd></div><div><dt>Model to test</dt><dd>{m.model}</dd></div></dl><div><strong>Primary question</strong><p>{m.primaryQuestion}</p></div></article>)}</section>
-   <p className="deep-warning">No market has been selected, approved, or committed to. These are research positions, and each remains subject to partner, facility, family, scholarship, and regulatory verification.</p>
+   <section>
+    <h2 className="deep-section-title">Current development focus</h2>
+    <div className="florida-current-focus">
+      {CURRENT_FLORIDA_FOCUS.map((market)=><article key={market.name}>
+        <div><h3>{market.name}</h3><span>{market.status}</span></div>
+        <p>{market.why}</p>
+        <div><strong>Model being explored</strong><p>{market.model}</p></div>
+        <div><strong>What we're evaluating</strong><ul>{market.evaluating.map((item)=><li key={item}>{item}</li>)}</ul></div>
+      </article>)}
+    </div>
+   </section>
+   <section>
+    <h2 className="deep-section-title">Earlier research portfolio</h2>
+    <p className="deep-lead">The original Florida research also examined additional counties to understand different kinds of access, quality, geography, affordability, and platform opportunity. That work remains useful evidence even where the current development focus has moved elsewhere.</p>
+    <section className="florida-market-list">{markets.map(m=><article key={m.slug}><div><h2><Link to={m.route}>{m.name}</Link></h2><p>{m.thesis}</p><small>{m.status}</small></div><dl><div><dt>Research role</dt><dd>{m.researchRole}</dd></div><div><dt>Opportunity</dt><dd>{m.opportunity}</dd></div><div><dt>Model to test</dt><dd>{m.model}</dd></div></dl><div><strong>What we're evaluating</strong><p>{m.primaryQuestion}</p></div></article>)}</section>
+   </section>
   </div>
  </article>
 }
@@ -88,7 +133,7 @@ export function FloridaMarketProfilePage({slug}:{slug:'desoto'|'okeechobee'|'hol
   <header className="deep-page-hero"><p className="destination-eyebrow">{m.county} / {m.community}</p><h1 className="editorial-heading">{m.name}</h1><div className="deep-page-intro"><p>{m.thesis}</p><p><strong>Research role:</strong> {m.researchRole}. <strong>Status:</strong> {m.status}.</p></div></header>
   <Nav active="/florida/markets"/>
   <div className="deep-page-body">
-   <blockquote className="deep-pull">{m.primaryQuestion}</blockquote>
+   <section className="deep-note"><p className="destination-eyebrow">What we're evaluating</p><p>{m.primaryQuestion}</p></section>
    <section><h2 className="deep-section-title">Why this market matters</h2>{m.whyMatters.map(p=><p className="deep-lead" key={p.slice(0,40)}>{p}</p>)}</section>
    <section><h2 className="deep-section-title">Research figures</h2><div className="florida-figures">{m.figures.map(f=><div key={f.label}><span>{f.label}</span><strong>{f.value}</strong>{f.note&&<small>{f.note}</small>}</div>)}</div></section>
    <section className="deep-two-grid"><div><h2>Choice landscape</h2><List items={m.choiceLandscape}/></div><div><h2>Partnership landscape</h2><List items={m.partnershipLandscape}/></div></section>
