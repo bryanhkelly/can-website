@@ -9,6 +9,7 @@ export function SiteHeader() {
   const location = useLocation()
   const labels = ['Stakes', 'Possibility', 'Curriculum', 'Platform', 'Rooted Locally', 'Student Experience', 'Why It Can Work', 'Explore CAN']
   const [storyOpen, setStoryOpen] = useState(false)
+  const isStory = location.pathname.startsWith('/story/')
   const currentIndex = navSlugs.findIndex((slug) => location.pathname === `/story/${slug}`)
   const currentLabel = currentIndex >= 0 ? labels[currentIndex] : 'Explore CAN'
 
@@ -26,7 +27,14 @@ export function SiteHeader() {
           {brandTagline}
         </p>
       </div>
-      <div className="story-mobile-shell sm:hidden">
+      {!isStory && (
+        <nav className="public-site-nav" aria-label="Primary navigation">
+          <Link to={withPartnerContext('/story/stakes', location.search)}>The CAN story</Link>
+          <Link to={withPartnerContext('/story/explore-can', location.search)}>Explore</Link>
+          <Link to={withPartnerContext('/contact', location.search)} className="public-site-nav-cta">Start a conversation</Link>
+        </nav>
+      )}
+      {isStory && <div className="story-mobile-shell sm:hidden">
         <button
           type="button"
           className="story-mobile-toggle"
@@ -52,8 +60,8 @@ export function SiteHeader() {
             ))}
           </nav>
         )}
-      </div>
-      <nav
+      </div>}
+      {isStory && <nav
         className="mx-auto hidden max-w-7xl flex-wrap justify-center gap-1 px-6 pb-2.5 sm:flex"
         aria-label="CAN story pages"
       >
@@ -73,7 +81,7 @@ export function SiteHeader() {
             <span>{labels[i]}</span>
           </NavLink>
         ))}
-      </nav>
+      </nav>}
     </header>
   )
 }
