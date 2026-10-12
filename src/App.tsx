@@ -14,6 +14,8 @@ import { HomePage } from './pages/HomePage'
 import { AccessibilityPage, NotFoundPage, PrivacyPage, TermsPage } from './pages/StaticPages'
 import { AccountabilityPage } from './pages/AccountabilityPage'
 import { LocationsPage } from './pages/LocationsPage'
+import { StateLocationPage } from './pages/StateLocationPage'
+import { stateLocations } from './data/locationStateData'
 import { FaqPage } from './pages/FaqPage'
 import { LeadershipPage } from './pages/LeadershipPage'
 import {
@@ -116,6 +118,9 @@ function App() {
         <Route path="/economic-breakthrough" element={<EconomicBreakthroughPage />} />
         <Route path="/accountability" element={<AccountabilityPage />} />
         <Route path="/locations" element={<LocationsPage />} />
+        {stateLocations.map((state) => (
+          <Route key={state.slug} path={`/locations/${state.slug}`} element={<StateLocationPage slug={state.slug} />} />
+        ))}
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/leadership" element={<LeadershipPage />} />
         <Route path="/evidence" element={<EvidenceDeepPage path="/evidence" />} />
