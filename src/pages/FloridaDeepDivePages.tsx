@@ -83,7 +83,7 @@ export function FloridaMarketsPage(){
 }
 
 export function FloridaMarketProfilePage({slug}:{slug:'desoto'|'okeechobee'|'holmes'|'gadsden'|'hamilton'}){
- const m=marketBySlug[slug]
+ const m=marketBySlug(slug)!
  return <article className="deep-page">
   <header className="deep-page-hero"><p className="destination-eyebrow">{m.county} / {m.community}</p><h1 className="editorial-heading">{m.name}</h1><div className="deep-page-intro"><p>{m.thesis}</p><p><strong>Research role:</strong> {m.researchRole}. <strong>Status:</strong> {m.status}.</p></div></header>
   <Nav active="/florida/markets"/>
