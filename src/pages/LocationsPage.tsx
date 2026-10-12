@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
 import { ArrowRight, MapPinned } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { stateLocations } from '../data/locationStateData'
 
 const statusDefinitions = [
   ['Operating', 'Students are enrolled and instruction is being delivered.'],
@@ -8,40 +9,30 @@ const statusDefinitions = [
   ['Exploring partnerships', 'CAN is researching the market or developing relationships without a launch commitment.'],
 ] as const
 
-const places = [
-  {
-    name: 'Florida',
-    status: 'In development',
-    body: 'Florida remains the primary pilot focus. The current work includes market research, partner development, and validation of the academic, operating, facility, funding, and regulatory model.',
-    href: '/florida',
-    note: 'Specific sites, launch dates, and market commitments remain subject to validation.',
-  },
-  {
-    name: 'Texas',
-    status: 'Exploring partnerships',
-    body: 'A large potential church network and an emerging school-choice environment make Texas strategically important for continued partner development.',
-  },
-  {
-    name: 'Arizona',
-    status: 'Exploring partnerships',
-    body: 'Arizona remains attractive for a standardized CAN model because of its established education-choice environment and flexible education options.',
-  },
-  {
-    name: 'Arkansas',
-    status: 'Exploring partnerships',
-    body: 'Arkansas is a strong research candidate because of its microschool and educational-service-provider pathways, alongside important quality and regulatory questions.',
-  },
-  {
-    name: 'West Virginia',
-    status: 'Exploring partnerships',
-    body: 'West Virginia remains attractive for targeted rural-market research, particularly where a network model could expand access without requiring a conventional standalone campus.',
-  },
-  {
-    name: 'North Carolina',
-    status: 'Exploring partnerships',
-    body: 'North Carolina remains a selective research market where facility requirements, school-specific compliance, and local partnership conditions need to be evaluated carefully.',
-  },
-] as const
+const inDevelopment = stateLocations.filter((state) => state.status === 'In development')
+const exploring = stateLocations.filter((state) => state.status === 'Exploring partnerships')
+
+function LocationCard({ state, compact = false }: { state: (typeof stateLocations)[number]; compact?: boolean }) {
+  return (
+    <article className={compact ? 'locations-card locations-card-compact' : 'locations-card'}>
+      <div className="locations-place-heading">
+        <span className="locations-pin"><MapPinned aria-hidden="true" /></span>
+        <div>
+          <h2>{state.name}</h2>
+          <span className="locations-status">{state.status}</span>
+        </div>
+      </div>
+      <p>{state.summary}</p>
+      {!compact && (
+        <div className="locations-focus">
+          <strong>Areas of focus</strong>
+          <p>{state.areas.join(' · ')}</p>
+        </div>
+      )}
+      <Link to={`/locations/${state.slug}`}>Explore {state.name} <ArrowRight aria-hidden="true" /></Link>
+    </article>
+  )
+}
 
 export function LocationsPage() {
   return (
@@ -50,7 +41,7 @@ export function LocationsPage() {
         <p className="destination-eyebrow">Locations & Launch</p>
         <h1 className="editorial-heading">See what is operating, developing, and still being explored.</h1>
         <p>
-          CAN is building toward a network of locally rooted school communities. This page distinguishes active availability from pilot development and market research so the envisioned network is not confused with current operations.
+          CAN is building toward a network of locally rooted school communities. The same launch-status framework applies everywhere, while the content below shows where CAN's work is currently most developed and where additional partnerships are being explored.
         </p>
       </header>
 
@@ -66,30 +57,43 @@ export function LocationsPage() {
         </div>
       </section>
 
-      <section className="locations-list">
-        {places.map((place) => (
-          <article key={place.name}>
-            <div className="locations-place-heading">
-              <span className="locations-pin"><MapPinned aria-hidden="true" /></span>
-              <div>
-                <h2>{place.name}</h2>
-                <span className="locations-status">{place.status}</span>
-              </div>
-            </div>
-            <p>{place.body}</p>
-            {'note' in place && place.note && <small>{place.note}</small>}
-            {'href' in place && place.href && (
-              <Link to={place.href}>Explore {place.name} <ArrowRight aria-hidden="true" /></Link>
-            )}
-          </article>
-        ))}
+      <section className="locations-group">
+        <div className="locations-group-heading">
+          <p className="destination-eyebrow">In development</p>
+          <h2 className="editorial-heading">Markets where CAN is actively building the launch path.</h2>
+          <p>These states have the most developed combination of market work, partner models, and potential launch communities in the current strategy.</p>
+        </div>
+        <div className="locations-list locations-list-featured">
+          {inDevelopment.map((state) => <LocationCard key={state.slug} state={state} />)}
+        </div>
+      </section>
+
+      <section className="locations-group">
+        <div className="locations-group-heading">
+          <p className="destination-eyebrow">Exploring partnerships</p>
+          <h2 className="editorial-heading">Additional states where the model may fit.</h2>
+          <p>
+            Some are near-term school-choice opportunities. Others are longer-horizon markets where CAN is tracking policy, school supply, homeschool demand, or potential local partners.
+          </p>
+        </div>
+        <div className="locations-list locations-list-exploring">
+          {exploring.map((state) => <LocationCard key={state.slug} state={state} compact />)}
+        </div>
       </section>
 
       <section className="locations-disclosure">
-        <h2>Research is not a launch announcement.</h2>
+        <h2>How a location moves forward.</h2>
         <p>
-          Markets shown as being explored are strategic research positions, not commitments to open a CAN Academy. A launch depends on partner readiness, family demand, facility suitability, economics, funding eligibility, regulatory requirements, and the ability to deliver the student experience CAN promises.
+          Research identifies opportunity. Partner and family validation establish local fit. Facility, funding, academic, regulatory, and operating readiness determine whether a location moves toward a confirmed launch and eventually into operation.
         </p>
+        <div className="locations-stage-flow" aria-label="Location development stages">
+          {statusDefinitions.slice().reverse().map(([label], index) => (
+            <div key={label}>
+              {index > 0 && <ArrowRight aria-hidden="true" />}
+              <span>{label}</span>
+            </div>
+          ))}
+        </div>
         <div className="deep-actions">
           <Link to="/launch-approach">See the Launch Approach →</Link>
           <Link to="/contact?topic=locations">Ask about a market →</Link>
