@@ -182,6 +182,17 @@ export function RoleDoorwayPage({ page }: { page: RoleDoorway }) {
           <p>{page.body}</p>
         </section>
 
+        {page.audience === 'pastor' && (
+          <section className="pastor-economics-philosophy">
+            <p className="destination-eyebrow">The economic philosophy</p>
+            <h2>A ministry opportunity, not a real-estate monetization scheme.</h2>
+            <p>
+              CAN is designed so a church can contribute what it already has—trusted relationships, local leadership, weekday space, and ministry presence—without being asked to build and operate an entire school system. Shared academic and operating capabilities reduce duplication, while partnership economics should help keep local participation sustainable.
+            </p>
+            <Link to="/economic-breakthrough">See why sharing changes the economics <ArrowRight aria-hidden="true" /></Link>
+          </section>
+        )}
+
         {NEXT_BY_AUDIENCE[page.audience] && (
           <section className="role-doorway-next">
             <div>
