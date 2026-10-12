@@ -118,7 +118,7 @@ export function AcademicsPage() {
         <PageIntro
           eyebrow="Academics"
           heading="A strong academic path, built to grow with students."
-          description="CAN brings together rigorous courses, live instruction, academic support, and clear progress tracking so students can build a strong foundation and prepare for what comes next."
+          description="CAN is being built as a grades 6–12 academic pathway, bringing together rigorous courses, live instruction, academic support, and clear progress tracking so students can build a strong foundation and prepare for what comes next."
         />
 
         <section className="academics-visual" aria-label="One academic path supported by connected learning and student support">
@@ -162,6 +162,29 @@ export function AcademicsPage() {
           <p className="destination-eyebrow">The academic experience</p>
           <h2 className="editorial-heading">This is not online school in a church building.</h2>
           <p>Students learn from real teachers, work alongside real peers, and have adults present locally throughout the school day. Some instruction can be shared across the CAN network. Technology connects the system. It does not replace the school.</p>
+        </section>
+
+        <section className="teacher-network-section">
+          <div>
+            <p className="destination-eyebrow">A deeper teacher bench</p>
+            <h2 className="editorial-heading">One subject should not depend on one local teacher.</h2>
+            <p>
+              CAN is exploring a Peloton-style teacher network: multiple excellent teachers within a subject area, each bringing different strengths, explanations, personalities, and ways of engaging students. A network can give students access to a deeper bench of subject expertise than a small local school could recruit on its own.
+            </p>
+          </div>
+          <div className="teacher-network-visual" aria-label="Multiple teachers supporting students through one shared CAN academic network">
+            <div className="teacher-network-subject">One subject</div>
+            <div className="teacher-network-teachers">
+              <span>Teacher A<strong>Clear explainer</strong></span>
+              <span>Teacher B<strong>Seminar + discussion</strong></span>
+              <span>Teacher C<strong>Applied projects</strong></span>
+              <span>Teacher D<strong>Advanced depth</strong></span>
+            </div>
+            <div className="teacher-network-student">Students access the wider CAN teacher network</div>
+          </div>
+          <p className="teacher-network-note">
+            The exact teacher-selection and course-delivery model will be validated through pilots. The core idea is network-wide access to subject expertise rather than a one-teacher-per-site constraint.
+          </p>
         </section>
 
         <section className="source-backed-section">
