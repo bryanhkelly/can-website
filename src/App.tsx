@@ -14,6 +14,7 @@ import { HomePage } from './pages/HomePage'
 import { AccessibilityPage, NotFoundPage, PrivacyPage, TermsPage } from './pages/StaticPages'
 import { AccountabilityPage } from './pages/AccountabilityPage'
 import { LocationsPage } from './pages/LocationsPage'
+import { FaqPage } from './pages/FaqPage'
 import {
   StudentActivitiesPage,
   StudentBelongingPage,
@@ -114,6 +115,7 @@ function App() {
         <Route path="/economic-breakthrough" element={<EconomicBreakthroughPage />} />
         <Route path="/accountability" element={<AccountabilityPage />} />
         <Route path="/locations" element={<LocationsPage />} />
+        <Route path="/faq" element={<FaqPage />} />
         <Route path="/evidence" element={<EvidenceDeepPage path="/evidence" />} />
         <Route path="/evidence/academic-model" element={<EvidenceDeepPage path="/evidence/academic-model" />} />
         <Route path="/evidence/alternative-education" element={<EvidenceDeepPage path="/evidence/alternative-education" />} />
