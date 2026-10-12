@@ -55,7 +55,7 @@ export function HowCanIsDifferentPage() {
           </p>
         </div>
 
-        <div className="different-matrix" aria-label="Education model positioning by faith formation and flexibility">
+        <div className="different-matrix different-matrix-desktop" aria-label="Education model positioning by faith formation and flexibility">
           <span className="different-axis-y">Faith formation</span>
           <span className="different-axis-x">Flexibility / accessibility</span>
           <span className="different-axis-y-low">Lower</span>
@@ -77,6 +77,17 @@ export function HowCanIsDifferentPage() {
             <strong>CAN Academy</strong>
             <span>Christian formation + flexibility + local community + shared school infrastructure</span>
           </div>
+        </div>
+
+        <div className="different-matrix-mobile" aria-label="Simplified education model positioning">
+          <span className="different-mobile-y">Higher faith formation</span>
+          <div className="different-mobile-grid">
+            <span>Traditional Christian</span>
+            <strong>CAN Academy</strong>
+            <span>Public school</span>
+            <span>Homeschool / Online</span>
+          </div>
+          <span className="different-mobile-x">More flexibility / accessibility →</span>
         </div>
 
         <div className="different-model-notes">
