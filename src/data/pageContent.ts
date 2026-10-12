@@ -218,8 +218,10 @@ export const explorePageContent = {
     { label: 'Launch Approach', subtitle: 'How CAN evaluates launch readiness', href: '/launch-approach' },
   ],
   secondaryTopics: [
-    { label: 'Team & Leadership', subtitle: 'Meet the people and advisors helping build CAN', status: 'Coming soon' },
+    { label: 'Trust & Accountability', subtitle: 'Standards, safety, progress, and responsibility', href: '/accountability' },
+    { label: 'Locations & Launch', subtitle: 'What is developing and what is still exploratory', href: '/locations' },
     { label: 'Evidence Library', subtitle: 'Research, data, and assumptions behind the CAN model', href: '/evidence' },
+    { label: 'Team & Leadership', subtitle: 'Meet the people and advisors helping build CAN', status: 'Coming soon' },
   ],
   roleIntro: 'Every community is unique. Find the path that fits your perspective.',
   roles: [
