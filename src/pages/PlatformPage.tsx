@@ -130,7 +130,6 @@ export function PlatformPage() {
       <RefrainBar text={refrain} transition={transition} current="platform" />
 
       <DetailSection>
-        <DetailItem label="Technology leadership" body={details.credibility} variant="proof" />
         <DetailItem label="For example" body={details.example} variant="editorial" />
         <DetailItem label="A common concern" body={details.objection} variant="clarification" />
       </DetailSection>
