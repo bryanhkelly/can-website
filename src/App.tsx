@@ -38,12 +38,18 @@ import {
 } from './pages/PartnershipDeepDivePages'
 import { LaunchStagePage } from './pages/LaunchDeepDivePages'
 import { EvidenceDeepPage } from './pages/EvidenceDeepDivePages'
+import {
+  FloridaDeepPage,
+  FloridaLandscapePage,
+  FloridaMarketProfilePage,
+  FloridaMarketsPage,
+  FloridaResearchPage,
+  FloridaSelectionPage,
+} from './pages/FloridaDeepDivePages'
 import { RoleDoorwayPage } from './components/RoleDoorwayPage'
 import { roleDoorways } from './data/pageContent'
 import {
   AcademicsPage,
-  EvidencePage,
-  FloridaPage,
   PartnerPage,
   PartnershipModelPage,
   StartCommunityPage,
@@ -84,16 +90,16 @@ function App() {
         <Route path="/partnership-model/local-distinctives" element={<PartnershipDistinctivesPage />} />
         <Route path="/partnership-model/governance-and-accountability" element={<PartnershipGovernancePage />} />
         <Route path="/partnership-model/partnership-readiness" element={<PartnershipReadinessPage />} />
-        <Route path="/florida" element={<FloridaPage />} />
-        <Route path="/florida/market-landscape" element={<Navigate to="/florida" replace />} />
-        <Route path="/florida/market-selection" element={<Navigate to="/florida" replace />} />
-        <Route path="/florida/markets" element={<Navigate to="/florida" replace />} />
-        <Route path="/florida/markets/desoto" element={<Navigate to="/florida" replace />} />
-        <Route path="/florida/markets/gadsden" element={<Navigate to="/florida" replace />} />
-        <Route path="/florida/markets/hamilton" element={<Navigate to="/florida" replace />} />
-        <Route path="/florida/markets/holmes" element={<Navigate to="/florida" replace />} />
-        <Route path="/florida/markets/okeechobee" element={<Navigate to="/florida" replace />} />
-        <Route path="/florida/research" element={<Navigate to="/florida" replace />} />
+        <Route path="/florida" element={<FloridaDeepPage />} />
+        <Route path="/florida/market-landscape" element={<FloridaLandscapePage />} />
+        <Route path="/florida/market-selection" element={<FloridaSelectionPage />} />
+        <Route path="/florida/markets" element={<FloridaMarketsPage />} />
+        <Route path="/florida/markets/desoto" element={<FloridaMarketProfilePage slug="desoto" />} />
+        <Route path="/florida/markets/gadsden" element={<FloridaMarketProfilePage slug="gadsden" />} />
+        <Route path="/florida/markets/hamilton" element={<FloridaMarketProfilePage slug="hamilton" />} />
+        <Route path="/florida/markets/holmes" element={<FloridaMarketProfilePage slug="holmes" />} />
+        <Route path="/florida/markets/okeechobee" element={<FloridaMarketProfilePage slug="okeechobee" />} />
+        <Route path="/florida/research" element={<FloridaResearchPage />} />
         <Route path="/start-a-community" element={<StartCommunityPage />} />
         <Route path="/launch-approach" element={<StartCommunityPage />} />
         <Route path="/launch-approach/discover" element={<LaunchStagePage slug="discover" />} />
