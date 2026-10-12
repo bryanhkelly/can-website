@@ -37,6 +37,7 @@ import {
   PartnershipWhyPage,
 } from './pages/PartnershipDeepDivePages'
 import { LaunchStagePage } from './pages/LaunchDeepDivePages'
+import { EvidenceDeepPage } from './pages/EvidenceDeepDivePages'
 import { RoleDoorwayPage } from './components/RoleDoorwayPage'
 import { roleDoorways } from './data/pageContent'
 import {
@@ -102,13 +103,13 @@ function App() {
         <Route path="/launch-approach/launch" element={<LaunchStagePage slug="launch" />} />
         <Route path="/launch-approach/measure" element={<LaunchStagePage slug="measure" />} />
         <Route path="/economic-breakthrough" element={<EconomicsPage />} />
-        <Route path="/evidence" element={<EvidencePage />} />
-        <Route path="/evidence/academic-model" element={<Navigate to="/evidence" replace />} />
-        <Route path="/evidence/alternative-education" element={<Navigate to="/evidence" replace />} />
-        <Route path="/evidence/can-research" element={<Navigate to="/evidence" replace />} />
-        <Route path="/evidence/christian-education" element={<Navigate to="/evidence" replace />} />
-        <Route path="/evidence/education-choice" element={<Navigate to="/evidence" replace />} />
-        <Route path="/evidence/market-research" element={<Navigate to="/evidence" replace />} />
+        <Route path="/evidence" element={<EvidenceDeepPage path="/evidence" />} />
+        <Route path="/evidence/academic-model" element={<EvidenceDeepPage path="/evidence/academic-model" />} />
+        <Route path="/evidence/alternative-education" element={<EvidenceDeepPage path="/evidence/alternative-education" />} />
+        <Route path="/evidence/can-research" element={<EvidenceDeepPage path="/evidence/can-research" />} />
+        <Route path="/evidence/christian-education" element={<EvidenceDeepPage path="/evidence/christian-education" />} />
+        <Route path="/evidence/education-choice" element={<EvidenceDeepPage path="/evidence/education-choice" />} />
+        <Route path="/evidence/market-research" element={<EvidenceDeepPage path="/evidence/market-research" />} />
         <Route path="/vision" element={<Navigate to="/story/possibility" replace />} />
         <Route path="/missing-piece" element={<Navigate to="/story/stakes" replace />} />
         <Route path="/can-model" element={<Navigate to="/story/platform" replace />} />
