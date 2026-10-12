@@ -119,6 +119,14 @@ export function PlatformPage() {
         </p>
       </section>
 
+      <section className="platform-leadership-proof">
+        <p className="destination-eyebrow">Platform leadership</p>
+        <h2>Bryan Kelly</h2>
+        <p><strong>Founder & CEO</strong></p>
+        <p>Bryan leads CAN Academy’s strategy, platform, partnerships, and operating model. His background includes senior data and product leadership at Microsoft and more than 25 years building technology, analytics, and operating systems at scale.</p>
+        <Link to="/leadership">Meet CAN leadership <ArrowRight aria-hidden="true" /></Link>
+      </section>
+
       <RefrainBar text={refrain} transition={transition} current="platform" />
 
       <DetailSection>
