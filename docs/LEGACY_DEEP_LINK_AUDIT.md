@@ -22,7 +22,7 @@ Do not collapse a deep topic route into its similarly named story page.
 | Florida Opportunity | `/florida` | Old source-backed opportunity, research, and five market profiles restored |
 | Economics | `/economic-breakthrough` | Restored as a deep destination distinct from Story Page 07 |
 | Launch Approach | `/launch-approach` | Six-stage Discover → Validate → Design → Build → Launch → Measure sequence restored |
-| Team & Leadership | no route | Preserve as Coming soon until approved content exists |
+| Team & Leadership | `/leadership` | Founding leadership page now live |
 | Evidence Library | `/evidence` | Old source-backed library and all six evidence sections restored |
 
 ## Student Experience routes
