@@ -48,11 +48,13 @@ export function ContactPage() {
   const audience = searchParams.get('audience') ?? ''
   const topic = searchParams.get('topic') ?? ''
   const partner = partnerIds.find((id) => id === searchParams.get('partner')) ?? ''
+  const state = searchParams.get('state') ?? ''
   const audienceLabel = audience ? AUDIENCE_LABELS[audience] : undefined
   const audiencePrompt = audience ? AUDIENCE_PROMPTS[audience] : undefined
   const topicLabel = topic ? TOPIC_LABELS[topic] : undefined
   const partnerLabel = partner ? PARTNER_LABELS[partner] : undefined
   const conversationLabel = partnerLabel ?? audienceLabel ?? topicLabel
+  const stateLabel = state ? state.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()) : undefined
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -88,7 +90,7 @@ export function ContactPage() {
         <p className="destination-eyebrow">Start a conversation</p>
         <h1 className="editorial-heading">Tell us what you are exploring.</h1>
         <p>Share your context and the question that matters most. A member of the CAN Academy team can follow up from there.</p>
-        {conversationLabel && <p className="contact-context">Conversation context: <strong>{conversationLabel}</strong></p>}
+        {conversationLabel && <p className="contact-context">Conversation context: <strong>{conversationLabel}</strong>{stateLabel ? <> · {stateLabel}</> : null}</p>}
         {audiencePrompt && <p className="contact-audience-prompt">{audiencePrompt}</p>}
       </div>
 
@@ -112,6 +114,7 @@ export function ContactPage() {
           <input type="hidden" name="audience" value={audience} />
           <input type="hidden" name="topic" value={topic} />
           <input type="hidden" name="partner" value={partner} />
+          <input type="hidden" name="state" value={state} />
           <p className="contact-honeypot">
             <label>Do not fill this out: <input name="bot-field" /></label>
           </p>
