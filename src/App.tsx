@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import { StakesPage } from './pages/StakesPage'
@@ -67,17 +67,27 @@ import {
 function RouteScrollManager() {
   const location = useLocation()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const previous = window.history.scrollRestoration
+    window.history.scrollRestoration = 'manual'
+    return () => {
+      window.history.scrollRestoration = previous
+    }
+  }, [])
+
+  useLayoutEffect(() => {
     if (location.hash) {
       const id = decodeURIComponent(location.hash.slice(1))
-      const element = document.getElementById(id)
-      if (element) {
-        requestAnimationFrame(() => element.scrollIntoView({ block: 'start' }))
-        return
-      }
+      requestAnimationFrame(() => {
+        document.getElementById(id)?.scrollIntoView({ block: 'start' })
+      })
+      return
     }
 
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    })
   }, [location.pathname, location.hash])
 
   return null
