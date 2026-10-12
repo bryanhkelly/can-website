@@ -78,3 +78,17 @@ The following pages were added from the October 12, 2026 CAN strategy discussion
 - Accommodation and special-education language should describe CAN's need for a defined support model and clear pre-enrollment expectations; do not claim IDEA-equivalent services or protections.
 - Platform accountability content describes intended capabilities, not reported CAN student performance.
 - The FAQ must route visitors to deeper governed content rather than inventing new operating commitments.
+
+
+## Leadership titles and biographies
+
+Current public leadership titles:
+- Bryan Kelly — Founder & CEO
+- Dr. Neko Coleman Green — Co-founder & Chief Academic Officer
+
+### Governance rules
+- Use `Founder & CEO` for Bryan in primary site titles. Product, technology, data, platform, partnership, and operating responsibilities belong in the biography rather than replacing the CEO title with CTO or CPO.
+- Use `Co-founder & Chief Academic Officer` for Dr. Neko Coleman Green.
+- Neko's public biography is grounded in her supplied CV: Ed.D. in Organizational Leadership, M.A. in Teaching, MBA, B.S. in Business Management, classroom experience including special education and elementary/middle grades, differentiated instruction and assessment, and church ministry leadership.
+- Do not add unverified certifications, school-system leadership roles, published research, accreditation authority, or academic outcomes.
+- Do not imply the founders alone constitute the full school staff or local leadership model. The site should continue to distinguish academic leadership, platform/operating leadership, and local leadership.
