@@ -79,19 +79,12 @@ export function ExplorePage() {
             })}
           </div>
           <div className="explore-secondary-topics" aria-label="More ways to explore CAN">
-            {content.secondaryTopics.map((topic) =>
-              topic.href ? (
-                <Link key={topic.label} to={withPartnerContext(topic.href, location.search)}>
-                  <span><strong>{topic.label}</strong><small>{topic.subtitle}</small></span>
-                  <ArrowRight aria-hidden="true" />
-                </Link>
-              ) : (
-                <div key={topic.label} className="is-coming-soon">
-                  <span><strong>{topic.label}</strong><small>{topic.subtitle}</small></span>
-                  <em>{topic.status}</em>
-                </div>
-              )
-            )}
+            {content.secondaryTopics.map((topic) => (
+              <Link key={topic.label} to={withPartnerContext(topic.href, location.search)}>
+                <span><strong>{topic.label}</strong><small>{topic.subtitle}</small></span>
+                <ArrowRight aria-hidden="true" />
+              </Link>
+            ))}
           </div>
         </section>
 
