@@ -1,6 +1,7 @@
 import { ArrowDown, ArrowRight, MessagesSquare } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
+import { AcademicsDeepLinks } from './AcademicsDeepDivePages'
 import type { PartnerId } from '../lib/nav'
 
 const ACADEMIC_COMPONENTS = [
@@ -152,6 +153,8 @@ export function AcademicsPage() {
             <article key={title}><h2>{title}</h2><p>{text}</p></article>
           ))}
         </section>
+
+        <AcademicsDeepLinks />
 
         <DestinationFooter>
           <Link to="/contact?topic=academics" className="destination-primary-link">
