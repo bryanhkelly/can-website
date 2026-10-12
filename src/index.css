@@ -1574,3 +1574,279 @@ body {
   .deep-promises p { grid-column:2; }
   .deep-role-list article { grid-template-columns:1fr; gap:6px; }
 }
+
+
+/* Restored deep-link navigation and source-backed research pages */
+.destination-deep-links {
+  margin-top: 42px;
+  border-top: 1px solid var(--color-navy-100);
+  padding-top: 24px;
+}
+.destination-deep-links > div {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 10px 16px;
+  margin-top: 14px;
+}
+.destination-deep-links a,
+.destination-deep-links article {
+  display: flex;
+  min-height: 96px;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid var(--color-navy-100);
+  border-radius: 10px;
+  background: #fff;
+  padding: 15px 17px;
+  color: var(--color-navy-900);
+  text-decoration: none;
+}
+.destination-deep-links a:hover {
+  border-color: var(--color-navy-300);
+  background: #f8fafb;
+}
+.destination-deep-links strong {
+  font-family: var(--font-serif);
+  font-size: 18px;
+}
+.destination-deep-links span {
+  margin-top: 5px;
+  color: var(--color-navy-600);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.destination-deep-links small {
+  margin-top: 8px;
+  color: #9a772c;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.deep-subhead {
+  margin-top: 24px;
+  color: var(--color-navy-900);
+  font-family: var(--font-serif);
+  font-size: 20px;
+}
+.deep-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.deep-list li small {
+  flex-shrink: 0;
+  color: #94633b;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.deep-note {
+  border-left: 4px solid #9ab5c5;
+  background: #f0f5f7;
+  padding: 20px 22px;
+}
+.deep-note > p:not(.destination-eyebrow) {
+  margin-top: 8px;
+  color: var(--color-navy-700);
+  line-height: 1.6;
+}
+.deep-closing-copy {
+  margin-top: 18px;
+  color: var(--color-navy-800);
+  font-family: var(--font-serif);
+  font-size: 20px;
+  line-height: 1.5;
+}
+.deep-funnel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.deep-funnel span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 999px;
+  background: #edf3f6;
+  padding: 9px 14px;
+  color: var(--color-navy-800);
+  font-size: 13px;
+}
+.deep-funnel b {
+  color: #9a772c;
+  font-weight: 400;
+}
+.deep-source-list {
+  margin-top: 16px;
+}
+.deep-source-list li {
+  border-top: 1px solid var(--color-navy-100);
+  padding: 11px 0;
+  color: var(--color-navy-700);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.deep-source-list a {
+  color: var(--color-navy-800);
+  text-decoration-color: #c3a150;
+  text-underline-offset: 3px;
+}
+.deep-two-grid details {
+  border: 1px solid var(--color-navy-100);
+  border-radius: 9px;
+  background: #fff;
+  padding: 14px 16px;
+}
+.deep-two-grid details summary {
+  cursor: pointer;
+  color: var(--color-navy-900);
+  font-family: var(--font-serif);
+  font-size: 19px;
+}
+.economic-equation-deep {
+  border: 1px solid #d5c28a;
+  background: #fff8e7;
+  padding: 28px;
+}
+.economic-equation-deep > p:last-of-type {
+  max-width: 900px;
+  margin-top: 12px;
+  color: var(--color-navy-900);
+  font-family: var(--font-serif);
+  font-size: clamp(24px,3vw,36px);
+  line-height: 1.35;
+}
+.economic-equation-deep b {
+  color: #9a772c;
+}
+.economic-equation-deep small {
+  display: block;
+  max-width: 760px;
+  margin-top: 18px;
+  color: var(--color-navy-600);
+  font-size: 11px;
+  line-height: 1.55;
+}
+.florida-market-list article {
+  display: grid;
+  grid-template-columns: 1.1fr 1.45fr .9fr;
+  gap: 28px;
+  border-top: 1px solid var(--color-navy-100);
+  padding: 26px 0;
+}
+.florida-market-list h2 {
+  font-family: var(--font-serif);
+  font-size: 26px;
+}
+.florida-market-list h2 a {
+  color: var(--color-navy-900);
+  text-decoration: none;
+}
+.florida-market-list p {
+  margin-top: 7px;
+  color: var(--color-navy-700);
+  line-height: 1.5;
+}
+.florida-market-list small {
+  display: block;
+  margin-top: 8px;
+  color: #94633b;
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.florida-market-list dl {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 14px;
+}
+.florida-market-list dt {
+  color: var(--color-navy-400);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.florida-market-list dd {
+  margin-top: 3px;
+  color: var(--color-navy-800);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.florida-figures,
+.florida-verify-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+.florida-figures > div,
+.florida-verify-grid > div {
+  display: flex;
+  min-height: 110px;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid var(--color-navy-100);
+  background: #fff;
+  padding: 14px;
+}
+.florida-figures span,
+.florida-verify-grid span {
+  color: var(--color-navy-500);
+  font-size: 10px;
+  line-height: 1.4;
+}
+.florida-figures strong {
+  margin-top: 6px;
+  color: var(--color-navy-900);
+  font-family: var(--font-serif);
+  font-size: 22px;
+}
+.florida-figures small {
+  margin-top: 4px;
+  color: #94633b;
+  font-size: 9px;
+}
+.florida-verify-grid strong {
+  margin-bottom: 7px;
+  color: var(--color-navy-900);
+}
+.deep-table-wrap {
+  margin-top: 18px;
+  overflow-x: auto;
+}
+.deep-table-wrap table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+}
+.deep-table-wrap th {
+  border-bottom: 2px solid #c3a150;
+  padding: 10px 12px;
+  color: var(--color-navy-500);
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.deep-table-wrap td {
+  border-bottom: 1px solid var(--color-navy-100);
+  padding: 12px;
+  color: var(--color-navy-700);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+@media (max-width: 760px) {
+  .destination-deep-links > div,
+  .florida-figures,
+  .florida-verify-grid {
+    grid-template-columns: 1fr;
+  }
+  .florida-market-list article {
+    grid-template-columns: 1fr;
+  }
+}
