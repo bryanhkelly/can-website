@@ -8,7 +8,6 @@ import { BrandMark } from './ui/BrandMark'
 export function SiteHeader() {
   const location = useLocation()
   const labels = ['Stakes', 'Possibility', 'Curriculum', 'Platform', 'Rooted Locally', 'Student Experience', 'Why It Can Work', 'Explore CAN']
-  const compactLabels = ['Stakes', 'Possibility', 'Curriculum', 'Platform', 'Local', 'Student', 'Why It Can Work', 'Explore']
   const [storyOpen, setStoryOpen] = useState(false)
   const currentIndex = navSlugs.findIndex((slug) => location.pathname === `/story/${slug}`)
   const currentLabel = currentIndex >= 0 ? labels[currentIndex] : 'Explore CAN'
@@ -16,7 +15,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 border-b border-navy-100/80 bg-cream-50/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6">
-        <Link to={withPartnerContext('/story/stakes', location.search)} aria-label="CAN Academy home" className="flex shrink-0 items-center gap-2.5">
+        <Link to="/" aria-label="CAN Academy home" className="flex shrink-0 items-center gap-2.5">
           <BrandMark />
           <span className="leading-tight">
             <span className="block text-sm font-extrabold tracking-tight text-navy-950">CAN Academy</span>
