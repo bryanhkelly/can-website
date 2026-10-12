@@ -77,6 +77,14 @@ const META: Record<string, { title: string; description: string }> = {
     title: 'Launch Approach | CAN Academy',
     description: 'Explore the stages from initial interest through readiness, planning, preparation, launch, and growth.',
   },
+  '/accountability': {
+    title: 'Trust & Accountability | CAN Academy',
+    description: 'See how CAN approaches academic standards, student safety, visible progress, shared responsibility, and site readiness.',
+  },
+  '/locations': {
+    title: 'Locations & Launch | CAN Academy',
+    description: 'See which CAN markets are operating, in development, or still being explored.',
+  },
   '/evidence': {
     title: 'Evidence Library | CAN Academy',
     description: 'The destination for research, policy, academic, and operating evidence behind the CAN model.',
