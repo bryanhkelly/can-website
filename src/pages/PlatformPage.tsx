@@ -1,7 +1,8 @@
 import { StoryIntro } from '../components/ui/StoryIntro'
 import { RefrainBar } from '../components/ui/RefrainBar'
 import { DetailSection, DetailItem } from '../components/ui/DetailSection'
-import { BookOpen, Users, MapPinned, ClipboardList } from 'lucide-react'
+import { ArrowRight, BookOpen, Users, MapPinned, ClipboardList, TrendingUp, LifeBuoy } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { platformContent } from '../data/pageContent'
 import { LocalSettingsDiagram } from '../components/ui/LocalSettingsDiagram'
 
@@ -79,6 +80,43 @@ export function PlatformPage() {
 
       <section className="platform-communities" aria-label="One platform serving many local communities">
         <LocalSettingsDiagram connected />
+      </section>
+
+      <section className="platform-accountability" aria-label="Evidence and accountability">
+        <div className="platform-accountability-heading">
+          <p className="destination-eyebrow">Evidence & Accountability</p>
+          <h2 className="editorial-heading">Every student matters. Every student's progress should be visible.</h2>
+          <p>
+            A school is more than a building, a curriculum, or a place to gather. Its responsibility is to help students learn, grow, and prepare for what comes next. CAN is designed to make that responsibility visible.
+          </p>
+        </div>
+        <div className="platform-accountability-grid">
+          <article>
+            <BookOpen aria-hidden="true" />
+            <h3>Learning</h3>
+            <p>What students have learned and demonstrated through assignments, assessment, and student work.</p>
+          </article>
+          <article>
+            <TrendingUp aria-hidden="true" />
+            <h3>Growth</h3>
+            <p>How understanding, skill, and academic readiness develop over time.</p>
+          </article>
+          <article>
+            <LifeBuoy aria-hidden="true" />
+            <h3>Support</h3>
+            <p>What happens when a student needs help, who responds, and how intervention is coordinated.</p>
+          </article>
+        </div>
+        <div className="platform-accountability-responsibility">
+          <strong>One connected model. Clear responsibilities.</strong>
+          <p>
+            CAN supports academic instruction, curriculum, assessment, and educational oversight. Local partners provide the supervised learning environment and community relationships. Together, they share responsibility for student progress and well-being.
+          </p>
+          <Link to="/accountability">Explore Trust & Accountability <ArrowRight aria-hidden="true" /></Link>
+        </div>
+        <p className="platform-accountability-note">
+          These are intended platform and accountability capabilities, not reported CAN performance results.
+        </p>
       </section>
 
       <RefrainBar text={refrain} transition={transition} current="platform" />
