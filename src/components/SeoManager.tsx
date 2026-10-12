@@ -85,6 +85,10 @@ const META: Record<string, { title: string; description: string }> = {
     title: 'Locations & Launch | CAN Academy',
     description: 'See which CAN markets are operating, in development, or still being explored.',
   },
+  '/faq': {
+    title: 'FAQ | CAN Academy',
+    description: 'Practical questions for families, churches, schools, homeschool communities, and church networks exploring CAN Academy.',
+  },
   '/evidence': {
     title: 'Evidence Library | CAN Academy',
     description: 'The destination for research, policy, academic, and operating evidence behind the CAN model.',
