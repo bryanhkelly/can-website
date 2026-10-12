@@ -76,8 +76,16 @@ function DeepShell({
   )
 }
 
-function List({ items }: { items: string[] }) {
-  return <ul className="deep-list">{items.map((item) => <li key={item}>{item}</li>)}</ul>
+function List({ items }: { items: Array<string | { label: string; status: string }> }) {
+  return (
+    <ul className="deep-list">
+      {items.map((item) => {
+        const label = typeof item === 'string' ? item : item.label
+        const status = typeof item === 'string' ? undefined : item.status
+        return <li key={label}><span>{label}</span>{status && <small>{status}</small>}</li>
+      })}
+    </ul>
+  )
 }
 
 function Numbered({ items }: { items: { n: string; title: string; body: string }[] }) {
