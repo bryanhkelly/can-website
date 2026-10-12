@@ -84,7 +84,17 @@ function RouteScrollManager() {
       return
     }
 
-    const reset = () => window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    const main = document.querySelector('main') as HTMLElement | null
+    if (main) {
+      main.setAttribute('tabindex', '-1')
+      main.focus({ preventScroll: true })
+    }
+
+    const reset = () => {
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    }
     reset()
     requestAnimationFrame(reset)
     const immediate = window.setTimeout(reset, 0)
