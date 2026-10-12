@@ -44,7 +44,7 @@ const ACADEMIC_DETAILS = [
   },
 ]
 
-const LAUNCH_STAGES = ['Explore', 'Fit / readiness', 'Plan', 'Prepare', 'Launch', 'Grow']
+const LAUNCH_STAGES = ['Discover', 'Validate', 'Design', 'Build', 'Launch', 'Measure']
 
 const PARTNER_PAGES: Record<PartnerId, {
   name: string
@@ -250,9 +250,9 @@ export function StartCommunityPage() {
     <article className="destination-page">
       <div className="destination-container">
         <PageIntro
-          eyebrow="Launch Approach"
-          heading="From interest to a thriving community."
-          description="A community’s path takes shape through conversation, local context, and shared planning. These stages describe a framework, not a fixed timeline or contractual commitment."
+          eyebrow="From opportunity to operation"
+          heading="CAN should launch carefully, not quickly."
+          description="A promising community is not automatically a launch-ready community. CAN should move forward only when the academic, financial, regulatory, partner, and local-demand conditions are strong enough to support students and families over time."
         />
         <ol className="launch-stages">
           {LAUNCH_STAGES.map((stage, index) => (
@@ -263,8 +263,8 @@ export function StartCommunityPage() {
           ))}
         </ol>
         <section className="destination-note">
-          <h2>Every community is different</h2>
-          <p>Timing, readiness, and specific requirements depend on the community and are worked through together.</p>
+          <h2>Strong first. Then scale.</h2>
+          <p>The goal is not to collect as many locations as possible. It is to launch strong communities that can become the foundation of a strong network.</p>
         </section>
 
         <LaunchDeepLinks />
