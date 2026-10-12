@@ -210,57 +210,30 @@ export const economicsContent = {
 }
 
 export const explorePageContent = {
-  script: 'Together we can.',
-  h1: 'Different roles. A shared mission.',
-  dek: "Whether you're a parent, community leader, church, co-op, or local organization, there's a place for you in the CAN Academy movement.",
-  audiences: [
-    {
-      heading: 'For Families',
-      body: 'Learn how CAN Academy can benefit your child.',
-      href: '/parents',
-      image: '/images/roles/01_families.png',
-      alt: 'A high-school student looking toward the future',
-    },
-    {
-      heading: 'For Churches & Ministries',
-      body: 'Discover how your church can participate in Christian education.',
-      href: '/pastors',
-      image: '/images/roles/02_churches_ministries.png',
-      alt: 'Students and adults learning together in a church community',
-    },
-    {
-      heading: 'For School Leaders',
-      body: 'Explore how CAN can extend what your school already does well.',
-      href: '/christian-schools',
-      image: '/images/roles/03_school_leaders.png',
-      alt: 'Students outside a local school campus',
-    },
-    {
-      heading: 'For Co-ops & Homeschools',
-      body: 'Bring high-quality academics and a wider network to your community.',
-      href: '/homeschool',
-      image: '/images/roles/04_coops_homeschools.png',
-      alt: 'A student focused on schoolwork',
-    },
-    {
-      heading: 'For Denominations & Church Networks',
-      body: 'Explore how churches can expand Christian education together.',
-      href: '/denominations',
-      image: '/images/roles/05_denominations_networks.png',
-      alt: 'Community leaders planning together',
-    },
+  h1: 'Where would you like to go next?',
+  dek: 'Go deeper by topic, start from your role, or begin a conversation about whether CAN could fit your community.',
+  secondaryDek: 'You can keep exploring, start from your role, or begin a conversation now.',
+  topicIntro: 'Explore what makes CAN different and how it could work in your community.',
+  topics: [
+    { label: 'Student Experience', subtitle: 'What school feels like', href: '/story/student-experience' },
+    { label: 'Academics', subtitle: 'Courses & pathways', href: '/academics' },
+    { label: 'Partnership Model', subtitle: 'How communities join', href: '/partnership-model' },
+    { label: 'Florida', subtitle: 'Market-specific path', href: '/florida' },
+    { label: 'Economics', subtitle: 'Why sharing matters', href: '/story/why-it-can-work' },
+    { label: 'Launch Approach', subtitle: 'From interest to opening', href: '/start-a-community' },
   ],
-  ctaLabel: 'Start the Conversation →',
-  details: {
-    deepDives: {
-      heading: 'See the details',
-      items: ['Curriculum', 'Academics', 'Student Experience', 'Economics', 'Evidence Library · Coming soon'],
-    },
-    launchPaths: {
-      heading: 'See how CAN starts',
-      items: ['Partnership Model', 'Starting a CAN Community', 'Florida Launch'],
-    },
-  },
+  roleIntro: 'Every community is unique. Find the path that fits your perspective.',
+  roles: [
+    { label: 'Pastor / Church Leader', href: '/pastors' },
+    { label: 'Parent / Family', href: '/parents' },
+    { label: 'Christian School Leader', href: '/christian-schools' },
+    { label: 'Homeschool Community', href: '/homeschool' },
+    { label: 'Denomination / Network', href: '/denominations' },
+  ],
+  conversationHeading: 'Start a conversation.',
+  conversationBody: 'Share your context and begin with the question that matters most to your community.',
+  ctaLabel: 'Start a conversation',
+  closing: 'Greater access. Stronger communities. Brighter tomorrows.',
 }
 
 export const roleDoorways = {
@@ -341,8 +314,8 @@ export const roleDoorways = {
       'CAN is designed to help churches do more together without erasing what should remain local.',
     secondaryCta: 'Talk with us about your church network',
     audience: 'denomination',
-    image: '/images/07_economics_leadership_meeting.png',
-    imageAlt: 'Community leaders planning together',
+    image: '/images/community-network.png',
+    imageAlt: 'Church and community leaders sharing a conversation outdoors',
     visualVariant: 'denomination',
   },
 } as const

@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowDown, ArrowRight, Church, Network } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { roleDoorways } from '../data/pageContent'
 
@@ -68,21 +68,24 @@ function RoleVisual({ variant }: { variant: RoleDoorway['visualVariant'] }) {
   }
 
   return (
-    <div className="role-visual-network">
-      <svg viewBox="0 0 600 220" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M120 55 270 100M120 110 270 110M120 165 270 120M330 110 480 78M330 110 480 145" />
-      </svg>
-      <div className="role-visual-network-churches">
-        <span>Local church</span>
-        <span>Local church</span>
-        <span>Local church</span>
-        <span>Local church</span>
-        <span>Local church</span>
+    <div className="denomination-network">
+      <div className="denomination-network-churches" aria-label="Many local churches and communities">
+        {[1, 2, 3, 4, 5].map((church) => (
+          <div className="denomination-network-church" key={church}>
+            <Church aria-hidden="true" />
+            <span>Local church</span>
+          </div>
+        ))}
       </div>
-      <div className="role-visual-network-core">Shared CAN school capabilities</div>
-      <div className="role-visual-network-outcomes">
-        <span>Stronger together</span>
-        <span>Local identity stays local</span>
+      <ArrowDown className="denomination-network-arrow" aria-hidden="true" />
+      <div className="denomination-network-shared">
+        <Network aria-hidden="true" />
+        <span><strong>Shared CAN layer</strong><small>Academic + operating capabilities</small></span>
+      </div>
+      <div className="denomination-network-outcomes" aria-label="Local outcomes">
+        <span>Local leadership</span>
+        <span>Local identity</span>
+        <span>Local ministry and community relationships</span>
       </div>
     </div>
   )

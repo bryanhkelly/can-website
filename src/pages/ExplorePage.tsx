@@ -1,108 +1,120 @@
+import {
+  ArrowRight,
+  Church,
+  GraduationCap,
+  Handshake,
+  House,
+  MapPin,
+  Network,
+  School,
+  UsersRound,
+} from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
-import { StoryIntro } from '../components/ui/StoryIntro'
-import { PhotoBlock } from '../components/ui/PhotoBlock'
 import { explorePageContent } from '../data/pageContent'
 
+const TOPIC_ICONS = [
+  UsersRound,
+  GraduationCap,
+  Handshake,
+  MapPin,
+  School,
+  Network,
+]
+
+const ROLE_ICONS = [Church, UsersRound, School, House, Network]
+
 export function ExplorePage() {
-  const { script, h1, dek, audiences, ctaLabel, details } = explorePageContent
-  const deepDiveRoutes: Record<string, string> = {
-    Curriculum: '/story/curriculum',
-    Academics: '/story/curriculum',
-    'Student Experience': '/story/student-experience',
-    Economics: '/story/why-it-can-work',
-  }
+  const content = explorePageContent
 
   return (
-    <article>
-      <section className="story-page pb-0">
-          <StoryIntro
-            number="08/08"
-            label="Explore CAN"
-            kicker="Let's build what's possible."
-            heading={h1}
-            description={dek}
-            note={script}
-          />
-
-          <nav className="audience-cards" aria-label="Explore CAN by audience">
-            {audiences.map((audience) => (
-              <Link
-                key={audience.heading}
-                to={audience.href}
-                className="audience-card"
-              >
-                <div className="audience-photo">
-                  <img src={audience.image} alt={audience.alt} loading="lazy" />
-                </div>
-                <div className="px-3 py-4">
-                  <h3 className="text-base font-bold text-navy-900">{audience.heading}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-navy-600">{audience.body}</p>
-                </div>
-              </Link>
-            ))}
-          </nav>
-
-      </section>
-
-      <PhotoBlock
-        src="/images/08_explore_audience_roles.png"
-        alt="Community members connecting with a city skyline behind them"
-        imagePosition="50% 48%"
-        imagePositionMobile="50% 46%"
-        className="explore-cta mt-6 rounded-none"
-        shaded={false}
-      >
-      <div className="explore-cta-wash">
-      <div className="story-content flex flex-col items-end gap-6 py-8 sm:py-12">
-        <p className="font-serif text-2xl leading-tight text-navy-950 sm:text-3xl">Communities.<br />Learners.<br />Brighter futures.</p>
-        <Link
-          to="/contact"
-          className="inline-flex min-h-12 items-center gap-2 rounded-full bg-gold-500 px-7 py-3 text-sm font-bold text-navy-950 shadow-sm transition-colors hover:bg-gold-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-600"
-        >
-          {ctaLabel.replace(' →', '')}
-          <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
-        </Link>
-      </div>
-      </div>
-      </PhotoBlock>
-
-      <section className="px-5 py-10 sm:px-8 sm:py-14">
-        <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2">
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-navy-500">
-              {details.deepDives.heading}
-            </h3>
-            <ul className="mt-3 flex flex-col gap-2">
-              {details.deepDives.items.map((item) => (
-                <li key={item} className="text-sm font-semibold text-navy-800">
-                  {deepDiveRoutes[item] ? (
-                    <Link to={deepDiveRoutes[item]} className="transition-colors hover:text-teal-700">
-                      {item} <span aria-hidden="true">→</span>
-                    </Link>
-                  ) : (
-                    <span>{item}</span>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-navy-500">
-              {details.launchPaths.heading}
-            </h3>
-            <ul className="mt-3 flex flex-col gap-2">
-              {details.launchPaths.items.map((item) => (
-                <li key={item} className="text-sm font-semibold text-navy-800">
-                  <Link to={item === 'Starting a CAN Community' ? '/contact' : '/story/rooted-locally'} className="transition-colors hover:text-teal-700">
-                    {item} <span aria-hidden="true">→</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <article className="explore-hub">
+      <section className="explore-hub-hero">
+        <img
+          className="explore-hub-hero-image"
+          src="/images/community-network.png"
+          alt=""
+          fetchPriority="high"
+        />
+        <div className="explore-hub-hero-wash" />
+        <div className="explore-hub-hero-content">
+          <p className="explore-hub-eyebrow">08 / Explore CAN</p>
+          <h1 className="editorial-heading">{content.h1}</h1>
+          <p className="explore-hub-dek">{content.dek}</p>
+          <p className="explore-hub-secondary">{content.secondaryDek}</p>
+          <Link to="/contact" className="explore-hub-primary">
+            {content.ctaLabel}
+            <ArrowRight aria-hidden="true" />
+          </Link>
+          <p className="explore-hub-tagline">A different way forward</p>
         </div>
       </section>
+
+      <div className="explore-hub-content">
+        <section className="explore-hub-section" aria-labelledby="explore-topics-heading">
+          <div className="explore-hub-section-heading">
+            <span aria-hidden="true" />
+            <div>
+              <h2 id="explore-topics-heading" className="editorial-heading">Explore by topic</h2>
+              <p>{content.topicIntro}</p>
+            </div>
+          </div>
+          <div className="explore-topic-grid">
+            {content.topics.map((topic, index) => {
+              const Icon = TOPIC_ICONS[index]
+              return (
+                <Link key={topic.label} to={topic.href} className="explore-topic-card">
+                  <span className="explore-topic-icon"><Icon aria-hidden="true" /></span>
+                  <span className="explore-topic-copy">
+                    <span className="explore-topic-title">{topic.label}</span>
+                    <span className="explore-topic-subtitle">{topic.subtitle}</span>
+                  </span>
+                  <span className="explore-topic-arrow"><ArrowRight aria-hidden="true" /></span>
+                </Link>
+              )
+            })}
+          </div>
+          <p className="explore-evidence-link">
+            <Link to="/evidence">Evidence Library <span>Coming soon</span><ArrowRight aria-hidden="true" /></Link>
+          </p>
+        </section>
+
+        <section className="explore-hub-section explore-roles-section" aria-labelledby="explore-roles-heading">
+          <div className="explore-hub-section-heading">
+            <span aria-hidden="true" />
+            <div>
+              <h2 id="explore-roles-heading" className="editorial-heading">Start with who you are</h2>
+              <p>{content.roleIntro}</p>
+            </div>
+          </div>
+          <div className="explore-role-grid">
+            {content.roles.map((role, index) => {
+              const Icon = ROLE_ICONS[index]
+              return (
+                <Link key={role.label} to={role.href} className="explore-role-card">
+                  <Icon aria-hidden="true" className="explore-role-icon" />
+                  <span>{role.label}</span>
+                  <span className="explore-role-arrow"><ArrowRight aria-hidden="true" /></span>
+                </Link>
+              )
+            })}
+          </div>
+        </section>
+
+        <section className="explore-conversation">
+          <img src="/images/08_explore_audience_roles.png" alt="" loading="lazy" />
+          <div className="explore-conversation-wash" />
+          <div className="explore-conversation-copy">
+            <p className="explore-hub-eyebrow">Let's explore together</p>
+            <h2 className="editorial-heading">{content.conversationHeading}</h2>
+            <p>{content.conversationBody}</p>
+            <Link to="/contact" className="explore-hub-primary">
+              {content.ctaLabel}
+              <ArrowRight aria-hidden="true" />
+            </Link>
+          </div>
+          <p className="explore-conversation-closing">{content.closing}</p>
+        </section>
+      </div>
     </article>
   )
 }

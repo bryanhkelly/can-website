@@ -10,6 +10,18 @@ Five audience doorway pages lead into the shared story:
 - `/homeschool`
 - `/denominations`
 
+Explore also links to these topic destinations:
+
+- `/academics` — a standalone academic operating-model page
+- `/partnership-model`
+- `/florida` — market details pending approval
+- `/start-a-community`
+- `/evidence` — evidence materials coming soon
+
+Partner-specific information routes are reserved at `/partners/the-journey-church`,
+`/partners/cogic`, and `/partners/cogbf`; each currently displays a neutral
+coming-soon page.
+
 ## Development
 
 - `npm run dev` starts the local site.
@@ -25,18 +37,21 @@ and diagram structure. Standalone production photographs live in
 The Stakes and Curriculum use overlaid copy within photo-backed scenes.
 Possibility uses a circular student focal image; Student Experience combines
 the portrait with three belonging layers. Rooted Locally retains its three
-colored columns, and Explore uses photo-led audience cards and a photo-overlay
-conversation CTA. Platform and Economics are native diagrams, not photo heroes.
+colored columns. Explore is a topic-and-role destination hub with large visual
+cards and a photo-led conversation CTA. Platform and Economics are native
+diagrams, not photo heroes.
 
 All labels, diagrams, cards, and CTAs are editable HTML/CSS/SVG. At mobile widths,
 the curriculum slabs flatten into readable bands and multi-column compositions
 reflow rather than shrinking their text. Belonging-layer descriptions move into
 a color-keyed legend below the portrait on mobile to stay readable.
 
-The Explore CAN audience cards link to the five doorway pages. Their distinct
-visuals use editable diagrams and existing production photography; the doorway
-package provides art direction and reference comps, not production-ready hero
-photographs.
+The Explore CAN role cards link to the five doorway pages. The Academics page is
+distinct from Curriculum: it describes the academic path over time, while
+Curriculum describes instructional content and perspective. Florida, Evidence,
+and partner-specific pages avoid publishing unapproved details or sources.
+The denominations hero uses the package's interim community-network image; a
+bespoke 2400-3000 px production photograph is still required before final launch.
 
 The production handoff does not include independent skyline banners, individual
 audience portraits, the illustrated buildings, the book cover, or a script font.

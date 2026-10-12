@@ -11,6 +11,14 @@ import { ExplorePage } from './pages/ExplorePage'
 import { ContactPage } from './pages/ContactPage'
 import { RoleDoorwayPage } from './components/RoleDoorwayPage'
 import { roleDoorways } from './data/pageContent'
+import {
+  AcademicsPage,
+  EvidencePage,
+  FloridaPage,
+  PartnerPage,
+  PartnershipModelPage,
+  StartCommunityPage,
+} from './pages/ExploreDestinations'
 
 function App() {
   return (
@@ -25,11 +33,19 @@ function App() {
         <Route path="/story/student-experience" element={<StudentExperiencePage />} />
         <Route path="/story/why-it-can-work" element={<EconomicsPage />} />
         <Route path="/story/explore-can" element={<ExplorePage />} />
+        <Route path="/academics" element={<AcademicsPage />} />
+        <Route path="/partnership-model" element={<PartnershipModelPage />} />
+        <Route path="/florida" element={<FloridaPage />} />
+        <Route path="/start-a-community" element={<StartCommunityPage />} />
+        <Route path="/evidence" element={<EvidencePage />} />
         <Route path="/parents" element={<RoleDoorwayPage page={roleDoorways.parents} />} />
         <Route path="/pastors" element={<RoleDoorwayPage page={roleDoorways.pastors} />} />
         <Route path="/christian-schools" element={<RoleDoorwayPage page={roleDoorways.christianSchools} />} />
         <Route path="/homeschool" element={<RoleDoorwayPage page={roleDoorways.homeschool} />} />
         <Route path="/denominations" element={<RoleDoorwayPage page={roleDoorways.denominations} />} />
+        <Route path="/partners/the-journey-church" element={<PartnerPage name="The Journey Church" />} />
+        <Route path="/partners/cogic" element={<PartnerPage name="COGIC" />} />
+        <Route path="/partners/cogbf" element={<PartnerPage name="COGBF" />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<Navigate to="/story/stakes" replace />} />
       </Routes>

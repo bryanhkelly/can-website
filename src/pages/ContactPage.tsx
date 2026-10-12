@@ -8,12 +8,24 @@ const AUDIENCE_LABELS: Record<string, string> = {
   denomination: 'Denominations and church networks',
 }
 
+const TOPIC_LABELS: Record<string, string> = {
+  academics: 'Academics',
+  'partnership-model': 'Partnership Model',
+  florida: 'Florida',
+  'launch-approach': 'Launch Approach',
+  evidence: 'Evidence Library',
+  'partner-information': 'Partner information',
+}
+
 export function ContactPage() {
   const [searchParams] = useSearchParams()
   const audience = searchParams.get('audience')
+  const topic = searchParams.get('topic')
   const audienceLabel = audience ? AUDIENCE_LABELS[audience] : undefined
-  const subject = audienceLabel
-    ? `CAN Academy conversation: ${audienceLabel}`
+  const topicLabel = topic ? TOPIC_LABELS[topic] : undefined
+  const conversationLabel = audienceLabel ?? topicLabel
+  const subject = conversationLabel
+    ? `CAN Academy conversation: ${conversationLabel}`
     : 'CAN Academy conversation'
 
   return (
@@ -23,9 +35,9 @@ export function ContactPage() {
       <p className="mt-5 text-lg leading-relaxed text-navy-700">
         We will start there. Reach out and a member of the CAN Academy team will follow up with you.
       </p>
-      {audienceLabel && (
+      {conversationLabel && (
         <p className="mt-4 text-sm font-semibold text-navy-600">
-          Conversation topic: {audienceLabel}
+          Conversation topic: {conversationLabel}
         </p>
       )}
       <a
