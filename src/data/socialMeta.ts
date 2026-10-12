@@ -1,3 +1,4 @@
+import { locationBySlug } from './locationStateData'
 export type SocialMeta = {
   title: string
   description: string
@@ -190,6 +191,20 @@ const PREFIX_META: Array<[string, string]> = [
 export function getSocialMeta(pathname: string): SocialMeta {
   const clean = pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname
   if (META[clean]) return META[clean]
+
+  if (clean.startsWith('/locations/')) {
+    const slug = clean.split('/')[2]
+    const state = locationBySlug(slug)
+    if (state) {
+      return {
+        title: `${state.name} | Locations | CAN Academy`,
+        description: state.summary,
+        image: state.slug === 'florida' ? '/images/04_platform_local_campus.png' : '/images/08_explore_audience_roles.png',
+        imageAlt: `CAN Academy location information for ${state.name}.`,
+      }
+    }
+  }
+
   const prefix = PREFIX_META.find(([needle]) => clean.startsWith(needle))
   return prefix ? META[prefix[1]] : DEFAULT_SOCIAL_META
 }
