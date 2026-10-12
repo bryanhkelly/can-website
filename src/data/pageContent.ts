@@ -221,6 +221,7 @@ export const explorePageContent = {
     { label: 'Trust & Accountability', subtitle: 'Standards, safety, progress, and responsibility', href: '/accountability' },
     { label: 'Locations & Launch', subtitle: 'What is developing and what is still exploratory', href: '/locations' },
     { label: 'Evidence Library', subtitle: 'Research, data, and assumptions behind the CAN model', href: '/evidence' },
+    { label: 'How CAN Is Different', subtitle: 'See where CAN fits among the models families already know', href: '/how-can-is-different' },
     { label: 'FAQ', subtitle: 'Practical questions for families and partners', href: '/faq' },
     { label: 'Team & Leadership', subtitle: 'Meet the founding leaders building CAN', href: '/leadership' },
   ],
