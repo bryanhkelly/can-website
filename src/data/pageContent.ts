@@ -246,7 +246,7 @@ export const roleDoorways = {
       'This is not simply about using church facilities differently. It is about creating another way for the church to invest deeply in the next generation.',
     concern:
       'CAN is designed to help churches serve students without asking every church to build and operate an entire school on its own.',
-    secondaryCta: 'Talk with us about your church',
+    secondaryCta: 'Request a partnership conversation',
     audience: 'pastor',
     image: '/images/05_rooted_locally_community.png',
     imageAlt: 'Students and adults learning together in a church community',
@@ -265,7 +265,7 @@ export const roleDoorways = {
       'CAN is designed to bring those priorities together in a school experience that stays personal while connecting students to a broader world of teachers, courses, relationships, and opportunities.',
     concern:
       'CAN is designed to combine intentional academics, real local community, and access to a broader school network.',
-    secondaryCta: 'Talk with us about your child',
+    secondaryCta: 'Share interest for your child',
     audience: 'parent',
     image: '/images/06_student_experience_portrait.png',
     imageAlt: 'A student looking ahead with confidence',
@@ -283,7 +283,7 @@ export const roleDoorways = {
       'A larger high school without becoming a large school. CAN can help extend what your school already does well into the high-school years.',
     concern:
       'CAN is meant to extend what your school already does well, not replace its culture or identity.',
-    secondaryCta: 'Talk with us about high school expansion',
+    secondaryCta: 'Explore a school expansion partnership',
     audience: 'school-leader',
     image: '/images/04_platform_local_campus.png',
     imageAlt: 'Students outside a local school campus',
@@ -301,7 +301,7 @@ export const roleDoorways = {
       'More options do not have to mean less flexibility. CAN can expand what is available without replacing the family involvement and relationships that made homeschooling work for you.',
     concern:
       'CAN is meant to add options while preserving the flexibility and family involvement you value.',
-    secondaryCta: 'Talk with us about your family',
+    secondaryCta: 'Explore homeschool participation',
     audience: 'homeschool',
     image: '/images/03_curriculum_student_study.png',
     imageAlt: 'A student reading and studying',
@@ -319,7 +319,7 @@ export const roleDoorways = {
       'Together, your churches may be able to offer something no single congregation could build alone.',
     concern:
       'CAN is designed to help churches do more together without erasing what should remain local.',
-    secondaryCta: 'Talk with us about your church network',
+    secondaryCta: 'Discuss a network pilot',
     audience: 'denomination',
     image: '/images/04_platform_local_campus.png',
     imageAlt: 'Students outside a contemporary church and school community',
