@@ -8,7 +8,7 @@ const ICONS = [MapPin, DollarSign, Cross, BookOpen]
 const TONES = ['bg-navy-900', 'bg-green-600', 'bg-gold-600', 'bg-navy-900']
 
 export function StakesPage() {
-  const { eyebrowNumber, eyebrowLabel, h1, dek, items, refrain, details } = stakesContent
+  const { eyebrowNumber, eyebrowLabel, h1, dek, items, refrain, transition, details } = stakesContent
   return (
     <article>
       <section className="stakes-scene" aria-label="Challenges families face">
@@ -31,7 +31,10 @@ export function StakesPage() {
               )
             })}
             <div className="stakes-refrain">
-              <p>{refrain}</p>
+              <div>
+                <p>{refrain}</p>
+                <p className="stakes-transition">{transition}</p>
+              </div>
               <NextStoryLink current="stakes" dark />
             </div>
           </div>
