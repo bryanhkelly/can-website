@@ -51,12 +51,14 @@ export function ContactPage() {
     const form = event.currentTarget
     const data = new FormData(form)
     data.set('form-name', 'can-contact')
+    const encoded = new URLSearchParams()
+    data.forEach((value, key) => encoded.append(key, String(value)))
 
     try {
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(Array.from(data.entries()).map(([key, value]) => [key, String(value)])).toString(),
+        body: encoded.toString(),
       })
 
       if (!response.ok) throw new Error('Form submission failed')
@@ -91,7 +93,7 @@ export function ContactPage() {
           name="can-contact"
           method="POST"
           data-netlify="true"
-          netlify-honeypot="bot-field"
+          data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="can-contact" />
