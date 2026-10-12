@@ -50,7 +50,8 @@ const PARTNER_PAGES: Record<PartnerId, {
   why: string
   conversation: string
   explore: string
-  themes: string[]
+  image: string
+  imagePosition: string
 }> = {
   'the-journey-church': {
     name: 'The Journey Church',
@@ -59,7 +60,8 @@ const PARTNER_PAGES: Record<PartnerId, {
     why: 'The Journey Church has built something an education model cannot manufacture: the trust of families, a strong ministry culture, and a place people recognize as home.',
     conversation: 'Nassau County already offers families strong educational options. The question is whether some families are looking for something those options are not designed to provide: rigorous academics intentionally connected to Christian formation, culture, community, and family life.',
     explore: 'Christian education could become part of how The Journey serves families all week.',
-    themes: ['Families you already know', 'A trusted ministry culture', 'A local community', 'More opportunity for the next generation'],
+    image: '/images/04_platform_local_campus.png',
+    imagePosition: '72% 46%',
   },
   cogic: {
     name: 'Church of God in Christ',
@@ -68,7 +70,8 @@ const PARTNER_PAGES: Record<PartnerId, {
     why: 'For generations, COGIC churches have helped Black children know who they are, whose they are, and what God has called them to become.',
     conversation: 'That formation should not have to stop when students enter the classroom. Families should not have to choose between academic excellence, Christian formation, and an education that recognizes their faith, culture, history, and story.',
     explore: 'What could become possible if COGIC churches could participate in a shared education system without each congregation having to build a school alone?',
-    themes: ['Build on a strong legacy', 'Support more students and families', 'Share resources and expertise', 'Expand opportunity across communities'],
+    image: '/images/05_rooted_locally_community.png',
+    imagePosition: '52% 48%',
   },
   cogbf: {
     name: 'Church of God by Faith',
@@ -77,7 +80,8 @@ const PARTNER_PAGES: Record<PartnerId, {
     why: 'Church of God by Faith grew through local churches connected by shared faith, trusted relationships, and a commitment to serve communities.',
     conversation: 'That same connection creates an interesting education possibility. Individual congregations may not be positioned to build complete middle and high school programs on their own, but together they represent something much larger.',
     explore: 'Could the strength of the Church of God by Faith connection help make Christian education available in more of the communities its churches already serve?',
-    themes: ['Strengthen what churches can do together', 'Reach more students and families', 'Expand access in more communities', 'Create new possibilities for the next generation'],
+    image: '/images/08_explore_audience_roles.png',
+    imagePosition: '55% 44%',
   },
 }
 
@@ -290,7 +294,8 @@ export function PartnerPage({ partner }: { partner: PartnerId }) {
   return (
     <article className="partner-front-door">
       <header className="partner-front-door-hero">
-        <div className="partner-front-door-hero-mark" aria-hidden="true" />
+        <img className="partner-front-door-hero-image" src={page.image} alt="" style={{ objectPosition: page.imagePosition }} />
+        <div className="partner-front-door-hero-wash" aria-hidden="true" />
         <div className="partner-front-door-hero-copy">
           <p className="partner-front-door-eyebrow">CAN Academy × {page.name}</p>
           <h1 className="editorial-heading">{page.heading}</h1>
@@ -318,11 +323,6 @@ export function PartnerPage({ partner }: { partner: PartnerId }) {
             <p>{page.explore}</p>
           </div>
         </section>
-        <ul className="partner-front-door-themes" aria-label="Shared possibilities">
-          {page.themes.map((theme, index) => (
-            <li key={theme}><span>{String(index + 1).padStart(2, '0')}</span>{theme}</li>
-          ))}
-        </ul>
         <div className="partner-front-door-actions">
           <Link to={`/story/stakes?partner=${partner}`} className="destination-primary-link">
             See the CAN story <ArrowRight aria-hidden="true" />
