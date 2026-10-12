@@ -4064,3 +4064,9 @@ body {
     padding-block: 10px;
   }
 }
+
+
+/* Prevent browser scroll anchoring from pulling SPA route transitions away from the top as images/layout settle. */
+main {
+  overflow-anchor: none;
+}
