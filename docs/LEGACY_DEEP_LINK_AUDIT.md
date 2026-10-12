@@ -2,22 +2,33 @@
 
 Source reviewed: `bryanhkelly/can-narrative-forge`.
 
-## Explore destinations in the old site
+## Architecture decision
 
-| Old Explore topic | Old route | Current treatment |
+The current 8-page CAN narrative and the old deep-dive architecture serve different purposes.
+
+- `/story/*` is the guided narrative.
+- Topic routes such as `/student-experience`, `/academics`, `/partnership-model`, `/florida`, `/launch-approach`, `/economic-breakthrough`, and `/evidence` are deeper reference sections.
+- Explore CAN is the bridge between the narrative and those deeper sections.
+
+Do not collapse a deep topic route into its similarly named story page.
+
+## Explore destinations restored from the old site
+
+| Explore topic | Route | Current status |
 | --- | --- | --- |
-| Student Experience | `/student-experience` | Restored as a dedicated deep-dive hub |
-| Academics | `/academics` | Live |
-| Partnership Model | `/partnership-model` | Live |
-| Florida Opportunity | `/florida` | Live, but current content is lighter than the old research section |
-| Economics | `/economic-breakthrough` | Restored as a compatibility route to the current Economics page |
-| Launch Approach | `/launch-approach` | Restored as a compatibility route to the current launch page |
-| Team & Leadership | no route | Preserve as Coming soon |
-| Evidence Library | `/evidence` | Live, but current content is lighter than the old evidence library |
+| Student Experience | `/student-experience` | Restored with all seven old deep pages |
+| Academics | `/academics` | Hub retained; six old deep pages restored |
+| Partnership Model | `/partnership-model` | Hub retained; six old deep pages restored |
+| Florida Opportunity | `/florida` | Old source-backed opportunity, research, and five market profiles restored |
+| Economics | `/economic-breakthrough` | Restored as a deep destination distinct from Story Page 07 |
+| Launch Approach | `/launch-approach` | Six-stage Discover → Validate → Design → Build → Launch → Measure sequence restored |
+| Team & Leadership | no route | Preserve as Coming soon until approved content exists |
+| Evidence Library | `/evidence` | Old source-backed library and all six evidence sections restored |
 
-## Student Experience deep routes
+## Student Experience routes
 
-These have been restored with the original source content:
+Restored from `src/lib/student-content.ts` in the old repository:
+
 - `/student-experience`
 - `/student-experience/a-week-at-can`
 - `/student-experience/known-and-supported`
@@ -26,9 +37,13 @@ These have been restored with the original source content:
 - `/student-experience/activities-and-service`
 - `/student-experience/ready-for-whats-next`
 
-## Academics deep routes from the old site
+The Explore card must point to `/student-experience`, not `/story/student-experience`.
 
-The old site contained:
+## Academics routes
+
+Source data restored from old `src/lib/academics-content.ts`.
+
+- `/academics`
 - `/academics/how-learning-works`
 - `/academics/courses-and-graduation`
 - `/academics/teachers-and-support`
@@ -36,11 +51,13 @@ The old site contained:
 - `/academics/pathways`
 - `/academics/academic-credibility`
 
-The old Academics content is materially deeper than the current top-level Academics page. Until those pages are ported, legacy URLs should resolve to the Academics hub rather than 404.
+Academics remains distinct from Curriculum. Curriculum describes the instructional-content architecture. Academics describes how the academic program works for a student over time.
 
-## Partnership Model deep routes from the old site
+## Partnership Model routes
 
-The old site contained:
+Source data restored from old `src/lib/partnership-content.ts`.
+
+- `/partnership-model`
 - `/partnership-model/why-partner`
 - `/partnership-model/ways-to-partner`
 - `/partnership-model/shared-responsibilities`
@@ -48,11 +65,11 @@ The old site contained:
 - `/partnership-model/governance-and-accountability`
 - `/partnership-model/partnership-readiness`
 
-The old content included more detail on partner types, responsibilities, governance, and readiness than the current page.
+## Florida routes
 
-## Florida deep routes from the old site
+Source data restored from old `src/lib/florida-content.ts`.
 
-The old site contained:
+- `/florida`
 - `/florida/market-landscape`
 - `/florida/market-selection`
 - `/florida/markets`
@@ -63,11 +80,13 @@ The old site contained:
 - `/florida/markets/okeechobee`
 - `/florida/research`
 
-The current Florida page is intentionally lighter. Do not silently invent or rewrite the old market evidence. Port it from the old source when Florida publication is approved.
+The original source deliberately contains `VERIFY` markers and documented data conflicts. Preserve those markers. Do not silently fill them from general knowledge.
 
-## Launch Approach deep routes from the old site
+## Launch Approach routes
 
-The old site contained:
+Source data restored from old `src/lib/launch-content.ts`.
+
+- `/launch-approach`
 - `/launch-approach/discover`
 - `/launch-approach/validate`
 - `/launch-approach/design`
@@ -75,29 +94,41 @@ The old site contained:
 - `/launch-approach/launch`
 - `/launch-approach/measure`
 
-The old sequence was Discover → Validate → Design → Build → Launch → Measure.
+The governed stage sequence is:
 
-## Evidence Library deep routes from the old site
+Discover → Validate → Design → Build → Launch → Measure
 
-The old site contained:
+## Evidence Library routes
+
+Source data restored from old `src/lib/evidence-content.ts`.
+
+- `/evidence`
+- `/evidence/market-research`
+- `/evidence/education-choice`
 - `/evidence/academic-model`
+- `/evidence/christian-education`
 - `/evidence/alternative-education`
 - `/evidence/can-research`
-- `/evidence/christian-education`
-- `/evidence/education-choice`
-- `/evidence/market-research`
 
-The old evidence pages contain source-framed research and should be ported as source material, not reconstructed from general knowledge.
+Evidence pages explicitly distinguish evidence, CAN interpretation, and open questions. Preserve that framing and the source list supplied by the old repository.
+
+## Economics
+
+Old Explore routed Economics to `/economic-breakthrough`.
+
+That route is restored as a deeper explanation of the shared-capability economic model. Story Page 07 remains the narrative version and should not replace the deep route.
 
 ## Old narrative aliases
 
-The old 7-page narrative used:
+The old 7-page narrative used these URLs. Compatibility redirects remain so previously shared links do not break:
+
 - `/vision`
 - `/missing-piece`
 - `/can-model`
 - `/local-distinctives`
 - `/student-life`
-- `/economic-breakthrough`
 - `/explore`
 
-Compatibility aliases should remain so old links do not break.
+## Source-governance rule
+
+When restoring old deep content, preserve the old source's wording, qualification, status labels, `VERIFY` markers, and source framing. Do not improve claims by guessing or by silently substituting current general knowledge.
