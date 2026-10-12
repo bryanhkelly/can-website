@@ -49,7 +49,7 @@ export function HomePage() {
             <p className="home-eyebrow">CAN Academy</p>
             <h1 className="editorial-heading">Christian education, closer to home.</h1>
             <p className="home-dek">
-              CAN connects rigorous academics, Christian formation, trusted local communities, and a wider network of opportunity.
+              CAN is being built for grades 6–12, connecting rigorous academics, Christian formation, trusted local communities, and a wider network of opportunity.
             </p>
 
             <div className="home-primary-paths" aria-label="Choose how to explore CAN Academy">
