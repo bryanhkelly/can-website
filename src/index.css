@@ -3013,3 +3013,392 @@ body {
     left: 0;
   }
 }
+
+
+/* Expanded Locations content */
+.locations-group {
+  margin-top: 64px;
+}
+.locations-group-heading {
+  max-width: 820px;
+}
+.locations-group-heading h2 {
+  margin-top: 8px;
+  font-size: clamp(32px, 4vw, 46px);
+}
+.locations-group-heading > p:not(.destination-eyebrow) {
+  max-width: 760px;
+  margin-top: 12px;
+  color: var(--color-navy-700);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.locations-list-featured {
+  margin-top: 26px;
+}
+.locations-list-exploring {
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  margin-top: 24px;
+}
+.locations-card {
+  border: 1px solid var(--color-navy-100);
+  border-radius: 12px;
+  background: white;
+  padding: 20px;
+}
+.locations-card > p {
+  margin-top: 15px;
+  color: var(--color-navy-700);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.locations-focus {
+  margin-top: 14px;
+  border-top: 1px solid var(--color-navy-100);
+  padding-top: 11px;
+}
+.locations-focus strong {
+  color: var(--color-navy-500);
+  font-size: 9px;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.locations-focus p {
+  margin-top: 5px;
+  color: var(--color-navy-700);
+  font-size: 11px;
+  line-height: 1.45;
+}
+.locations-card > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 15px;
+  color: var(--color-navy-800);
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
+}
+.locations-card > a svg {
+  width: 15px;
+  height: 15px;
+}
+.locations-card-compact {
+  min-height: 245px;
+}
+.locations-stage-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.locations-stage-flow > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.locations-stage-flow span {
+  border: 1px solid var(--color-navy-200);
+  border-radius: 999px;
+  background: white;
+  padding: 8px 12px;
+  color: var(--color-navy-700);
+  font-size: 10px;
+  font-weight: 750;
+}
+.locations-stage-flow svg {
+  width: 14px;
+  height: 14px;
+  color: #9a772c;
+}
+
+/* State location pages */
+.state-location-page {
+  width: min(100%, 1120px);
+  margin-inline: auto;
+  padding: 58px 32px 90px;
+}
+.state-location-hero {
+  display: grid;
+  grid-template-columns: minmax(0,1.35fr) minmax(240px,.65fr);
+  gap: 38px;
+  align-items: center;
+}
+.state-location-status {
+  display: inline-block;
+  margin-top: 14px;
+  border-radius: 999px;
+  background: #eaf2f5;
+  padding: 7px 11px;
+  color: var(--color-navy-700);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.state-location-hero h1 {
+  margin-top: 10px;
+  font-size: clamp(48px,6vw,72px);
+}
+.state-location-hero > div:first-child > p:last-child {
+  max-width: 760px;
+  margin-top: 16px;
+  color: var(--color-navy-700);
+  font-size: 17px;
+  line-height: 1.65;
+}
+.state-location-hero-mark {
+  display: grid;
+  min-height: 260px;
+  place-items: center;
+  align-content: center;
+  gap: 14px;
+  border-radius: 18px;
+  background: linear-gradient(145deg,#e7f0f4,#f5f1e7);
+  color: var(--color-navy-800);
+}
+.state-location-hero-mark svg {
+  width: 62px;
+  height: 62px;
+}
+.state-location-hero-mark span {
+  font-family: var(--font-serif);
+  font-size: 24px;
+}
+.state-location-why,
+.state-location-interest,
+.state-location-footer-note {
+  margin-top: 58px;
+  border-top: 1px solid var(--color-navy-100);
+  padding-top: 26px;
+}
+.state-location-why h2 {
+  max-width: 760px;
+  margin-top: 8px;
+  font-size: clamp(32px,4vw,46px);
+}
+.state-location-why > p:last-child {
+  max-width: 780px;
+  margin-top: 14px;
+  color: var(--color-navy-700);
+  font-size: 15px;
+  line-height: 1.65;
+}
+.state-location-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+.state-location-grid article {
+  border-top: 3px solid #9eb9c8;
+  background: #f8fbfc;
+  padding: 19px;
+}
+.state-location-grid article:nth-child(2) { border-top-color: #c5a44d; }
+.state-location-grid article:nth-child(3) { border-top-color: #758f69; }
+.state-location-grid h2 {
+  margin-top: 6px;
+  color: var(--color-navy-900);
+  font-family: var(--font-serif);
+  font-size: 22px;
+}
+.state-location-grid ul {
+  margin-top: 12px;
+}
+.state-location-grid li {
+  border-top: 1px solid var(--color-navy-100);
+  padding: 8px 0;
+  color: var(--color-navy-700);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.state-location-deep-link {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  margin-top: 36px;
+  border-radius: 13px;
+  background: #eef4f7;
+  padding: 22px;
+}
+.state-location-deep-link h2 {
+  margin-top: 5px;
+  color: var(--color-navy-900);
+  font-family: var(--font-serif);
+  font-size: 23px;
+}
+.state-location-deep-link > a,
+.state-location-footer-note > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--color-navy-800);
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
+}
+.state-location-deep-link svg,
+.state-location-footer-note svg {
+  width: 15px;
+  height: 15px;
+}
+.state-location-interest > div:first-child {
+  max-width: 780px;
+}
+.state-location-interest h2 {
+  margin-top: 8px;
+  font-size: clamp(34px,4vw,48px);
+}
+.state-location-interest > div:first-child > p:last-child {
+  margin-top: 12px;
+  color: var(--color-navy-700);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.state-location-interest-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+.state-location-interest-grid > a {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  min-height: 100px;
+  border: 1px solid var(--color-navy-100);
+  border-radius: 11px;
+  background: white;
+  padding: 15px;
+  color: var(--color-navy-800);
+  text-decoration: none;
+}
+.state-location-interest-grid > a > svg:first-child {
+  width: 26px;
+  height: 26px;
+}
+.state-location-interest-grid > a > svg:last-child {
+  width: 16px;
+  height: 16px;
+}
+.state-location-interest-grid strong,
+.state-location-interest-grid small {
+  display: block;
+}
+.state-location-interest-grid strong {
+  font-size: 12px;
+}
+.state-location-interest-grid small {
+  margin-top: 4px;
+  color: var(--color-navy-500);
+  font-size: 10px;
+  line-height: 1.35;
+}
+.state-location-footer-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.state-location-footer-note p {
+  max-width: 760px;
+  color: var(--color-navy-500);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* Current Florida development focus */
+.florida-current-focus {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+.florida-current-focus article {
+  border: 1px solid var(--color-navy-100);
+  border-radius: 12px;
+  background: white;
+  padding: 20px;
+}
+.florida-current-focus article > div:first-child {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+}
+.florida-current-focus h3 {
+  color: var(--color-navy-900);
+  font-family: var(--font-serif);
+  font-size: 24px;
+}
+.florida-current-focus article > div:first-child span {
+  flex-shrink: 0;
+  color: #94633b;
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.florida-current-focus article > p {
+  margin-top: 12px;
+  color: var(--color-navy-700);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.florida-current-focus article > div:not(:first-child) {
+  margin-top: 15px;
+  border-top: 1px solid var(--color-navy-100);
+  padding-top: 11px;
+}
+.florida-current-focus strong {
+  color: var(--color-navy-900);
+  font-size: 11px;
+}
+.florida-current-focus div > p,
+.florida-current-focus li {
+  margin-top: 5px;
+  color: var(--color-navy-700);
+  font-size: 11px;
+  line-height: 1.45;
+}
+.florida-current-focus li {
+  margin-top: 0;
+  border-top: 1px solid #eef1f2;
+  padding: 6px 0;
+}
+
+@media (max-width: 900px) {
+  .locations-list-exploring {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .state-location-grid,
+  .state-location-interest-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 639px) {
+  .locations-list-exploring,
+  .florida-current-focus {
+    grid-template-columns: 1fr;
+  }
+  .state-location-page {
+    padding: 42px 20px 70px;
+  }
+  .state-location-hero {
+    grid-template-columns: 1fr;
+  }
+  .state-location-hero-mark {
+    min-height: 180px;
+  }
+  .state-location-deep-link {
+    grid-template-columns: 1fr;
+  }
+  .state-location-footer-note {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
