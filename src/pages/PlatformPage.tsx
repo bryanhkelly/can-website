@@ -17,6 +17,7 @@ export function PlatformPage() {
     osWelcome,
     layers,
     refrain,
+    transition,
     details,
   } = platformContent
 
