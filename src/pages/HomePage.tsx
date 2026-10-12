@@ -1,5 +1,6 @@
 import { ArrowRight, BookOpenText, Users } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { trackEvent } from '../lib/analytics'
 
 const roles = [
   ['Parents & Families', '/parents'],
@@ -28,7 +29,7 @@ export function HomePage() {
           </p>
 
           <div className="home-primary-paths" aria-label="Choose how to explore CAN Academy">
-            <Link to="/story/stakes" className="home-path-card home-path-primary">
+            <Link to="/story/stakes" className="home-path-card home-path-primary" onClick={() => trackEvent('home_story_click')}>
               <span className="home-path-icon"><BookOpenText aria-hidden="true" /></span>
               <span>
                 <strong>Explore the CAN story</strong>
@@ -56,7 +57,7 @@ export function HomePage() {
         </div>
         <div className="home-role-grid">
           {roles.map(([label, href]) => (
-            <Link to={href} key={href}>
+            <Link to={href} key={href} onClick={() => trackEvent('home_role_click', { route: href })}>
               <span>{label}</span>
               <ArrowRight aria-hidden="true" />
             </Link>
