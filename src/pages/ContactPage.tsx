@@ -27,6 +27,7 @@ const TOPIC_LABELS: Record<string, string> = {
   evidence: 'Evidence Library',
   privacy: 'Privacy',
   accessibility: 'Accessibility',
+  terms: 'Website terms',
 }
 
 export function ContactPage() {
@@ -121,6 +122,8 @@ export function ContactPage() {
             <span>What are you exploring?</span>
             <textarea name="message" rows={6} required placeholder="Share the context, question, or opportunity you would like to discuss." />
           </label>
+
+          <p className="contact-privacy-note">By submitting this form, you are asking CAN Academy to respond to your inquiry. Please do not include sensitive student records. <Link to="/privacy">Privacy</Link></p>
 
           <button type="submit" disabled={status === 'submitting'}>
             {status === 'submitting' ? 'Sending…' : 'Start the conversation'}
