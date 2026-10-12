@@ -109,7 +109,7 @@ export function RoleDoorwayPage({ page }: { page: RoleDoorway }) {
             <h1 className="editorial-heading">{page.heading}</h1>
             <p>{page.intro}</p>
           </div>
-          <figure className="role-doorway-photo">
+          <figure className={`role-doorway-photo role-doorway-photo-${page.visualVariant}`}>
             <img
               src={page.image}
               alt={page.imageAlt}
