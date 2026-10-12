@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import { StakesPage } from './pages/StakesPage'
 import { PossibilityPage } from './pages/PossibilityPage'
@@ -9,6 +9,8 @@ import { StudentExperiencePage } from './pages/StudentExperiencePage'
 import { EconomicsPage } from './pages/EconomicsPage'
 import { ExplorePage } from './pages/ExplorePage'
 import { ContactPage } from './pages/ContactPage'
+import { HomePage } from './pages/HomePage'
+import { AccessibilityPage, NotFoundPage, PrivacyPage } from './pages/StaticPages'
 import { RoleDoorwayPage } from './components/RoleDoorwayPage'
 import { roleDoorways } from './data/pageContent'
 import {
@@ -24,7 +26,7 @@ function App() {
   return (
     <Layout>
       <Routes>
-        <Route path="/" element={<Navigate to="/story/stakes" replace />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/story/stakes" element={<StakesPage />} />
         <Route path="/story/possibility" element={<PossibilityPage />} />
         <Route path="/story/curriculum" element={<CurriculumPage />} />
@@ -47,7 +49,9 @@ function App() {
         <Route path="/partners/cogic" element={<PartnerPage partner="cogic" />} />
         <Route path="/partners/cogbf" element={<PartnerPage partner="cogbf" />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="*" element={<Navigate to="/story/stakes" replace />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/accessibility" element={<AccessibilityPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Layout>
   )
