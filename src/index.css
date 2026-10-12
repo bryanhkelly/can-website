@@ -2817,3 +2817,75 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Social sharing */
+.share-menu {
+  position: relative;
+}
+.share-menu-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  background: transparent;
+  color: var(--color-navy-200);
+  font: inherit;
+  cursor: pointer;
+}
+.share-menu-trigger:hover,
+.share-menu-trigger[aria-expanded="true"] {
+  color: white;
+}
+.share-menu-trigger svg {
+  width: 15px;
+  height: 15px;
+}
+.share-menu-popover {
+  position: absolute;
+  z-index: 50;
+  right: 0;
+  bottom: calc(100% + 10px);
+  width: 210px;
+  overflow: hidden;
+  border: 1px solid #27465f;
+  border-radius: 12px;
+  background: #fff;
+  padding: 6px;
+  box-shadow: 0 18px 45px #061a2c40;
+}
+.share-menu-popover button,
+.share-menu-popover a {
+  display: flex;
+  width: 100%;
+  min-height: 40px;
+  align-items: center;
+  gap: 9px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  padding: 9px 10px;
+  color: var(--color-navy-800);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+.share-menu-popover button:hover,
+.share-menu-popover a:hover {
+  background: #eef4f7;
+  color: var(--color-navy-950);
+}
+.share-menu-popover svg {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+}
+@media (max-width: 639px) {
+  .share-menu-popover {
+    right: auto;
+    left: 0;
+  }
+}
