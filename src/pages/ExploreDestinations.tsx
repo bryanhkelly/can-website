@@ -3,6 +3,8 @@ import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { AcademicsDeepLinks } from './AcademicsDeepDivePages'
 import { PartnershipDeepLinks, PartnershipPartnerTypes } from './PartnershipDeepDivePages'
+import { academicPromises, networkProvides, partnersProvide } from '../data/academicsDeepContent'
+import { partnershipIs, partnershipIsNot, partnershipPrinciples } from '../data/partnershipDeepContent'
 import { CurrentLaunchSummary, LaunchDeepLinks } from './LaunchDeepDivePages'
 import type { PartnerId } from '../lib/nav'
 
@@ -156,6 +158,36 @@ export function AcademicsPage() {
           ))}
         </section>
 
+        <section className="source-backed-section">
+          <p className="destination-eyebrow">The academic experience</p>
+          <h2 className="editorial-heading">This is not online school in a church building.</h2>
+          <p>Students learn from real teachers, work alongside real peers, and have adults present locally throughout the school day. Some instruction can be shared across the CAN network. Technology connects the system. It does not replace the school.</p>
+        </section>
+
+        <section className="source-backed-section">
+          <p className="destination-eyebrow">Five academic promises</p>
+          <ol className="source-backed-promises">
+            {academicPromises.map((promise) => (
+              <li key={promise.n}>
+                <span>{promise.n}</span>
+                <h3>{promise.title}</h3>
+                <p>{promise.body}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section className="source-backed-two">
+          <div>
+            <h2>The CAN network provides</h2>
+            <ul>{networkProvides.map((item) => <li key={item}>{item}</li>)}</ul>
+          </div>
+          <div>
+            <h2>The local CAN Community provides</h2>
+            <ul>{partnersProvide.map((item) => <li key={item}>{item}</li>)}</ul>
+          </div>
+        </section>
+
         <AcademicsDeepLinks />
 
         <DestinationFooter>
@@ -210,6 +242,36 @@ export function PartnershipModelPage() {
         <section className="destination-note">
           <h2>From conversation to partnership</h2>
           <p>An initial conversation is a chance to share context, ask questions, and explore fit. A formal partnership calls for a clearer shared understanding of roles, resources, and local needs. Specific terms and requirements are discussed directly with each community.</p>
+        </section>
+
+        <section className="source-backed-section partnership-source-intro">
+          <p className="destination-eyebrow">Local identity. Shared strength.</p>
+          <h2 className="editorial-heading">You bring the trust. We bring the school.</h2>
+          <p>A CAN partnership should expand what a church or Christian school can provide without requiring it to surrender its history, culture, ministry, or local relationships.</p>
+        </section>
+
+        <section className="source-backed-section">
+          <p className="destination-eyebrow">Three partnership principles</p>
+          <ol className="source-backed-promises">
+            {partnershipPrinciples.map((principle) => (
+              <li key={principle.n}>
+                <span>{principle.n}</span>
+                <h3>{principle.title}</h3>
+                <p>{principle.body}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section className="source-backed-two">
+          <div>
+            <h2>A CAN partnership is a shared operating relationship in which</h2>
+            <ul>{partnershipIs.map((item) => <li key={item}>{item}</li>)}</ul>
+          </div>
+          <div>
+            <h2>A CAN partnership is not simply</h2>
+            <ul>{partnershipIsNot.map((item) => <li key={item}>{item}</li>)}</ul>
+          </div>
         </section>
 
         <PartnershipPartnerTypes />
