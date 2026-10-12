@@ -59,6 +59,12 @@ export const curriculumContent = {
   kicker: '',
   h1: 'Rigorous academics. Intentional design.',
   dek: 'CAN combines standards-aligned academics with intentionally chosen texts, examples, projects, and perspectives that can reflect faith, culture, tradition, and community.',
+  visualLayers: [
+    { heading: 'Local / Denominational Distinctives', body: 'Appropriate local expression' },
+    { heading: 'Cultural / Community Context', body: 'Relevant voices, examples, and place' },
+    { heading: 'Christian Worldview', body: 'Faith integrated where course-appropriate' },
+    { heading: 'Standards / Shared Academic Core', body: 'Rigorous, standards-aligned foundation' },
+  ],
   layers: [
     { heading: 'Meet the standards', body: 'CAN courses teach the knowledge and skills students are expected to master: analysis, writing, research, mathematics, science, history, and more.' },
     { heading: 'Shape the experience', body: 'The texts, examples, projects, case studies, and questions students encounter can be chosen intentionally while still meeting academic requirements.' },
@@ -204,12 +210,16 @@ export const explorePageContent = {
   secondaryDek: 'You can keep exploring, start from your role, or begin a conversation now.',
   topicIntro: 'Explore what makes CAN different and how it could work in your community.',
   topics: [
-    { label: 'Student Experience', subtitle: 'What school feels like', href: '/story/student-experience' },
-    { label: 'Academics', subtitle: 'Courses & pathways', href: '/academics' },
-    { label: 'Partnership Model', subtitle: 'How communities join', href: '/partnership-model' },
-    { label: 'Florida', subtitle: 'Market-specific path', href: '/florida' },
-    { label: 'Economics', subtitle: 'Why sharing matters', href: '/story/why-it-can-work' },
-    { label: 'Launch Approach', subtitle: 'From interest to opening', href: '/start-a-community' },
+    { label: 'Student Experience', subtitle: 'Known, supported, connected, prepared', href: '/student-experience' },
+    { label: 'Academics', subtitle: 'Teachers, courses, support, pathways', href: '/academics' },
+    { label: 'Partnership Model', subtitle: 'How CAN and local partners work', href: '/partnership-model' },
+    { label: 'Florida Opportunity', subtitle: 'Why Florida is the first proving ground', href: '/florida' },
+    { label: 'Economics', subtitle: 'Shared capabilities change the equation', href: '/economic-breakthrough' },
+    { label: 'Launch Approach', subtitle: 'How CAN evaluates launch readiness', href: '/launch-approach' },
+  ],
+  secondaryTopics: [
+    { label: 'Team & Leadership', subtitle: 'Meet the people and advisors helping build CAN', status: 'Coming soon' },
+    { label: 'Evidence Library', subtitle: 'Research, data, and assumptions behind the CAN model', href: '/evidence' },
   ],
   roleIntro: 'Every community is unique. Find the path that fits your perspective.',
   roles: [
