@@ -13,6 +13,14 @@ const AUDIENCE_LABELS: Record<string, string> = {
   denomination: 'Denominations and church networks',
 }
 
+const AUDIENCE_PROMPTS: Record<string, string> = {
+  parent: 'Is CAN potentially right for your child and family?',
+  pastor: 'Could your church responsibly host or participate in a CAN Academy?',
+  'school-leader': 'Could CAN expand your school\'s educational capacity?',
+  homeschool: 'How might your family or homeschool community participate?',
+  denomination: 'Could CAN support a network pilot across your churches?',
+}
+
 const PARTNER_LABELS: Record<(typeof partnerIds)[number], string> = {
   'the-journey-church': 'The Journey Church',
   cogic: 'Church of God in Christ',
@@ -41,6 +49,7 @@ export function ContactPage() {
   const topic = searchParams.get('topic') ?? ''
   const partner = partnerIds.find((id) => id === searchParams.get('partner')) ?? ''
   const audienceLabel = audience ? AUDIENCE_LABELS[audience] : undefined
+  const audiencePrompt = audience ? AUDIENCE_PROMPTS[audience] : undefined
   const topicLabel = topic ? TOPIC_LABELS[topic] : undefined
   const partnerLabel = partner ? PARTNER_LABELS[partner] : undefined
   const conversationLabel = partnerLabel ?? audienceLabel ?? topicLabel
@@ -80,6 +89,7 @@ export function ContactPage() {
         <h1 className="editorial-heading">Tell us what you are exploring.</h1>
         <p>Share your context and the question that matters most. A member of the CAN Academy team can follow up from there.</p>
         {conversationLabel && <p className="contact-context">Conversation context: <strong>{conversationLabel}</strong></p>}
+        {audiencePrompt && <p className="contact-audience-prompt">{audiencePrompt}</p>}
       </div>
 
       {status === 'success' ? (
