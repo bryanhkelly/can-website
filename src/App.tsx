@@ -53,12 +53,50 @@ function App() {
         <Route path="/student-experience/activities-and-service" element={<StudentActivitiesPage />} />
         <Route path="/student-experience/ready-for-whats-next" element={<StudentReadyPage />} />
         <Route path="/academics" element={<AcademicsPage />} />
+        <Route path="/academics/how-learning-works" element={<Navigate to="/academics" replace />} />
+        <Route path="/academics/courses-and-graduation" element={<Navigate to="/academics" replace />} />
+        <Route path="/academics/teachers-and-support" element={<Navigate to="/academics" replace />} />
+        <Route path="/academics/progress-and-mastery" element={<Navigate to="/academics" replace />} />
+        <Route path="/academics/pathways" element={<Navigate to="/academics" replace />} />
+        <Route path="/academics/academic-credibility" element={<Navigate to="/academics" replace />} />
         <Route path="/partnership-model" element={<PartnershipModelPage />} />
+        <Route path="/partnership-model/why-partner" element={<Navigate to="/partnership-model" replace />} />
+        <Route path="/partnership-model/ways-to-partner" element={<Navigate to="/partnership-model" replace />} />
+        <Route path="/partnership-model/shared-responsibilities" element={<Navigate to="/partnership-model" replace />} />
+        <Route path="/partnership-model/local-distinctives" element={<Navigate to="/partnership-model" replace />} />
+        <Route path="/partnership-model/governance-and-accountability" element={<Navigate to="/partnership-model" replace />} />
+        <Route path="/partnership-model/partnership-readiness" element={<Navigate to="/partnership-model" replace />} />
         <Route path="/florida" element={<FloridaPage />} />
+        <Route path="/florida/market-landscape" element={<Navigate to="/florida" replace />} />
+        <Route path="/florida/market-selection" element={<Navigate to="/florida" replace />} />
+        <Route path="/florida/markets" element={<Navigate to="/florida" replace />} />
+        <Route path="/florida/markets/desoto" element={<Navigate to="/florida" replace />} />
+        <Route path="/florida/markets/gadsden" element={<Navigate to="/florida" replace />} />
+        <Route path="/florida/markets/hamilton" element={<Navigate to="/florida" replace />} />
+        <Route path="/florida/markets/holmes" element={<Navigate to="/florida" replace />} />
+        <Route path="/florida/markets/okeechobee" element={<Navigate to="/florida" replace />} />
+        <Route path="/florida/research" element={<Navigate to="/florida" replace />} />
         <Route path="/start-a-community" element={<StartCommunityPage />} />
         <Route path="/launch-approach" element={<StartCommunityPage />} />
+        <Route path="/launch-approach/discover" element={<Navigate to="/launch-approach" replace />} />
+        <Route path="/launch-approach/validate" element={<Navigate to="/launch-approach" replace />} />
+        <Route path="/launch-approach/design" element={<Navigate to="/launch-approach" replace />} />
+        <Route path="/launch-approach/build" element={<Navigate to="/launch-approach" replace />} />
+        <Route path="/launch-approach/launch" element={<Navigate to="/launch-approach" replace />} />
+        <Route path="/launch-approach/measure" element={<Navigate to="/launch-approach" replace />} />
         <Route path="/economic-breakthrough" element={<EconomicsPage />} />
         <Route path="/evidence" element={<EvidencePage />} />
+        <Route path="/evidence/academic-model" element={<Navigate to="/evidence" replace />} />
+        <Route path="/evidence/alternative-education" element={<Navigate to="/evidence" replace />} />
+        <Route path="/evidence/can-research" element={<Navigate to="/evidence" replace />} />
+        <Route path="/evidence/christian-education" element={<Navigate to="/evidence" replace />} />
+        <Route path="/evidence/education-choice" element={<Navigate to="/evidence" replace />} />
+        <Route path="/evidence/market-research" element={<Navigate to="/evidence" replace />} />
+        <Route path="/vision" element={<Navigate to="/story/possibility" replace />} />
+        <Route path="/missing-piece" element={<Navigate to="/story/stakes" replace />} />
+        <Route path="/can-model" element={<Navigate to="/story/platform" replace />} />
+        <Route path="/local-distinctives" element={<Navigate to="/story/rooted-locally" replace />} />
+        <Route path="/student-life" element={<Navigate to="/story/student-experience" replace />} />
         <Route path="/parents" element={<RoleDoorwayPage page={roleDoorways.parents} />} />
         <Route path="/pastors" element={<RoleDoorwayPage page={roleDoorways.pastors} />} />
         <Route path="/christian-schools" element={<RoleDoorwayPage page={roleDoorways.christianSchools} />} />
