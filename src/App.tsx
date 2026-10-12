@@ -1,4 +1,5 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import { StakesPage } from './pages/StakesPage'
 import { PossibilityPage } from './pages/PossibilityPage'
@@ -63,9 +64,29 @@ import {
   StartCommunityPage,
 } from './pages/ExploreDestinations'
 
+function RouteScrollManager() {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = decodeURIComponent(location.hash.slice(1))
+      const element = document.getElementById(id)
+      if (element) {
+        requestAnimationFrame(() => element.scrollIntoView({ block: 'start' }))
+        return
+      }
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [location.pathname, location.hash])
+
+  return null
+}
+
 function App() {
   return (
     <Layout>
+      <RouteScrollManager />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/story/stakes" element={<StakesPage />} />
