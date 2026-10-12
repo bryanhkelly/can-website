@@ -117,6 +117,12 @@ const META: Record<string, SocialMeta> = {
     image: '/images/07_economics_leadership_meeting.png',
     imageAlt: 'Education and community leaders reviewing an opportunity together.',
   },
+  '/how-can-is-different': {
+    title: 'How CAN Is Different | CAN Academy',
+    description: 'See where CAN fits between traditional private school, online school, homeschool, and public school—and why the combination matters.',
+    image: '/images/02_possibility_student_group.png',
+    imageAlt: 'A diverse group of students together in a contemporary community.',
+  },
   '/faq': {
     title: 'FAQ | CAN Academy',
     description: 'Practical questions for families, churches, schools, homeschool communities, and church networks exploring CAN Academy.',
