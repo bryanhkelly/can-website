@@ -28,6 +28,14 @@ import {
   AcademicsProgressPage,
   AcademicsTeachersPage,
 } from './pages/AcademicsDeepDivePages'
+import {
+  PartnershipDistinctivesPage,
+  PartnershipGovernancePage,
+  PartnershipReadinessPage,
+  PartnershipResponsibilitiesPage,
+  PartnershipWaysPage,
+  PartnershipWhyPage,
+} from './pages/PartnershipDeepDivePages'
 import { RoleDoorwayPage } from './components/RoleDoorwayPage'
 import { roleDoorways } from './data/pageContent'
 import {
@@ -68,12 +76,12 @@ function App() {
         <Route path="/academics/pathways" element={<AcademicsPathwaysPage />} />
         <Route path="/academics/academic-credibility" element={<AcademicsCredibilityPage />} />
         <Route path="/partnership-model" element={<PartnershipModelPage />} />
-        <Route path="/partnership-model/why-partner" element={<Navigate to="/partnership-model" replace />} />
-        <Route path="/partnership-model/ways-to-partner" element={<Navigate to="/partnership-model" replace />} />
-        <Route path="/partnership-model/shared-responsibilities" element={<Navigate to="/partnership-model" replace />} />
-        <Route path="/partnership-model/local-distinctives" element={<Navigate to="/partnership-model" replace />} />
-        <Route path="/partnership-model/governance-and-accountability" element={<Navigate to="/partnership-model" replace />} />
-        <Route path="/partnership-model/partnership-readiness" element={<Navigate to="/partnership-model" replace />} />
+        <Route path="/partnership-model/why-partner" element={<PartnershipWhyPage />} />
+        <Route path="/partnership-model/ways-to-partner" element={<PartnershipWaysPage />} />
+        <Route path="/partnership-model/shared-responsibilities" element={<PartnershipResponsibilitiesPage />} />
+        <Route path="/partnership-model/local-distinctives" element={<PartnershipDistinctivesPage />} />
+        <Route path="/partnership-model/governance-and-accountability" element={<PartnershipGovernancePage />} />
+        <Route path="/partnership-model/partnership-readiness" element={<PartnershipReadinessPage />} />
         <Route path="/florida" element={<FloridaPage />} />
         <Route path="/florida/market-landscape" element={<Navigate to="/florida" replace />} />
         <Route path="/florida/market-selection" element={<Navigate to="/florida" replace />} />
