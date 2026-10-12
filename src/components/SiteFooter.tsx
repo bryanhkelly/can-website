@@ -20,6 +20,7 @@ export function SiteFooter() {
           </p>
           <div className="site-footer-links">
             <Link to="/privacy">Privacy</Link>
+            <Link to="/terms">Terms</Link>
             <Link to="/accessibility">Accessibility</Link>
             <Link
               to={withPartnerContext('/contact', location.search)}
