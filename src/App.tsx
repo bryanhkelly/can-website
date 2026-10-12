@@ -18,6 +18,7 @@ import { StateLocationPage } from './pages/StateLocationPage'
 import { stateLocations } from './data/locationStateData'
 import { FaqPage } from './pages/FaqPage'
 import { LeadershipPage } from './pages/LeadershipPage'
+import { HowCanIsDifferentPage } from './pages/HowCanIsDifferentPage'
 import {
   StudentActivitiesPage,
   StudentBelongingPage,
@@ -123,6 +124,7 @@ function App() {
         ))}
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/leadership" element={<LeadershipPage />} />
+        <Route path="/how-can-is-different" element={<HowCanIsDifferentPage />} />
         <Route path="/evidence" element={<EvidenceDeepPage path="/evidence" />} />
         <Route path="/evidence/academic-model" element={<EvidenceDeepPage path="/evidence/academic-model" />} />
         <Route path="/evidence/alternative-education" element={<EvidenceDeepPage path="/evidence/alternative-education" />} />
