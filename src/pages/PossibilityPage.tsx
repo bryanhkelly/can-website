@@ -40,7 +40,6 @@ export function PossibilityPage() {
       </section>
       <div className="possibility-refrain"><RefrainBar text={refrain} transition={transition} current="possibility" /></div>
       <DetailSection>
-        <DetailItem label="Why now" body={details.policy} variant="proof" />
         <DetailItem label="For example" body={details.example} variant="editorial" />
         <DetailItem label="A common concern" body={details.objection} variant="clarification" />
       </DetailSection>
