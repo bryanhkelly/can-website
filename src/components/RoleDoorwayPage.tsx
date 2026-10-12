@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowRight, Church, Network } from 'lucide-react'
+import { ArrowDown, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { roleDoorways } from '../data/pageContent'
 
@@ -69,23 +69,31 @@ function RoleVisual({ variant }: { variant: RoleDoorway['visualVariant'] }) {
 
   return (
     <div className="denomination-network">
-      <div className="denomination-network-churches" aria-label="Many local churches and communities">
-        {[1, 2, 3, 4, 5].map((church) => (
-          <div className="denomination-network-church" key={church}>
-            <Church aria-hidden="true" />
-            <span>Local church</span>
-          </div>
-        ))}
-      </div>
-      <ArrowDown className="denomination-network-arrow" aria-hidden="true" />
-      <div className="denomination-network-shared">
-        <Network aria-hidden="true" />
-        <span><strong>Shared CAN layer</strong><small>Academic + operating capabilities</small></span>
-      </div>
-      <div className="denomination-network-outcomes" aria-label="Local outcomes">
-        <span>Local leadership</span>
-        <span>Local identity</span>
-        <span>Local ministry and community relationships</span>
+      <img
+        className="denomination-network-desktop"
+        src="/images/denomination-network-model.svg"
+        alt="Multiple local churches connect to shared CAN academic and operating capabilities while local leadership, identity, and relationships remain local."
+      />
+      <div className="denomination-network-mobile">
+        <p>Many local churches</p>
+        <div className="denomination-network-churches">
+          <span>Local church</span>
+          <span>Local church</span>
+          <span>Local church</span>
+          <span>Local church</span>
+          <span>Local church</span>
+        </div>
+        <ArrowDown className="denomination-network-arrow" aria-hidden="true" />
+        <div className="denomination-network-shared">
+          <strong>Shared CAN layer</strong>
+          <span>Academic + operating capabilities</span>
+        </div>
+        <ArrowDown className="denomination-network-arrow" aria-hidden="true" />
+        <div className="denomination-network-outcomes">
+          <span>Local leadership</span>
+          <span>Local identity</span>
+          <span>Local ministry + relationships</span>
+        </div>
       </div>
     </div>
   )

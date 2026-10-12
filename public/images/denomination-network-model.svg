@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="t d">
+<title id="t">Denomination network model</title>
+<desc id="d">Multiple local churches connect to a shared CAN academic and operating layer while local leadership and identity remain local.</desc>
+<rect width="1200" height="620" rx="34" fill="#F8F6EF"/>
+<g stroke="#B8CBD6" stroke-width="4" fill="none">
+  <path d="M145 185 C260 250 365 275 500 320"/>
+  <path d="M360 145 C430 220 485 265 540 315"/>
+  <path d="M600 130 L600 300"/>
+  <path d="M840 145 C770 220 715 265 660 315"/>
+  <path d="M1055 185 C940 250 835 275 700 320"/>
+</g>
+<g font-family="Arial, sans-serif" text-anchor="middle">
+  <g transform="translate(145 125)">
+    <circle r="70" fill="#FFF" stroke="#9FB8C7" stroke-width="3"/>
+    <path d="M-30 24V-8H30V24M-38-6L0-40 38-6M0-40V-58M-8-51H8" fill="none" stroke="#173B5D" stroke-width="5" stroke-linecap="round"/>
+    <text y="100" font-size="19" font-weight="700" fill="#173B5D">Local church</text>
+  </g>
+  <g transform="translate(360 95)">
+    <circle r="70" fill="#FFF" stroke="#9FB8C7" stroke-width="3"/>
+    <path d="M-30 24V-8H30V24M-38-6L0-40 38-6M0-40V-58M-8-51H8" fill="none" stroke="#173B5D" stroke-width="5" stroke-linecap="round"/>
+    <text y="100" font-size="19" font-weight="700" fill="#173B5D">Local church</text>
+  </g>
+  <g transform="translate(600 80)">
+    <circle r="70" fill="#FFF" stroke="#9FB8C7" stroke-width="3"/>
+    <path d="M-30 24V-8H30V24M-38-6L0-40 38-6M0-40V-58M-8-51H8" fill="none" stroke="#173B5D" stroke-width="5" stroke-linecap="round"/>
+    <text y="100" font-size="19" font-weight="700" fill="#173B5D">Local church</text>
+  </g>
+  <g transform="translate(840 95)">
+    <circle r="70" fill="#FFF" stroke="#9FB8C7" stroke-width="3"/>
+    <path d="M-30 24V-8H30V24M-38-6L0-40 38-6M0-40V-58M-8-51H8" fill="none" stroke="#173B5D" stroke-width="5" stroke-linecap="round"/>
+    <text y="100" font-size="19" font-weight="700" fill="#173B5D">Local church</text>
+  </g>
+  <g transform="translate(1055 125)">
+    <circle r="70" fill="#FFF" stroke="#9FB8C7" stroke-width="3"/>
+    <path d="M-30 24V-8H30V24M-38-6L0-40 38-6M0-40V-58M-8-51H8" fill="none" stroke="#173B5D" stroke-width="5" stroke-linecap="round"/>
+    <text y="100" font-size="19" font-weight="700" fill="#173B5D">Local church</text>
+  </g>
+</g>
+<rect x="340" y="300" width="520" height="125" rx="26" fill="#DFEDF3" stroke="#7399AE" stroke-width="4"/>
+<text x="600" y="345" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="#102E50">Shared CAN layer</text>
+<text x="600" y="378" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#365D78">Academic + operating capabilities</text>
+<text x="600" y="402" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#57758A">Shared where scale helps. Local where identity matters.</text>
+<g stroke="#B5903E" stroke-width="4">
+  <line x1="460" y1="425" x2="330" y2="500"/>
+  <line x1="600" y1="425" x2="600" y2="500"/>
+  <line x1="740" y1="425" x2="870" y2="500"/>
+</g>
+<g font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="#173B5D" text-anchor="middle">
+  <text x="300" y="535">Local leadership</text>
+  <text x="600" y="535">Local identity</text>
+  <text x="900" y="535">Local ministry + relationships</text>
+</g>
+</svg>

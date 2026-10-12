@@ -9,8 +9,9 @@ import {
   School,
   UsersRound,
 } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { explorePageContent } from '../data/pageContent'
+import { withPartnerContext } from '../lib/nav'
 
 const TOPIC_ICONS = [
   UsersRound,
@@ -25,13 +26,15 @@ const ROLE_ICONS = [Church, UsersRound, School, House, Network]
 
 export function ExplorePage() {
   const content = explorePageContent
+  const location = useLocation()
+  const contactPath = withPartnerContext('/contact', location.search)
 
   return (
     <article className="explore-hub">
       <section className="explore-hub-hero">
         <img
           className="explore-hub-hero-image"
-          src="/images/community-network.png"
+          src="/images/roles/01_families.png"
           alt=""
           fetchPriority="high"
         />
@@ -41,7 +44,7 @@ export function ExplorePage() {
           <h1 className="editorial-heading">{content.h1}</h1>
           <p className="explore-hub-dek">{content.dek}</p>
           <p className="explore-hub-secondary">{content.secondaryDek}</p>
-          <Link to="/contact" className="explore-hub-primary">
+          <Link to={contactPath} className="explore-hub-primary">
             {content.ctaLabel}
             <ArrowRight aria-hidden="true" />
           </Link>
@@ -107,7 +110,7 @@ export function ExplorePage() {
             <p className="explore-hub-eyebrow">Let's explore together</p>
             <h2 className="editorial-heading">{content.conversationHeading}</h2>
             <p>{content.conversationBody}</p>
-            <Link to="/contact" className="explore-hub-primary">
+            <Link to={contactPath} className="explore-hub-primary">
               {content.ctaLabel}
               <ArrowRight aria-hidden="true" />
             </Link>

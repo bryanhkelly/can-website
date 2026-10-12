@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { brandTagline } from '../data/pageContent'
+import { withPartnerContext } from '../lib/nav'
 import { BrandMark } from './ui/BrandMark'
 
 export function SiteFooter() {
+  const location = useLocation()
   return (
     <footer className="bg-navy-950 text-navy-100">
       <div className="mx-auto max-w-7xl px-5 py-9 sm:px-8">
@@ -17,7 +19,7 @@ export function SiteFooter() {
             {brandTagline}
           </p>
           <Link
-            to="/story/explore-can"
+            to={withPartnerContext('/story/explore-can', location.search)}
             className="text-sm font-semibold text-gold-400 transition-colors hover:text-gold-500"
           >
             Start a conversation →

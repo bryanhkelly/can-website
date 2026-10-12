@@ -18,9 +18,9 @@ Explore also links to these topic destinations:
 - `/start-a-community`
 - `/evidence` — evidence materials coming soon
 
-Partner-specific information routes are reserved at `/partners/the-journey-church`,
-`/partners/cogic`, and `/partners/cogbf`; each currently displays a neutral
-coming-soon page.
+Partner-specific front doors are available at `/partners/the-journey-church`,
+`/partners/cogic`, and `/partners/cogbf`. Their primary story links preserve
+partner context through the shared story and into Explore and contact.
 
 ## Development
 
@@ -50,8 +50,11 @@ The Explore CAN role cards link to the five doorway pages. The Academics page is
 distinct from Curriculum: it describes the academic path over time, while
 Curriculum describes instructional content and perspective. Florida, Evidence,
 and partner-specific pages avoid publishing unapproved details or sources.
-The denominations hero uses the package's interim community-network image; a
-bespoke 2400-3000 px production photograph is still required before final launch.
+Academics and Partnership Model use native SVG path and relationship models;
+the mobile layouts simplify each model into readable vertical sequences. The
+denominations page uses the supplied network model SVG and an interim community
+photograph. A bespoke 2400-3000 px production photograph is still required
+before final launch.
 
 The production handoff does not include independent skyline banners, individual
 audience portraits, the illustrated buildings, the book cover, or a script font.

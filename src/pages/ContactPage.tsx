@@ -1,4 +1,5 @@
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useLocation, useSearchParams } from 'react-router-dom'
+import { partnerIds, withPartnerContext } from '../lib/nav'
 
 const AUDIENCE_LABELS: Record<string, string> = {
   parent: 'Parents',
@@ -6,6 +7,12 @@ const AUDIENCE_LABELS: Record<string, string> = {
   'school-leader': 'Christian school leaders',
   homeschool: 'Homeschool families',
   denomination: 'Denominations and church networks',
+}
+
+const PARTNER_LABELS: Record<(typeof partnerIds)[number], string> = {
+  'the-journey-church': 'The Journey Church',
+  cogic: 'Church of God in Christ',
+  cogbf: 'Church of God by Faith',
 }
 
 const TOPIC_LABELS: Record<string, string> = {
@@ -18,12 +25,15 @@ const TOPIC_LABELS: Record<string, string> = {
 }
 
 export function ContactPage() {
+  const location = useLocation()
   const [searchParams] = useSearchParams()
   const audience = searchParams.get('audience')
   const topic = searchParams.get('topic')
+  const partner = partnerIds.find((id) => id === searchParams.get('partner'))
   const audienceLabel = audience ? AUDIENCE_LABELS[audience] : undefined
   const topicLabel = topic ? TOPIC_LABELS[topic] : undefined
-  const conversationLabel = audienceLabel ?? topicLabel
+  const partnerLabel = partner ? PARTNER_LABELS[partner] : undefined
+  const conversationLabel = audienceLabel ?? topicLabel ?? partnerLabel
   const subject = conversationLabel
     ? `CAN Academy conversation: ${conversationLabel}`
     : 'CAN Academy conversation'
@@ -47,7 +57,7 @@ export function ContactPage() {
         Email the CAN Academy team
       </a>
       <p className="mt-6 text-sm text-navy-500">
-        <Link to="/story/explore-can" className="font-semibold text-navy-700 hover:text-navy-900">
+        <Link to={withPartnerContext('/story/explore-can', location.search)} className="font-semibold text-navy-700 hover:text-navy-900">
           ← Back to Explore CAN
         </Link>
       </p>

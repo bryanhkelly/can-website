@@ -43,9 +43,9 @@ function App() {
         <Route path="/christian-schools" element={<RoleDoorwayPage page={roleDoorways.christianSchools} />} />
         <Route path="/homeschool" element={<RoleDoorwayPage page={roleDoorways.homeschool} />} />
         <Route path="/denominations" element={<RoleDoorwayPage page={roleDoorways.denominations} />} />
-        <Route path="/partners/the-journey-church" element={<PartnerPage name="The Journey Church" />} />
-        <Route path="/partners/cogic" element={<PartnerPage name="COGIC" />} />
-        <Route path="/partners/cogbf" element={<PartnerPage name="COGBF" />} />
+        <Route path="/partners/the-journey-church" element={<PartnerPage partner="the-journey-church" />} />
+        <Route path="/partners/cogic" element={<PartnerPage partner="cogic" />} />
+        <Route path="/partners/cogbf" element={<PartnerPage partner="cogbf" />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<Navigate to="/story/stakes" replace />} />
       </Routes>

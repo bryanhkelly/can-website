@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import { getNextSlug } from '../../lib/nav'
+import { getNextSlug, withPartnerContext } from '../../lib/nav'
 import { navSlugs } from '../../data/pageContent'
 
 const PAGE_LABELS: Record<(typeof navSlugs)[number], string> = {
@@ -25,13 +25,14 @@ export function NextStoryLink({
   current: (typeof navSlugs)[number]
   dark?: boolean
 }) {
+  const location = useLocation()
   const next = getNextSlug(current)
   if (!next) return null
 
   const nextIndex = navSlugs.indexOf(next) + 1
   return (
     <Link
-      to={getStoryPath(next)}
+      to={withPartnerContext(getStoryPath(next), location.search)}
       className={`next-story-link${dark ? ' next-story-link-dark' : ''}`}
     >
       <span className="next-story-label">

@@ -1,31 +1,85 @@
-import { ArrowRight, BookOpenCheck, ClipboardCheck, GraduationCap, HeartHandshake, MessagesSquare } from 'lucide-react'
+import { ArrowDown, ArrowRight, MessagesSquare } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
+import type { PartnerId } from '../lib/nav'
 
 const ACADEMIC_COMPONENTS = [
   {
     title: 'Courses & pathways',
     text: 'A coherent academic program with core subjects, learning experiences, and options that help students keep moving forward.',
-    icon: BookOpenCheck,
   },
   {
     title: 'How learning works',
     text: 'Live teaching, independent work, discussion, projects, and local learning support bring structure and flexibility together.',
-    icon: GraduationCap,
   },
   {
     title: 'Support around the student',
     text: 'Teachers, Academic Coaches, Counselors, and local facilitators work from a shared view of student progress.',
-    icon: HeartHandshake,
   },
   {
     title: 'Progress & readiness',
     text: 'Assessment, grades, records, and academic support help students understand where they are and what they need next.',
-    icon: ClipboardCheck,
+  },
+]
+
+const ACADEMIC_DETAILS = [
+  {
+    title: 'Courses & pathways',
+    text: 'Students need more than individual classes. They need a coherent academic program with the core subjects, learning experiences, and options required to keep moving forward.',
+  },
+  {
+    title: 'How learning works',
+    text: 'CAN combines live teaching, independent work, discussion, projects, and local learning support so students have both structure and flexibility.',
+  },
+  {
+    title: 'Support around the student',
+    text: 'CAN Teachers, Academic Coaches, Counselors, and local facilitators work from a shared view of student progress so help can arrive before a student gets lost.',
+  },
+  {
+    title: 'Progress & readiness',
+    text: 'Assessment, grades, records, and academic support should help students understand where they are, what they need next, and how their learning connects to future opportunities.',
   },
 ]
 
 const LAUNCH_STAGES = ['Explore', 'Fit / readiness', 'Plan', 'Prepare', 'Launch', 'Grow']
+
+const PARTNER_PAGES: Record<PartnerId, {
+  name: string
+  heading: string
+  whyHeading: string
+  why: string
+  conversation: string
+  explore: string
+  themes: string[]
+}> = {
+  'the-journey-church': {
+    name: 'The Journey Church',
+    heading: 'What could Christian education look like if it grew from a community families already trust?',
+    whyHeading: 'Why we thought of The Journey',
+    why: 'The Journey Church has built something an education model cannot manufacture: the trust of families, a strong ministry culture, and a place people recognize as home.',
+    conversation: 'Nassau County already offers families strong educational options. The question is whether some families are looking for something those options are not designed to provide: rigorous academics intentionally connected to Christian formation, culture, community, and family life.',
+    explore: 'Christian education could become part of how The Journey serves families all week.',
+    themes: ['Families you already know', 'A trusted ministry culture', 'A local community', 'More opportunity for the next generation'],
+  },
+  cogic: {
+    name: 'Church of God in Christ',
+    heading: 'An education worthy of our children and rooted in who they are.',
+    whyHeading: 'Why we thought of COGIC',
+    why: 'For generations, COGIC churches have helped Black children know who they are, whose they are, and what God has called them to become.',
+    conversation: 'That formation should not have to stop when students enter the classroom. Families should not have to choose between academic excellence, Christian formation, and an education that recognizes their faith, culture, history, and story.',
+    explore: 'What could become possible if COGIC churches could participate in a shared education system without each congregation having to build a school alone?',
+    themes: ['Build on a strong legacy', 'Support more students and families', 'Share resources and expertise', 'Expand opportunity across communities'],
+  },
+  cogbf: {
+    name: 'Church of God by Faith',
+    heading: 'What if the connection that built a denomination could help extend Christian education to a new generation?',
+    whyHeading: 'Why we thought of Church of God by Faith',
+    why: 'Church of God by Faith grew through local churches connected by shared faith, trusted relationships, and a commitment to serve communities.',
+    conversation: 'That same connection creates an interesting education possibility. Individual congregations may not be positioned to build complete middle and high school programs on their own, but together they represent something much larger.',
+    explore: 'Could the strength of the Church of God by Faith connection help make Christian education available in more of the communities its churches already serve?',
+    themes: ['Strengthen what churches can do together', 'Reach more students and families', 'Expand access in more communities', 'Create new possibilities for the next generation'],
+  },
+}
 
 function PageIntro({ eyebrow, heading, description }: { eyebrow: string; heading: string; description: string }) {
   return (
@@ -58,54 +112,41 @@ export function AcademicsPage() {
           description="CAN brings together rigorous courses, live instruction, academic support, and clear progress tracking so students can build a strong foundation and prepare for what comes next."
         />
 
+        <section className="academics-visual" aria-label="One academic path supported by connected learning and student support">
+          <img
+            className="academics-path-desktop"
+            src="/images/academic-path-model.svg"
+            alt="A student academic path connected through courses and pathways, how learning works, support, and progress and readiness."
+          />
+          <div className="academics-path-mobile">
+            <div className="academics-path-student"><span>Student</span><strong>Academic path</strong></div>
+            {ACADEMIC_COMPONENTS.map(({ title, text }) => (
+              <article className="academics-path-step" key={title}>
+                <span aria-hidden="true" />
+                <div><h2>{title}</h2><p>{text}</p></div>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="academics-distinction" aria-label="How Academics and Curriculum differ">
           <div>
             <p className="destination-eyebrow">Curriculum</p>
-            <h2>What do we teach?</h2>
-            <p>Curriculum brings together standards, content, Christian worldview, and local distinctives.</p>
+            <h2>What do we teach, and how is it framed?</h2>
+            <p>Standards, content, Christian worldview, and local distinctives shape the instructional program.</p>
             <Link to="/story/curriculum">See the Curriculum story <ArrowRight aria-hidden="true" /></Link>
           </div>
           <div>
             <p className="destination-eyebrow">Academics</p>
-            <h2>How does the program work over time?</h2>
-            <p>Academics describes the student’s broader academic path: learning, support, progress, and preparation for what comes next.</p>
-          </div>
-        </section>
-
-        <section className="academics-model" aria-labelledby="academics-model-heading">
-          <h2 id="academics-model-heading" className="editorial-heading">One academic path, connected support</h2>
-          <div className="academics-model-grid">
-            {ACADEMIC_COMPONENTS.map(({ title, text, icon: Icon }) => (
-              <article className="academics-component" key={title}>
-                <Icon aria-hidden="true" />
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
-            ))}
-            <div className="academics-model-center" aria-hidden="true">
-              <span>Student</span>
-              <strong>Academic path</strong>
-            </div>
+            <h2>How does the academic program work over time?</h2>
+            <p>Courses, learning, student support, assessment, records, and readiness connect into a path for each student.</p>
           </div>
         </section>
 
         <section className="academics-details" aria-label="Academic model details">
-          <article>
-            <h2>Courses & pathways</h2>
-            <p>Students need more than individual classes. They need a coherent academic program with the core subjects, learning experiences, and options required to keep moving forward.</p>
-          </article>
-          <article>
-            <h2>How learning works</h2>
-            <p>CAN combines live teaching, independent work, discussion, projects, and local learning support so students have both structure and flexibility.</p>
-          </article>
-          <article>
-            <h2>Support around the student</h2>
-            <p>CAN Teachers, Academic Coaches, Counselors, and local facilitators work from a shared view of student progress so help can arrive before a student gets lost.</p>
-          </article>
-          <article>
-            <h2>Progress & readiness</h2>
-            <p>Assessment, grades, records, and academic support should help students understand where they are, what they need next, and how their learning connects to future opportunities.</p>
-          </article>
+          {ACADEMIC_DETAILS.map(({ title, text }) => (
+            <article key={title}><h2>{title}</h2><p>{text}</p></article>
+          ))}
         </section>
 
         <DestinationFooter>
@@ -119,12 +160,6 @@ export function AcademicsPage() {
 }
 
 export function PartnershipModelPage() {
-  const roles = [
-    { title: 'What the community brings', text: 'Local relationships, knowledge of families and students, and the community context that shapes what a school should be.' },
-    { title: 'What CAN provides', text: 'A shared academic and operating model that can support a local community without asking it to build every capability alone.' },
-    { title: 'What remains local', text: 'Local leadership, identity, ministry, and community relationships remain central to how the school is expressed.' },
-  ]
-
   return (
     <article className="destination-page">
       <div className="destination-container">
@@ -133,8 +168,35 @@ export function PartnershipModelPage() {
           heading="A shared model, shaped with each community."
           description="Understand what a local community and CAN each bring, what stays local, and how a conversation can develop into a clear partnership."
         />
-        <section className="destination-card-grid">
-          {roles.map(({ title, text }) => <article className="destination-card" key={title}><h2>{title}</h2><p>{text}</p></article>)}
+        <section className="partnership-model-visual" aria-label="The community brings local relationships, CAN provides shared capabilities, and local identity remains local in the school experience">
+          <img
+            className="partnership-model-desktop"
+            src="/images/partnership-model.svg"
+            alt="The community brings local relationships, leadership, facilities, and knowledge of families. CAN provides a shared academic model, teachers and support, and operating systems. Local identity and leadership remain local in the resulting school experience."
+          />
+          <div className="partnership-model-mobile">
+            <article><p>Community brings</p><h2>Relationships and local knowledge</h2><span>Leadership, facilities and support, knowledge of families</span></article>
+            <span className="partnership-model-plus" aria-hidden="true">+</span>
+            <article><p>CAN provides</p><h2>Shared capabilities</h2><span>Academic model, teachers and support, operating systems</span></article>
+            <span className="partnership-model-plus" aria-hidden="true">+</span>
+            <article><p>What stays local</p><h2>Identity and leadership</h2><span>Ministry, culture, community relationships, local expression</span></article>
+            <ArrowDown className="partnership-model-down" aria-hidden="true" />
+            <strong className="partnership-model-result">A local CAN school experience</strong>
+          </div>
+        </section>
+        <section className="partnership-details" aria-label="Partnership roles">
+          <article>
+            <h2>What the community brings</h2>
+            <p>Local relationships, knowledge of families and students, facilities and local support, and the community context that shapes what a school should be.</p>
+          </article>
+          <article>
+            <h2>What CAN provides</h2>
+            <p>A shared academic and operating model, teachers and support, systems, and capabilities that local communities should not each have to rebuild alone.</p>
+          </article>
+          <article>
+            <h2>What remains local</h2>
+            <p>Local leadership, identity, ministry, culture, and community relationships remain central to how the school is expressed.</p>
+          </article>
         </section>
         <section className="destination-note">
           <h2>From conversation to partnership</h2>
@@ -223,25 +285,52 @@ export function EvidencePage() {
   )
 }
 
-export function PartnerPage({ name }: { name: string }) {
+export function PartnerPage({ partner }: { partner: PartnerId }) {
+  const page = PARTNER_PAGES[partner]
   return (
-    <article className="destination-page">
-      <div className="destination-container">
-        <PageIntro
-          eyebrow="Partner information"
-          heading={name}
-          description="This partner-specific CAN overview is not yet available."
-        />
-        <section className="destination-pending" role="status">
-          <p className="destination-eyebrow">Information pending</p>
-          <h2>Partner information is being prepared.</h2>
-          <p>This page will be updated when approved information is ready to share.</p>
+    <article className="partner-front-door">
+      <header className="partner-front-door-hero">
+        <div className="partner-front-door-hero-mark" aria-hidden="true" />
+        <div className="partner-front-door-hero-copy">
+          <p className="partner-front-door-eyebrow">CAN Academy × {page.name}</p>
+          <h1 className="editorial-heading">{page.heading}</h1>
+        </div>
+      </header>
+      <div className="partner-front-door-content">
+        <section className="partner-front-door-section">
+          <p className="partner-section-number">01</p>
+          <div>
+            <h2>{page.whyHeading}</h2>
+            <p>{page.why}</p>
+          </div>
         </section>
-        <DestinationFooter>
-          <Link to="/contact?topic=partner-information" className="destination-primary-link">
-            Ask a question <MessagesSquare aria-hidden="true" />
+        <section className="partner-front-door-section">
+          <p className="partner-section-number">02</p>
+          <div>
+            <h2>Why this conversation</h2>
+            <p>{page.conversation}</p>
+          </div>
+        </section>
+        <section className="partner-front-door-section partner-front-door-explore">
+          <p className="partner-section-number">03</p>
+          <div>
+            <h2>What we want to explore together</h2>
+            <p>{page.explore}</p>
+          </div>
+        </section>
+        <ul className="partner-front-door-themes" aria-label="Shared possibilities">
+          {page.themes.map((theme, index) => (
+            <li key={theme}><span>{String(index + 1).padStart(2, '0')}</span>{theme}</li>
+          ))}
+        </ul>
+        <div className="partner-front-door-actions">
+          <Link to={`/story/stakes?partner=${partner}`} className="destination-primary-link">
+            See the CAN story <ArrowRight aria-hidden="true" />
           </Link>
-        </DestinationFooter>
+          <Link to={`/contact?partner=${partner}`} className="partner-front-door-secondary">
+            Talk with us about {page.name} <MessagesSquare aria-hidden="true" />
+          </Link>
+        </div>
       </div>
     </article>
   )

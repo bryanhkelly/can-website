@@ -1,15 +1,17 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { brandTagline, navSlugs } from '../data/pageContent'
+import { withPartnerContext } from '../lib/nav'
 import { BrandMark } from './ui/BrandMark'
 
 export function SiteHeader() {
+  const location = useLocation()
   const labels = ['Stakes', 'Possibility', 'Curriculum', 'Platform', 'Rooted Locally', 'Student Experience', 'Economics', 'Explore CAN']
   const compactLabels = ['Stakes', 'Possibility', 'Curriculum', 'Platform', 'Local', 'Student', 'Economics', 'Explore']
 
   return (
     <header className="sticky top-0 z-30 border-b border-navy-100/80 bg-cream-50/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6">
-        <Link to="/" aria-label="CAN Academy home" className="flex shrink-0 items-center gap-2.5">
+        <Link to={withPartnerContext('/story/stakes', location.search)} aria-label="CAN Academy home" className="flex shrink-0 items-center gap-2.5">
           <BrandMark />
           <span className="leading-tight">
             <span className="block text-sm font-extrabold tracking-tight text-navy-950">CAN Academy</span>
@@ -27,7 +29,7 @@ export function SiteHeader() {
         {navSlugs.map((slug, i) => (
           <NavLink
             key={slug}
-            to={`/story/${slug}`}
+            to={withPartnerContext(`/story/${slug}`, location.search)}
             aria-label={`${i + 1}. ${labels[i]}`}
             title={`${i + 1}. ${labels[i]}`}
             className={({ isActive }) =>
