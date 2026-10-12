@@ -57,3 +57,24 @@ Do not invent citations, proof points, research findings, or downloadable eviden
 - Preserve CAN terminology consistently.
 - Do not turn short doorway pages into duplicate versions of the 8-page story.
 - Do not introduce unsupported outcome claims, enrollment numbers, funding promises, accreditation claims, or partner commitments.
+
+
+## Trust, accountability, locations, and FAQ
+
+The following pages were added from the October 12, 2026 CAN strategy discussion informed by the ProPublica school-choice investigation:
+
+- `/accountability`
+- `/locations`
+- `/faq`
+- the Evidence & Accountability section on `/story/platform`
+
+### Publication rules
+
+- Distinguish intended standards from implemented processes and verified outcomes.
+- Do not present the proposed CAN site-certification model as an existing certification program until formally approved and operational.
+- Do not imply a state, county, church, or school is a confirmed CAN launch unless a formal launch commitment exists.
+- On Locations, use `Operating`, `Confirmed launch partner`, `In development`, and `Exploring partnerships` only when the evidence supports the status.
+- Florida may be described as the primary pilot focus / in development. Other listed states are research or partnership-development markets, not launch commitments.
+- Accommodation and special-education language should describe CAN's need for a defined support model and clear pre-enrollment expectations; do not claim IDEA-equivalent services or protections.
+- Platform accountability content describes intended capabilities, not reported CAN student performance.
+- The FAQ must route visitors to deeper governed content rather than inventing new operating commitments.
