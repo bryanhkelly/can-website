@@ -2437,3 +2437,15 @@ body {
     padding: 24px 20px;
   }
 }
+
+
+.contact-audience-prompt {
+  max-width: 680px;
+  margin-top: 12px !important;
+  border-left: 3px solid var(--color-gold-500);
+  padding-left: 12px;
+  color: var(--color-navy-800) !important;
+  font-family: var(--font-serif);
+  font-size: 17px !important;
+  line-height: 1.45 !important;
+}
