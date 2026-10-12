@@ -9,7 +9,7 @@ const ICONS = [BookOpen, Cross, Users, Globe]
 const TONES = ['bg-green-600', 'bg-gold-600', 'bg-navy-500', 'bg-navy-900']
 
 export function PossibilityPage() {
-  const { eyebrowNumber, eyebrowLabel, kicker, h1, dek, items, refrain, details } = possibilityContent
+  const { eyebrowNumber, eyebrowLabel, kicker, h1, dek, items, refrain, transition, details } = possibilityContent
   return (
     <article className="story-page">
       <StoryIntro number={eyebrowNumber} label={eyebrowLabel} kicker={kicker} heading={h1} description={dek} centered />
@@ -38,7 +38,7 @@ export function PossibilityPage() {
           )
         })}
       </section>
-      <div className="possibility-refrain"><RefrainBar text={refrain} current="possibility" /></div>
+      <div className="possibility-refrain"><RefrainBar text={refrain} transition={transition} current="possibility" /></div>
       <DetailSection>
         <DetailItem label="Why now" body={details.policy} variant="proof" />
         <DetailItem label="For example" body={details.example} variant="editorial" />
