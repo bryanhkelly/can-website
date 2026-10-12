@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { brandTagline } from '../data/pageContent'
 import { withPartnerContext } from '../lib/nav'
 import { BrandMark } from './ui/BrandMark'
+import { ShareMenu } from './ShareMenu'
 
 export function SiteFooter() {
   const location = useLocation()
@@ -19,6 +20,7 @@ export function SiteFooter() {
             {brandTagline}
           </p>
           <div className="site-footer-links">
+            <ShareMenu />
             <Link to="/privacy">Privacy</Link>
             <Link to="/terms">Terms</Link>
             <Link to="/accessibility">Accessibility</Link>
