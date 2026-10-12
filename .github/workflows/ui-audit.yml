@@ -1,0 +1,45 @@
+name: UI Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'index.html'
+      - 'netlify.toml'
+      - 'scripts/ui-audit.mjs'
+      - '.github/workflows/ui-audit.yml'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Install Playwright package
+        run: npm install --no-save playwright@1.55.0
+      - name: Start local production preview
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4173 > /tmp/can-preview.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/can-preview.log
+          exit 1
+      - name: Run Playwright UI audit
+        run: node scripts/ui-audit.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ui-audit-output
+          path: ui-audit-output
+          retention-days: 7
