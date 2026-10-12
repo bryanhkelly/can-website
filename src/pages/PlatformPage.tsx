@@ -80,7 +80,7 @@ export function PlatformPage() {
         <LocalSettingsDiagram connected />
       </section>
 
-      <RefrainBar text={refrain} current="platform" />
+      <RefrainBar text={refrain} transition={transition} current="platform" />
 
       <DetailSection>
         <DetailItem label="Technology leadership" body={details.credibility} variant="proof" />
