@@ -7,8 +7,8 @@ import { curriculumContent } from '../data/pageContent'
 
 const LAYER_TONES = [
   'curriculum-local',
-  'curriculum-worldview',
   'curriculum-content',
+  'curriculum-worldview',
   'curriculum-standards',
 ]
 const LAYER_ICONS = [MapPin, Globe, Cross, TrendingUp]
