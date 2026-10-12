@@ -188,6 +188,14 @@ export function AcademicsPage() {
           </div>
         </section>
 
+        <section className="destination-leadership-proof">
+          <p className="destination-eyebrow">Academic leadership</p>
+          <h2>Dr. Neko Coleman Green</h2>
+          <p><strong>Co-founder & Chief Academic Officer</strong></p>
+          <p>Neko leads CAN Academy’s academic model, instructional quality, student-support philosophy, and educator-facing design. Her experience spans special education, elementary and middle-school instruction, differentiated learning, assessment, and church ministry leadership.</p>
+          <Link to="/leadership">Meet CAN leadership <ArrowRight aria-hidden="true" /></Link>
+        </section>
+
         <AcademicsDeepLinks />
 
         <DestinationFooter>
