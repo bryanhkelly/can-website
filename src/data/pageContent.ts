@@ -240,7 +240,9 @@ export const roleDoorways = {
     audience: 'pastor',
     image: '/images/05_rooted_locally_community.png',
     imageAlt: 'Students and adults learning together in a church community',
-    imagePosition: '52% 46%',\n    imagePositionMobile: '50% 44%',\n    visualVariant: 'pastor',
+    imagePosition: '52% 46%',
+    imagePositionMobile: '50% 44%',
+    visualVariant: 'pastor',
   },
   parents: {
     eyebrow: 'For Parents',
@@ -257,7 +259,9 @@ export const roleDoorways = {
     audience: 'parent',
     image: '/images/06_student_experience_portrait.png',
     imageAlt: 'A student looking ahead with confidence',
-    imagePosition: '48% 42%',\n    imagePositionMobile: '48% 38%',\n    visualVariant: 'parent',
+    imagePosition: '48% 42%',
+    imagePositionMobile: '48% 38%',
+    visualVariant: 'parent',
   },
   christianSchools: {
     eyebrow: 'For Christian School Leaders',
@@ -273,7 +277,9 @@ export const roleDoorways = {
     audience: 'school-leader',
     image: '/images/04_platform_local_campus.png',
     imageAlt: 'Students outside a local school campus',
-    imagePosition: '72% 46%',\n    imagePositionMobile: '68% 44%',\n    visualVariant: 'school',
+    imagePosition: '72% 46%',
+    imagePositionMobile: '68% 44%',
+    visualVariant: 'school',
   },
   homeschool: {
     eyebrow: 'For Homeschool Families',
@@ -289,7 +295,9 @@ export const roleDoorways = {
     audience: 'homeschool',
     image: '/images/03_curriculum_student_study.png',
     imageAlt: 'A student reading and studying',
-    imagePosition: '44% 44%',\n    imagePositionMobile: '42% 40%',\n    visualVariant: 'homeschool',
+    imagePosition: '44% 44%',
+    imagePositionMobile: '42% 40%',
+    visualVariant: 'homeschool',
   },
   denominations: {
     eyebrow: 'For Denominations & Church Networks',
@@ -305,7 +313,9 @@ export const roleDoorways = {
     audience: 'denomination',
     image: '/images/04_platform_local_campus.png',
     imageAlt: 'Church and community leaders sharing a conversation outdoors',
-    imagePosition: '74% 46%',\n    imagePositionMobile: '68% 44%',\n    visualVariant: 'denomination',
+    imagePosition: '74% 46%',
+    imagePositionMobile: '68% 44%',
+    visualVariant: 'denomination',
   },
 } as const
 
