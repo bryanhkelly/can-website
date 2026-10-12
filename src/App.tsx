@@ -12,6 +12,8 @@ import { ExplorePage } from './pages/ExplorePage'
 import { ContactPage } from './pages/ContactPage'
 import { HomePage } from './pages/HomePage'
 import { AccessibilityPage, NotFoundPage, PrivacyPage, TermsPage } from './pages/StaticPages'
+import { AccountabilityPage } from './pages/AccountabilityPage'
+import { LocationsPage } from './pages/LocationsPage'
 import {
   StudentActivitiesPage,
   StudentBelongingPage,
@@ -110,6 +112,8 @@ function App() {
         <Route path="/launch-approach/launch" element={<LaunchStagePage slug="launch" />} />
         <Route path="/launch-approach/measure" element={<LaunchStagePage slug="measure" />} />
         <Route path="/economic-breakthrough" element={<EconomicBreakthroughPage />} />
+        <Route path="/accountability" element={<AccountabilityPage />} />
+        <Route path="/locations" element={<LocationsPage />} />
         <Route path="/evidence" element={<EvidenceDeepPage path="/evidence" />} />
         <Route path="/evidence/academic-model" element={<EvidenceDeepPage path="/evidence/academic-model" />} />
         <Route path="/evidence/alternative-education" element={<EvidenceDeepPage path="/evidence/alternative-education" />} />
