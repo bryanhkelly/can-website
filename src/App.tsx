@@ -15,6 +15,7 @@ import { AccessibilityPage, NotFoundPage, PrivacyPage, TermsPage } from './pages
 import { AccountabilityPage } from './pages/AccountabilityPage'
 import { LocationsPage } from './pages/LocationsPage'
 import { FaqPage } from './pages/FaqPage'
+import { LeadershipPage } from './pages/LeadershipPage'
 import {
   StudentActivitiesPage,
   StudentBelongingPage,
@@ -116,6 +117,7 @@ function App() {
         <Route path="/accountability" element={<AccountabilityPage />} />
         <Route path="/locations" element={<LocationsPage />} />
         <Route path="/faq" element={<FaqPage />} />
+        <Route path="/leadership" element={<LeadershipPage />} />
         <Route path="/evidence" element={<EvidenceDeepPage path="/evidence" />} />
         <Route path="/evidence/academic-model" element={<EvidenceDeepPage path="/evidence/academic-model" />} />
         <Route path="/evidence/alternative-education" element={<EvidenceDeepPage path="/evidence/alternative-education" />} />
