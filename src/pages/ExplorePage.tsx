@@ -34,7 +34,7 @@ export function ExplorePage() {
       <section className="explore-hub-hero">
         <img
           className="explore-hub-hero-image"
-          src="/images/roles/01_families.png"
+          src="/images/02_possibility_student_group.png"
           alt=""
           fetchPriority="high"
         />
@@ -65,7 +65,7 @@ export function ExplorePage() {
             {content.topics.map((topic, index) => {
               const Icon = TOPIC_ICONS[index]
               return (
-                <Link key={topic.label} to={topic.href} className="explore-topic-card">
+                <Link key={topic.label} to={withPartnerContext(topic.href, location.search)} className="explore-topic-card">
                   <span className="explore-topic-icon"><Icon aria-hidden="true" /></span>
                   <span className="explore-topic-copy">
                     <span className="explore-topic-title">{topic.label}</span>
@@ -77,7 +77,7 @@ export function ExplorePage() {
             })}
           </div>
           <p className="explore-evidence-link">
-            <Link to="/evidence">Evidence Library <span>Coming soon</span><ArrowRight aria-hidden="true" /></Link>
+            <Link to={withPartnerContext("/evidence", location.search)}>Evidence Library <span>Coming soon</span><ArrowRight aria-hidden="true" /></Link>
           </p>
         </section>
 
@@ -93,7 +93,7 @@ export function ExplorePage() {
             {content.roles.map((role, index) => {
               const Icon = ROLE_ICONS[index]
               return (
-                <Link key={role.label} to={role.href} className="explore-role-card">
+                <Link key={role.label} to={withPartnerContext(role.href, location.search)} className="explore-role-card">
                   <Icon aria-hidden="true" className="explore-role-icon" />
                   <span>{role.label}</span>
                   <span className="explore-role-arrow"><ArrowRight aria-hidden="true" /></span>
