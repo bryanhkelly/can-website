@@ -70,6 +70,13 @@ export function AcademicsTeachersPage(){
   <section><h2 className="deep-section-title">Academic roles around the student</h2><div className="deep-role-list">{academicRoles.map(r=><article key={r.title}><h3>{r.title}</h3><p>{r.body}</p><p className="deep-status-note"><strong>Student experience:</strong> {r.experience}</p></article>)}</div></section>
   <section className="deep-two-grid"><div><h2>Network academic responsibilities</h2><List items={networkResponsibilities}/></div><div><h2>Local academic responsibilities</h2><List items={localResponsibilities}/></div></section>
   <section><h2 className="deep-section-title">Technology's proper role</h2><p className="deep-lead">Technology should help students reach teachers, access well-designed lessons, submit work, receive feedback, monitor progress, and participate in a broader academic network.</p><h3 className="deep-subhead">Technology should not</h3><List items={technologyShouldNot}/></section>
+  <section className="deep-note">
+    <p className="destination-eyebrow">Accommodations and student needs</p>
+    <h2>Support expectations should be clear before enrollment.</h2>
+    <p>
+      CAN needs a defined approach to accommodations, special-education services, and situations in which a student's needs exceed the capabilities of a particular setting. Families should understand available supports, limitations, and referral or service expectations before a student enrolls.
+    </p>
+  </section>
   <blockquote className="deep-pull">The question is never whether a student can access content. It is whether an accountable adult knows how that student is doing.</blockquote>
  </Shell>
 }
