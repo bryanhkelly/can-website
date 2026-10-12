@@ -22,7 +22,7 @@ export function SiteFooter() {
             <Link to="/privacy">Privacy</Link>
             <Link to="/accessibility">Accessibility</Link>
             <Link
-              to={withPartnerContext('/story/explore-can', location.search)}
+              to={withPartnerContext('/contact', location.search)}
               className="font-semibold text-gold-400 transition-colors hover:text-gold-500"
             >
               Start a conversation →
