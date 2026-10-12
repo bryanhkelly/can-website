@@ -154,7 +154,7 @@ const roleLink = interaction.locator('a[href="/parents"]').first()
 if (await roleLink.count()) {
   await roleLink.click()
   await interaction.waitForLoadState('networkidle')
-  await interaction.waitForTimeout(200)
+  await interaction.waitForTimeout(500)
   report.push({
     interaction: 'Explore role -> Parents scroll reset',
     pathname: new URL(interaction.url()).pathname,
