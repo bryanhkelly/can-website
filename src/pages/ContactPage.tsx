@@ -1,4 +1,5 @@
-import { FormEvent, useState } from 'react'
+import { useState } from 'react'
+import type { FormEvent } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom'
 import { CheckCircle2 } from 'lucide-react'
 import { partnerIds, withPartnerContext } from '../lib/nav'
