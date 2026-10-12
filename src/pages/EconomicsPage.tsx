@@ -30,15 +30,15 @@ export function EconomicsPage() {
           </ul>
           <div className="mt-5">
             <div className="economics-old-settings"><LocalSettingsDiagram compact /></div>
-            <p className="flex items-center gap-2 text-sm font-bold"><X aria-hidden="true" className="h-4 w-4" /> Many schools</p>
-            <p className="mt-1 text-sm text-navy-600">High cost. Inconsistent quality.<br />Hard to sustain.</p>
+            <p className="flex items-center gap-2 text-sm font-bold"><X aria-hidden="true" className="h-4 w-4" /> Standalone duplication</p>
+            <p className="mt-1 text-sm text-navy-600">{oldWay.outcome}</p>
           </div>
         </div>
 
         <ArrowRight aria-hidden="true" className="economics-arrow" />
         <div className="economics-can">
           <h3 className="text-lg font-bold">{canWay.heading}</h3>
-          <p className="mt-1 text-sm text-navy-700">Shared infrastructure. Local expression.</p>
+          <p className="mt-1 text-sm text-navy-700">{canWay.subheading}</p>
           <div className="mt-4 px-2 py-3">
             <div className="shared-platform">
               <Cloud aria-hidden="true" />
@@ -46,7 +46,7 @@ export function EconomicsPage() {
             </div>
             <LocalSettingsDiagram connected />
           </div>
-          <ul className="mt-3 flex flex-col gap-2 text-sm">{['Many communities', 'Lower cost. Higher quality.', 'Built for long-term impact.'].map(item => <li key={item} className="flex items-center gap-2"><Check aria-hidden="true" className="h-4 w-4 shrink-0" />{item}</li>)}</ul>
+          <p className="mt-3 flex items-start gap-2 text-sm leading-relaxed"><Check aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0" />{canWay.outcome}</p>
         </div>
       </div>
 
