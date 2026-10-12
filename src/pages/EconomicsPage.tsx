@@ -8,7 +8,7 @@ import { LocalSettingsDiagram } from '../components/ui/LocalSettingsDiagram'
 const FUNDING_ICONS = [Landmark, HandCoins, Users]
 
 export function EconomicsPage() {
-  const { eyebrowNumber, eyebrowLabel, kicker, h1, dek, oldWay, canWay, fundingLabel, funding, refrain, transition, details } =
+  const { eyebrowNumber, eyebrowLabel, kicker, h1, dek, oldWay, canWay, fundingLabel, funding, refrain, transition, equation, details } =
     economicsContent
 
   return (
@@ -51,6 +51,7 @@ export function EconomicsPage() {
       </div>
 
       <div className="funding-panel">
+        <p className="economics-equation">{equation}</p>
         <p className="text-xs font-bold uppercase tracking-[0.16em] text-navy-800">
           {fundingLabel}
         </p>
