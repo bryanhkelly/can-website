@@ -18,12 +18,16 @@ export function SiteFooter() {
           <p className="text-sm font-bold uppercase tracking-[0.15em] text-navy-200">
             {brandTagline}
           </p>
-          <Link
-            to={withPartnerContext('/story/explore-can', location.search)}
-            className="text-sm font-semibold text-gold-400 transition-colors hover:text-gold-500"
-          >
-            Start a conversation →
-          </Link>
+          <div className="site-footer-links">
+            <Link to="/privacy">Privacy</Link>
+            <Link to="/accessibility">Accessibility</Link>
+            <Link
+              to={withPartnerContext('/story/explore-can', location.search)}
+              className="font-semibold text-gold-400 transition-colors hover:text-gold-500"
+            >
+              Start a conversation →
+            </Link>
+          </div>
         </div>
         <p className="mt-8 text-xs text-navy-400">
           © {new Date().getFullYear()} CAN Academy. All rights reserved.
