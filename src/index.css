@@ -1146,7 +1146,7 @@ body {
 
 @media (max-width: 900px) {
   .home-hero-image {
-    inset-left: 30%;
+    left: 30%;
     width: 70%;
   }
   .home-role-grid {
