@@ -7,7 +7,7 @@ import { studentExperienceContent } from '../data/pageContent'
 const WEEK_ICONS = [MonitorPlay, Users, UserRound, Globe, Cross, ShieldCheck]
 
 export function StudentExperiencePage() {
-  const { eyebrowNumber, eyebrowLabel, kicker, h1, dek, rings, weekLabel, week, refrain, details } = studentExperienceContent
+  const { eyebrowNumber, eyebrowLabel, kicker, h1, dek, rings, weekLabel, week, refrain, transition, details } = studentExperienceContent
   return (
     <article className="story-page">
       <StoryIntro number={eyebrowNumber} label={eyebrowLabel} kicker={kicker} heading={h1} description={dek} note="Real learning. Real people. Real impact." />
@@ -38,7 +38,7 @@ export function StudentExperiencePage() {
           </ul>
         </section>
       </div>
-      <RefrainBar text={refrain} current="student-experience" />
+      <RefrainBar text={refrain} transition={transition} current="student-experience" />
       <DetailSection>
         <DetailItem label="A day in a CAN community" body={details.vignette} variant="editorial" />
         <DetailItem label="A common concern" body={details.objection} variant="clarification" />
