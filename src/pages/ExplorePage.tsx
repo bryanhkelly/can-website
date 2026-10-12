@@ -54,8 +54,8 @@ export function ExplorePage() {
       <PhotoBlock
         src="/images/08_explore_audience_roles.png"
         alt="Community members connecting with a city skyline behind them"
-        imagePosition="50% 0%"
-        imagePositionMobile="50% 0%"
+        imagePosition="50% 48%"
+        imagePositionMobile="50% 46%"
         className="explore-cta mt-6 rounded-none"
         shaded={false}
       >
