@@ -72,6 +72,23 @@ export function EconomicsPage() {
         </div>
       </div>
 
+      <section className="church-economics-section">
+        <div>
+          <p className="destination-eyebrow">For local partners</p>
+          <h2 className="editorial-heading">The economics should support the ministry, not turn the church into a landlord.</h2>
+          <p>
+            CAN's partnership philosophy starts with resources a local community may already have: trusted relationships, weekday space, local leadership, and ministry presence. The goal is to avoid asking a church or school to finance and operate an entire standalone high school before it can serve students.
+          </p>
+        </div>
+        <div className="church-economics-grid">
+          <article><strong>Use what already exists</strong><p>Existing facilities and community assets can reduce the need for large upfront real-estate investment.</p></article>
+          <article><strong>Share the expensive capabilities</strong><p>Teachers, curriculum, records, student support, technology, and operations do not have to be recreated independently at every site.</p></article>
+          <article><strong>Keep the partnership sustainable</strong><p>Local partnership economics should help offset participation costs and allow value created by the school community to support the local mission.</p></article>
+          <article><strong>Test before scaling</strong><p>Discovery and pilot stages should make the model smaller, staged, and evidence-driven before a community takes on a larger commitment.</p></article>
+        </div>
+        <p className="church-economics-note">Specific fees, funding, partner economics, and financial terms depend on the market and approved partnership agreement.</p>
+      </section>
+
       <RefrainBar text={refrain} transition={transition} current="why-it-can-work" />
 
       <DetailSection>
