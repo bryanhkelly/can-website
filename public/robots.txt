@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://can-academy.netlify.app/sitemap.xml
