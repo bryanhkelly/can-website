@@ -1,4 +1,5 @@
-// Copy transcribed from the approved CAN Academy comp set (visual + copy reference).
+// Story Pages 01-07 use the approved v12 copy-locked governance matrix.
+// Page 08 Explore and role doorways use the later approved doorway / Explore direction.
 
 export const navSlugs = [
   'stakes',
@@ -14,198 +15,186 @@ export const navSlugs = [
 export const stakesContent = {
   eyebrowNumber: '01/08',
   eyebrowLabel: 'The Stakes',
-  h1: 'Too many families have to compromise.',
-  dek: 'When a community comes together, extraordinary things happen. But today, too many families must choose between strong academics, Christian formation, affordable access, and a real sense of belonging.',
+  h1: 'Families are making educational tradeoffs they should not have to make.',
+  dek: 'For many families, the tradeoff is real: the option they want is too far away, too expensive, disconnected from their faith and culture, or too limited in courses and support.',
   items: [
-    {
-      heading: 'Too far',
-      body: 'Great schools are often not nearby.',
-    },
-    {
-      heading: 'Too expensive',
-      body: 'High-quality private education can be out of reach.',
-    },
-    {
-      heading: 'Too disconnected',
-      body: "Many schools don't reflect your faith, culture, and story.",
-    },
-    {
-      heading: 'Too limited in breadth',
-      body: "Smaller schools often can't offer the full range of courses and opportunities.",
-    },
+    { heading: 'Too far', body: 'The Christian school a family wants may be an hour away, or may not exist nearby at all.' },
+    { heading: 'Too expensive', body: 'Private-school tuition can put Christian education out of reach for families who would choose it if they could.' },
+    { heading: 'Too disconnected from their faith, culture, and story', body: 'A public school can serve a student well and still not provide the Christian formation a family is seeking. A student can succeed academically and still see too little of their faith, culture, history, or community reflected in what they study.' },
+    { heading: 'Too limited in breadth', body: 'Small schools, co-ops, and homeschool communities may not be able to offer every advanced course, specialist teacher, activity, counseling resource, or support option a teenager wants.' },
   ],
-  refrain: "Brighter futures shouldn't require compromise.",
+  refrain: 'Distance. Cost. Relevance. Breadth. Families should not have to solve one problem by accepting another.',
+  transition: 'What if families did not have to choose among those tradeoffs?',
   details: {
-    example:
-      'A family may have a nearby public school with strong programs but not the Christian formation they are seeking, a Christian school that requires a long commute or tuition beyond reach, or a smaller alternative that reflects its values but cannot offer the courses and support a teenager needs.',
-    objection:
-      'This is not an argument that every existing school has failed. It is an argument that families should have more ways to combine academics, faith, culture, community, opportunity, and affordability.',
+    example: 'A family may have a nearby public school with strong programs but not the Christian formation the family is seeking, a Christian school that requires a long commute or tuition beyond reach, or a smaller alternative that reflects its values but cannot offer the courses and support a teenager needs.',
+    objection: 'This is not an argument that every existing school has failed. It is an argument that families should have more ways to combine academics, faith, culture, community, opportunity, and affordability.',
   },
 }
 
 export const possibilityContent = {
   eyebrowNumber: '02/08',
   eyebrowLabel: 'The Possibility',
-  kicker: "What if families didn't have to choose?",
-  h1: 'A stronger way forward.',
-  dek: 'CAN Academy brings together trusted communities, rigorous academics, and flexible local models, so every child can thrive without compromise.',
+  kicker: '',
+  h1: 'What if Christian education could happen closer to home?',
+  dek: 'Families should be able to choose an education that offers rigorous academics, Christian formation, meaningful local relationships, and access to a much bigger world without sacrificing one for another.',
   photoCaption: 'Together greater futures',
   items: [
-    { heading: 'Rigorous Academics', body: 'Real-world readiness' },
-    { heading: 'Christian Formation', body: 'Faith integrated across learning' },
-    { heading: 'Meaningful Community', body: 'Belonging and relationships' },
-    { heading: 'Greater Access', body: 'High quality at a sustainable cost' },
+    { heading: 'Closer to home', body: 'Students should be able to learn close to home, with live sessions and local community built into the week.' },
+    { heading: 'More choice for families', body: 'Across the country, more states are creating or expanding programs that allow eligible families to direct education funding toward approved learning options. Funding alone does not create a great education. Families still need strong choices.' },
+    { heading: 'Equipping the people families trust', body: 'CAN equips families and the churches, schools, educators, and communities they trust to make the most of that growing choice.' },
+    { heading: 'A bigger world while staying rooted locally', body: 'Students can remain rooted locally while gaining access to teachers, courses, activities, and peers across a much larger network.' },
   ],
-  refrain: 'A new model. A stronger generation.',
+  refrain: 'Choice matters most when families have strong options.',
+  transition: 'But access and choice only matter if the education itself is worth choosing.',
   details: {
-    policy:
-      'Across the country, more states are creating or expanding programs that allow eligible families to direct education funding toward approved learning options. Funding alone does not create a great education. Families still need strong choices.',
-    example:
-      'A family may be able to use an available scholarship to join a CAN Community close to home while accessing teachers, courses, and support from the wider CAN network.',
-    objection:
-      'CAN is not one perfect format for every family. It is another path that families and trusted communities can use in ways that fit their circumstances.',
+    policy: 'Across the country, more states are creating or expanding programs that allow eligible families to direct education funding toward approved learning options. Funding alone does not create a great education. Families still need strong choices.',
+    example: 'A family may be able to use an available scholarship to join a CAN Community close to home while accessing teachers, courses, and support from the wider CAN network.',
+    objection: 'CAN is not one perfect format for every family. It is another path that families and trusted communities can use in ways that fit their circumstances.',
   },
 }
 
 export const curriculumContent = {
   eyebrowNumber: '03/08',
   eyebrowLabel: 'The Curriculum',
-  kicker: 'Academics with purpose',
-  h1: 'Rigorous learning. Real life impact.',
-  dek: 'CAN Academy delivers a high-quality, Christ-centered education grounded in proven standards and brought to life through engaging, relevant, and culturally responsive content.',
+  kicker: '',
+  h1: 'Rigorous academics. Intentional design.',
+  dek: 'CAN combines standards-aligned academics with intentionally chosen texts, examples, projects, and perspectives that can reflect faith, culture, tradition, and community.',
   layers: [
-    { heading: 'Local Distinctives', body: 'Community, culture, and unique offerings' },
-    { heading: 'Christian Worldview', body: 'Faith integrated across subjects' },
-    { heading: 'High-Quality Content', body: 'Engaging, diverse, and relevant' },
-    { heading: 'Proven Standards', body: 'Built for real-world readiness' },
+    { heading: 'Meet the standards', body: 'CAN courses teach the knowledge and skills students are expected to master: analysis, writing, research, mathematics, science, history, and more.' },
+    { heading: 'Shape the experience', body: 'The texts, examples, projects, case studies, and questions students encounter can be chosen intentionally while still meeting academic requirements.' },
+    { heading: 'Built with educators', body: 'Licensed educators lead academic design. Experienced paraeducators and local church leaders contribute practical, cultural, and community-grounded insight so the learning experience remains both academically coherent and locally meaningful.' },
+    { heading: 'Designed in layers', body: 'A shared academic core can be shaped through Christian worldview, cultural and community context, and local or denominational distinctives chosen with the local partner. That does not require rebuilding every course from scratch.' },
   ],
   example: {
     label: 'Real Example',
     title: 'English 10',
     bookTitle: 'Humanity & Hope',
-    checklist: ['Diverse voices', 'Meaningful discussion', 'Real-world application', 'Faith-informed perspective'],
+    checklist: ['Literary analysis', 'Argument & research', 'Diverse voices', 'Faith-informed perspective'],
   },
-  refrain: 'More than a class. A foundation for life.',
+  refrain: 'Standards define what students need to learn. They do not have to dictate every voice, text, example, or question used to teach it.',
+  transition: 'An education this intentional needs a school system built to deliver it across many contexts.',
   details: {
-    credibility:
-      "CAN's academic leadership combines years of classroom experience with advanced academic training, while licensed educators lead course design with input from experienced paraeducators and local church leaders.",
-    example:
-      "English 10 can still teach literary analysis, argument, research, composition, and rhetoric while intentionally including Christian authors, Black authors, global voices, texts reflecting students' cultural traditions, and community-connected assignments.",
-    objection:
-      'Academic rigor does not disappear when curriculum becomes more intentional. The standards remain; CAN makes deliberate choices about the voices, examples, projects, and perspectives used to teach them.',
+    credibility: "CAN's academic leadership combines years of classroom experience with advanced academic training, while licensed educators lead course design with input from experienced paraeducators and local church leaders.",
+    example: "English 10 can still teach literary analysis, argument, research, composition, and rhetoric while intentionally including Christian authors, Black authors, global voices, texts reflecting students' cultural traditions, and community-connected assignments.",
+    objection: 'Academic rigor does not disappear when curriculum becomes more intentional. The standards remain; CAN makes deliberate choices about the voices, examples, projects, and perspectives used to teach them.',
   },
 }
 
 export const platformContent = {
   eyebrowNumber: '04/08',
   eyebrowLabel: 'The Platform',
-  kicker: 'One system. Many places.',
-  h1: 'A powerful platform for local schools.',
-  dek: 'The CAN platform provides everything needed to launch and operate a high-quality school, from academics to operations, so local communities can focus on what they do best: people.',
+  kicker: '',
+  h1: 'One school system across many local communities.',
+  dek: 'CAN connects learning, student support, local-site coordination, and school operations in one system designed to work across many different local settings.',
   osLabel: 'CAN OS',
   osWelcome: 'Welcome. Building brighter futures together.',
   layers: [
-    { heading: 'Learning & Curriculum', body: 'Courses, content, assessment' },
-    { heading: 'Student Support', body: 'Advising, mentoring, tools' },
-    { heading: 'Local Coordination', body: 'Scheduling, community, partners' },
-    { heading: 'School Operations', body: 'Enrollment, records, compliance' },
+    { heading: 'Learning', body: 'Curriculum, instruction, assignments, assessment, and teacher workflows operate inside the same connected academic environment.' },
+    { heading: 'Student support', body: 'Academic Coaches, Counselors, progress data, interventions, communication, and student services can work from the same picture of each student.' },
+    { heading: 'Local sites and school operations', body: 'Attendance, room facilitation, local schedules, enrollment, records, funding, compliance, reporting, and communication work through one coordinated system.' },
+    { heading: 'Many local contexts', body: 'Church-hosted community. K-8 school adding high school. Homeschool / co-op. Small private school.' },
   ],
   communityTypes: ['Churches', 'Homes / Homeschools', 'Co-ops', 'K-8 Schools', 'Small Private Schools'],
-  refrain: 'Different communities. One trusted system.',
+  refrain: 'One connected system. Many local contexts.',
+  transition: 'The platform can be shared. The community still has to be local.',
   details: {
-    credibility:
-      "CAN's technology is led by a former Microsoft senior leader with enterprise platform experience, helping build CAN as one connected school rather than a collection of disconnected tools.",
-    example:
-      'A CAN Teacher can post an assignment, a student can complete it from a church-hosted site, an Academic Coach can see the same progress data, and the local Site Leader can manage attendance through the same system.',
-    objection:
-      'An LMS manages coursework. CAN also connects the people, support, records, and local operations required for one school to work across many communities.',
+    credibility: "CAN's technology is led by a former Microsoft senior leader with enterprise platform experience, helping build CAN as one connected school rather than a collection of disconnected tools.",
+    example: 'A CAN Teacher can post an assignment, a student can complete it from a church-hosted site, an Academic Coach can see the same progress data, and the local Site Leader can manage attendance through the same system.',
+    objection: 'An LMS manages coursework. CAN also connects the people, support, records, and local operations required for one school to work across many communities.',
   },
 }
 
 export const rootedLocallyContent = {
   eyebrowNumber: '05/08',
   eyebrowLabel: 'Rooted Locally',
-  kicker: 'Built together. For what matters.',
-  h1: 'Your community. Your school.',
-  dek: 'Every CAN Academy is uniquely local, reflecting the people, values, and aspirations of the community it serves, with the strength of a shared platform behind it.',
+  kicker: '',
+  h1: 'The school system can be shared. The community cannot be.',
+  dek: 'CAN starts with communities that already exist and equips them with the school system they need to serve students well.',
   columns: [
     {
-      heading: 'Community Brings',
+      heading: 'What communities bring',
       accent: 'green',
+      summary: 'Families, trusted leaders, mentors, spiritual community, facilities, volunteers, service opportunities, culture, and local credibility often already exist.',
       items: ['Local leadership', 'Facilities and support', 'Community relationships', 'Unique opportunities'],
     },
     {
-      heading: 'CAN Brings',
+      heading: 'What CAN brings',
       accent: 'navy',
-      items: ['Proven academics', 'Trained teachers', 'Student support systems', 'Operations and tools'],
+      summary: 'CAN brings the curriculum, teachers, student support, and school operations that are difficult for every local community to recreate on its own.',
+      items: ['Curriculum', 'Teachers', 'Student support', 'School operations'],
     },
     {
-      heading: 'What Stays Local',
+      heading: 'What stays local',
       accent: 'gold',
-      items: ['Your culture', 'Your distinctives', 'Your students', 'Your mission'],
+      summary: 'Worship culture, mentoring, spiritual formation, service, local leadership, traditions, and community rhythms remain rooted in the local partner.',
+      items: ['Worship and ministry culture', 'Mentoring and formation', 'Local leadership', 'Traditions and rhythms'],
     },
   ],
-  refrain: 'Same high quality. A stronger tomorrow.',
+  refrain: 'One academic foundation. Distinct local communities.',
+  transition: 'What does that combination actually feel like for a student?',
   details: {
-    localFormVaries:
-      'CAN may take different local forms, including a church, an existing school, a co-op, or another trusted community, while operating through the same shared school foundation.',
-    objection:
-      'Shared academics and systems do not require shared worship, ministry culture, traditions, or local identity.',
+    localFormVaries: 'CAN may take different local forms, including a church, an existing school, a co-op, or another trusted community, while operating through the same shared school foundation.',
+    objection: 'Shared academics and systems do not require shared worship, ministry culture, traditions, or local identity.',
   },
 }
 
 export const studentExperienceContent = {
   eyebrowNumber: '06/08',
   eyebrowLabel: 'The Student Experience',
-  kicker: 'Known. Connected. Prepared.',
-  h1: 'A place to belong. A future to build.',
-  dek: 'At CAN Academy, students receive a high-quality education in a supportive, Christ-centered environment, with real relationships, real opportunities, and real preparation for life.',
+  kicker: '',
+  h1: 'Small enough to know every student. Large enough to give them options.',
+  dek: 'Students belong to a local community while learning from CAN Teachers and gaining access to a much larger network of students, specialists, activities, and opportunities.',
   rings: [
-    { heading: 'Expanded Nationally', body: 'A larger network for college, career, and life' },
-    { heading: 'Connected Regionally', body: 'Access to expanded opportunities' },
-    { heading: 'Known Locally', body: 'A close-knit community' },
+    { heading: 'Expanded Nationally', body: 'A larger network of students, specialists, activities, and opportunities' },
+    { heading: 'Connected Regionally', body: 'Regional activities and relationships beyond one local site' },
+    { heading: 'Known Locally', body: 'A close-knit community where students are known, noticed, and supported' },
   ],
-  weekLabel: 'A typical week might include',
-  week: ['Live Classes', 'Study Groups', 'Mentorship', 'Activities & Clubs', 'Worship', 'Service'],
-  refrain: 'Confident learners. Compassionate leaders. Stronger communities.',
+  beats: [
+    { heading: 'Academic expertise', body: 'CAN Teachers lead academic instruction and bring subject expertise that each local site does not have to staff on its own.' },
+    { heading: 'Local relationships', body: 'A Room Facilitator, Site Leader / Director, Small Group Leader, mentors, and local peers create the local relationships that help ensure a student is known, noticed, and supported.' },
+    { heading: 'A wider world', body: 'Students should be able to stay rooted in a local community while reaching far beyond it through regional activities and the wider CAN network.' },
+    { heading: 'A CAN week', body: 'A CAN week can include more than lessons: live instruction, conversation, collaboration, mentoring, activities, worship, and service.' },
+  ],
+  weekLabel: 'A CAN week',
+  week: ['Live instruction', 'Conversation', 'Collaboration', 'Mentoring', 'Activities', 'Worship & service'],
+  refrain: 'No student should become invisible.',
+  transition: 'Can a model like this also work economically?',
   details: {
-    vignette:
-      'On a live-session day, a student might begin with a CAN Teacher, work alongside local peers with a Room Facilitator nearby, meet with an Academic Coach when a course gets difficult, and later connect with a Small Group Leader or Counselor who knows the student beyond the gradebook.',
+    vignette: 'On a live-session day, a student might begin with a CAN Teacher, work alongside local peers with a Room Facilitator nearby, meet with an Academic Coach when a course gets difficult, and later connect with a Small Group Leader or Counselor who knows the student beyond the gradebook.',
     objection: 'A small local school should not mean a small student world.',
   },
 }
 
 export const economicsContent = {
   eyebrowNumber: '07/08',
-  eyebrowLabel: 'The Economics',
-  kicker: 'Greater impact. Smarter use of resources.',
-  h1: 'High quality, real value.',
-  dek: 'By sharing a common platform, CAN Academy helps communities deliver exceptional education at a lower cost, without compromising quality.',
+  eyebrowLabel: 'Why It Can Work',
+  kicker: '',
+  h1: 'A smaller local school should not have to carry the cost of an entire school system.',
+  dek: 'A standalone school has to build and support many academic, administrative, and student-service functions on its own. CAN shares more of those capabilities across a larger network.',
   oldWay: {
-    heading: 'The Old Way',
-    subheading: 'Each school duplicates everything',
-    items: ['Curriculum', 'Teachers', 'Technology', 'Student Support', 'Administration', 'Compliance'],
-    outcome: 'Many schools. High cost. Inconsistent quality. Hard to sustain.',
+    heading: 'A standalone school',
+    subheading: 'Carries the full system on its own',
+    items: ['Specialized teachers', 'Curriculum', 'Academic systems', 'Technology', 'Counseling and support', 'Records and school services'],
+    outcome: 'Many schools recreate the same capabilities separately.',
   },
   canWay: {
-    heading: 'The CAN Way',
-    subheading: 'CAN Academy Shared Platform',
-    outcome: 'Many communities. Lower cost. Higher quality. Built for long-term impact.',
+    heading: 'Shared teachers, systems, and support',
+    subheading: 'CAN shares more capacity across the network',
+    outcome: 'Local communities can focus more of their resources on students and relationships.',
   },
-  fundingLabel: 'Funding can make it possible',
+  fundingLabel: 'The equation',
   funding: [
-    { heading: 'Choice programs', body: 'ESAs, scholarships, and more' },
-    { heading: 'Grants & partnerships', body: 'By state and organization' },
-    { heading: 'Community investment', body: 'Local support and goodwill' },
+    { heading: 'Shared teachers, systems, and support', body: 'Specialized teachers, curriculum, academic systems, technology, counseling, records, and school services can serve students across multiple locations.' },
+    { heading: 'Use what is already local', body: 'CAN builds on facilities and community assets that already exist close to families instead of recreating them at every location.' },
+    { heading: 'Available education funding', body: 'Where scholarships and other education-choice programs are available, CAN works to reduce or eliminate out-of-pocket tuition for eligible families wherever possible.' },
   ],
-  refrain: 'A stronger return, for students, for communities, for generations.',
+  refrain: 'Share more. Rebuild less.',
+  transition: 'Now you have enough of the model to start testing it.',
+  equation: 'Available education funding + local spaces and community assets + shared teachers, systems, and support = a more accessible path to Christian education.',
   details: {
-    example:
-      'Instead of each community separately building curriculum, hiring every specialist, buying every system, and recreating every administrative function, CAN shares more of that capacity across the network.',
-    objection:
-      'Sharing does not make costs disappear. It changes how much each local community has to recreate on its own.',
-    disclaimer:
-      "CAN's objective is to reduce or eliminate out-of-pocket tuition for qualifying families wherever possible. Eligibility, funding levels, fees, transportation, and local operating costs vary by market.",
+    example: 'Instead of each community separately building curriculum, hiring every specialist, buying every system, and recreating every administrative function, CAN shares more of that capacity across the network.',
+    objection: 'Sharing does not make costs disappear. It changes how much each local community has to recreate on its own.',
+    disclaimer: "CAN's objective is to reduce or eliminate out-of-pocket tuition for qualifying families wherever possible. Eligibility, funding levels, fees, transportation, and local operating costs vary by market.",
   },
 }
 
@@ -251,7 +240,7 @@ export const roleDoorways = {
     audience: 'pastor',
     image: '/images/05_rooted_locally_community.png',
     imageAlt: 'Students and adults learning together in a church community',
-    visualVariant: 'pastor',
+    imagePosition: '52% 46%',\n    imagePositionMobile: '50% 44%',\n    visualVariant: 'pastor',
   },
   parents: {
     eyebrow: 'For Parents',
@@ -268,7 +257,7 @@ export const roleDoorways = {
     audience: 'parent',
     image: '/images/06_student_experience_portrait.png',
     imageAlt: 'A student looking ahead with confidence',
-    visualVariant: 'parent',
+    imagePosition: '48% 42%',\n    imagePositionMobile: '48% 38%',\n    visualVariant: 'parent',
   },
   christianSchools: {
     eyebrow: 'For Christian School Leaders',
@@ -284,7 +273,7 @@ export const roleDoorways = {
     audience: 'school-leader',
     image: '/images/04_platform_local_campus.png',
     imageAlt: 'Students outside a local school campus',
-    visualVariant: 'school',
+    imagePosition: '72% 46%',\n    imagePositionMobile: '68% 44%',\n    visualVariant: 'school',
   },
   homeschool: {
     eyebrow: 'For Homeschool Families',
@@ -300,7 +289,7 @@ export const roleDoorways = {
     audience: 'homeschool',
     image: '/images/03_curriculum_student_study.png',
     imageAlt: 'A student reading and studying',
-    visualVariant: 'homeschool',
+    imagePosition: '44% 44%',\n    imagePositionMobile: '42% 40%',\n    visualVariant: 'homeschool',
   },
   denominations: {
     eyebrow: 'For Denominations & Church Networks',
@@ -314,9 +303,9 @@ export const roleDoorways = {
       'CAN is designed to help churches do more together without erasing what should remain local.',
     secondaryCta: 'Talk with us about your church network',
     audience: 'denomination',
-    image: '/images/community-network.png',
+    image: '/images/04_platform_local_campus.png',
     imageAlt: 'Church and community leaders sharing a conversation outdoors',
-    visualVariant: 'denomination',
+    imagePosition: '74% 46%',\n    imagePositionMobile: '68% 44%',\n    visualVariant: 'denomination',
   },
 } as const
 
