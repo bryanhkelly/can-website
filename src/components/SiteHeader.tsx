@@ -5,7 +5,7 @@ import { BrandMark } from './ui/BrandMark'
 
 export function SiteHeader() {
   const location = useLocation()
-  const labels = ['Stakes', 'Possibility', 'Curriculum', 'Platform', 'Rooted Locally', 'Student Experience', 'Economics', 'Explore CAN']
+  const labels = ['Stakes', 'Possibility', 'Curriculum', 'Platform', 'Rooted Locally', 'Student Experience', 'Why It Can Work', 'Explore CAN']
   const compactLabels = ['Stakes', 'Possibility', 'Curriculum', 'Platform', 'Local', 'Student', 'Economics', 'Explore']
 
   return (
