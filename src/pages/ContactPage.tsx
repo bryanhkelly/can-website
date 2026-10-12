@@ -38,6 +38,7 @@ const TOPIC_LABELS: Record<string, string> = {
   terms: 'Website terms',
   accountability: 'Trust & Accountability',
   locations: 'Locations & Launch',
+  difference: 'How CAN Is Different',
 }
 
 export function ContactPage() {
