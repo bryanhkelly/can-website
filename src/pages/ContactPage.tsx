@@ -28,6 +28,8 @@ const TOPIC_LABELS: Record<string, string> = {
   privacy: 'Privacy',
   accessibility: 'Accessibility',
   terms: 'Website terms',
+  accountability: 'Trust & Accountability',
+  locations: 'Locations & Launch',
 }
 
 export function ContactPage() {
