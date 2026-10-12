@@ -98,11 +98,13 @@ function RouteScrollManager() {
     reset()
     requestAnimationFrame(reset)
     const immediate = window.setTimeout(reset, 0)
-    const settled = window.setTimeout(reset, 120)
+    const settled = window.setTimeout(reset, 160)
+    const late = window.setTimeout(reset, 320)
 
     return () => {
       window.clearTimeout(immediate)
       window.clearTimeout(settled)
+      window.clearTimeout(late)
     }
   }, [location.pathname, location.hash])
 
