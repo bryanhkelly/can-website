@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { AcademicsDeepLinks } from './AcademicsDeepDivePages'
 import { PartnershipDeepLinks, PartnershipPartnerTypes } from './PartnershipDeepDivePages'
+import { CurrentLaunchSummary, LaunchDeepLinks } from './LaunchDeepDivePages'
 import type { PartnerId } from '../lib/nav'
 
 const ACADEMIC_COMPONENTS = [
@@ -265,6 +266,10 @@ export function StartCommunityPage() {
           <h2>Every community is different</h2>
           <p>Timing, readiness, and specific requirements depend on the community and are worked through together.</p>
         </section>
+
+        <LaunchDeepLinks />
+        <CurrentLaunchSummary />
+
         <DestinationFooter>
           <Link to="/contact?topic=launch-approach" className="destination-primary-link">Start a conversation <ArrowRight aria-hidden="true" /></Link>
         </DestinationFooter>
