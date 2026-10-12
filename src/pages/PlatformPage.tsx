@@ -36,7 +36,7 @@ export function PlatformPage() {
               {osLabel}
               </span>
             </div>
-            <span className="rounded-full bg-teal-300/15 px-2.5 py-1 text-[0.6rem] font-bold uppercase tracking-wider text-teal-200">Live</span>
+            <span className="rounded-full bg-teal-300/15 px-2.5 py-1 text-[0.6rem] font-bold uppercase tracking-wider text-teal-200">Illustrative interface</span>
           </div>
           <div className="mt-4 grid min-h-64 grid-cols-[3rem_minmax(0,1fr)] overflow-hidden rounded-xl border border-white/10 bg-white text-navy-950 sm:grid-cols-[5rem_minmax(0,1fr)]">
             <div className="flex flex-col items-center gap-4 bg-navy-900 py-5 text-white/65">
