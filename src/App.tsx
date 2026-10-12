@@ -9,6 +9,8 @@ import { StudentExperiencePage } from './pages/StudentExperiencePage'
 import { EconomicsPage } from './pages/EconomicsPage'
 import { ExplorePage } from './pages/ExplorePage'
 import { ContactPage } from './pages/ContactPage'
+import { RoleDoorwayPage } from './components/RoleDoorwayPage'
+import { roleDoorways } from './data/pageContent'
 
 function App() {
   return (
@@ -23,6 +25,11 @@ function App() {
         <Route path="/story/student-experience" element={<StudentExperiencePage />} />
         <Route path="/story/why-it-can-work" element={<EconomicsPage />} />
         <Route path="/story/explore-can" element={<ExplorePage />} />
+        <Route path="/parents" element={<RoleDoorwayPage page={roleDoorways.parents} />} />
+        <Route path="/pastors" element={<RoleDoorwayPage page={roleDoorways.pastors} />} />
+        <Route path="/christian-schools" element={<RoleDoorwayPage page={roleDoorways.christianSchools} />} />
+        <Route path="/homeschool" element={<RoleDoorwayPage page={roleDoorways.homeschool} />} />
+        <Route path="/denominations" element={<RoleDoorwayPage page={roleDoorways.denominations} />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<Navigate to="/story/stakes" replace />} />
       </Routes>
@@ -31,4 +38,3 @@ function App() {
 }
 
 export default App
-

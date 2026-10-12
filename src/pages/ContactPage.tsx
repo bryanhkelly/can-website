@@ -1,6 +1,21 @@
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
+
+const AUDIENCE_LABELS: Record<string, string> = {
+  parent: 'Parents',
+  pastor: 'Pastors and church leaders',
+  'school-leader': 'Christian school leaders',
+  homeschool: 'Homeschool families',
+  denomination: 'Denominations and church networks',
+}
 
 export function ContactPage() {
+  const [searchParams] = useSearchParams()
+  const audience = searchParams.get('audience')
+  const audienceLabel = audience ? AUDIENCE_LABELS[audience] : undefined
+  const subject = audienceLabel
+    ? `CAN Academy conversation: ${audienceLabel}`
+    : 'CAN Academy conversation'
+
   return (
     <article className="mx-auto max-w-2xl px-6 py-20 text-center">
       <p className="text-sm font-bold uppercase tracking-widest text-navy-500">Start a conversation</p>
@@ -8,8 +23,13 @@ export function ContactPage() {
       <p className="mt-5 text-lg leading-relaxed text-navy-700">
         We will start there. Reach out and a member of the CAN Academy team will follow up with you.
       </p>
+      {audienceLabel && (
+        <p className="mt-4 text-sm font-semibold text-navy-600">
+          Conversation topic: {audienceLabel}
+        </p>
+      )}
       <a
-        href="mailto:hello@canacademy.org"
+        href={`mailto:hello@canacademy.org?subject=${encodeURIComponent(subject)}`}
         className="mt-8 inline-flex items-center rounded-md bg-gold-500 px-6 py-3 text-base font-bold text-navy-950 shadow-sm transition-colors hover:bg-gold-600"
       >
         Email the CAN Academy team

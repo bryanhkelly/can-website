@@ -3,7 +3,8 @@ import { brandTagline, navSlugs } from '../data/pageContent'
 import { BrandMark } from './ui/BrandMark'
 
 export function SiteHeader() {
-  const labels = ['Stakes', 'Possibility', 'Curriculum', 'Platform', 'Local', 'Student', 'Economics', 'Explore']
+  const labels = ['Stakes', 'Possibility', 'Curriculum', 'Platform', 'Rooted Locally', 'Student Experience', 'Economics', 'Explore CAN']
+  const compactLabels = ['Stakes', 'Possibility', 'Curriculum', 'Platform', 'Local', 'Student', 'Economics', 'Explore']
 
   return (
     <header className="sticky top-0 z-30 border-b border-navy-100/80 bg-cream-50/95 backdrop-blur">
@@ -36,7 +37,8 @@ export function SiteHeader() {
             }
           >
             <span className="text-[0.6rem] opacity-65">{String(i + 1).padStart(2, '0')}</span>
-            <span>{labels[i]}</span>
+            <span className="hidden sm:inline">{labels[i]}</span>
+            <span className="sm:hidden">{compactLabels[i]}</span>
           </NavLink>
         ))}
       </nav>

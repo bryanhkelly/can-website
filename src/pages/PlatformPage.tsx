@@ -1,12 +1,11 @@
 import { StoryIntro } from '../components/ui/StoryIntro'
 import { RefrainBar } from '../components/ui/RefrainBar'
 import { DetailSection, DetailItem } from '../components/ui/DetailSection'
-import { BookOpen, Users, MapPinned, ClipboardList, Church, Home, Building2, School } from 'lucide-react'
+import { BookOpen, Users, MapPinned, ClipboardList } from 'lucide-react'
 import { platformContent } from '../data/pageContent'
+import { LocalSettingsDiagram } from '../components/ui/LocalSettingsDiagram'
 
 const LAYER_ICONS = [BookOpen, Users, MapPinned, ClipboardList]
-const COMMUNITY_ICONS = [Church, Home, Users, School, Building2]
-
 export function PlatformPage() {
   const {
     eyebrowNumber,
@@ -17,7 +16,6 @@ export function PlatformPage() {
     osLabel,
     osWelcome,
     layers,
-    communityTypes,
     refrain,
     details,
   } = platformContent
@@ -79,28 +77,15 @@ export function PlatformPage() {
       </div>
 
       <section className="platform-communities" aria-label="One platform serving many local communities">
-        <svg className="platform-connectors" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M280 0 L280 25 M100 65 L100 25 L900 25 L900 65 M300 25 L300 65 M500 25 L500 65 M700 25 L700 65" fill="none" stroke="currentColor" strokeWidth="2" />
-        </svg>
-        <div className="platform-settings">
-        {communityTypes.map((type, i) => {
-          const Icon = COMMUNITY_ICONS[i]
-          return (
-            <div key={type} className="flex flex-col items-center gap-2 text-center">
-              <span className="local-setting"><Icon aria-hidden="true" className="h-12 w-12 sm:h-16 sm:w-16" strokeWidth={1.25} /></span>
-              <p className="max-w-28 text-xs font-semibold text-navy-700">{type}</p>
-            </div>
-          )
-        })}
-        </div>
+        <LocalSettingsDiagram connected />
       </section>
 
       <RefrainBar text={refrain} current="platform" />
 
       <DetailSection>
-        <DetailItem label="Technology leadership" body={details.credibility} />
-        <DetailItem label="For example" body={details.example} />
-        <DetailItem label="A common concern" body={details.objection} />
+        <DetailItem label="Technology leadership" body={details.credibility} variant="proof" />
+        <DetailItem label="For example" body={details.example} variant="editorial" />
+        <DetailItem label="A common concern" body={details.objection} variant="clarification" />
       </DetailSection>
     </article>
   )

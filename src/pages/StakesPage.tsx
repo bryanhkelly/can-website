@@ -1,7 +1,7 @@
-import { MapPin, DollarSign, Cross, BookOpen, ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { MapPin, DollarSign, Cross, BookOpen } from 'lucide-react'
 import { PageEyebrow } from '../components/ui/PageEyebrow'
 import { DetailSection, DetailItem } from '../components/ui/DetailSection'
+import { NextStoryLink } from '../components/ui/RefrainBar'
 import { stakesContent } from '../data/pageContent'
 
 const ICONS = [MapPin, DollarSign, Cross, BookOpen]
@@ -32,15 +32,15 @@ export function StakesPage() {
             })}
             <div className="stakes-refrain">
               <p>{refrain}</p>
-              <Link to="/story/possibility" aria-label="Continue to The Possibility" className="story-next"><ArrowRight aria-hidden="true" /></Link>
+              <NextStoryLink current="stakes" dark />
             </div>
           </div>
         </div>
       </section>
       <div className="story-content pb-10">
         <DetailSection>
-          <DetailItem label="A fuller picture" body={details.example} />
-          <DetailItem label="A common concern" body={details.objection} />
+          <DetailItem label="A fuller picture" body={details.example} variant="editorial" />
+          <DetailItem label="A common concern" body={details.objection} variant="clarification" />
         </DetailSection>
       </div>
     </article>

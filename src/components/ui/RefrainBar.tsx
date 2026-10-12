@@ -1,7 +1,49 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { getNextSlug } from '../../lib/nav'
-import type { navSlugs } from '../../data/pageContent'
+import { navSlugs } from '../../data/pageContent'
+
+const PAGE_LABELS: Record<(typeof navSlugs)[number], string> = {
+  stakes: 'The Stakes',
+  possibility: 'The Possibility',
+  curriculum: 'The Curriculum',
+  platform: 'The Platform',
+  'rooted-locally': 'Rooted Locally',
+  'student-experience': 'The Student Experience',
+  'why-it-can-work': 'The Economics',
+  'explore-can': 'Explore CAN',
+}
+
+function getStoryPath(slug: (typeof navSlugs)[number]) {
+  return slug === 'explore-can' ? '/story/explore-can' : `/story/${slug}`
+}
+
+export function NextStoryLink({
+  current,
+  dark = false,
+}: {
+  current: (typeof navSlugs)[number]
+  dark?: boolean
+}) {
+  const next = getNextSlug(current)
+  if (!next) return null
+
+  const nextIndex = navSlugs.indexOf(next) + 1
+  return (
+    <Link
+      to={getStoryPath(next)}
+      className={`next-story-link${dark ? ' next-story-link-dark' : ''}`}
+    >
+      <span className="next-story-label">
+        <span>NEXT</span>
+        <span>{String(nextIndex).padStart(2, '0')} / {PAGE_LABELS[next]}</span>
+      </span>
+      <span className="next-story-arrow" aria-hidden="true">
+        <ArrowRight className="h-5 w-5" strokeWidth={2.5} />
+      </span>
+    </Link>
+  )
+}
 
 export function RefrainBar({
   text,
@@ -12,8 +54,6 @@ export function RefrainBar({
   current: (typeof navSlugs)[number]
   dark?: boolean
 }) {
-  const next = getNextSlug(current)
-
   return (
     <div
       className={`mt-8 flex items-center justify-between gap-5 px-1 py-5 ${
@@ -21,15 +61,7 @@ export function RefrainBar({
       }`}
     >
       <p className="max-w-3xl font-serif text-lg leading-snug sm:text-xl">{text}</p>
-      {next && (
-        <Link
-          to={next === 'explore-can' ? '/story/explore-can' : `/story/${next}`}
-          aria-label="Next page"
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-navy-900 text-white transition-colors hover:bg-navy-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-600"
-        >
-          <ArrowRight className="h-5 w-5" strokeWidth={2.5} />
-        </Link>
-      )}
+      <NextStoryLink current={current} dark={dark} />
     </div>
   )
 }

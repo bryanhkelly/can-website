@@ -67,9 +67,9 @@ export function CurriculumPage() {
       <RefrainBar text={refrain} current="curriculum" />
 
       <DetailSection>
-        <DetailItem label="Academic leadership" body={details.credibility} />
-        <DetailItem label="The full example" body={details.example} />
-        <DetailItem label="A common concern" body={details.objection} />
+        <DetailItem label="Academic leadership" body={details.credibility} variant="proof" />
+        <DetailItem label="The full example" body={details.example} variant="editorial" />
+        <DetailItem label="A common concern" body={details.objection} variant="clarification" />
       </DetailSection>
       </div>
     </article>

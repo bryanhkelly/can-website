@@ -25,29 +25,23 @@ export function ExplorePage() {
             note={script}
           />
 
-          <div className="audience-cards">
-            {audiences.map((audience, i) => {
-              return (
-                <div
-                  key={audience.heading}
-                  className="audience-card"
-                >
-                  <div className="audience-photo">
-                    <img
-                      src="/images/08_explore_audience_roles.png"
-                      alt={['A community member smiling', 'A community leader in conversation', 'A woman collaborating with her community', 'A man participating in a community conversation'][i]}
-                      style={{ transform: `translateX(-${i * 25}%)` }}
-                      loading="eager"
-                    />
-                  </div>
-                  <div className="px-3 py-4">
+          <nav className="audience-cards" aria-label="Explore CAN by audience">
+            {audiences.map((audience) => (
+              <Link
+                key={audience.heading}
+                to={audience.href}
+                className="audience-card"
+              >
+                <div className="audience-photo">
+                  <img src={audience.image} alt={audience.alt} loading="lazy" />
+                </div>
+                <div className="px-3 py-4">
                   <h3 className="text-base font-bold text-navy-900">{audience.heading}</h3>
                   <p className="mt-1 text-sm leading-relaxed text-navy-600">{audience.body}</p>
-                  </div>
                 </div>
-              )
-            })}
-          </div>
+              </Link>
+            ))}
+          </nav>
 
       </section>
 

@@ -40,8 +40,8 @@ export function StudentExperiencePage() {
       </div>
       <RefrainBar text={refrain} current="student-experience" />
       <DetailSection>
-        <DetailItem label="A day in a CAN community" body={details.vignette} />
-        <DetailItem label="A common concern" body={details.objection} />
+        <DetailItem label="A day in a CAN community" body={details.vignette} variant="editorial" />
+        <DetailItem label="A common concern" body={details.objection} variant="clarification" />
       </DetailSection>
     </article>
   )

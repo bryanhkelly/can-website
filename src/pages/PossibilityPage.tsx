@@ -40,9 +40,9 @@ export function PossibilityPage() {
       </section>
       <div className="possibility-refrain"><RefrainBar text={refrain} current="possibility" /></div>
       <DetailSection>
-        <DetailItem label="Why now" body={details.policy} />
-        <DetailItem label="For example" body={details.example} />
-        <DetailItem label="A common concern" body={details.objection} />
+        <DetailItem label="Why now" body={details.policy} variant="proof" />
+        <DetailItem label="For example" body={details.example} variant="editorial" />
+        <DetailItem label="A common concern" body={details.objection} variant="clarification" />
       </DetailSection>
     </article>
   )

@@ -214,16 +214,47 @@ export const explorePageContent = {
   h1: 'Different roles. A shared mission.',
   dek: "Whether you're a parent, community leader, church, co-op, or local organization, there's a place for you in the CAN Academy movement.",
   audiences: [
-    { heading: 'For Families', body: 'Learn how CAN Academy can benefit your child.' },
-    { heading: 'For Churches & Ministries', body: 'Discover how your church can start a school.' },
-    { heading: 'For School Leaders', body: 'Explore partnership opportunities.' },
-    { heading: 'For Co-ops & Homeschools', body: 'Bring high-quality academics to your community.' },
+    {
+      heading: 'For Families',
+      body: 'Learn how CAN Academy can benefit your child.',
+      href: '/parents',
+      image: '/images/roles/01_families.png',
+      alt: 'A high-school student looking toward the future',
+    },
+    {
+      heading: 'For Churches & Ministries',
+      body: 'Discover how your church can participate in Christian education.',
+      href: '/pastors',
+      image: '/images/roles/02_churches_ministries.png',
+      alt: 'Students and adults learning together in a church community',
+    },
+    {
+      heading: 'For School Leaders',
+      body: 'Explore how CAN can extend what your school already does well.',
+      href: '/christian-schools',
+      image: '/images/roles/03_school_leaders.png',
+      alt: 'Students outside a local school campus',
+    },
+    {
+      heading: 'For Co-ops & Homeschools',
+      body: 'Bring high-quality academics and a wider network to your community.',
+      href: '/homeschool',
+      image: '/images/roles/04_coops_homeschools.png',
+      alt: 'A student focused on schoolwork',
+    },
+    {
+      heading: 'For Denominations & Church Networks',
+      body: 'Explore how churches can expand Christian education together.',
+      href: '/denominations',
+      image: '/images/roles/05_denominations_networks.png',
+      alt: 'Community leaders planning together',
+    },
   ],
   ctaLabel: 'Start the Conversation →',
   details: {
     deepDives: {
       heading: 'See the details',
-      items: ['Curriculum', 'Academics', 'Student Experience', 'Economics', 'Evidence Library'],
+      items: ['Curriculum', 'Academics', 'Student Experience', 'Economics', 'Evidence Library · Coming soon'],
     },
     launchPaths: {
       heading: 'See how CAN starts',
@@ -231,5 +262,89 @@ export const explorePageContent = {
     },
   },
 }
+
+export const roleDoorways = {
+  pastors: {
+    eyebrow: 'For Pastors & Church Leaders',
+    heading: 'Your church already knows these families. What if it could serve them throughout the week?',
+    intro:
+      'Your church already invests deeply in children, teenagers, and families. For many of those families, Christian education can still mean going farther, paying more, or simply going without.',
+    refrain: 'Christian education could become part of how your church serves families all week.',
+    body:
+      'This is not simply about using church facilities differently. It is about creating another way for the church to invest deeply in the next generation.',
+    concern:
+      'CAN is designed to help churches serve students without asking every church to build and operate an entire school on its own.',
+    secondaryCta: 'Talk with us about your church',
+    audience: 'pastor',
+    image: '/images/05_rooted_locally_community.png',
+    imageAlt: 'Students and adults learning together in a church community',
+    visualVariant: 'pastor',
+  },
+  parents: {
+    eyebrow: 'For Parents',
+    heading: 'What if your child did not have to choose between close community and bigger opportunities?',
+    intro:
+      'You may be looking for a place where your child is known, challenged academically, formed in faith, surrounded by meaningful relationships, and prepared for what comes next.',
+    refrain:
+      'You should not have to choose between a school that knows your child well and one that gives them room to grow.',
+    body:
+      'CAN is designed to bring those priorities together in a school experience that stays personal while connecting students to a broader world of teachers, courses, relationships, and opportunities.',
+    concern:
+      'CAN is designed to combine intentional academics, real local community, and access to a broader school network.',
+    secondaryCta: 'Talk with us about your child',
+    audience: 'parent',
+    image: '/images/06_student_experience_portrait.png',
+    imageAlt: 'A student looking ahead with confidence',
+    visualVariant: 'parent',
+  },
+  christianSchools: {
+    eyebrow: 'For Christian School Leaders',
+    heading: 'What if eighth grade did not have to be the end?',
+    intro:
+      'Your families may already be asking what comes after eighth grade. Extending into high school can open new possibilities, but it is not as simple as adding another grade.',
+    refrain: 'Give your families a path to continue with you.',
+    body:
+      'A larger high school without becoming a large school. CAN can help extend what your school already does well into the high-school years.',
+    concern:
+      'CAN is meant to extend what your school already does well, not replace its culture or identity.',
+    secondaryCta: 'Talk with us about high school expansion',
+    audience: 'school-leader',
+    image: '/images/04_platform_local_campus.png',
+    imageAlt: 'Students outside a local school campus',
+    visualVariant: 'school',
+  },
+  homeschool: {
+    eyebrow: 'For Homeschool Families',
+    heading: 'You chose a more personal education for a reason.',
+    intro:
+      'As students grow, they may want more teachers, subjects, activities, peers, and support. CAN is designed to expand their world without asking families to give up the flexibility, involvement, and relationships they value.',
+    refrain: 'Keep what you value. Add what high school asks for.',
+    body:
+      'More options do not have to mean less flexibility. CAN can expand what is available without replacing the family involvement and relationships that made homeschooling work for you.',
+    concern:
+      'CAN is meant to add options while preserving the flexibility and family involvement you value.',
+    secondaryCta: 'Talk with us about your family',
+    audience: 'homeschool',
+    image: '/images/03_curriculum_student_study.png',
+    imageAlt: 'A student reading and studying',
+    visualVariant: 'homeschool',
+  },
+  denominations: {
+    eyebrow: 'For Denominations & Church Networks',
+    heading: 'What could your churches make possible together that none should have to build alone?',
+    intro:
+      'Your network may already have churches, families, trusted leaders, facilities, and relationships across many communities. Some of those communities may have enough students to need Christian education but too few to sustain a conventional standalone high school.',
+    refrain: 'A larger education mission can begin with the local churches you already have.',
+    body:
+      'Together, your churches may be able to offer something no single congregation could build alone.',
+    concern:
+      'CAN is designed to help churches do more together without erasing what should remain local.',
+    secondaryCta: 'Talk with us about your church network',
+    audience: 'denomination',
+    image: '/images/07_economics_leadership_meeting.png',
+    imageAlt: 'Community leaders planning together',
+    visualVariant: 'denomination',
+  },
+} as const
 
 export const brandTagline = 'Communities. Learners. Brighter futures.'

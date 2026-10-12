@@ -2,6 +2,14 @@
 
 Eight responsive story pages built with React, TypeScript, Vite, and Tailwind CSS.
 
+Five audience doorway pages lead into the shared story:
+
+- `/parents`
+- `/pastors`
+- `/christian-schools`
+- `/homeschool`
+- `/denominations`
+
 ## Development
 
 - `npm run dev` starts the local site.
@@ -24,6 +32,11 @@ All labels, diagrams, cards, and CTAs are editable HTML/CSS/SVG. At mobile width
 the curriculum slabs flatten into readable bands and multi-column compositions
 reflow rather than shrinking their text. Belonging-layer descriptions move into
 a color-keyed legend below the portrait on mobile to stay readable.
+
+The Explore CAN audience cards link to the five doorway pages. Their distinct
+visuals use editable diagrams and existing production photography; the doorway
+package provides art direction and reference comps, not production-ready hero
+photographs.
 
 The production handoff does not include independent skyline banners, individual
 audience portraits, the illustrated buildings, the book cover, or a script font.
