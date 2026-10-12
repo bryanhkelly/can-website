@@ -14,7 +14,7 @@ const LAYER_TONES = [
 const LAYER_ICONS = [PersonStanding, Cross, Globe, TrendingUp]
 
 export function CurriculumPage() {
-  const { eyebrowNumber, eyebrowLabel, kicker, h1, dek, layers, example, refrain, details } =
+  const { eyebrowNumber, eyebrowLabel, kicker, h1, dek, layers, example, refrain, transition, details } =
     curriculumContent
 
   return (
@@ -64,7 +64,7 @@ export function CurriculumPage() {
         </div>
       </div>
 
-      <RefrainBar text={refrain} current="curriculum" />
+      <RefrainBar text={refrain} transition={transition} current="curriculum" />
 
       <DetailSection>
         <DetailItem label="Academic leadership" body={details.credibility} variant="proof" />
