@@ -38,6 +38,21 @@ export function PossibilityPage() {
           )
         })}
       </section>
+      <section className="why-now-section" aria-labelledby="why-now-heading">
+        <div className="why-now-heading">
+          <p className="destination-eyebrow">Why now</p>
+          <h2 id="why-now-heading" className="editorial-heading">The pieces that once had to live in one building can now work as a network.</h2>
+          <p>
+            Families are more familiar with flexible and hybrid education than they were a generation ago. Churches, schools, homeschool communities, and other trusted institutions already have relationships and local infrastructure. A shared academic network can connect those communities to teachers, courses, support, and school operations without asking every site to rebuild the whole system.
+          </p>
+        </div>
+        <div className="why-now-grid">
+          <article><strong>Families are choosing differently.</strong><p>More families are comfortable considering hybrid, homeschool, private, and other alternatives when the model fits their priorities.</p></article>
+          <article><strong>Trusted infrastructure already exists.</strong><p>Local communities already have relationships, leaders, gathering space, mentors, and ministry rhythms that a new school cannot manufacture quickly.</p></article>
+          <article><strong>Shared capabilities can travel.</strong><p>Teachers, courses, records, support, and operating systems can increasingly be shared across communities while students remain rooted close to home.</p></article>
+        </div>
+      </section>
+
       <div className="possibility-refrain"><RefrainBar text={refrain} transition={transition} current="possibility" /></div>
       <DetailSection>
         <DetailItem label="For example" body={details.example} variant="editorial" />
