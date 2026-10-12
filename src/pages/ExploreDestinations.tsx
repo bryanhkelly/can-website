@@ -2,6 +2,7 @@ import { ArrowDown, ArrowRight, MessagesSquare } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { AcademicsDeepLinks } from './AcademicsDeepDivePages'
+import { PartnershipDeepLinks, PartnershipPartnerTypes } from './PartnershipDeepDivePages'
 import type { PartnerId } from '../lib/nav'
 
 const ACADEMIC_COMPONENTS = [
@@ -209,6 +210,10 @@ export function PartnershipModelPage() {
           <h2>From conversation to partnership</h2>
           <p>An initial conversation is a chance to share context, ask questions, and explore fit. A formal partnership calls for a clearer shared understanding of roles, resources, and local needs. Specific terms and requirements are discussed directly with each community.</p>
         </section>
+
+        <PartnershipPartnerTypes />
+        <PartnershipDeepLinks />
+
         <DestinationFooter>
           <Link to="/contact?topic=partnership-model" className="destination-primary-link">Talk with us about a partnership <ArrowRight aria-hidden="true" /></Link>
         </DestinationFooter>
