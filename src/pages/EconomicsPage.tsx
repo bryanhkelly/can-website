@@ -8,7 +8,7 @@ import { LocalSettingsDiagram } from '../components/ui/LocalSettingsDiagram'
 const FUNDING_ICONS = [Landmark, HandCoins, Users]
 
 export function EconomicsPage() {
-  const { eyebrowNumber, eyebrowLabel, kicker, h1, dek, oldWay, canWay, fundingLabel, funding, refrain, details } =
+  const { eyebrowNumber, eyebrowLabel, kicker, h1, dek, oldWay, canWay, fundingLabel, funding, refrain, transition, details } =
     economicsContent
 
   return (
@@ -71,7 +71,7 @@ export function EconomicsPage() {
         </div>
       </div>
 
-      <RefrainBar text={refrain} current="why-it-can-work" />
+      <RefrainBar text={refrain} transition={transition} current="why-it-can-work" />
 
       <DetailSection>
         <DetailItem label="For example" body={details.example} variant="editorial" />
