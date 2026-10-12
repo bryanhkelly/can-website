@@ -1,7 +1,7 @@
 import { RefrainBar } from '../components/ui/RefrainBar'
 import { DetailSection, DetailItem } from '../components/ui/DetailSection'
 import { CheckItem } from '../components/ui/CheckItem'
-import { BookOpen, Cross, Globe, TrendingUp, PersonStanding } from 'lucide-react'
+import { BookOpen, Cross, Globe, TrendingUp, MapPin } from 'lucide-react'
 import { PhotoHero } from '../components/ui/PhotoHero'
 import { curriculumContent } from '../data/pageContent'
 
@@ -11,10 +11,10 @@ const LAYER_TONES = [
   'curriculum-content',
   'curriculum-standards',
 ]
-const LAYER_ICONS = [PersonStanding, Cross, Globe, TrendingUp]
+const LAYER_ICONS = [MapPin, Globe, Cross, TrendingUp]
 
 export function CurriculumPage() {
-  const { eyebrowNumber, eyebrowLabel, kicker, h1, dek, layers, example, refrain, transition, details } =
+  const { eyebrowNumber, eyebrowLabel, kicker, h1, dek, visualLayers, layers, example, refrain, transition, details } =
     curriculumContent
 
   return (
@@ -32,7 +32,7 @@ export function CurriculumPage() {
       <div className="story-content pb-10">
       <div className="curriculum-layout">
         <section className="curriculum-stack" aria-label="Four layers of the CAN curriculum">
-          {layers.map((layer, i) => {
+          {visualLayers.map((layer, i) => {
             const Icon = LAYER_ICONS[i]
             return (
               <div key={layer.heading} className={`curriculum-slab ${LAYER_TONES[i]}`}>
@@ -63,6 +63,15 @@ export function CurriculumPage() {
           </ul>
         </div>
       </div>
+
+      <section className="curriculum-copy-grid" aria-label="How CAN designs curriculum">
+        {layers.map((layer) => (
+          <article key={layer.heading}>
+            <h2>{layer.heading}</h2>
+            <p>{layer.body}</p>
+          </article>
+        ))}
+      </section>
 
       <RefrainBar text={refrain} transition={transition} current="curriculum" />
 
