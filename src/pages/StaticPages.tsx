@@ -47,6 +47,32 @@ export function AccessibilityPage() {
   )
 }
 
+
+export function TermsPage() {
+  return (
+    <article className="static-page">
+      <p className="destination-eyebrow">Terms</p>
+      <h1 className="editorial-heading">Website terms.</h1>
+      <p>
+        This public website provides information about CAN Academy and opportunities to begin a conversation with the CAN Academy team.
+      </p>
+      <h2>Informational content</h2>
+      <p>
+        Unless a page clearly says otherwise, website content is informational and does not create an enrollment offer, partnership agreement, funding commitment, eligibility determination, or contractual obligation.
+      </p>
+      <h2>Market-specific information</h2>
+      <p>
+        Education funding, eligibility, fees, transportation, operating requirements, and launch conditions may vary by location and may change. Market-specific details should be confirmed directly with CAN Academy before decisions are made.
+      </p>
+      <h2>Questions</h2>
+      <p>
+        If you have a question about information on this website, contact the CAN Academy team so the relevant context can be discussed directly.
+      </p>
+      <Link to="/contact?topic=terms" className="destination-primary-link">Ask a question <ArrowRight aria-hidden="true" /></Link>
+    </article>
+  )
+}
+
 export function NotFoundPage() {
   return (
     <article className="not-found-page">
