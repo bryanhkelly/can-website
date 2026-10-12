@@ -1850,3 +1850,95 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Source-backed content restored from the original narrative-forge hubs */
+.source-backed-section {
+  margin-top: 48px;
+  border-top: 1px solid var(--color-navy-100);
+  padding-top: 26px;
+}
+.source-backed-section > h2 {
+  max-width: 820px;
+  margin-top: 9px;
+  font-size: clamp(30px,3.5vw,44px);
+}
+.source-backed-section > p:not(.destination-eyebrow) {
+  max-width: 760px;
+  margin-top: 14px;
+  color: var(--color-navy-700);
+  font-size: 15px;
+  line-height: 1.65;
+}
+.source-backed-promises {
+  margin-top: 20px;
+}
+.source-backed-promises li {
+  display: grid;
+  grid-template-columns: 58px 220px 1fr;
+  gap: 20px;
+  border-top: 1px solid var(--color-navy-100);
+  padding: 18px 0;
+}
+.source-backed-promises li > span {
+  color: #9a772c;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: .14em;
+}
+.source-backed-promises h3 {
+  color: var(--color-navy-900);
+  font-family: var(--font-serif);
+  font-size: 20px;
+  line-height: 1.2;
+}
+.source-backed-promises p {
+  color: var(--color-navy-700);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.source-backed-two {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 28px;
+  margin-top: 34px;
+}
+.source-backed-two > div {
+  border-top: 3px solid #9fb9c7;
+  padding-top: 17px;
+}
+.source-backed-two > div:nth-child(2) {
+  border-top-color: #b99a4a;
+}
+.source-backed-two h2 {
+  color: var(--color-navy-900);
+  font-family: var(--font-serif);
+  font-size: 21px;
+  line-height: 1.25;
+}
+.source-backed-two ul {
+  margin-top: 12px;
+}
+.source-backed-two li {
+  border-top: 1px solid var(--color-navy-100);
+  padding: 8px 0;
+  color: var(--color-navy-700);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.partnership-source-intro > h2 {
+  color: var(--color-navy-900);
+}
+
+@media (max-width: 760px) {
+  .source-backed-promises li {
+    grid-template-columns: 38px 1fr;
+    gap: 10px;
+  }
+  .source-backed-promises p {
+    grid-column: 2;
+  }
+  .source-backed-two {
+    grid-template-columns: 1fr;
+  }
+}
