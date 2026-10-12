@@ -99,6 +99,59 @@ function RoleVisual({ variant }: { variant: RoleDoorway['visualVariant'] }) {
   )
 }
 
+const NEXT_BY_AUDIENCE: Record<string, { title: string; body: string; links: [string, string][] }> = {
+  parent: {
+    title: 'What parents usually want to understand next',
+    body: 'Safety, academic quality, daily experience, support, funding, and how a parent will be able to see progress.',
+    links: [
+      ['Student Experience', '/student-experience'],
+      ['Academics', '/academics'],
+      ['Trust & Accountability', '/accountability'],
+      ['Locations & Launch', '/locations'],
+    ],
+  },
+  pastor: {
+    title: 'What church leaders usually want to understand next',
+    body: 'Responsibilities, staffing, economics, site readiness, safeguarding, and what CAN provides versus what remains local.',
+    links: [
+      ['Partnership Model', '/partnership-model'],
+      ['Shared Responsibilities', '/partnership-model/shared-responsibilities'],
+      ['Launch Approach', '/launch-approach'],
+      ['Trust & Accountability', '/accountability'],
+    ],
+  },
+  'school-leader': {
+    title: 'What school leaders usually want to understand next',
+    body: 'Academic credibility, extension into high school, shared capabilities, student support, and partnership responsibilities.',
+    links: [
+      ['Academics', '/academics'],
+      ['Academic Credibility', '/academics/academic-credibility'],
+      ['Partnership Model', '/partnership-model'],
+      ['Student Experience', '/student-experience'],
+    ],
+  },
+  homeschool: {
+    title: 'What homeschool families usually want to understand next',
+    body: 'Flexibility, course access, teachers, peers, student support, and which participation models may ultimately be available.',
+    links: [
+      ['Academics', '/academics'],
+      ['Student Experience', '/student-experience'],
+      ['Ways to Partner', '/partnership-model/ways-to-partner'],
+      ['FAQ', '/faq'],
+    ],
+  },
+  denomination: {
+    title: 'What network leaders usually want to understand next',
+    body: 'How multiple churches can share capability, what remains local, governance, readiness, economics, and how a network pilot could be evaluated.',
+    links: [
+      ['Partnership Model', '/partnership-model'],
+      ['Governance & Accountability', '/partnership-model/governance-and-accountability'],
+      ['Locations & Launch', '/locations'],
+      ['Trust & Accountability', '/accountability'],
+    ],
+  },
+}
+
 export function RoleDoorwayPage({ page }: { page: RoleDoorway }) {
   return (
     <article className="role-doorway-page">
@@ -128,6 +181,21 @@ export function RoleDoorwayPage({ page }: { page: RoleDoorway }) {
           <h2 className="editorial-heading">{page.refrain}</h2>
           <p>{page.body}</p>
         </section>
+
+        {NEXT_BY_AUDIENCE[page.audience] && (
+          <section className="role-doorway-next">
+            <div>
+              <p className="destination-eyebrow">Go deeper</p>
+              <h2>{NEXT_BY_AUDIENCE[page.audience].title}</h2>
+              <p>{NEXT_BY_AUDIENCE[page.audience].body}</p>
+            </div>
+            <nav aria-label={`Explore more for ${page.eyebrow}`}>
+              {NEXT_BY_AUDIENCE[page.audience].links.map(([label, href]) => (
+                <Link key={href} to={href}>{label} <ArrowRight aria-hidden="true" /></Link>
+              ))}
+            </nav>
+          </section>
+        )}
 
         <section className="role-doorway-actions">
           <div className="role-doorway-concern">
