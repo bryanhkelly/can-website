@@ -69,6 +69,30 @@ const META: Record<string, { title: string; description: string }> = {
     title: 'For Denominations & Church Networks | CAN Academy',
     description: 'Explore what churches across a network could make possible together without erasing what should remain local.',
   },
+  '/florida': {
+    title: 'Florida | CAN Academy',
+    description: 'Florida-specific CAN Academy information and a path to ask questions about the market.',
+  },
+  '/start-a-community': {
+    title: 'Launch Approach | CAN Academy',
+    description: 'Explore the stages from initial interest through readiness, planning, preparation, launch, and growth.',
+  },
+  '/evidence': {
+    title: 'Evidence Library | CAN Academy',
+    description: 'The destination for research, policy, academic, and operating evidence behind the CAN model.',
+  },
+  '/partners/the-journey-church': {
+    title: 'CAN Academy × The Journey Church',
+    description: 'Explore a CAN Academy conversation shaped for The Journey Church.',
+  },
+  '/partners/cogic': {
+    title: 'CAN Academy × Church of God in Christ',
+    description: 'Explore a CAN Academy conversation shaped for Church of God in Christ.',
+  },
+  '/partners/cogbf': {
+    title: 'CAN Academy × Church of God by Faith',
+    description: 'Explore a CAN Academy conversation shaped for Church of God by Faith.',
+  },
   '/contact': {
     title: 'Start a Conversation | CAN Academy',
     description: 'Share what you are exploring with the CAN Academy team.',
@@ -80,6 +104,10 @@ const META: Record<string, { title: string; description: string }> = {
   '/accessibility': {
     title: 'Accessibility | CAN Academy',
     description: 'CAN Academy website accessibility information and contact details.',
+  },
+  '/terms': {
+    title: 'Terms | CAN Academy',
+    description: 'Terms for use of the CAN Academy public website.',
   },
 }
 
