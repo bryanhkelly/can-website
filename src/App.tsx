@@ -84,10 +84,16 @@ function RouteScrollManager() {
       return
     }
 
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-    requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-    })
+    const reset = () => window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    reset()
+    requestAnimationFrame(reset)
+    const immediate = window.setTimeout(reset, 0)
+    const settled = window.setTimeout(reset, 120)
+
+    return () => {
+      window.clearTimeout(immediate)
+      window.clearTimeout(settled)
+    }
   }, [location.pathname, location.hash])
 
   return null
