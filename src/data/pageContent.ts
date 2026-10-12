@@ -80,7 +80,7 @@ export const curriculumContent = {
   refrain: 'Standards define what students need to learn. They do not have to dictate every voice, text, example, or question used to teach it.',
   transition: 'An education this intentional needs a school system built to deliver it across many contexts.',
   details: {
-    credibility: "CAN's academic leadership combines years of classroom experience with advanced academic training, while licensed educators lead course design with input from experienced paraeducators and local church leaders.",
+    credibility: "CAN's academic model is led by Dr. Neko Coleman Green, Co-founder and Chief Academic Officer. She brings classroom experience across special education, elementary and middle-school instruction, differentiated learning and assessment, along with advanced training in teaching, organizational leadership, and business.",
     example: "English 10 can still teach literary analysis, argument, research, composition, and rhetoric while intentionally including Christian authors, Black authors, global voices, texts reflecting students' cultural traditions, and community-connected assignments.",
     objection: 'Academic rigor does not disappear when curriculum becomes more intentional. The standards remain; CAN makes deliberate choices about the voices, examples, projects, and perspectives used to teach them.',
   },
@@ -104,7 +104,7 @@ export const platformContent = {
   refrain: 'One connected system. Many local contexts.',
   transition: 'The platform can be shared. The community still has to be local.',
   details: {
-    credibility: "CAN's technology is led by a former Microsoft senior leader with enterprise platform experience, helping build CAN as one connected school rather than a collection of disconnected tools.",
+    credibility: "CAN's platform and operating model are led by founder and CEO Bryan Kelly, a former Microsoft senior data and product leader with more than 25 years of experience building technology, analytics, teams, and operating systems at scale.",
     example: 'A CAN Teacher can post an assignment, a student can complete it from a church-hosted site, an Academic Coach can see the same progress data, and the local Site Leader can manage attendance through the same system.',
     objection: 'An LMS manages coursework. CAN also connects the people, support, records, and local operations required for one school to work across many communities.',
   },
@@ -222,7 +222,7 @@ export const explorePageContent = {
     { label: 'Locations & Launch', subtitle: 'What is developing and what is still exploratory', href: '/locations' },
     { label: 'Evidence Library', subtitle: 'Research, data, and assumptions behind the CAN model', href: '/evidence' },
     { label: 'FAQ', subtitle: 'Practical questions for families and partners', href: '/faq' },
-    { label: 'Team & Leadership', subtitle: 'Meet the people and advisors helping build CAN', status: 'Coming soon' },
+    { label: 'Team & Leadership', subtitle: 'Meet the founding leaders building CAN', href: '/leadership' },
   ],
   roleIntro: 'Every community is unique. Find the path that fits your perspective.',
   roles: [
