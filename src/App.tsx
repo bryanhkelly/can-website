@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import { StakesPage } from './pages/StakesPage'
 import { PossibilityPage } from './pages/PossibilityPage'
@@ -11,6 +11,15 @@ import { ExplorePage } from './pages/ExplorePage'
 import { ContactPage } from './pages/ContactPage'
 import { HomePage } from './pages/HomePage'
 import { AccessibilityPage, NotFoundPage, PrivacyPage, TermsPage } from './pages/StaticPages'
+import {
+  StudentActivitiesPage,
+  StudentBelongingPage,
+  StudentExperienceHub,
+  StudentFaithPage,
+  StudentKnownSupportedPage,
+  StudentReadyPage,
+  StudentWeekPage,
+} from './pages/StudentDeepDivePages'
 import { RoleDoorwayPage } from './components/RoleDoorwayPage'
 import { roleDoorways } from './data/pageContent'
 import {
@@ -35,10 +44,20 @@ function App() {
         <Route path="/story/student-experience" element={<StudentExperiencePage />} />
         <Route path="/story/why-it-can-work" element={<EconomicsPage />} />
         <Route path="/story/explore-can" element={<ExplorePage />} />
+        <Route path="/explore" element={<Navigate to="/story/explore-can" replace />} />
+        <Route path="/student-experience" element={<StudentExperienceHub />} />
+        <Route path="/student-experience/a-week-at-can" element={<StudentWeekPage />} />
+        <Route path="/student-experience/known-and-supported" element={<StudentKnownSupportedPage />} />
+        <Route path="/student-experience/belonging" element={<StudentBelongingPage />} />
+        <Route path="/student-experience/faith-and-formation" element={<StudentFaithPage />} />
+        <Route path="/student-experience/activities-and-service" element={<StudentActivitiesPage />} />
+        <Route path="/student-experience/ready-for-whats-next" element={<StudentReadyPage />} />
         <Route path="/academics" element={<AcademicsPage />} />
         <Route path="/partnership-model" element={<PartnershipModelPage />} />
         <Route path="/florida" element={<FloridaPage />} />
         <Route path="/start-a-community" element={<StartCommunityPage />} />
+        <Route path="/launch-approach" element={<StartCommunityPage />} />
+        <Route path="/economic-breakthrough" element={<EconomicsPage />} />
         <Route path="/evidence" element={<EvidencePage />} />
         <Route path="/parents" element={<RoleDoorwayPage page={roleDoorways.parents} />} />
         <Route path="/pastors" element={<RoleDoorwayPage page={roleDoorways.pastors} />} />
