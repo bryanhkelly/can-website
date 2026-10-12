@@ -1,4 +1,3 @@
-import type { Context } from 'https://edge.netlify.com'
 import { getSocialMeta, socialImageUrl } from '../../src/data/socialMeta.ts'
 
 const escapeHtml = (value: string) =>
@@ -14,7 +13,7 @@ function replaceTag(html: string, pattern: RegExp, tag: string) {
     : html.replace('</head>', `  ${tag}\n</head>`)
 }
 
-export default async (request: Request, context: Context) => {
+export default async (request: Request, context: { next: () => Promise<Response> }) => {
   if (request.method !== 'GET') return context.next()
 
   const response = await context.next()
