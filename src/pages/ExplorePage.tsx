@@ -76,9 +76,21 @@ export function ExplorePage() {
               )
             })}
           </div>
-          <p className="explore-evidence-link">
-            <Link to={withPartnerContext("/evidence", location.search)}>Evidence Library <span>Coming soon</span><ArrowRight aria-hidden="true" /></Link>
-          </p>
+          <div className="explore-secondary-topics" aria-label="More ways to explore CAN">
+            {content.secondaryTopics.map((topic) =>
+              topic.href ? (
+                <Link key={topic.label} to={withPartnerContext(topic.href, location.search)}>
+                  <span><strong>{topic.label}</strong><small>{topic.subtitle}</small></span>
+                  <ArrowRight aria-hidden="true" />
+                </Link>
+              ) : (
+                <div key={topic.label} className="is-coming-soon">
+                  <span><strong>{topic.label}</strong><small>{topic.subtitle}</small></span>
+                  <em>{topic.status}</em>
+                </div>
+              )
+            )}
+          </div>
         </section>
 
         <section className="explore-hub-section explore-roles-section" aria-labelledby="explore-roles-heading">
