@@ -10,6 +10,11 @@ const sections = [
         links: [['See how learning works','/academics/how-learning-works'],['Explore Student Experience','/student-experience']],
       },
       {
+        q: 'What grades is CAN designed to serve?',
+        a: 'CAN is being built as a grades 6–12 pathway, covering the middle- and high-school years when families increasingly need subject expertise, credits, records, activities, guidance, and preparation for what comes next.',
+        links: [['Explore Academics','/academics'],['Student Experience','/student-experience']],
+      },
+      {
         q: 'Who teaches my child and who is present locally?',
         a: 'CAN separates responsibilities that benefit from network scale from responsibilities that require local presence. CAN Teachers and shared academic roles can provide subject expertise, while local facilitators, leaders, mentors, and other adults provide daily presence and relationships.',
         links: [['Teachers & support','/academics/teachers-and-support']],
@@ -34,6 +39,11 @@ const sections = [
   {
     title: 'Churches and Christian schools',
     items: [
+      {
+        q: 'How is CAN different from a traditional private school, homeschool, or online school?',
+        a: 'CAN is designed to combine elements families value across those models: Christian formation, real local relationships, flexibility, broader teacher and course access, and the academic infrastructure of a connected school system.',
+        links: [['See where CAN fits','/how-can-is-different']],
+      },
       {
         q: 'Does a church have to build an entire school system?',
         a: 'That is the problem CAN is designed to address. A local partner can contribute trust, relationships, facilities, leadership, and community while CAN provides shared academic and operating capabilities that would be difficult for every site to recreate independently.',
