@@ -187,7 +187,7 @@ export function AcademicsPage() {
           </p>
         </section>
 
-        <section className="source-backed-section">
+        <section className="source-backed-section academics-desktop-depth">
           <p className="destination-eyebrow">Five academic promises</p>
           <ol className="source-backed-promises">
             {academicPromises.map((promise) => (
@@ -200,7 +200,7 @@ export function AcademicsPage() {
           </ol>
         </section>
 
-        <section className="source-backed-two">
+        <section className="source-backed-two academics-desktop-depth">
           <div>
             <h2>The CAN network provides</h2>
             <ul>{networkProvides.map((item) => <li key={item}>{item}</li>)}</ul>
@@ -209,6 +209,28 @@ export function AcademicsPage() {
             <h2>The local CAN Community provides</h2>
             <ul>{partnersProvide.map((item) => <li key={item}>{item}</li>)}</ul>
           </div>
+        </section>
+
+        <section className="academics-mobile-depth">
+          <details>
+            <summary>Five academic promises</summary>
+            <ol className="academics-mobile-promises">
+              {academicPromises.map((promise) => (
+                <li key={promise.n}>
+                  <span>{promise.n}</span>
+                  <div><strong>{promise.title}</strong><p>{promise.body}</p></div>
+                </li>
+              ))}
+            </ol>
+          </details>
+          <details>
+            <summary>What the network provides</summary>
+            <ul>{networkProvides.map((item) => <li key={item}>{item}</li>)}</ul>
+          </details>
+          <details>
+            <summary>What stays local</summary>
+            <ul>{partnersProvide.map((item) => <li key={item}>{item}</li>)}</ul>
+          </details>
         </section>
 
         <section className="destination-leadership-proof">
