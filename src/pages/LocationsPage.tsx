@@ -22,7 +22,7 @@ function LocationCard({ state, compact = false }: { state: (typeof stateLocation
           <span className="locations-status">{state.status}</span>
         </div>
       </div>
-      <p>{state.summary}</p>
+      <p className="locations-card-summary">{state.summary}</p>
       {!compact && (
         <div className="locations-focus">
           <strong>Areas of focus</strong>
