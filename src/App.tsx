@@ -7,6 +7,7 @@ import { PlatformPage } from './pages/PlatformPage'
 import { RootedLocallyPage } from './pages/RootedLocallyPage'
 import { StudentExperiencePage } from './pages/StudentExperiencePage'
 import { EconomicsPage } from './pages/EconomicsPage'
+import { EconomicBreakthroughPage } from './pages/EconomicBreakthroughPage'
 import { ExplorePage } from './pages/ExplorePage'
 import { ContactPage } from './pages/ContactPage'
 import { HomePage } from './pages/HomePage'
@@ -108,7 +109,7 @@ function App() {
         <Route path="/launch-approach/build" element={<LaunchStagePage slug="build" />} />
         <Route path="/launch-approach/launch" element={<LaunchStagePage slug="launch" />} />
         <Route path="/launch-approach/measure" element={<LaunchStagePage slug="measure" />} />
-        <Route path="/economic-breakthrough" element={<EconomicsPage />} />
+        <Route path="/economic-breakthrough" element={<EconomicBreakthroughPage />} />
         <Route path="/evidence" element={<EvidenceDeepPage path="/evidence" />} />
         <Route path="/evidence/academic-model" element={<EvidenceDeepPage path="/evidence/academic-model" />} />
         <Route path="/evidence/alternative-education" element={<EvidenceDeepPage path="/evidence/alternative-education" />} />
