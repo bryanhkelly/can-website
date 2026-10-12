@@ -4,8 +4,10 @@ import {
   GraduationCap,
   Handshake,
   House,
-  MapPin,
+  MapPinned,
   Network,
+  Route,
+  BarChart3,
   School,
   UsersRound,
 } from 'lucide-react'
@@ -17,9 +19,9 @@ const TOPIC_ICONS = [
   UsersRound,
   GraduationCap,
   Handshake,
-  MapPin,
-  School,
-  Network,
+  MapPinned,
+  BarChart3,
+  Route,
 ]
 
 const ROLE_ICONS = [Church, UsersRound, School, House, Network]
