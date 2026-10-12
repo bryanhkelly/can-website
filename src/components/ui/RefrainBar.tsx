@@ -10,7 +10,7 @@ const PAGE_LABELS: Record<(typeof navSlugs)[number], string> = {
   platform: 'The Platform',
   'rooted-locally': 'Rooted Locally',
   'student-experience': 'The Student Experience',
-  'why-it-can-work': 'The Economics',
+  'why-it-can-work': 'Why It Can Work',
   'explore-can': 'Explore CAN',
 }
 
@@ -48,10 +48,12 @@ export function NextStoryLink({
 
 export function RefrainBar({
   text,
+  transition,
   current,
   dark = false,
 }: {
   text: string
+  transition?: string
   current: (typeof navSlugs)[number]
   dark?: boolean
 }) {
@@ -61,7 +63,10 @@ export function RefrainBar({
         dark ? 'bg-navy-950 px-5 text-white' : 'text-navy-950'
       }`}
     >
-      <p className="max-w-3xl font-serif text-lg leading-snug sm:text-xl">{text}</p>
+      <div className="max-w-3xl">
+        <p className="font-serif text-lg leading-snug sm:text-xl">{text}</p>
+        {transition && <p className={`mt-2 text-xs leading-relaxed sm:text-sm ${dark ? 'text-white/75' : 'text-navy-600'}`}>{transition}</p>}
+      </div>
       <NextStoryLink current={current} dark={dark} />
     </div>
   )
