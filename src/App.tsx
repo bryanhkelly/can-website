@@ -36,6 +36,7 @@ import {
   PartnershipWaysPage,
   PartnershipWhyPage,
 } from './pages/PartnershipDeepDivePages'
+import { LaunchStagePage } from './pages/LaunchDeepDivePages'
 import { RoleDoorwayPage } from './components/RoleDoorwayPage'
 import { roleDoorways } from './data/pageContent'
 import {
@@ -94,12 +95,12 @@ function App() {
         <Route path="/florida/research" element={<Navigate to="/florida" replace />} />
         <Route path="/start-a-community" element={<StartCommunityPage />} />
         <Route path="/launch-approach" element={<StartCommunityPage />} />
-        <Route path="/launch-approach/discover" element={<Navigate to="/launch-approach" replace />} />
-        <Route path="/launch-approach/validate" element={<Navigate to="/launch-approach" replace />} />
-        <Route path="/launch-approach/design" element={<Navigate to="/launch-approach" replace />} />
-        <Route path="/launch-approach/build" element={<Navigate to="/launch-approach" replace />} />
-        <Route path="/launch-approach/launch" element={<Navigate to="/launch-approach" replace />} />
-        <Route path="/launch-approach/measure" element={<Navigate to="/launch-approach" replace />} />
+        <Route path="/launch-approach/discover" element={<LaunchStagePage slug="discover" />} />
+        <Route path="/launch-approach/validate" element={<LaunchStagePage slug="validate" />} />
+        <Route path="/launch-approach/design" element={<LaunchStagePage slug="design" />} />
+        <Route path="/launch-approach/build" element={<LaunchStagePage slug="build" />} />
+        <Route path="/launch-approach/launch" element={<LaunchStagePage slug="launch" />} />
+        <Route path="/launch-approach/measure" element={<LaunchStagePage slug="measure" />} />
         <Route path="/economic-breakthrough" element={<EconomicsPage />} />
         <Route path="/evidence" element={<EvidencePage />} />
         <Route path="/evidence/academic-model" element={<Navigate to="/evidence" replace />} />
