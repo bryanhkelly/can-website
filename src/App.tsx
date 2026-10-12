@@ -20,6 +20,14 @@ import {
   StudentReadyPage,
   StudentWeekPage,
 } from './pages/StudentDeepDivePages'
+import {
+  AcademicsCredibilityPage,
+  AcademicsCoursesPage,
+  AcademicsHowLearningPage,
+  AcademicsPathwaysPage,
+  AcademicsProgressPage,
+  AcademicsTeachersPage,
+} from './pages/AcademicsDeepDivePages'
 import { RoleDoorwayPage } from './components/RoleDoorwayPage'
 import { roleDoorways } from './data/pageContent'
 import {
@@ -53,12 +61,12 @@ function App() {
         <Route path="/student-experience/activities-and-service" element={<StudentActivitiesPage />} />
         <Route path="/student-experience/ready-for-whats-next" element={<StudentReadyPage />} />
         <Route path="/academics" element={<AcademicsPage />} />
-        <Route path="/academics/how-learning-works" element={<Navigate to="/academics" replace />} />
-        <Route path="/academics/courses-and-graduation" element={<Navigate to="/academics" replace />} />
-        <Route path="/academics/teachers-and-support" element={<Navigate to="/academics" replace />} />
-        <Route path="/academics/progress-and-mastery" element={<Navigate to="/academics" replace />} />
-        <Route path="/academics/pathways" element={<Navigate to="/academics" replace />} />
-        <Route path="/academics/academic-credibility" element={<Navigate to="/academics" replace />} />
+        <Route path="/academics/how-learning-works" element={<AcademicsHowLearningPage />} />
+        <Route path="/academics/courses-and-graduation" element={<AcademicsCoursesPage />} />
+        <Route path="/academics/teachers-and-support" element={<AcademicsTeachersPage />} />
+        <Route path="/academics/progress-and-mastery" element={<AcademicsProgressPage />} />
+        <Route path="/academics/pathways" element={<AcademicsPathwaysPage />} />
+        <Route path="/academics/academic-credibility" element={<AcademicsCredibilityPage />} />
         <Route path="/partnership-model" element={<PartnershipModelPage />} />
         <Route path="/partnership-model/why-partner" element={<Navigate to="/partnership-model" replace />} />
         <Route path="/partnership-model/ways-to-partner" element={<Navigate to="/partnership-model" replace />} />
