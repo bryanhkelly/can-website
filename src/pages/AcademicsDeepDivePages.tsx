@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import {
   academicRoles,
+  academicSupports,
   academicsEntryPoints,
   academicsSteps,
   appliedExperiences,
