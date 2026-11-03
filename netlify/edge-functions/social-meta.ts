@@ -216,6 +216,8 @@ export default async (request: Request, context: { next: () => Promise<Response>
   const partner = requestUrl.searchParams.get('partner')
   const shareUrl = partner ? `${canonical}?partner=${encodeURIComponent(partner)}` : canonical
   const image = socialImageUrl(requestUrl.origin, meta.image)
+  const noindexPaths = ['/family-interest','/church-interest','/teachers/apply','/teachers/directory','/demo-access','/partners/the-journey-church','/partners/cogic','/partners/cogbf']
+  const noindex = noindexPaths.includes(requestUrl.pathname) || requestUrl.hostname.includes('--can-academy.netlify.app')
 
   let html = await response.text()
 
@@ -238,6 +240,9 @@ export default async (request: Request, context: { next: () => Promise<Response>
   html = replaceTag(html, /<meta\s+name=["']twitter:image["'][^>]*>/i, `<meta name="twitter:image" content="${escapeHtml(image)}" />`)
   html = replaceTag(html, /<meta\s+name=["']twitter:image:alt["'][^>]*>/i, `<meta name="twitter:image:alt" content="${escapeHtml(meta.imageAlt)}" />`)
   html = replaceTag(html, /<link\s+rel=["']canonical["'][^>]*>/i, `<link rel="canonical" href="${escapeHtml(canonical)}" />`)
+  html = replaceTag(html, /<meta\\s+name=["']robots["'][^>]*>/i, `<meta name="robots" content="${noindex ? 'noindex,nofollow' : 'index,follow,max-image-preview:large'}" />`)
+  const organizationSchema = JSON.stringify({ '@context': 'https://schema.org', '@type': 'EducationalOrganization', name: 'CAN Academy', url: requestUrl.origin + '/', description: meta.description, logo: requestUrl.origin + '/favicon.svg' }).replaceAll('<','\\u003c')
+  html = html.replace('</head>', `<script type="application/ld+json">${organizationSchema}</script>\\n</head>`)
 
   const headers = new Headers(response.headers)
   headers.delete('content-length')
