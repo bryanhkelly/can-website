@@ -1,0 +1,39 @@
+name: Form delivery smoke
+on:
+  push:
+    branches: ['feature/editorial-site-redesign']
+    paths: ['.github/workflows/form-delivery-smoke.yml']
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify published preview and contact form POST
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="https://deploy-preview-2--can-academy.netlify.app"
+          for n in $(seq 1 18); do
+            if curl -fsSL --max-time 20 "$BASE/" -o /tmp/can_home.html; then break; fi
+            sleep 5
+          done
+          grep -qi 'CAN Academy' /tmp/can_home.html
+          for path in /florida /families /churches /teachers /experience-can /student-experience/a-week-at-can /__forms.html; do
+            code=$(curl -sL --max-time 20 -o /dev/null -w "%{http_code}" "$BASE$path")
+            echo "$path -> HTTP $code"
+            test "$code" = 200
+          done
+          echo "Submitting synthetic Netlify Forms inquiry (non-personal QA data)"
+          code=$(curl -sS --max-time 25 -o /tmp/can_form_response.txt -w "%{http_code}" \
+            -H 'Content-Type: application/x-www-form-urlencoded' \
+            --data-urlencode 'form-name=can-contact' \
+            --data-urlencode 'name=CAN Academy QA Verification' \
+            --data-urlencode 'email=site-smoke@example.com' \
+            --data-urlencode 'audience=internal-smoke' \
+            --data-urlencode 'topic=form-delivery-smoke' \
+            --data-urlencode 'state=Florida' \
+            --data-urlencode 'message=Automated functional test only. No real customer information.' \
+            --data-urlencode 'consent=yes' \
+            "$BASE/__forms.html")
+          echo "Form POST HTTP $code"
+          test "$code" = 200
