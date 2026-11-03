@@ -1,1 +1,9 @@
+# Retired internal research URLs
+/florida/market-landscape /florida 301!
+/florida/market-selection /florida 301!
+/florida/markets /florida 301!
+/florida/markets/* /florida 301!
+/florida/research /florida 301!
+/evidence /accountability 301!
+/evidence/* /accountability 301!
 /* /index.html 200

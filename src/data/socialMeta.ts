@@ -83,7 +83,7 @@ const META: Record<string, SocialMeta> = {
   },
   '/florida': {
     title: 'Florida Opportunity | CAN Academy',
-    description: 'Explore why Florida is the first proving ground for CAN Academy and the research behind potential pilot markets.',
+    description: 'Explore CAN Academy in Florida, its development status, and ways families and churches can participate.',
     image: '/images/04_platform_local_campus.png',
     imageAlt: 'Students outside a local church and school community.',
   },
@@ -110,12 +110,6 @@ const META: Record<string, SocialMeta> = {
     description: 'See which CAN markets are in development and which are still being explored.',
     image: '/images/04_platform_local_campus.png',
     imageAlt: 'Students outside a local church and school community.',
-  },
-  '/evidence': {
-    title: 'Evidence Library | CAN Academy',
-    description: 'Research, data, sources, assumptions, and open questions behind the CAN model.',
-    image: '/images/07_economics_leadership_meeting.png',
-    imageAlt: 'Education and community leaders reviewing an opportunity together.',
   },
   '/how-can-is-different': {
     title: 'How CAN Is Different | CAN Academy',
@@ -191,7 +185,6 @@ const PREFIX_META: Array<[string, string]> = [
   ['/partnership-model/', '/partnership-model'],
   ['/florida/', '/florida'],
   ['/launch-approach/', '/launch-approach'],
-  ['/evidence/', '/evidence'],
 ]
 
 export function getSocialMeta(pathname: string): SocialMeta {

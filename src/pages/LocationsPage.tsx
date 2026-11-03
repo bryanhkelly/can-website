@@ -6,7 +6,7 @@ const statusDefinitions = [
   ['Operating', 'Students are enrolled and instruction is being delivered.'],
   ['Confirmed launch partner', 'A launch partner and launch plan have been formally confirmed.'],
   ['In development', 'A market or partnership is in active pilot development and validation.'],
-  ['Exploring partnerships', 'CAN is researching the market or developing relationships without a launch commitment.'],
+  ['Exploring partnerships', 'CAN is considering possible local partnerships; no opening is confirmed.'],
 ] as const
 
 const inDevelopment = stateLocations.filter((state) => state.status === 'In development')
@@ -23,12 +23,6 @@ function LocationCard({ state, compact = false }: { state: (typeof stateLocation
         </div>
       </div>
       <p className="locations-card-summary">{state.summary}</p>
-      {!compact && (
-        <div className="locations-focus">
-          <strong>Areas of focus</strong>
-          <p>{state.areas.join(' · ')}</p>
-        </div>
-      )}
       <Link to={`/locations/${state.slug}`}>Explore {state.name} <ArrowRight aria-hidden="true" /></Link>
     </article>
   )
@@ -41,7 +35,7 @@ export function LocationsPage() {
         <p className="destination-eyebrow">Locations & Launch</p>
         <h1 className="editorial-heading">See what is operating, developing, and still being explored.</h1>
         <p>
-          CAN is building toward a network of locally rooted school communities. The same launch-status framework applies everywhere, while the content below shows where CAN's work is currently most developed and where additional partnerships are being explored.
+          CAN is building toward a network of locally rooted school communities. The same launch-status framework applies everywhere, while the page shows development statuses and ways to connect with CAN.
         </p>
       </header>
 
@@ -61,7 +55,7 @@ export function LocationsPage() {
         <div className="locations-group-heading">
           <p className="destination-eyebrow">In development</p>
           <h2 className="editorial-heading">Markets where CAN is actively building the launch path.</h2>
-          <p>These states have the most developed combination of market work, partner models, and potential launch communities in the current strategy.</p>
+          <p>These locations are in development. Specific sites, programs, and enrollment dates have not been confirmed.</p>
         </div>
         <div className="locations-list locations-list-featured">
           {inDevelopment.map((state) => <LocationCard key={state.slug} state={state} />)}
@@ -73,7 +67,7 @@ export function LocationsPage() {
           <p className="destination-eyebrow">Exploring partnerships</p>
           <h2 className="editorial-heading">Additional states where the model may fit.</h2>
           <p>
-            Some are near-term school-choice opportunities. Others are longer-horizon markets where CAN is tracking policy, school supply, homeschool demand, or potential local partners.
+            These states are open to early conversations with families, churches, and school leaders; they are not confirmed school openings.
           </p>
         </div>
         <div className="locations-list locations-list-exploring">

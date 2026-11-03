@@ -76,13 +76,13 @@ const sections = [
       },
       {
         q: 'Where is CAN launching?',
-        a: 'Florida is the primary pilot focus. Other states on the site are research or partnership-development markets, not launch commitments. The Locations page distinguishes development from exploration.',
+        a: 'Florida is the primary pilot focus. Other states shown are in development or early partnership exploration, not confirmed openings. The Locations page distinguishes development from exploration.',
         links: [['Locations & Launch','/locations'],['Florida Opportunity','/florida']],
       },
       {
         q: 'How does CAN decide which markets to pursue?',
-        a: 'Market research considers student need, quality-adjusted alternatives, family economics, partner readiness, facility feasibility, scholarship conditions, and the operating model that fits the local context. County-level research is a screening tool, not a launch decision.',
-        links: [['Florida market selection','/florida/market-selection'],['Market research evidence','/evidence/market-research']],
+        a: 'CAN considers family interest, local partnerships, facilities, academic and operating readiness, funding, and applicable requirements before confirming any school opening.',
+        links: [['CAN Florida','/florida'],['Locations & Launch','/locations']],
       },
     ],
   },

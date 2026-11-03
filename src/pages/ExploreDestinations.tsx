@@ -393,30 +393,6 @@ export function StartCommunityPage() {
   )
 }
 
-export function EvidencePage() {
-  const areas = ['Research and source references', 'Policy and market sources', 'Academic evidence', 'Operating evidence']
-  return (
-    <article className="destination-page">
-      <div className="destination-container">
-        <PageIntro
-          eyebrow="Evidence Library"
-          heading="Evidence, sources, and proof."
-          description="A place for research and source references behind the CAN model."
-        />
-        <section className="destination-pending" role="status">
-          <p className="destination-eyebrow">Coming soon</p>
-          <h2>Evidence materials are being gathered and reviewed.</h2>
-          <p>No citations or downloadable proof materials are published here yet.</p>
-        </section>
-        <ul className="evidence-areas">{areas.map((area) => <li key={area}>{area}</li>)}</ul>
-        <DestinationFooter>
-          <Link to="/contact?topic=evidence" className="destination-primary-link">Ask about the evidence <ArrowRight aria-hidden="true" /></Link>
-        </DestinationFooter>
-      </div>
-    </article>
-  )
-}
-
 export function PartnerPage({ partner }: { partner: PartnerId }) {
   const page = PARTNER_PAGES[partner]
   return (
