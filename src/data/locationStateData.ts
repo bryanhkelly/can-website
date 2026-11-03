@@ -86,6 +86,16 @@ export const stateLocations: StateLocation[] = [
     evaluating: ['Local partner readiness', 'Staffing in smaller markets', 'Travel geography', 'Funding fit', 'Sustainable small-site operations'],
   },
   {
+    slug: 'wisconsin',
+    name: 'Wisconsin',
+    status: 'Exploring partnerships',
+    summary: 'Wisconsin has several established private-school choice programs, with participation rules that vary by program and location. CAN is researching whether a church-hosted model could meet those requirements.',
+    why: 'The state\'s distinct choice programs create opportunities to explore partnerships with existing private schools, but any new school or site would need its own participation and operating review.',
+    areas: ['Milwaukee area', 'Racine area', 'Statewide communities with potential church and school partners'],
+    models: ['Church-hosted academy', 'Existing private-school partnership', 'Hybrid local learning community'],
+    evaluating: ['Choice-program eligibility', 'Participating-school requirements', 'Church and school partnerships', 'Family demand', 'Local facility readiness'],
+  },
+  {
     slug: 'nebraska',
     name: 'Nebraska',
     status: 'Exploring partnerships',
