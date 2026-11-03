@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { ActionLink, Conversion, Eyebrow, FeatureLines, Hero, RoleCards, Section, Split, Statement, media } from '../components/EditorialElements'
 
 export function EditorialHomePage() {

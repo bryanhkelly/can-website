@@ -4,6 +4,11 @@ export type AnalyticsEvent =
   | 'contact_submit'
   | 'contact_success'
   | 'contact_error'
+  | 'lead_submit'
+  | 'lead_success'
+  | 'lead_error'
+  | 'demo_role_change'
+  | 'week_day_select'
 
 export function trackEvent(name: AnalyticsEvent, params: Record<string, string> = {}) {
   if (typeof window === 'undefined') return
