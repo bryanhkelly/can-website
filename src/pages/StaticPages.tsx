@@ -11,15 +11,15 @@ export function PrivacyPage() {
       </p>
       <h2>Information you submit</h2>
       <p>
-        The contact form may ask for your name, email address, organization or community, and the question or context you choose to share.
+        Contact and interest forms may collect your name, email address, state, organization, anticipated grade of interest, teaching background or role, and information you choose to share. We use this information to respond to inquiries about CAN Academy. Please do not submit student names, sensitive student records, health details, or payment information.
       </p>
       <h2>Website operations</h2>
       <p>
-        The site may use standard hosting, security, performance, and analytics services needed to operate and improve the public website.
+        The site uses Netlify for hosting and form processing. Form submissions are retained by Netlify and may be delivered to authorized CAN Academy team members through configured notifications or a transactional email service. We may use standard security, performance, and analytics services necessary to operate and improve this website. No school enrollment record is created by submitting a public interest form.
       </p>
       <h2>Student information</h2>
       <p>
-        This page describes the public website only. It is not a student-records or enrolled-family privacy notice, and the public contact form should not be used to submit sensitive student records.
+        This page describes the public website only. It is not a student-records or enrolled-family privacy notice. Public inquiries do not authorize enrollment or establish an account. A separate privacy notice applies to any future CAN OS or school services.
       </p>
       <h2>Questions</h2>
       <p>

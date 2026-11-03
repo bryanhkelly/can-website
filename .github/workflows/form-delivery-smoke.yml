@@ -23,36 +23,18 @@ jobs:
             echo "$path -> HTTP $code"
             test "$code" = 200
           done
-          echo "Submitting synthetic Netlify Forms inquiry (non-personal QA data)"
-          code=$(curl -sS --max-time 25 -o /tmp/can_form_response.txt -w "%{http_code}" \
+          echo "Submitting synthetic isolated demo request"
+          code=$(curl -sS --max-time 25 -o /tmp/can_demo_response.txt -w "%{http_code}" \
             -H 'Content-Type: application/x-www-form-urlencoded' \
-            --data-urlencode 'form-name=can-contact' \
-            --data-urlencode 'name=CAN Academy QA Verification' \
-            --data-urlencode 'email=site-smoke@example.com' \
-            --data-urlencode 'audience=internal-smoke' \
-            --data-urlencode 'topic=form-delivery-smoke' \
-            --data-urlencode 'state=Florida' \
-            --data-urlencode 'message=Automated functional test only. No real customer information.' \
+            --data-urlencode 'form-name=can-demo-request' \
+            --data-urlencode 'subject=CAN Academy QA demo request' \
+            --data-urlencode 'source=demo-qa-one-off' \
+            --data-urlencode 'name=CAN Demo Smoke Validation' \
+            --data-urlencode 'email=can-demo-smoke@example.org' \
+            --data-urlencode 'state=Arizona' \
+            --data-urlencode 'audience=church' \
+            --data-urlencode 'message=Prospective church leadership would appreciate a general synthetic demo. This is a QA test, not a real person.' \
             --data-urlencode 'consent=yes' \
             "$BASE/__forms.html")
-          echo "Form POST HTTP $code"
+          echo "Demo request POST HTTP $code"
           test "$code" = 200
-
-          for form in can-family-interest can-church-interest can-teacher-interest can-demo-request; do
-            echo "Submitting synthetic $form inquiry"
-            code=$(curl -sS --max-time 25 -o /tmp/can_form_response.txt -w "%{http_code}" \
-              -H 'Content-Type: application/x-www-form-urlencoded' \
-              --data-urlencode "form-name=$form" \
-              --data-urlencode "source=automated-$form-test" \
-              --data-urlencode 'name=CAN Academy QA Verification' \
-              --data-urlencode 'email=site-smoke@example.com' \
-              --data-urlencode 'state=Florida' \
-              --data-urlencode 'organization=QA synthetic institution' \
-              --data-urlencode 'grade=9' \
-              --data-urlencode 'audience=family' \
-              --data-urlencode 'message=Automated functional test only. No real person or school.' \
-              --data-urlencode 'consent=yes' \
-              "$BASE/__forms.html")
-            echo "$form POST HTTP $code"
-            test "$code" = 200
-          done
