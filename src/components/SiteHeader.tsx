@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { navSlugs } from '../data/pageContent'
+import { withPartnerContext } from '../lib/nav'
 import { BrandMark } from './ui/BrandMark'
 
 const entries=[
@@ -18,9 +19,10 @@ export function SiteHeader(){
   const loc=useLocation();const [open,setOpen]=useState(false);const [storyOpen,setStoryOpen]=useState(false)
   useEffect(()=>{setOpen(false);setStoryOpen(false)},[loc.pathname])
   const isStory=loc.pathname.startsWith('/story/')
+  const preserve=(path:string)=>withPartnerContext(path,loc.search)
   return <header className="ca-public-nav">
     <div className="ca-public-head">
-      <Link className="ca-brand" to="/" aria-label="CAN Academy home">
+      <Link className="ca-brand" to={preserve("/")} aria-label="CAN Academy home">
         <span className="ca-brand-mark"><BrandMark className="h-7 w-7"/></span>
         <span><strong>CAN <span style={{fontWeight:500}}>ACADEMY</span></strong><small>COMMUNITIES. LEARNERS. BRIGHTER FUTURES.</small></span>
       </Link>
@@ -28,8 +30,8 @@ export function SiteHeader(){
         {open?<X size={25}/>:<Menu size={25}/>}
       </button>
       <nav id="ca-main-nav" aria-label="Primary navigation" className={'ca-main-nav'+(open?' is-open':'')}>
-        {entries.map(e=><NavLink key={e.to} to={e.to}>{e.label}</NavLink>)}
-        <NavLink to="/experience-can" className="ca-main-cta">Experience CAN <span aria-hidden="true">↗</span></NavLink>
+        {entries.map(e=><NavLink key={e.to} to={preserve(e.to)}>{e.label}</NavLink>)}
+        <NavLink to={preserve("/experience-can")} className="ca-main-cta">Experience CAN <span aria-hidden="true">↗</span></NavLink>
       </nav>
     </div>
     {isStory&&<div>
@@ -37,7 +39,7 @@ export function SiteHeader(){
         {storyOpen?'Close story chapters':'Explore CAN story chapters'} {storyOpen?<X size={17}/>:<Menu size={17}/>}
       </button>
       <nav id="ca-story-links" className={'ca-story-nav'+(storyOpen?' is-open':'')} aria-label="The CAN story">
-        {navSlugs.map((slug,i)=><NavLink key={slug} to={`/story/${slug}`}>{String(i+1).padStart(2,'0')} · {labels[i]}</NavLink>)}
+        {navSlugs.map((slug,i)=><NavLink key={slug} to={preserve(`/story/${slug}`)}>{String(i+1).padStart(2,'0')} · {labels[i]}</NavLink>)}
       </nav>
     </div>}
   </header>

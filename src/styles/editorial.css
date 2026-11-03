@@ -101,3 +101,8 @@
 .ca-location-inquiries>a>span{flex:1}.ca-location-inquiries strong{display:block;font:400 27px var(--ca-serif);margin-bottom:8px}.ca-location-inquiries small{font-size:14px;color:#526a7a;line-height:1.5}
 @media(max-width:1000px){.ca-location-statuses{grid-template-columns:repeat(2,1fr)}.ca-location-cards{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:650px){.ca-location-statuses,.ca-location-cards,.ca-location-inquiries{grid-template-columns:1fr}.ca-location-card{min-height:270px}}
+
+/* Higher specificity than legacy detail-page rules imported later. */
+.ca-deep-unify blockquote.deep-pull,.ca-deep-unify .deep-pull-small{color:#fffdf6!important;background:#0c2338;border-left:5px solid #f2b647}
+.ca-deep-unify .accountability-closing,.ca-deep-unify .accountability-closing h2{color:#fffdf6}
+@media(max-width:850px){.ca-story-toggle{width:auto;min-width:200px;max-width:calc(100% - 32px);height:auto;min-height:45px;justify-content:space-between;padding:12px 18px}}

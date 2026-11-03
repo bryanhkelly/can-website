@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import type { KeyboardEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { ActionLink, Conversion, Eyebrow, FeatureLines, Hero, RoleCards, Section, Split, Statement, media } from '../components/EditorialElements'
 
@@ -139,6 +140,21 @@ export function EditorialAcademicsPage() {
   </article>
 }
 
+function handleTabKeys(event:KeyboardEvent<HTMLButtonElement>,index:number,total:number,select:(index:number)=>void){
+  let next:number|undefined
+  switch(event.key){
+    case 'ArrowRight':case 'ArrowDown':next=(index+1)%total;break
+    case 'ArrowLeft':case 'ArrowUp':next=(index-1+total)%total;break
+    case 'Home':next=0;break
+    case 'End':next=total-1;break
+  }
+  if(next===undefined)return
+  event.preventDefault()
+  const tabButtons=event.currentTarget.parentElement?.querySelectorAll<HTMLButtonElement>('[role="tab"]')
+  select(next)
+  tabButtons?.[next]?.focus()
+}
+
 const weekDays=[
   {day:'Mon',name:'Monday',heading:'Begin together.',body:'A supportive start to the week: planning, live instruction, community connection and shared expectations.',tags:['Community connection','Live classes','Academic planning'],image:media.school},
   {day:'Tue',name:'Tuesday',heading:'Go deeper in the work.',body:'Subject learning, collaborative practice and opportunities to get help before small problems become big ones.',tags:['Core instruction','Small groups','Coaching'],image:media.educators},
@@ -153,7 +169,7 @@ export function EditorialWeekPage() {
   return <article className="ca-editorial">
     <Hero eyebrow="The student experience" title="Not just a school day." accent="A week full of possibility." lede="Follow a representative CAN student through a rhythm of teaching, friendship, discovery, faith, service, and optional enrichment." image={media.students} actions={[{label:'Explore the week',to:'#week'},{label:'For families',to:'/families'}]}/>
     <Section id="week" eyebrow="Explore a representative week" title="Seven days. More than one kind of opportunity." lede="This is an illustrative school week—not a required schedule for every student or community.">
-      <div className="ca-week-tabs" role="tablist" aria-label="Choose a day of the CAN example week">{weekDays.map((day,i)=><button className="ca-week-tab" id={`can-day-${i}`} role="tab" aria-controls="can-day-panel" aria-selected={i===current} tabIndex={i===current?0:-1} onClick={()=>setCurrent(i)} key={day.name}><strong>{day.day}</strong><small>{i>4?'OPTIONAL':'EXPLORE'}</small></button>)}</div>
+      <div className="ca-week-tabs" role="tablist" aria-label="Choose a day of the CAN example week">{weekDays.map((day,i)=><button className="ca-week-tab" id={`can-day-${i}`} role="tab" aria-controls="can-day-panel" aria-selected={i===current} tabIndex={i===current?0:-1} onClick={()=>setCurrent(i)} onKeyDown={event=>handleTabKeys(event,i,weekDays.length,setCurrent)} key={day.name}><strong>{day.day}</strong><small>{i>4?'OPTIONAL':'EXPLORE'}</small></button>)}</div>
       <div id="can-day-panel" className="ca-week-body" role="tabpanel" aria-labelledby={`can-day-${current}`}><div><Eyebrow>{d.name} / illustrative</Eyebrow><h3>{d.heading}</h3><p>{d.body}</p><div className="ca-week-tags">{d.tags.map(t=><span key={t}>{t}</span>)}</div></div><img src={d.image} alt="Illustrative educational activity" /></div>
       <p className="ca-note">Weekday schedules, onsite experiences, academic delivery, optional weekend participation and school calendars vary by local model and approved program.</p>
     </Section>
@@ -173,8 +189,8 @@ export function EditorialExperiencePage(){
  return <article className="ca-editorial">
     <Hero eyebrow="Experience CAN" title="You do not have to imagine it all." accent="Come see what could be possible." lede="Tour a sample CAN Community and follow one of three guided experiences. No login is required to learn about CAN; deeper CAN OS access follows a short, verified lead step." image={media.community} actions={[{label:'Explore the guided tour',to:'#experience'},{label:'A week at CAN',to:'/student-experience/a-week-at-can'}]}/>
     <Section eyebrow="Your own perspective" title="Choose the experience closest to you." lede="The preview uses illustrative content and synthetic scenarios; it is not a login to a live school or real student records." id="experience">
-      <div className="ca-demo-shell"><div className="ca-demo-picker" role="tablist" aria-label="Demo perspective">{(['family','church','educator'] as const).map(r=><button role="tab" key={r} aria-selected={role===r} onClick={()=>setRole(r)}>{r==='family'?'For families':r==='church'?'For churches':'For educators'}</button>)}</div>
-        <div className="ca-demo-stage" role="tabpanel"><Eyebrow>{role} / concept tour</Eyebrow><h3>{d.title}</h3><p>{d.lede}</p><ol>{d.steps.map(s=><li key={s}>{s}</li>)}</ol><ActionLink to={d.action}>Continue this journey</ActionLink></div>
+      <div className="ca-demo-shell"><div className="ca-demo-picker" role="tablist" aria-label="Demo perspective">{(['family','church','educator'] as const).map(r=><button id={`can-demo-${r}`} role="tab" key={r} aria-selected={role===r} tabIndex={role===r?0:-1} onClick={()=>setRole(r)} onKeyDown={event=>handleTabKeys(event,(['family','church','educator'] as const).indexOf(r),3,next=>setRole((['family','church','educator'] as const)[next]))}>{r==='family'?'For families':r==='church'?'For churches':'For educators'}</button>)}</div>
+        <div className="ca-demo-stage" role="tabpanel" aria-labelledby={`can-demo-${role}`}><Eyebrow>{role} / concept tour</Eyebrow><h3>{d.title}</h3><p>{d.lede}</p><ol>{d.steps.map(s=><li key={s}>{s}</li>)}</ol><ActionLink to={d.action}>Continue this journey</ActionLink></div>
       </div>
     </Section>
     <Split eyebrow="The next experience" title="Go beyond the concept when you're ready." body="A deeper CAN OS demonstration may be offered to qualified prospects only after the sample environment and access protections are verified. Real student data and live school configuration are never exposed through this public page." image={media.school} link={{label:'Request a guided CAN demonstration',to:'/demo-access'}}/>
