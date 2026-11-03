@@ -1,9 +1,11 @@
 import { ArrowRight, Building2, Church, MapPinned, UsersRound } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { locationBySlug } from '../data/locationStateData'
+import { stateResearch } from '../data/stateResearch'
 
 export function StateLocationPage({ slug }: { slug: string }) {
   const state = locationBySlug(slug)
+  const research = stateResearch[slug]
 
   if (!state) {
     return (
@@ -51,6 +53,42 @@ export function StateLocationPage({ slug }: { slug: string }) {
           <h2>What we're evaluating</h2>
           <ul>{state.evaluating.map((item) => <li key={item}>{item}</li>)}</ul>
         </article>
+      </section>
+
+      <section className="state-location-why" aria-labelledby="research-heading">
+        <p className="destination-eyebrow">State funding and launch research</p>
+        <h2 id="research-heading" className="editorial-heading">Understand the opportunities and obligations.</h2>
+        <p>Published program information is a starting point, not confirmation that CAN or a proposed church location is approved, accredited, eligible for funding, or authorized to enroll students.</p>
+        {research ? (
+          <div className="state-location-grid">
+            <article>
+              <p className="destination-eyebrow">{research.status} · Sources checked {research.checked}</p>
+              <h3>Education funding pathways</h3>
+              {research.funding.map((program) => (
+                <div key={program.name}>
+                  <h4>{program.name}</h4>
+                  <p>{program.detail}</p>
+                  <p><a href={program.url} target="_blank" rel="noopener noreferrer">Official source: {program.source} ↗</a></p>
+                </div>
+              ))}
+            </article>
+            <article>
+              <p className="destination-eyebrow">Preliminary checklist</p>
+              <h3>What a launch would require us to investigate</h3>
+              <ul>{research.launch.map((item) => <li key={item}>{item}</li>)}</ul>
+            </article>
+            <article>
+              <p className="destination-eyebrow">Legal and operating questions</p>
+              <h3>Rules and limitations</h3>
+              <ul>{research.legal.map((item) => <li key={item}>{item}</li>)}</ul>
+              <h3>Still being validated</h3>
+              <ul>{research.openQuestions.map((item) => <li key={item}>{item}</li>)}</ul>
+            </article>
+          </div>
+        ) : (
+          <p>State-specific funding, provider requirements and legal considerations are in draft research. We are gathering primary government and program-administrator sources before publishing a detailed summary. <Link to={`/contact?topic=locations&state=${state.slug}`}>Ask us about this state</Link>.</p>
+        )}
+        <p>Research summaries are informational and may change. Families should confirm current scholarship terms with the program administrator. Each proposed CAN operation requires a separate legal, financial and school-readiness review.</p>
       </section>
 
       {state.deepLink && (
