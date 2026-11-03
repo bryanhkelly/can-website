@@ -11,7 +11,8 @@ import { EconomicsPage } from './pages/EconomicsPage'
 import { EconomicBreakthroughPage } from './pages/EconomicBreakthroughPage'
 import { ExplorePage } from './pages/ExplorePage'
 import { ContactPage } from './pages/ContactPage'
-import { HomePage } from './pages/HomePage'
+import { EditorialHomePage, EditorialModelPage, EditorialFamiliesPage, EditorialChurchesPage, EditorialEducatorsPage, EditorialAcademicsPage, EditorialWeekPage, EditorialExperiencePage, EditorialChurchPreviewPage, EditorialTeacherOpportunitiesPage, EditorialTeacherDirectoryPage } from './pages/EditorialMainPages'
+import { EditorialFamilyInterestPage, EditorialChurchInterestPage, EditorialTeacherApplyPage, EditorialDemoAccessPage } from './pages/EditorialLeadForms'
 import { AccessibilityPage, NotFoundPage, PrivacyPage, TermsPage } from './pages/StaticPages'
 import { AccountabilityPage } from './pages/AccountabilityPage'
 import { LocationsPage } from './pages/LocationsPage'
@@ -27,7 +28,6 @@ import {
   StudentFaithPage,
   StudentKnownSupportedPage,
   StudentReadyPage,
-  StudentWeekPage,
 } from './pages/StudentDeepDivePages'
 import {
   AcademicsCredibilityPage,
@@ -50,7 +50,6 @@ import { FloridaPublicPage } from './pages/FloridaPublicPage'
 import { RoleDoorwayPage } from './components/RoleDoorwayPage'
 import { roleDoorways } from './data/pageContent'
 import {
-  AcademicsPage,
   PartnerPage,
   PartnershipModelPage,
   StartCommunityPage,
@@ -108,7 +107,19 @@ function App() {
     <Layout>
       <RouteScrollManager />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<EditorialHomePage />} />
+        <Route path="/how-it-works" element={<EditorialModelPage />} />
+        <Route path="/families" element={<EditorialFamiliesPage />} />
+        <Route path="/churches" element={<EditorialChurchesPage />} />
+        <Route path="/teachers" element={<EditorialEducatorsPage />} />
+        <Route path="/teachers/opportunities" element={<EditorialTeacherOpportunitiesPage />} />
+        <Route path="/teachers/directory" element={<EditorialTeacherDirectoryPage />} />
+        <Route path="/teachers/apply" element={<EditorialTeacherApplyPage />} />
+        <Route path="/experience-can" element={<EditorialExperiencePage />} />
+        <Route path="/church-preview" element={<EditorialChurchPreviewPage />} />
+        <Route path="/family-interest" element={<EditorialFamilyInterestPage />} />
+        <Route path="/church-interest" element={<EditorialChurchInterestPage />} />
+        <Route path="/demo-access" element={<EditorialDemoAccessPage />} />
         <Route path="/story/stakes" element={<StakesPage />} />
         <Route path="/story/possibility" element={<PossibilityPage />} />
         <Route path="/story/curriculum" element={<CurriculumPage />} />
@@ -119,13 +130,13 @@ function App() {
         <Route path="/story/explore-can" element={<ExplorePage />} />
         <Route path="/explore" element={<Navigate to="/story/explore-can" replace />} />
         <Route path="/student-experience" element={<StudentExperienceHub />} />
-        <Route path="/student-experience/a-week-at-can" element={<StudentWeekPage />} />
+        <Route path="/student-experience/a-week-at-can" element={<EditorialWeekPage />} />
         <Route path="/student-experience/known-and-supported" element={<StudentKnownSupportedPage />} />
         <Route path="/student-experience/belonging" element={<StudentBelongingPage />} />
         <Route path="/student-experience/faith-and-formation" element={<StudentFaithPage />} />
         <Route path="/student-experience/activities-and-service" element={<StudentActivitiesPage />} />
         <Route path="/student-experience/ready-for-whats-next" element={<StudentReadyPage />} />
-        <Route path="/academics" element={<AcademicsPage />} />
+        <Route path="/academics" element={<EditorialAcademicsPage />} />
         <Route path="/academics/how-learning-works" element={<AcademicsHowLearningPage />} />
         <Route path="/academics/courses-and-graduation" element={<AcademicsCoursesPage />} />
         <Route path="/academics/teachers-and-support" element={<AcademicsTeachersPage />} />
