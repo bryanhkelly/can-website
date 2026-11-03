@@ -4,14 +4,14 @@ import { ArrowUpRight } from 'lucide-react'
 
 type Action = { label: string; to: string }
 export const media = {
-  students: '/images/02_possibility_student_group.png',
-  school: '/images/04_platform_local_campus.png',
-  family: '/images/roles/01_families.png',
-  church: '/images/roles/02_churches_ministries.png',
-  educators: '/images/03_curriculum_student_study.png',
-  community: '/images/05_rooted_locally_community.png',
-  homeschool: '/images/roles/04_coops_homeschools.png',
-  pathway: '/images/06_student_experience_portrait.png'
+  students: '/images/editorial/hero_students.jpg',
+  school: '/images/editorial/hero_school.jpg',
+  family: '/images/editorial/hero_family.jpg',
+  church: '/images/editorial/hero_church.jpg',
+  educators: '/images/editorial/hero_homeschool.jpg',
+  community: '/images/editorial/hero_church.jpg',
+  homeschool: '/images/editorial/hero_homeschool.jpg',
+  pathway: '/images/editorial/hero_school.jpg'
 } as const
 
 export function Eyebrow({children}:{children:ReactNode}) { return <p className="ca-eyebrow">{children}</p> }
