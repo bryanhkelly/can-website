@@ -2,7 +2,7 @@ name: UI Audit
 
 on:
   push:
-    branches: [main]
+    branches: [main, 'docs/site-pdf-export']
     paths:
       - 'src/**'
       - 'public/**'
