@@ -92,3 +92,14 @@ Current public leadership titles:
 - Neko's public biography is grounded in her supplied CV: Ed.D. in Organizational Leadership, M.A. in Teaching, MBA, B.S. in Business Management, classroom experience including special education and elementary/middle grades, differentiated instruction and assessment, and church ministry leadership.
 - Do not add unverified certifications, school-system leadership roles, published research, accreditation authority, or academic outcomes.
 - Do not imply the founders alone constitute the full school staff or local leadership model. The site should continue to distinguish academic leadership, platform/operating leadership, and local leadership.
+
+## Public state research profiles
+
+The public marketing pages at `/locations/:state` are owned by the CAN Academy website, not CAN OS jurisdiction policy. The research data lives in `src/data/stateResearch.ts`. These are public editorial summaries, not authoritative operating rules or school-specific authorization decisions.
+
+- Publish useful factual research as `Draft research` or `In review` when sourced to a primary state agency or official program administrator. Display the review label and checked date next to the research.
+- Preserve direct primary-source links, important qualification language, and explicit unanswered questions. Never translate scholarship eligibility into confirmed CAN eligibility, provider approval, or a commitment to enroll students.
+- Review date-sensitive award amounts, application periods, program restrictions, school registration and accreditation before representing them as current. Revise or remove stale claims.
+- The state page's market-development status (`In development`, `Exploring partnerships`) is distinct from research review status, funding participation and school-opening authorization.
+- Full legal and CAN-specific operational decisions are handled separately under independently reviewed CAN OS jurisdiction policies. Public marketing pages must not draw from unverified CAN OS drafts or expose private review material.
+- Marketing state research should help a prospective church or family identify questions to discuss, not supply a compliance checklist deemed ready for an actual school opening.
