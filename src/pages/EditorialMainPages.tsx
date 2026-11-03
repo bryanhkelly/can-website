@@ -25,7 +25,7 @@ export function EditorialHomePage() {
 
 export function EditorialModelPage() {
   return <article className="ca-editorial">
-    <Hero eyebrow="Our model" title="A local school." accent="A wider world." lede="CAN is designed to let churches and schools build deeply personal educational communities without every location independently building an entire school system." image={media.school} actions={[{label:'Explore the student experience',to:'/student-experience/a-week-at-can'},{label:'Understand the partnership',to:'/partnership-model'}]}/>
+    <Hero eyebrow="Our model" title="A complete school system." accent="Rooted in local community." lede="CAN is being designed to connect shared academic operations and teaching with churches and communities that provide local presence and support." image={media.school} split actions={[{label:'Explore the student experience',to:'/student-experience/a-week-at-can'},{label:'Understand the partnership',to:'/partnership-model'}]}/>
     <Section eyebrow="The model in one sentence" title="Share more. Rebuild less." lede="CAN connects shared instruction, curriculum, records, and school support with trusted people and places already close to families.">
       <FeatureLines items={[
         {title:'CAN brings the academic backbone',body:'Network teachers, coherent courses, assessment, academic records, and shared school services.'},
@@ -48,7 +48,7 @@ export function EditorialModelPage() {
 
 export function EditorialFamiliesPage() {
   return <article className="ca-editorial">
-    <Hero eyebrow="For families" title="For the future" accent="you see in your child." lede="Strong academics matter. So does being known, having a place to belong, and discovering what comes next. CAN is being designed to bring those things together." image={media.family} actions={[{label:'Experience a week at CAN',to:'/student-experience/a-week-at-can'},{label:'Check locations',to:'/locations'}]}/>
+    <Hero eyebrow="For families" title="The world is wide." accent="Their school can still feel like home." lede="A rigorous educational path. Adults who know your student. New connections, opportunities, and a community to grow with." image={media.family} split actions={[{label:'Experience a week at CAN',to:'/student-experience/a-week-at-can'},{label:'Check locations',to:'/locations'}]}/>
     <Section eyebrow="A parent's hope" title="An education that sees the whole child." lede="A CAN Community is designed to connect academic excellence, Christian formation, real friendships, and adults who pay attention.">
       <FeatureLines items={[
         {title:'Teachers who can go deeper',body:'A shared academic network expands the instruction and courses a smaller local school can offer.'},
@@ -95,7 +95,7 @@ export function EditorialChurchesPage() {
 
 export function EditorialEducatorsPage() {
   return <article className="ca-editorial">
-    <Hero eyebrow="For educators" title="Your teaching could change more lives." accent="And still feel personal." lede="CAN is building an educator network where subject expertise can reach students across local Christian learning communities—with support from adults who know students in person." image={media.educators} actions={[{label:'Explore teaching opportunities',to:'/teachers/opportunities'},{label:'Express educator interest',to:'/teachers/apply'}]}/>
+    <Hero eyebrow="For educators" title="Your classroom could reach farther." accent="Your impact could go deeper." lede="Imagine teaching with the resources of a connected academic network—and meaningful local support surrounding the students you serve." image={media.educators} actions={[{label:'Explore teaching opportunities',to:'/teachers/opportunities'},{label:'Express educator interest',to:'/teachers/apply'}]}/>
     <Section eyebrow="A bigger reach" title="One great teacher. More lives touched." lede="A network can help students in smaller communities benefit from excellent subject instruction without asking a single local site to recruit an entire conventional faculty.">
       <FeatureLines items={[
         {title:'Teach within a coherent academic program',body:'Course offerings, expectations, student work, and academic support connected across the network.'},
@@ -119,7 +119,7 @@ export function EditorialEducatorsPage() {
 
 export function EditorialAcademicsPage() {
   return <article className="ca-editorial">
-    <Hero eyebrow="Academic excellence" title="A strong academic path." accent="A bigger world of possibility." lede="CAN is designed for grades 6–12, bringing together rigorous coursework, qualified instruction, student support, mastery and a clear path beyond graduation." image={media.educators} actions={[{label:'Explore courses and graduation',to:'/academics/courses-and-graduation'},{label:'See how learning works',to:'/academics/how-learning-works'}]}/>
+    <Hero eyebrow="Academic excellence" title="Strong academics." accent="With students at the center." lede="Courses, teachers, progress, support, and future pathways should work together—not as separate systems, but as one coherent academic journey." image={media.educators} actions={[{label:'Explore courses and graduation',to:'/academics/courses-and-graduation'},{label:'See how learning works',to:'/academics/how-learning-works'}]}/>
     <Section eyebrow="Academic foundations" title="More than classes. A complete pathway." lede="Every student deserves coherent instruction, meaningful feedback, appropriate support, and a record of academic growth.">
       <FeatureLines items={[
         {title:'Courses and pathways',body:'Core subjects, electives and intentional preparation for what comes next.'},
@@ -151,7 +151,7 @@ const weekDays=[
 export function EditorialWeekPage() {
   const [current,setCurrent]=useState(0);const d=weekDays[current]
   return <article className="ca-editorial">
-    <Hero eyebrow="The student experience" title="A week full of learning." accent="A life full of possibility." lede="A CAN week is about more than finishing lessons. Explore how instruction, community, mentoring, faith, projects and activities could fit together." image={media.students} actions={[{label:'Explore the week',to:'#week'},{label:'For families',to:'/families'}]}/>
+    <Hero eyebrow="The student experience" title="Not just a school day." accent="A week full of possibility." lede="Follow a representative CAN student through a rhythm of teaching, friendship, discovery, faith, service, and optional enrichment." image={media.students} actions={[{label:'Explore the week',to:'#week'},{label:'For families',to:'/families'}]}/>
     <Section id="week" eyebrow="Explore a representative week" title="Seven days. More than one kind of opportunity." lede="This is an illustrative school week—not a required schedule for every student or community.">
       <div className="ca-week-tabs" role="tablist" aria-label="Choose a day of the CAN example week">{weekDays.map((day,i)=><button className="ca-week-tab" id={`can-day-${i}`} role="tab" aria-controls="can-day-panel" aria-selected={i===current} tabIndex={i===current?0:-1} onClick={()=>setCurrent(i)} key={day.name}><strong>{day.day}</strong><small>{i>4?'OPTIONAL':'EXPLORE'}</small></button>)}</div>
       <div id="can-day-panel" className="ca-week-body" role="tabpanel" aria-labelledby={`can-day-${current}`}><div><Eyebrow>{d.name} / illustrative</Eyebrow><h3>{d.heading}</h3><p>{d.body}</p><div className="ca-week-tags">{d.tags.map(t=><span key={t}>{t}</span>)}</div></div><img src={d.image} alt="Illustrative educational activity" /></div>
@@ -171,7 +171,7 @@ const demoRoles={
 export function EditorialExperiencePage(){
  const [role,setRole]=useState<keyof typeof demoRoles>('family');const d=demoRoles[role]
  return <article className="ca-editorial">
-    <Hero eyebrow="Experience CAN" title="See what a new kind of school" accent="could feel like." lede="A school visit should make the experience tangible. Start with a representative CAN journey—then explore the role that fits you." image={media.community} actions={[{label:'Explore the guided tour',to:'#experience'},{label:'A week at CAN',to:'/student-experience/a-week-at-can'}]}/>
+    <Hero eyebrow="Experience CAN" title="You do not have to imagine it all." accent="Come see what could be possible." lede="Tour a sample CAN Community and follow one of three guided experiences. No login is required to learn about CAN; deeper CAN OS access follows a short, verified lead step." image={media.community} actions={[{label:'Explore the guided tour',to:'#experience'},{label:'A week at CAN',to:'/student-experience/a-week-at-can'}]}/>
     <Section eyebrow="Your own perspective" title="Choose the experience closest to you." lede="The preview uses illustrative content and synthetic scenarios; it is not a login to a live school or real student records." id="experience">
       <div className="ca-demo-shell"><div className="ca-demo-picker" role="tablist" aria-label="Demo perspective">{(['family','church','educator'] as const).map(r=><button role="tab" key={r} aria-selected={role===r} onClick={()=>setRole(r)}>{r==='family'?'For families':r==='church'?'For churches':'For educators'}</button>)}</div>
         <div className="ca-demo-stage" role="tabpanel"><Eyebrow>{role} / concept tour</Eyebrow><h3>{d.title}</h3><p>{d.lede}</p><ol>{d.steps.map(s=><li key={s}>{s}</li>)}</ol><ActionLink to={d.action}>Continue this journey</ActionLink></div>
@@ -183,7 +183,7 @@ export function EditorialExperiencePage(){
 
 export function EditorialChurchPreviewPage() {
  return <article className="ca-editorial">
-   <Hero eyebrow="CAN at your church" title="What could a school look like" accent="in your community?" lede="Explore an illustrative local school opportunity supported by the CAN academic network. This is a preview, not an operating authorization or enrollment commitment." image={media.church} actions={[{label:'Start a partnership conversation',to:'/church-interest'},{label:'Learn the model',to:'/partnership-model'}]}/>
+   <Hero eyebrow="CAN at your church" title="Imagine what a school could mean" accent="here." lede="A local community is more than a pin on a map. Preview how shared instruction, a familiar gathering place, and trusted leadership might come together." image={media.church} split actions={[{label:'Start a partnership conversation',to:'/church-interest'},{label:'Learn the model',to:'/partnership-model'}]}/>
    <Section eyebrow="A possible starting point" title="Imagine what is already close to home." lede="CAN communities can take different shapes depending on student demand, local facilities, safe supervision, staffing, legal requirements and faith context.">
      <FeatureLines items={[{title:'What your church could bring',body:'Local relationships, available space, faith formation and trusted adult leadership.'},{title:'What CAN would support',body:'Academic programming, shared teacher capacity, records, technology and centralized operating services.'},{title:'What both must confirm',body:'Families, economics, school-of-record obligations, safety, facility readiness and formal launch authorization.'}]}/>
    </Section>
@@ -194,7 +194,7 @@ export function EditorialChurchPreviewPage() {
 
 export function EditorialTeacherOpportunitiesPage(){
  return <article className="ca-editorial">
-   <Hero eyebrow="Educator opportunities" title="Teach your subject." accent="Expand your impact." lede="CAN is exploring roles for excellent educators who want to serve students through a connected network of locally anchored Christian school communities." image={media.educators} actions={[{label:'Share your teaching interests',to:'/teachers/apply'},{label:'Teacher network vision',to:'/teachers'}]}/>
+   <Hero eyebrow="Educator opportunities" title="Your expertise." accent="A new kind of reach." lede="CAN intends to recruit, vet, and onboard educators centrally, then match approved teachers to curriculum, courses, and authorized classes." image={media.educators} split actions={[{label:'Share your teaching interests',to:'/teachers/apply'},{label:'Teacher network vision',to:'/teachers'}]}/>
    <Section eyebrow="The role" title="A professional network built around students." lede="Exact roles, instructional models, compensation, availability and hiring decisions are subject to approved school needs.">
      <FeatureLines items={[{title:'Subject teaching',body:'Lead or contribute to approved coursework, live instruction and meaningful feedback.'},{title:'Course and curriculum contributions',body:'Collaborate on high-quality learning experiences and materials aligned with CAN standards.'},{title:'Academic support and coaching',body:'Participate in coordinated interventions and student growth, where appropriate and authorized.'}]}/>
    </Section>
@@ -204,7 +204,7 @@ export function EditorialTeacherOpportunitiesPage(){
 
 export function EditorialTeacherDirectoryPage(){
  return <article className="ca-editorial">
-   <section className="ca-inner-hero"><div className="ca-container"><Eyebrow>The educator network</Eyebrow><h1>Meet the people who make learning personal.</h1><p>Verified faculty profiles will be published here only with an educator's approval and when the relevant school/program is ready to present its actual teaching team.</p></div></section>
+   <Hero eyebrow="The educator network" title="Meet the educators who make" accent="learning human." lede="An approved CAN educator directory could make course expertise, professional credentials, and teaching approaches visible to families and partner schools." image={media.educators} split actions={[{label:'Explore teacher opportunities',to:'/teachers/opportunities'}]}/>
    <Section eyebrow="Built on trust" title="No invented faculty. No demo identities presented as real.">
      <div className="ca-directory-placeholder"><b>CAN</b><p>Verified educator profiles will appear as approved.</p></div>
    </Section>
