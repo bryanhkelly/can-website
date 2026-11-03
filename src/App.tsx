@@ -15,7 +15,7 @@ import { EditorialHomePage, EditorialModelPage, EditorialFamiliesPage, Editorial
 import { EditorialFamilyInterestPage, EditorialChurchInterestPage, EditorialTeacherApplyPage, EditorialDemoAccessPage } from './pages/EditorialLeadForms'
 import { AccessibilityPage, NotFoundPage, PrivacyPage, TermsPage } from './pages/StaticPages'
 import { AccountabilityPage } from './pages/AccountabilityPage'
-import { LocationsPage } from './pages/LocationsPage'
+import { EditorialLocationsPage } from './pages/EditorialLocationsPage'
 import { StateLocationPage } from './pages/StateLocationPage'
 import { stateLocations } from './data/locationStateData'
 import { FaqPage } from './pages/FaqPage'
@@ -162,7 +162,7 @@ function App() {
         <Route path="/launch-approach/measure" element={<LaunchStagePage slug="measure" />} />
         <Route path="/economic-breakthrough" element={<EconomicBreakthroughPage />} />
         <Route path="/accountability" element={<AccountabilityPage />} />
-        <Route path="/locations" element={<LocationsPage />} />
+        <Route path="/locations" element={<EditorialLocationsPage />} />
         {stateLocations.map((state) => (
           <Route key={state.slug} path={`/locations/${state.slug}`} element={<StateLocationPage slug={state.slug} />} />
         ))}
