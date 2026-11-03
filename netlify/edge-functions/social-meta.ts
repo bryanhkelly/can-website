@@ -100,7 +100,7 @@ const META: Record<string, SocialMeta> = {
   },
   '/florida': {
     title: 'Florida Opportunity | CAN Academy',
-    description: 'Explore why Florida is a development market for CAN Academy and the research behind current focus communities.',
+    description: 'Explore CAN Academy in Florida, development status, and opportunities for families and churches.',
     image: '/images/04_platform_local_campus.png',
     imageAlt: 'Students outside a local church and school community.',
   },
@@ -109,12 +109,6 @@ const META: Record<string, SocialMeta> = {
     description: 'See how CAN approaches academic standards, student safety, visible progress, shared responsibility, and site readiness.',
     image: '/images/03_curriculum_student_study.png',
     imageAlt: 'A student engaged in academic work.',
-  },
-  '/evidence': {
-    title: 'Evidence Library | CAN Academy',
-    description: 'Research, data, sources, assumptions, and open questions behind the CAN model.',
-    image: '/images/07_economics_leadership_meeting.png',
-    imageAlt: 'Education and community leaders reviewing an opportunity together.',
   },
   '/faq': {
     title: 'FAQ | CAN Academy',
@@ -168,7 +162,6 @@ function getMeta(pathname: string): SocialMeta {
   if (clean.startsWith('/student-experience/')) return META['/student-experience']
   if (clean.startsWith('/partnership-model/')) return META['/partnership-model']
   if (clean.startsWith('/florida/')) return META['/florida']
-  if (clean.startsWith('/evidence/')) return META['/evidence']
 
   return DEFAULT_META
 }
