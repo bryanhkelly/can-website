@@ -13,6 +13,18 @@ const DEFAULT_META: SocialMeta = {
 }
 
 const META: Record<string, SocialMeta> = {
+  '/how-it-works': { title:'How CAN Works | CAN Academy',description:'One connected academic network, many locally rooted school communities.',image:'/images/04_platform_local_campus.png',imageAlt:'Students outside a local learning community.' },
+  '/families': { title:'For Families | CAN Academy',description:'Discover a school experience that combines academic opportunity and a place to belong.',image:'/images/roles/01_families.png',imageAlt:'Family exploring education choices.' },
+  '/churches': { title:'For Churches | CAN Academy',description:'Explore how your church could serve families throughout the week through a CAN Academy partnership.',image:'/images/roles/02_churches_ministries.png',imageAlt:'Church leaders in conversation.' },
+  '/teachers': { title:'For Educators | CAN Academy',description:'Explore how educators can contribute to CAN Academy across local Christian learning communities.',image:'/images/03_curriculum_student_study.png',imageAlt:'Student engaged in academic work.' },
+  '/experience-can': { title:'Experience CAN | Guided School Tour',description:'Explore the student experience, a church partnership, or educator journey through an illustrative CAN Academy tour.',image:'/images/05_rooted_locally_community.png',imageAlt:'Students and adult mentors in a community.' },
+  '/church-preview': { title:'CAN at Your Church | CAN Academy',description:'Explore what a school could look like in your church and community.',image:'/images/roles/02_churches_ministries.png',imageAlt:'Church leaders in conversation.' },
+  '/family-interest': { title:'Family Interest | CAN Academy',description:'Share interest in a future local CAN Academy community.',image:'/images/roles/01_families.png',imageAlt:'Family exploring school opportunities.' },
+  '/church-interest': { title:'Church Partnerships | CAN Academy',description:'Share church partnership interest in a potential CAN Academy community.',image:'/images/roles/02_churches_ministries.png',imageAlt:'Church leaders in conversation.' },
+  '/demo-access': { title:'Request a Guided CAN Demo | CAN Academy',description:'Ask about a guided CAN Academy operating-system demonstration.',image:'/images/04_platform_local_campus.png',imageAlt:'Students in a school setting.' },
+  '/teachers/opportunities': { title:'Educator Opportunities | CAN Academy',description:'Explore prospective instructional and academic opportunities with CAN Academy.',image:'/images/03_curriculum_student_study.png',imageAlt:'Student learning.' },
+  '/teachers/apply': { title:'Educator Interest | CAN Academy',description:'Share your teaching background and interest in CAN Academy.',image:'/images/03_curriculum_student_study.png',imageAlt:'Student learning.' },
+  '/teachers/directory': { title:'Educator Network | CAN Academy',description:'Verified educator information will appear when approved and available.',image:'/images/03_curriculum_student_study.png',imageAlt:'Student learning.' },
   '/': DEFAULT_META,
   '/story/stakes': {
     title: 'The Stakes | CAN Academy',
@@ -100,7 +112,7 @@ const META: Record<string, SocialMeta> = {
   },
   '/florida': {
     title: 'Florida Opportunity | CAN Academy',
-    description: 'Explore why Florida is a development market for CAN Academy and the research behind current focus communities.',
+    description: 'Explore CAN Academy in Florida, development status, and opportunities for families and churches.',
     image: '/images/04_platform_local_campus.png',
     imageAlt: 'Students outside a local church and school community.',
   },
@@ -109,12 +121,6 @@ const META: Record<string, SocialMeta> = {
     description: 'See how CAN approaches academic standards, student safety, visible progress, shared responsibility, and site readiness.',
     image: '/images/03_curriculum_student_study.png',
     imageAlt: 'A student engaged in academic work.',
-  },
-  '/evidence': {
-    title: 'Evidence Library | CAN Academy',
-    description: 'Research, data, sources, assumptions, and open questions behind the CAN model.',
-    image: '/images/07_economics_leadership_meeting.png',
-    imageAlt: 'Education and community leaders reviewing an opportunity together.',
   },
   '/faq': {
     title: 'FAQ | CAN Academy',
@@ -168,7 +174,6 @@ function getMeta(pathname: string): SocialMeta {
   if (clean.startsWith('/student-experience/')) return META['/student-experience']
   if (clean.startsWith('/partnership-model/')) return META['/partnership-model']
   if (clean.startsWith('/florida/')) return META['/florida']
-  if (clean.startsWith('/evidence/')) return META['/evidence']
 
   return DEFAULT_META
 }
@@ -202,6 +207,16 @@ export default async (request: Request, context: { next: () => Promise<Response>
   if (request.method !== 'GET') return context.next()
 
   const response = await context.next()
+  const requestPath = new URL(request.url)
+  const isStaticSearch = requestPath.pathname.startsWith('/go/') || requestPath.pathname.startsWith('/resources/')
+  if (isStaticSearch && (response.headers.get('content-type') ?? '').includes('text/html')) {
+    const html = await response.text()
+    const headers = new Headers(response.headers)
+    headers.delete('content-length')
+    if (requestPath.hostname.includes('--can-academy.netlify.app')) headers.set('x-robots-tag', 'noindex,nofollow')
+    if (!html.includes('name="can-static-content"')) return new Response('Not found', {status:404,headers:{'content-type':'text/plain; charset=utf-8','x-robots-tag':'noindex,nofollow'}})
+    return new Response(html,{status:response.status,statusText:response.statusText,headers})
+  }
   const contentType = response.headers.get('content-type') ?? ''
   if (!contentType.includes('text/html')) return response
 
@@ -211,6 +226,8 @@ export default async (request: Request, context: { next: () => Promise<Response>
   const partner = requestUrl.searchParams.get('partner')
   const shareUrl = partner ? `${canonical}?partner=${encodeURIComponent(partner)}` : canonical
   const image = socialImageUrl(requestUrl.origin, meta.image)
+  const noindexPaths = ['/family-interest','/church-interest','/teachers/apply','/teachers/directory','/demo-access','/partners/the-journey-church','/partners/cogic','/partners/cogbf']
+  const noindex = noindexPaths.includes(requestUrl.pathname) || requestUrl.hostname.includes('--can-academy.netlify.app')
 
   let html = await response.text()
 
@@ -233,6 +250,9 @@ export default async (request: Request, context: { next: () => Promise<Response>
   html = replaceTag(html, /<meta\s+name=["']twitter:image["'][^>]*>/i, `<meta name="twitter:image" content="${escapeHtml(image)}" />`)
   html = replaceTag(html, /<meta\s+name=["']twitter:image:alt["'][^>]*>/i, `<meta name="twitter:image:alt" content="${escapeHtml(meta.imageAlt)}" />`)
   html = replaceTag(html, /<link\s+rel=["']canonical["'][^>]*>/i, `<link rel="canonical" href="${escapeHtml(canonical)}" />`)
+  html = replaceTag(html, /<meta\\s+name=["']robots["'][^>]*>/i, `<meta name="robots" content="${noindex ? 'noindex,nofollow' : 'index,follow,max-image-preview:large'}" />`)
+  const organizationSchema = JSON.stringify({ '@context': 'https://schema.org', '@type': 'EducationalOrganization', name: 'CAN Academy', url: requestUrl.origin + '/', description: meta.description, logo: requestUrl.origin + '/favicon.svg' }).replaceAll('<','\\u003c')
+  html = html.replace('</head>', `<script type="application/ld+json">${organizationSchema}</script>\\n</head>`)
 
   const headers = new Headers(response.headers)
   headers.delete('content-length')

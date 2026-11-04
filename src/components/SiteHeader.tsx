@@ -1,87 +1,46 @@
+import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { brandTagline, navSlugs } from '../data/pageContent'
+import { navSlugs } from '../data/pageContent'
 import { withPartnerContext } from '../lib/nav'
 import { BrandMark } from './ui/BrandMark'
 
-export function SiteHeader() {
-  const location = useLocation()
-  const labels = ['Stakes', 'Possibility', 'Curriculum', 'Platform', 'Rooted Locally', 'Student Experience', 'Why It Can Work', 'Explore CAN']
-  const [storyOpen, setStoryOpen] = useState(false)
-  const isStory = location.pathname.startsWith('/story/')
-  const currentIndex = navSlugs.findIndex((slug) => location.pathname === `/story/${slug}`)
-  const currentLabel = currentIndex >= 0 ? labels[currentIndex] : 'Explore CAN'
+const entries=[
+  {label:'Our Model',to:'/how-it-works'},
+  {label:'Families',to:'/families'},
+  {label:'Churches',to:'/churches'},
+  {label:'Educators',to:'/teachers'},
+  {label:'A Week at CAN',to:'/student-experience/a-week-at-can'},
+  {label:'Locations',to:'/locations'},
+]
+const labels=['Stakes','Possibility','Curriculum','Platform','Rooted Locally','Student Experience','Why It Can Work','Explore CAN']
 
-  return (
-    <header className="sticky top-0 z-30 border-b border-navy-100/80 bg-cream-50/95 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6">
-        <Link to="/" aria-label="CAN Academy home" className="flex shrink-0 items-center gap-2.5">
-          <BrandMark />
-          <span className="leading-tight">
-            <span className="block text-sm font-extrabold tracking-tight text-navy-950">CAN Academy</span>
-            <span className="hidden text-[0.58rem] font-medium text-navy-500 sm:block">Communities. Learners. Brighter futures.</span>
-          </span>
-        </Link>
-        <p className="hidden shrink-0 text-[0.65rem] font-bold uppercase tracking-[0.13em] text-navy-500 xl:block">
-          {brandTagline}
-        </p>
-      </div>
-      {!isStory && (
-        <nav className="public-site-nav" aria-label="Primary navigation">
-          <Link to={withPartnerContext('/story/stakes', location.search)}>The CAN story</Link>
-          <Link to={withPartnerContext('/story/explore-can', location.search)}>Explore</Link>
-          <Link to={withPartnerContext('/contact', location.search)} className="public-site-nav-cta">Start a conversation</Link>
-        </nav>
-      )}
-      {isStory && <div className="story-mobile-shell sm:hidden">
-        <button
-          type="button"
-          className="story-mobile-toggle"
-          aria-expanded={storyOpen}
-          aria-controls="mobile-story-nav"
-          onClick={() => setStoryOpen((open) => !open)}
-        >
-          <span>{currentIndex >= 0 ? `${String(currentIndex + 1).padStart(2, '0')} / 08 · ${currentLabel}` : 'CAN story'}</span>
-          {storyOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-        </button>
-        {storyOpen && (
-          <nav id="mobile-story-nav" className="story-mobile-menu" aria-label="CAN story pages">
-            {navSlugs.map((slug, i) => (
-              <NavLink
-                key={slug}
-                to={withPartnerContext(`/story/${slug}`, location.search)}
-                onClick={() => setStoryOpen(false)}
-                className={({ isActive }) => isActive ? 'is-active' : ''}
-              >
-                <span>{String(i + 1).padStart(2, '0')}</span>
-                <strong>{labels[i]}</strong>
-              </NavLink>
-            ))}
-          </nav>
-        )}
-      </div>}
-      {isStory && <nav
-        className="mx-auto hidden max-w-7xl flex-wrap justify-center gap-1 px-6 pb-2.5 sm:flex"
-        aria-label="CAN story pages"
-      >
-        {navSlugs.map((slug, i) => (
-          <NavLink
-            key={slug}
-            to={withPartnerContext(`/story/${slug}`, location.search)}
-            aria-label={`${i + 1}. ${labels[i]}`}
-            title={`${i + 1}. ${labels[i]}`}
-            className={({ isActive }) =>
-              `flex min-h-8 shrink-0 items-center justify-center gap-1.5 rounded-full px-2.5 text-[0.68rem] font-bold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-600 ${
-                isActive ? 'bg-navy-900 text-white' : 'text-navy-600 hover:bg-navy-100'
-              }`
-            }
-          >
-            <span className="text-[0.6rem] opacity-65">{String(i + 1).padStart(2, '0')}</span>
-            <span>{labels[i]}</span>
-          </NavLink>
-        ))}
-      </nav>}
-    </header>
-  )
+export function SiteHeader(){
+  const loc=useLocation();const [open,setOpen]=useState(false);const [storyOpen,setStoryOpen]=useState(false)
+  useEffect(()=>{setOpen(false);setStoryOpen(false)},[loc.pathname])
+  const isStory=loc.pathname.startsWith('/story/')
+  const preserve=(path:string)=>withPartnerContext(path,loc.search)
+  return <header className="ca-public-nav">
+    <div className="ca-public-head">
+      <Link className="ca-brand" to={preserve("/")} aria-label="CAN Academy home">
+        <span className="ca-brand-mark"><BrandMark className="h-7 w-7"/></span>
+        <span><strong>CAN <span style={{fontWeight:500}}>ACADEMY</span></strong><small>COMMUNITIES. LEARNERS. BRIGHTER FUTURES.</small></span>
+      </Link>
+      <button type="button" className="ca-mobile-toggle" aria-label={open?'Close menu':'Open navigation menu'} aria-controls="ca-main-nav" aria-expanded={open} onClick={()=>setOpen(v=>!v)}>
+        {open?<X size={25}/>:<Menu size={25}/>}
+      </button>
+      <nav id="ca-main-nav" aria-label="Primary navigation" className={'ca-main-nav'+(open?' is-open':'')}>
+        {entries.map(e=><NavLink key={e.to} to={preserve(e.to)}>{e.label}</NavLink>)}
+        <NavLink to={preserve("/experience-can")} className="ca-main-cta">Experience CAN <span aria-hidden="true">↗</span></NavLink>
+      </nav>
+    </div>
+    {isStory&&<div>
+      <button type="button" className="ca-mobile-toggle ca-story-toggle" aria-expanded={storyOpen} aria-controls="ca-story-links" onClick={()=>setStoryOpen(v=>!v)}>
+        {storyOpen?'Close story chapters':'Explore CAN story chapters'} {storyOpen?<X size={17}/>:<Menu size={17}/>}
+      </button>
+      <nav id="ca-story-links" className={'ca-story-nav'+(storyOpen?' is-open':'')} aria-label="The CAN story">
+        {navSlugs.map((slug,i)=><NavLink key={slug} to={preserve(`/story/${slug}`)}>{String(i+1).padStart(2,'0')} · {labels[i]}</NavLink>)}
+      </nav>
+    </div>}
+  </header>
 }

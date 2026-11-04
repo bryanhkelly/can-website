@@ -11,10 +11,11 @@ import { EconomicsPage } from './pages/EconomicsPage'
 import { EconomicBreakthroughPage } from './pages/EconomicBreakthroughPage'
 import { ExplorePage } from './pages/ExplorePage'
 import { ContactPage } from './pages/ContactPage'
-import { HomePage } from './pages/HomePage'
+import { EditorialHomePage, EditorialModelPage, EditorialFamiliesPage, EditorialChurchesPage, EditorialEducatorsPage, EditorialAcademicsPage, EditorialWeekPage, EditorialExperiencePage, EditorialChurchPreviewPage, EditorialTeacherOpportunitiesPage, EditorialTeacherDirectoryPage } from './pages/EditorialMainPages'
+import { EditorialFamilyInterestPage, EditorialChurchInterestPage, EditorialTeacherApplyPage, EditorialDemoAccessPage } from './pages/EditorialLeadForms'
 import { AccessibilityPage, NotFoundPage, PrivacyPage, TermsPage } from './pages/StaticPages'
 import { AccountabilityPage } from './pages/AccountabilityPage'
-import { LocationsPage } from './pages/LocationsPage'
+import { EditorialLocationsPage } from './pages/EditorialLocationsPage'
 import { StateLocationPage } from './pages/StateLocationPage'
 import { stateLocations } from './data/locationStateData'
 import { FaqPage } from './pages/FaqPage'
@@ -27,7 +28,6 @@ import {
   StudentFaithPage,
   StudentKnownSupportedPage,
   StudentReadyPage,
-  StudentWeekPage,
 } from './pages/StudentDeepDivePages'
 import {
   AcademicsCredibilityPage,
@@ -46,19 +46,10 @@ import {
   PartnershipWhyPage,
 } from './pages/PartnershipDeepDivePages'
 import { LaunchStagePage } from './pages/LaunchDeepDivePages'
-import { EvidenceDeepPage } from './pages/EvidenceDeepDivePages'
-import {
-  FloridaDeepPage,
-  FloridaLandscapePage,
-  FloridaMarketProfilePage,
-  FloridaMarketsPage,
-  FloridaResearchPage,
-  FloridaSelectionPage,
-} from './pages/FloridaDeepDivePages'
+import { FloridaPublicPage } from './pages/FloridaPublicPage'
 import { RoleDoorwayPage } from './components/RoleDoorwayPage'
 import { roleDoorways } from './data/pageContent'
 import {
-  AcademicsPage,
   PartnerPage,
   PartnershipModelPage,
   StartCommunityPage,
@@ -116,7 +107,19 @@ function App() {
     <Layout>
       <RouteScrollManager />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<EditorialHomePage />} />
+        <Route path="/how-it-works" element={<EditorialModelPage />} />
+        <Route path="/families" element={<EditorialFamiliesPage />} />
+        <Route path="/churches" element={<EditorialChurchesPage />} />
+        <Route path="/teachers" element={<EditorialEducatorsPage />} />
+        <Route path="/teachers/opportunities" element={<EditorialTeacherOpportunitiesPage />} />
+        <Route path="/teachers/directory" element={<EditorialTeacherDirectoryPage />} />
+        <Route path="/teachers/apply" element={<EditorialTeacherApplyPage />} />
+        <Route path="/experience-can" element={<EditorialExperiencePage />} />
+        <Route path="/church-preview" element={<EditorialChurchPreviewPage />} />
+        <Route path="/family-interest" element={<EditorialFamilyInterestPage />} />
+        <Route path="/church-interest" element={<EditorialChurchInterestPage />} />
+        <Route path="/demo-access" element={<EditorialDemoAccessPage />} />
         <Route path="/story/stakes" element={<StakesPage />} />
         <Route path="/story/possibility" element={<PossibilityPage />} />
         <Route path="/story/curriculum" element={<CurriculumPage />} />
@@ -127,13 +130,13 @@ function App() {
         <Route path="/story/explore-can" element={<ExplorePage />} />
         <Route path="/explore" element={<Navigate to="/story/explore-can" replace />} />
         <Route path="/student-experience" element={<StudentExperienceHub />} />
-        <Route path="/student-experience/a-week-at-can" element={<StudentWeekPage />} />
+        <Route path="/student-experience/a-week-at-can" element={<EditorialWeekPage />} />
         <Route path="/student-experience/known-and-supported" element={<StudentKnownSupportedPage />} />
         <Route path="/student-experience/belonging" element={<StudentBelongingPage />} />
         <Route path="/student-experience/faith-and-formation" element={<StudentFaithPage />} />
         <Route path="/student-experience/activities-and-service" element={<StudentActivitiesPage />} />
         <Route path="/student-experience/ready-for-whats-next" element={<StudentReadyPage />} />
-        <Route path="/academics" element={<AcademicsPage />} />
+        <Route path="/academics" element={<EditorialAcademicsPage />} />
         <Route path="/academics/how-learning-works" element={<AcademicsHowLearningPage />} />
         <Route path="/academics/courses-and-graduation" element={<AcademicsCoursesPage />} />
         <Route path="/academics/teachers-and-support" element={<AcademicsTeachersPage />} />
@@ -147,16 +150,8 @@ function App() {
         <Route path="/partnership-model/local-distinctives" element={<PartnershipDistinctivesPage />} />
         <Route path="/partnership-model/governance-and-accountability" element={<PartnershipGovernancePage />} />
         <Route path="/partnership-model/partnership-readiness" element={<PartnershipReadinessPage />} />
-        <Route path="/florida" element={<FloridaDeepPage />} />
-        <Route path="/florida/market-landscape" element={<FloridaLandscapePage />} />
-        <Route path="/florida/market-selection" element={<FloridaSelectionPage />} />
-        <Route path="/florida/markets" element={<FloridaMarketsPage />} />
-        <Route path="/florida/markets/desoto" element={<FloridaMarketProfilePage slug="desoto" />} />
-        <Route path="/florida/markets/gadsden" element={<FloridaMarketProfilePage slug="gadsden" />} />
-        <Route path="/florida/markets/hamilton" element={<FloridaMarketProfilePage slug="hamilton" />} />
-        <Route path="/florida/markets/holmes" element={<FloridaMarketProfilePage slug="holmes" />} />
-        <Route path="/florida/markets/okeechobee" element={<FloridaMarketProfilePage slug="okeechobee" />} />
-        <Route path="/florida/research" element={<FloridaResearchPage />} />
+        <Route path="/florida" element={<FloridaPublicPage />} />
+        <Route path="/florida/*" element={<Navigate to="/florida" replace />} />
         <Route path="/start-a-community" element={<StartCommunityPage />} />
         <Route path="/launch-approach" element={<StartCommunityPage />} />
         <Route path="/launch-approach/discover" element={<LaunchStagePage slug="discover" />} />
@@ -167,20 +162,15 @@ function App() {
         <Route path="/launch-approach/measure" element={<LaunchStagePage slug="measure" />} />
         <Route path="/economic-breakthrough" element={<EconomicBreakthroughPage />} />
         <Route path="/accountability" element={<AccountabilityPage />} />
-        <Route path="/locations" element={<LocationsPage />} />
+        <Route path="/locations" element={<EditorialLocationsPage />} />
         {stateLocations.map((state) => (
           <Route key={state.slug} path={`/locations/${state.slug}`} element={<StateLocationPage slug={state.slug} />} />
         ))}
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/leadership" element={<LeadershipPage />} />
         <Route path="/how-can-is-different" element={<HowCanIsDifferentPage />} />
-        <Route path="/evidence" element={<EvidenceDeepPage path="/evidence" />} />
-        <Route path="/evidence/academic-model" element={<EvidenceDeepPage path="/evidence/academic-model" />} />
-        <Route path="/evidence/alternative-education" element={<EvidenceDeepPage path="/evidence/alternative-education" />} />
-        <Route path="/evidence/can-research" element={<EvidenceDeepPage path="/evidence/can-research" />} />
-        <Route path="/evidence/christian-education" element={<EvidenceDeepPage path="/evidence/christian-education" />} />
-        <Route path="/evidence/education-choice" element={<EvidenceDeepPage path="/evidence/education-choice" />} />
-        <Route path="/evidence/market-research" element={<EvidenceDeepPage path="/evidence/market-research" />} />
+        <Route path="/evidence" element={<Navigate to="/accountability" replace />} />
+        <Route path="/evidence/*" element={<Navigate to="/accountability" replace />} />
         <Route path="/vision" element={<Navigate to="/story/possibility" replace />} />
         <Route path="/missing-piece" element={<Navigate to="/story/stakes" replace />} />
         <Route path="/can-model" element={<Navigate to="/story/platform" replace />} />

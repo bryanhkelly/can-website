@@ -15,6 +15,18 @@ export const DEFAULT_SOCIAL_META: SocialMeta = {
 
 const META: Record<string, SocialMeta> = {
   '/': DEFAULT_SOCIAL_META,
+  '/how-it-works': { title:'How CAN Works | CAN Academy',description:'One connected academic network, many locally rooted school communities.',image:'/images/04_platform_local_campus.png',imageAlt:'Students outside a local learning community.' },
+  '/families': { title:'For Families | CAN Academy',description:'Discover a school experience that combines academic opportunity and a place to belong.',image:'/images/roles/01_families.png',imageAlt:'Family exploring education choices.' },
+  '/churches': { title:'For Churches | CAN Academy',description:'Explore how your church could serve families throughout the week through a CAN Academy partnership.',image:'/images/roles/02_churches_ministries.png',imageAlt:'Church leaders in conversation.' },
+  '/teachers': { title:'For Educators | CAN Academy',description:'Explore how educators can contribute to CAN Academy across local Christian learning communities.',image:'/images/03_curriculum_student_study.png',imageAlt:'Student engaged in academic work.' },
+  '/experience-can': { title:'Experience CAN | Guided School Tour',description:'Explore the student experience, a church partnership, or educator journey through an illustrative CAN Academy tour.',image:'/images/05_rooted_locally_community.png',imageAlt:'Students and adult mentors in a community.' },
+  '/church-preview': { title:'CAN at Your Church | CAN Academy',description:'Explore what a school could look like in your church and community.',image:'/images/roles/02_churches_ministries.png',imageAlt:'Church leaders in conversation.' },
+  '/family-interest': { title:'Family Interest | CAN Academy',description:'Share interest in a future local CAN Academy community.',image:'/images/roles/01_families.png',imageAlt:'Family exploring school opportunities.' },
+  '/church-interest': { title:'Church Partnerships | CAN Academy',description:'Share church partnership interest in a potential CAN Academy community.',image:'/images/roles/02_churches_ministries.png',imageAlt:'Church leaders in conversation.' },
+  '/demo-access': { title:'Request a Guided CAN Demo | CAN Academy',description:'Ask about a guided CAN Academy operating-system demonstration.',image:'/images/04_platform_local_campus.png',imageAlt:'Students in a school setting.' },
+  '/teachers/opportunities': { title:'Educator Opportunities | CAN Academy',description:'Explore prospective instructional and academic opportunities with CAN Academy.',image:'/images/03_curriculum_student_study.png',imageAlt:'Student learning.' },
+  '/teachers/apply': { title:'Educator Interest | CAN Academy',description:'Share your teaching background and interest in CAN Academy.',image:'/images/03_curriculum_student_study.png',imageAlt:'Student learning.' },
+  '/teachers/directory': { title:'Educator Network | CAN Academy',description:'Verified educator information will appear when approved and available.',image:'/images/03_curriculum_student_study.png',imageAlt:'Student learning.' },
   '/story/stakes': {
     title: 'The Stakes | CAN Academy',
     description: 'Why too many families are forced to make educational tradeoffs among distance, cost, relevance, and breadth.',
@@ -83,7 +95,7 @@ const META: Record<string, SocialMeta> = {
   },
   '/florida': {
     title: 'Florida Opportunity | CAN Academy',
-    description: 'Explore why Florida is the first proving ground for CAN Academy and the research behind potential pilot markets.',
+    description: 'Explore CAN Academy in Florida, its development status, and ways families and churches can participate.',
     image: '/images/04_platform_local_campus.png',
     imageAlt: 'Students outside a local church and school community.',
   },
@@ -110,12 +122,6 @@ const META: Record<string, SocialMeta> = {
     description: 'See which CAN markets are in development and which are still being explored.',
     image: '/images/04_platform_local_campus.png',
     imageAlt: 'Students outside a local church and school community.',
-  },
-  '/evidence': {
-    title: 'Evidence Library | CAN Academy',
-    description: 'Research, data, sources, assumptions, and open questions behind the CAN model.',
-    image: '/images/07_economics_leadership_meeting.png',
-    imageAlt: 'Education and community leaders reviewing an opportunity together.',
   },
   '/how-can-is-different': {
     title: 'How CAN Is Different | CAN Academy',
@@ -191,7 +197,6 @@ const PREFIX_META: Array<[string, string]> = [
   ['/partnership-model/', '/partnership-model'],
   ['/florida/', '/florida'],
   ['/launch-approach/', '/launch-approach'],
-  ['/evidence/', '/evidence'],
 ]
 
 export function getSocialMeta(pathname: string): SocialMeta {

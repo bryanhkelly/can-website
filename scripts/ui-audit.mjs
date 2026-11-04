@@ -6,38 +6,25 @@ const base = process.env.UI_AUDIT_BASE_URL || 'http://127.0.0.1:4173'
 const outDir = process.env.UI_AUDIT_OUT_DIR || 'ui-audit-output'
 await fs.mkdir(outDir, { recursive: true })
 
-const routes = [
-  '/',
-  '/story/stakes',
-  '/story/possibility',
-  '/story/curriculum',
-  '/story/platform',
-  '/story/rooted-locally',
-  '/story/student-experience',
-  '/story/why-it-can-work',
-  '/story/explore-can',
-  '/parents',
-  '/pastors',
-  '/christian-schools',
-  '/homeschool',
-  '/denominations',
-  '/student-experience',
-  '/academics',
-  '/partnership-model',
-  '/locations',
-  '/locations/arizona',
-  '/locations/florida',
-  '/florida',
-  '/florida/markets',
-  '/launch-approach',
-  '/economic-breakthrough',
-  '/how-can-is-different',
-  '/accountability',
-  '/evidence',
-  '/leadership',
-  '/faq',
-  '/contact',
-]
+const sitemapXml = await fs.readFile(new URL('../public/sitemap.xml', import.meta.url), 'utf8')
+const routes = [...new Set(
+  [...sitemapXml.matchAll(/<loc>https:\/\/can-academy\.netlify\.app([^<]*)<\/loc>/g)]
+    .map(match => match[1] || '/')
+    .concat(
+      '/start-a-community',
+      '/go/',
+      '/resources/',
+      '/go/church-school/',
+      '/go/church-opportunity/',
+      '/go/families/',
+      '/go/florida-families/',
+      '/go/teach-with-can/',
+      '/resources/how-to-start-a-christian-school-at-your-church/',
+      '/resources/how-to-choose-a-christian-school/',
+      '/resources/what-is-school-of-record/',
+      '/resources/designing-a-hybrid-school-week/'
+    )
+)]
 
 const viewports = [
   { name: 'desktop', width: 1440, height: 1000 },

@@ -1,0 +1,40 @@
+name: Form delivery smoke
+on:
+  push:
+    branches: ['feature/editorial-site-redesign']
+    paths: ['.github/workflows/form-delivery-smoke.yml']
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify published preview and contact form POST
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="https://deploy-preview-2--can-academy.netlify.app"
+          for n in $(seq 1 18); do
+            if curl -fsSL --max-time 20 "$BASE/" -o /tmp/can_home.html; then break; fi
+            sleep 5
+          done
+          grep -qi 'CAN Academy' /tmp/can_home.html
+          for path in /florida /families /churches /teachers /experience-can /student-experience/a-week-at-can /__forms.html; do
+            code=$(curl -sL --max-time 20 -o /dev/null -w "%{http_code}" "$BASE$path")
+            echo "$path -> HTTP $code"
+            test "$code" = 200
+          done
+          echo "Submitting synthetic isolated demo request"
+          code=$(curl -sS --max-time 25 -o /tmp/can_demo_response.txt -w "%{http_code}" \
+            -H 'Content-Type: application/x-www-form-urlencoded' \
+            --data-urlencode 'form-name=can-demo-request' \
+            --data-urlencode 'subject=CAN Academy QA demo request' \
+            --data-urlencode 'source=demo-qa-one-off' \
+            --data-urlencode 'name=CAN Demo Smoke Validation' \
+            --data-urlencode 'email=can-demo-smoke@example.org' \
+            --data-urlencode 'state=Arizona' \
+            --data-urlencode 'audience=church' \
+            --data-urlencode 'message=Prospective church leadership would appreciate a general synthetic demo. This is a QA test, not a real person.' \
+            --data-urlencode 'consent=yes' \
+            "$BASE/__forms.html")
+          echo "Demo request POST HTTP $code"
+          test "$code" = 200

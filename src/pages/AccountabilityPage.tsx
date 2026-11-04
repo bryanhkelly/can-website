@@ -160,7 +160,7 @@ export function AccountabilityPage() {
       <section className="accountability-closing">
         <h2 className="editorial-heading">A local school, supported by a network, accountable for learning.</h2>
         <div className="deep-actions">
-          <Link to="/evidence">Explore the Evidence Library →</Link>
+          <Link to="/academics/academic-credibility">Explore academic credibility →</Link>
           <Link to="/contact?topic=accountability">Talk with CAN about accountability →</Link>
         </div>
       </section>

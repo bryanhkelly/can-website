@@ -11,6 +11,7 @@ const AUDIENCE_LABELS: Record<string, string> = {
   'school-leader': 'Christian school leaders',
   homeschool: 'Homeschool families',
   denomination: 'Denominations and church networks',
+  educator: 'Educators',
 }
 
 const AUDIENCE_PROMPTS: Record<string, string> = {
@@ -19,6 +20,7 @@ const AUDIENCE_PROMPTS: Record<string, string> = {
   'school-leader': 'Could CAN expand your school\'s educational capacity?',
   homeschool: 'How might your family or homeschool community participate?',
   denomination: 'Could CAN support a network pilot across your churches?',
+  educator: 'How might your teaching expertise contribute to CAN?',
 }
 
 const PARTNER_LABELS: Record<(typeof partnerIds)[number], string> = {
@@ -69,7 +71,7 @@ export function ContactPage() {
     data.forEach((value, key) => encoded.append(key, String(value)))
 
     try {
-      const response = await fetch('/', {
+      const response = await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encoded.toString(),
@@ -112,10 +114,12 @@ export function ContactPage() {
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="can-contact" />
+          <input type="hidden" name="subject" value="CAN Academy: new contact inquiry (%{submissionId})" />
           <input type="hidden" name="audience" value={audience} />
           <input type="hidden" name="topic" value={topic} />
           <input type="hidden" name="partner" value={partner} />
           <input type="hidden" name="state" value={state} />
+          {(['campaign','utm_source','utm_medium','utm_campaign','utm_content','utm_term'] as const).map(name=><input key={name} type="hidden" name={name} value={(searchParams.get(name)??'').slice(0,140)} />)}
           <p className="contact-honeypot">
             <label>Do not fill this out: <input name="bot-field" /></label>
           </p>
@@ -141,7 +145,7 @@ export function ContactPage() {
             <textarea name="message" rows={6} required placeholder="Share the context, question, or opportunity you would like to discuss." />
           </label>
 
-          <p className="contact-privacy-note">By submitting this form, you are asking CAN Academy to respond to your inquiry. Please do not include sensitive student records. <Link to="/privacy">Privacy</Link></p>
+          <label className="contact-privacy-note"><input type="checkbox" name="consent" value="yes" required /> I agree CAN Academy may contact me about this inquiry. Please don't include sensitive student records. <Link to="/privacy">Privacy</Link></label>
 
           <button type="submit" disabled={status === 'submitting'}>
             {status === 'submitting' ? 'Sending…' : 'Start the conversation'}
@@ -149,7 +153,7 @@ export function ContactPage() {
 
           {status === 'error' && (
             <p className="contact-error" role="alert">
-              The form could not be submitted. Please try again, or email hello@canacademy.org.
+              Your message could not be submitted. Please check your connection and try again.
             </p>
           )}
         </form>

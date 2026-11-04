@@ -1,0 +1,45 @@
+name: Search pages live preview smoke
+on:
+  push:
+    branches: ['feature/editorial-site-redesign']
+    paths: ['.github/workflows/search-preview-smoke.yml']
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Check public preview HTML, metadata and unpublished route protection
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="https://deploy-preview-2--can-academy.netlify.app"
+          for n in $(seq 1 20); do
+            if curl -fsSL --max-time 20 "$BASE/resources/" -o /tmp/can-resources.html; then break; fi
+            sleep 4
+          done
+          grep -q 'name="can-static-content"' /tmp/can-resources.html
+          for slug in /go/ /resources/ /go/church-school/ /go/families/ /go/florida-families/ /resources/how-to-start-a-christian-school-at-your-church/ /resources/how-to-choose-a-christian-school/ /resources/what-is-school-of-record/; do
+            echo "Checking $slug"
+            code=$(curl -sSL --max-time 25 -D /tmp/can-header.txt -o /tmp/can-page.html -w "%{http_code}" "$BASE$slug")
+            test "$code" = "200"
+            grep -q 'name="can-static-content"' /tmp/can-page.html
+            grep -q '<h1>' /tmp/can-page.html
+            grep -q 'rel="canonical"' /tmp/can-page.html
+            grep -q 'application/ld+json' /tmp/can-page.html
+            grep -qi '^x-robots-tag: noindex' /tmp/can-header.txt
+            if [ "$slug" = "/go/church-school/" ]; then
+              grep -q 'Your church knows these families' /tmp/can-page.html
+              grep -q 'https://can-academy.netlify.app/go/church-school/' /tmp/can-page.html
+              grep -q 'data-conversion="church-school"' /tmp/can-page.html
+            fi
+          done
+          curl -fsSL "$BASE/sitemap.xml" -o /tmp/can-sitemap.xml
+          grep -q '/go/church-school/' /tmp/can-sitemap.xml
+          grep -q '/resources/how-to-choose-a-christian-school/' /tmp/can-sitemap.xml
+          if grep -q '/resources/how-churches-can-host-weekday-learning/' /tmp/can-sitemap.xml; then
+            echo "Unpublished planning topic leaked into sitemap" >&2
+            exit 1
+          fi
+          code=$(curl -sSL --max-time 25 -o /dev/null -w "%{http_code}" "$BASE/resources/this-page-was-never-published/")
+          echo "Unpublished resource HTTP: $code"
+          test "$code" = "404"
