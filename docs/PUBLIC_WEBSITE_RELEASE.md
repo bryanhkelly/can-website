@@ -39,3 +39,8 @@ The Netlify native notification and Resend event handler are alternatives for ad
 - Confirm real lead capture, notification delivery, consent language and accessibility; don't infer success from the presence of a form.
 - Review all opening, scholarship, partner, faculty and accreditation claims with responsible school leadership.
 - No full live CAN OS/tenant access is provided by the preview demo. A real gated demo requires isolated synthetic data and authorization.
+
+
+## Search & Campaigns library
+
+See [`docs/SEARCH_CAMPAIGNS.md`](./SEARCH_CAMPAIGNS.md) for the 100-topic roadmap, the 28 implemented pages, publication controls, campaign attribution, static SEO rendering and release checks. This feature is stacked into the editorial redesign and does not change the requirement to verify email delivery before public launch.
