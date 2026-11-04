@@ -402,7 +402,7 @@ export const campaignPages = [
     "description": "Explore a prospective CAN Academy educator network that connects teacher expertise with local student communities.",
     "leadTitle": "Teach subjects deeply. Know why they matter.",
     "lead": "A strong teacher can transform a student's confidence and trajectory. Smaller local schools may struggle to offer the same range of subjects, specializations and support that a larger system can coordinate.",
-    "distinction": "CAN intends to recruit, verify and match professional educators to courses and classes supported by onsite adults. This is an expression of interest in potential opportunities, not an advertised vacancy or employment offer.",
+    "distinction": "CAN intends to recruit, verify and match professional educators to courses and classes supported by onsite adults. This is an expression of interest in potential opportunities, not an advertised vacancy or employment offer. A meaningful applicant conversation also asks about instructional technology, collaboration with local staff, classroom accessibility and the educator's willingness to work within a shared curriculum while preserving effective teaching judgment.",
     "featureTitle": "What a connected educator network could enable",
     "features": [
       {
@@ -714,7 +714,7 @@ export const campaignPages = [
     "description": "Explore the CAN Academy model through a representative digital experience and request information about future briefings and guided conversations.",
     "leadTitle": "A good school conversation begins with listening.",
     "lead": "Traditional independent schools invite families onto a campus. CAN is introducing a model that may be new to parents, churches and educators, so an accessible overview and a way to ask questions matter especially before any community opens.",
-    "distinction": "This page invites interest in an information session or guided conversation. It does not advertise a scheduled session unless a specific date and host are confirmed.",
+    "distinction": "This page invites interest in an information session or guided conversation. It does not advertise a scheduled session unless a specific date and host are confirmed. A useful briefing should distinguish what the platform can demonstrate with synthetic data from the local approvals and conditions that still must be met before a school actually serves students.",
     "featureTitle": "What an introductory conversation should cover",
     "features": [
       {

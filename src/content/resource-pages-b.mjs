@@ -376,7 +376,7 @@ export const resourcePagesB = [
     "description": "Explore the characteristics of small faith-based learning communities and the differences between a microschool, hybrid program, co-op, and traditional private school.",
     "leadTitle": "Small describes the scale, not the whole educational model.",
     "lead": "Microschools are commonly discussed as smaller, more personalized learning environments. But the word itself does not establish a standard grade range, staffing structure, school-of-record status or curriculum.",
-    "distinction": "A Christian microschool might be independently run, housed in a church, supported by a broader network, or structured as a program serving homeschool families. Families must ask what is actually provided.",
+    "distinction": "A Christian microschool might be independently run, housed in a church, supported by a broader network, or structured as a program serving homeschool families. Families must ask what is actually provided. Families should also compare the consistency of the peer group, substitute arrangements, support for students with additional learning needs and the school's actual ability to continue offering courses as students grow older.",
     "featureTitle": "What can make a small school distinctive",
     "features": [
       {
@@ -672,7 +672,7 @@ export const resourcePagesB = [
     "description": "A guide to governance, academic authority, parent communication, financial stewardship, records, safeguarding, and shared responsibilities in church-school partnerships.",
     "leadTitle": "Good intentions need a governance system families can understand.",
     "lead": "A church partnership often involves more than one leader or organization: pastors, site leaders, teachers, network administrators and possibly a separate school entity. Without clear boundaries, important decisions can fall between groups.",
-    "distinction": "Governance is not a decorative board chart. It is the structure that determines who may act, who must report, whose policies apply and how conflicts or failures are addressed.",
+    "distinction": "Governance is not a decorative board chart. It is the structure that determines who may act, who must report, whose policies apply and how conflicts or failures are addressed. Before opening, leaders should consider who can pause an unsafe operation, how families are notified of material changes, and what happens if financial, academic or safeguarding standards are not met.",
     "featureTitle": "Make four kinds of authority visible",
     "features": [
       {
