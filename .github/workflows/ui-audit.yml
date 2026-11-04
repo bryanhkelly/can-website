@@ -10,6 +10,7 @@ on:
       - 'netlify.toml'
       - 'scripts/ui-audit.mjs'
       - '.github/workflows/ui-audit.yml'
+  pull_request:
   workflow_dispatch:
 
 jobs:
