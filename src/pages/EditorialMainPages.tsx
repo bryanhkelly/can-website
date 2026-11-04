@@ -18,7 +18,7 @@ export function EditorialHomePage() {
         {label:'02 / FOR CHURCHES',title:'For the families already at your door.',to:'/churches',image:media.church},
         {label:'03 / FOR EDUCATORS',title:'For the lives your teaching can change.',to:'/teachers',image:media.educators},
       ]}/>
-      <p className="ca-cta-box">Also explore CAN for <Link to="/christian-schools">Christian schools</Link>, <Link to="/homeschool">homeschool communities</Link>, and <Link to="/denominations">denominational networks</Link>.</p>
+      <p className="ca-cta-box">Also explore CAN for <Link to="/christian-schools">Christian schools</Link>, <Link to="/homeschool">homeschool communities</Link>, and <Link to="/denominations">denominational networks</Link>. <a href="/resources/" className="ca-line-link">Explore the CAN Resource Library →</a></p>
     </Section>
     <Conversion eyebrow="An invitation, not an enrollment offer" title="Come see what CAN could become." body="Step into a representative school experience, explore the model, and choose a journey that fits you." action={{label:'Experience CAN',to:'/experience-can'}}/>
   </article>
