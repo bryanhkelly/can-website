@@ -20,7 +20,7 @@ export default {
     if(!apiKey || !from || !to){console.warn('CAN form email delivery is not configured; submission remains in Netlify Forms.');return}
     if(!allowedMail(to)||!allowedMail(from.replace(/^.*<([^>]+)>$/,'$1')))throw new Error('CAN email sender or recipient configuration is invalid')
     const email=clean(data.email,254),name=clean(data.name,120)
-    const rows=[['Form',formName || 'CAN Academy inquiry'],['Name',name],['Email',email],['State',clean(data.state,100)],['Organization',clean(data.organization,180)],['Grade',clean(data.grade,20)],['Audience',clean(data.audience,40)],['Message',clean(data.message,1500)]]
+    const rows=[['Form',formName || 'CAN Academy inquiry'],['Name',name],['Email',email],['State',clean(data.state,100)],['Organization',clean(data.organization,180)],['Grade',clean(data.grade,20)],['Audience',clean(data.audience,40)],['Campaign',clean(data.campaign,140)],['UTM Source',clean(data.utm_source,140)],['UTM Medium',clean(data.utm_medium,140)],['UTM Campaign',clean(data.utm_campaign,140)],['City or ZIP',clean(data.city_or_zip,90)],['Entry year',clean(data.entry_year,20)],['Message',clean(data.message,1500)]]
     const subject=`New CAN Academy ${formName||'website'} inquiry`
     const html='<h2>New CAN Academy website inquiry</h2><table>'+rows.map(([k,v])=>`<tr><th align="left" style="padding:8px">${escape(k)}</th><td style="padding:8px">${escape(v)}</td></tr>`).join('')+'</table><p>Review the verified submission in Netlify Forms before taking action.</p>'
     const payload={from,to:[to],subject,html}

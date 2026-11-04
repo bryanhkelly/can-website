@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { FormEvent, ReactNode } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { CheckCircle2 } from 'lucide-react'
 import { Eyebrow, Hero, media } from '../components/EditorialElements'
 import { trackEvent } from '../lib/analytics'
@@ -25,6 +25,9 @@ export async function submitCanForm(form:HTMLFormElement){
 }
 export function LeadForm({kind,title,intro,children}:LeadProps){
  const [state,setState]=useState<'idle'|'sending'|'success'|'error'>('idle')
+ const [searchParams]=useSearchParams()
+ const attributionFields=['campaign','utm_source','utm_medium','utm_campaign','utm_content','utm_term','partner'] as const
+ const attribution=attributionFields.map(name=>({name,value:(searchParams.get(name)??'').slice(0,140)}))
  const {name,source,button}=info[kind]
  async function submit(event:FormEvent<HTMLFormElement>){
    event.preventDefault();if(state==='sending')return;const form=event.currentTarget
@@ -42,11 +45,15 @@ export function LeadForm({kind,title,intro,children}:LeadProps){
      <form name={name} method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={submit}>
        <input name="form-name" type="hidden" value={name}/>
        <input name="source" type="hidden" value={source}/>
+       <input name="landing_page" type="hidden" value={searchParams.get("landing_page")??""}/>
+       {attribution.map(field=><input key={field.name} type="hidden" name={field.name} value={field.value}/>)}
        <input name="subject" type="hidden" value={`CAN Academy: new ${source} (%{submissionId})`}/>
        <p className="sr-only" aria-hidden="true"><label>Leave blank<input type="text" name="bot-field" tabIndex={-1} autoComplete="off"/></label></p>
        <label>Full name<input type="text" name="name" autoComplete="name" maxLength={120} required/></label>
        <label>Email address<input type="email" name="email" autoComplete="email" maxLength={254} required/></label>
        <label>State<select name="state" defaultValue="" required><option value="" disabled>Select state</option>{['Florida','Arizona','Arkansas','Iowa','Texas','Oklahoma','Wisconsin','Other'].map(s=><option key={s} value={s}>{s}</option>)}</select></label>
+       {(kind==='family'||kind==='church')&&<label>City or ZIP code (optional)<input name="city_or_zip" type="text" autoComplete="postal-code" maxLength={90} placeholder="General area only; no street address"/></label>}
+       {kind==='family'&&<label>Anticipated entry year (optional)<select name="entry_year" defaultValue=""><option value="">Not sure yet</option>{[2027,2028,2029,2030].map(year=><option key={year} value={year}>{year}</option>)}</select></label>}
        {kind==='family'&&<label>Expected grade of interest<select name="grade" defaultValue=""><option value="">Prefer not to say</option>{[6,7,8,9,10,11,12].map(g=><option key={g} value={String(g)}>Grade {g}</option>)}</select></label>}
        {(kind==='church'||kind==='teacher')&&<label>{kind==='church'?'Church or organization':'Subject area or teaching background'}<input name="organization" type="text" maxLength={180} required/></label>}
        {kind==='demo'&&<label>I'm most interested as<select name="audience" defaultValue="family"><option value="family">Parent or family</option><option value="church">Church or school leader</option><option value="teacher">Educator</option></select></label>}

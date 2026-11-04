@@ -11,11 +11,11 @@ export function PrivacyPage() {
       </p>
       <h2>Information you submit</h2>
       <p>
-        Contact and interest forms may collect your name, email address, state, organization, anticipated grade of interest, teaching background or role, and information you choose to share. We use this information to respond to inquiries about CAN Academy. Please do not submit student names, sensitive student records, health details, or payment information.
+        Contact and interest forms may collect your name, email address, state, organization, approximate city or ZIP, anticipated grade and entry year of interest, teaching background or role, and information you choose to share. We use this information to respond to inquiries about CAN Academy. Please do not submit student names, sensitive student records, health details, or payment information.
       </p>
       <h2>Website operations</h2>
       <p>
-        The site uses Netlify for hosting and form processing. Form submissions are retained by Netlify and may be delivered to authorized CAN Academy team members through configured notifications or a transactional email service. We may use standard security, performance, and analytics services necessary to operate and improve this website. No school enrollment record is created by submitting a public interest form.
+        The site uses Netlify for hosting and form processing. Form submissions are retained by Netlify and may be delivered to authorized CAN Academy team members through configured notifications or a transactional email service. Campaign query parameters (such as UTM source and campaign ID) may be included with inquiry records to understand which outreach prompted the conversation. We do not ask for student names or records in these marketing forms. We may use standard security, performance, and analytics services necessary to operate and improve this website. No school enrollment record is created by submitting a public interest form.
       </p>
       <h2>Student information</h2>
       <p>
