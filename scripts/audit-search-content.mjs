@@ -12,7 +12,7 @@
    const checks=[
     ['semantic h1',/<h1>[^<]{20,}<\/h1>/.test(source)],
     ['complete main content',source.includes('<main id="main-content">')&&source.includes('search-benefits')&&source.includes('search-steps')],
-    ['real HTML content',source.includes(page.leadTitle)&&source.includes(page.features[0].title)&&source.includes(page.steps[0].title)],
+    ['real HTML content',[page.leadTitle,page.features[0].title,page.steps[0].title].every(value=>source.includes(value)||source.includes(value.replaceAll('&','&amp;').replaceAll("'",'&#39;').replaceAll('"','&quot;')))],
     ['FAQ accessibility',source.includes('<details class="search-faq">')],
     ['unique canonical',source.includes(`rel="canonical" href="${canonical}"`)],
     ['page description',source.includes(`name="description" content=`)],

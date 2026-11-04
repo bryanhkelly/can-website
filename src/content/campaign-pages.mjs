@@ -626,7 +626,12 @@ export const campaignPages = [
       "title": "Discuss the needs of your school.",
       "description": "Share your current model and the educational capacity you hope to expand."
     },
-    "sources": []
+    "sources": [],
+    "related": [
+      "/resources/what-is-school-of-record/",
+      "/resources/staffing-a-small-christian-school/",
+      "/go/denominational-schools/"
+    ]
   },
   {
     "id": "homeschool",
@@ -782,6 +787,11 @@ export const campaignPages = [
       "title": "Begin with a conversation.",
       "description": "Request information about guided tours and future introductory sessions."
     },
-    "sources": []
+    "sources": [],
+    "related": [
+      "/go/families/",
+      "/go/church-school/",
+      "/go/teach-with-can/"
+    ]
   }
 ]
