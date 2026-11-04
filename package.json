@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build && node scripts/build-search-pages.mjs",
     "lint": "oxlint",
     "preview": "vite preview",
-    "check:content": "node scripts/validate-search-pages.mjs"
+    "check:content": "node scripts/validate-search-pages.mjs",
+    "audit:search": "node scripts/audit-search-content.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.47.0",
