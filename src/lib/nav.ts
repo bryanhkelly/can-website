@@ -9,13 +9,18 @@ export function getNextSlug(current: (typeof navSlugs)[number]): (typeof navSlug
   return navSlugs[idx + 1]
 }
 
+// Preserve non-sensitive, allowlisted campaign context without cookies.
 export function withPartnerContext(path: string, search: string): string {
-  const partner = new URLSearchParams(search).get('partner')
-  const validPartner = partnerIds.find((id) => id === partner)
-  if (!validPartner) return path
-
+  const source = new URLSearchParams(search)
   const [pathname, query = ''] = path.split('?')
   const params = new URLSearchParams(query)
-  params.set('partner', validPartner)
-  return `${pathname}?${params.toString()}`
+  const campaignKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','campaign','landing_page'] as const
+  const partner = source.get('partner')
+  if (partnerIds.some(id => id === partner) && !params.has('partner')) params.set('partner', partner!)
+  for (const name of campaignKeys) {
+    const value = source.get(name)
+    if (value && value.length <= 140 && /^[a-zA-Z0-9_ .:/-]+$/.test(value) && !params.has(name)) params.set(name, value)
+  }
+  const qs = params.toString()
+  return qs ? `${pathname}?${qs}` : pathname
 }

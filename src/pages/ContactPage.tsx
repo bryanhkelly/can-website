@@ -119,6 +119,7 @@ export function ContactPage() {
           <input type="hidden" name="topic" value={topic} />
           <input type="hidden" name="partner" value={partner} />
           <input type="hidden" name="state" value={state} />
+          {(['campaign','utm_source','utm_medium','utm_campaign','utm_content','utm_term'] as const).map(name=><input key={name} type="hidden" name={name} value={(searchParams.get(name)??'').slice(0,140)} />)}
           <p className="contact-honeypot">
             <label>Do not fill this out: <input name="bot-field" /></label>
           </p>

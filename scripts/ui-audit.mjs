@@ -10,7 +10,20 @@ const sitemapXml = await fs.readFile(new URL('../public/sitemap.xml', import.met
 const routes = [...new Set(
   [...sitemapXml.matchAll(/<loc>https:\/\/can-academy\.netlify\.app([^<]*)<\/loc>/g)]
     .map(match => match[1] || '/')
-    .concat('/start-a-community')
+    .concat(
+      '/start-a-community',
+      '/go/',
+      '/resources/',
+      '/go/church-school/',
+      '/go/church-opportunity/',
+      '/go/families/',
+      '/go/florida-families/',
+      '/go/teach-with-can/',
+      '/resources/how-to-start-a-christian-school-at-your-church/',
+      '/resources/how-to-choose-a-christian-school/',
+      '/resources/what-is-school-of-record/',
+      '/resources/designing-a-hybrid-school-week/'
+    )
 )]
 
 const viewports = [

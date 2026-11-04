@@ -207,6 +207,16 @@ export default async (request: Request, context: { next: () => Promise<Response>
   if (request.method !== 'GET') return context.next()
 
   const response = await context.next()
+  const requestPath = new URL(request.url)
+  const isStaticSearch = requestPath.pathname.startsWith('/go/') || requestPath.pathname.startsWith('/resources/')
+  if (isStaticSearch && (response.headers.get('content-type') ?? '').includes('text/html')) {
+    const html = await response.text()
+    const headers = new Headers(response.headers)
+    headers.delete('content-length')
+    if (requestPath.hostname.includes('--can-academy.netlify.app')) headers.set('x-robots-tag', 'noindex,nofollow')
+    if (!html.includes('name="can-static-content"')) return new Response('Not found', {status:404,headers:{'content-type':'text/plain; charset=utf-8','x-robots-tag':'noindex,nofollow'}})
+    return new Response(html,{status:response.status,statusText:response.statusText,headers})
+  }
   const contentType = response.headers.get('content-type') ?? ''
   if (!contentType.includes('text/html')) return response
 
