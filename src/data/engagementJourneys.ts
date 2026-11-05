@@ -172,7 +172,7 @@ export const engagementJourneys: Record<JourneyId, EngagementJourney> = {
     audience: 'Christian school leaders',
     category: 'school',
     eyebrow: 'Extend an existing Christian school',
-    headline: 'Let your school's next chapter grow from its strengths.',
+    headline: "Let your school's next chapter grow from its strengths.",
     introduction: 'What if a trusted Christian school could offer additional grades and academic options without independently rebuilding every course, teacher role and system?',
     image: '/images/roles/03_school_leaders.png',
     imageAlt: 'School leaders discussing educational opportunities',
