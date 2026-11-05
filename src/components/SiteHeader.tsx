@@ -31,6 +31,7 @@ export function SiteHeader() {
         <nav className="public-site-nav" aria-label="Primary navigation">
           <Link to={withPartnerContext('/story/stakes', location.search)}>The CAN story</Link>
           <Link to={withPartnerContext('/story/explore-can', location.search)}>Explore</Link>
+          <Link to={withPartnerContext('/landing', location.search)}>Find your pathway</Link>
           <Link to={withPartnerContext('/contact', location.search)} className="public-site-nav-cta">Start a conversation</Link>
         </nav>
       )}
