@@ -103,3 +103,14 @@ The public marketing pages at `/locations/:state` are owned by the CAN Academy w
 - The state page's market-development status (`In development`, `Exploring partnerships`) is distinct from research review status, funding participation and school-opening authorization.
 - Full legal and CAN-specific operational decisions are handled separately under independently reviewed CAN OS jurisdiction policies. Public marketing pages must not draw from unverified CAN OS drafts or expose private review material.
 - Marketing state research should help a prospective church or family identify questions to discuss, not supply a compliance checklist deemed ready for an actual school opening.
+
+## Engagement landing and Next Steps (new)
+
+New, separately governed public routes are defined in [ENGAGEMENT_FRAMEWORK.md](./ENGAGEMENT_FRAMEWORK.md): `/landing`, five `/landing/:journey` pages, and five non-indexed `/next/:journey` pages. They do not change the story-page v12 lock, existing audience doorway v14 content, or partner front doors.
+
+- Public campaigns may invite interest and explain a possible future model, never imply a church, staff candidate, student, or Program was approved.
+- The teacher audience is recruitment interest, not an employment application or hiring promise. Verified staff onboarding in CAN OS is a separate system.
+- Public Next Steps is explicitly a choice page, not proof of a submitted application, completed school setup, or recorded operational outcome.
+- The optional feedback form is separate from the contact form, requires no name or email, and should never collect student records.
+- Leadership video keys in the registry are future optional references. No player, asset uploads, campaign matching, or admin console is implemented in this release.
+- The approved CAN OS host must be separately configured; do not silently direct visitors into the public demo.
