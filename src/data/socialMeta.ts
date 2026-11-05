@@ -1,4 +1,5 @@
 import { locationBySlug } from './locationStateData'
+import { getEngagementJourney } from './engagementJourneys'
 export type SocialMeta = {
   title: string
   description: string
@@ -197,6 +198,22 @@ const PREFIX_META: Array<[string, string]> = [
 export function getSocialMeta(pathname: string): SocialMeta {
   const clean = pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname
   if (META[clean]) return META[clean]
+
+  if (clean === '/landing') return {
+    title: 'Explore your path with CAN Academy',
+    description: 'Discover opportunities for churches, educators, families, Christian schools and church networks.',
+    image: '/images/08_explore_audience_roles.png',
+    imageAlt: 'Education and community leaders discussing possibilities.',
+  }
+  if (clean.startsWith('/landing/') || clean.startsWith('/next/')) {
+    const journey = getEngagementJourney(clean.split('/')[2])
+    if (journey) return {
+      title: `${clean.startsWith('/next/') ? 'Next Steps' : journey.audience} | CAN Academy`,
+      description: clean.startsWith('/next/') ? journey.next.description : journey.introduction,
+      image: journey.image,
+      imageAlt: journey.imageAlt,
+    }
+  }
 
   if (clean.startsWith('/locations/')) {
     const slug = clean.split('/')[2]
