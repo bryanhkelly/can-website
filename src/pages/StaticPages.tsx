@@ -7,15 +7,15 @@ export function PrivacyPage() {
       <p className="destination-eyebrow">Privacy</p>
       <h1 className="editorial-heading">Privacy on this website.</h1>
       <p>
-        CAN Academy uses information you choose to submit through this public website to respond to your inquiry and continue the conversation you requested.
+        CAN Academy uses contact information you choose to submit to respond to your inquiry. You can also voluntarily share feedback through a public engagement page without providing your name or email address.
       </p>
       <h2>Information you submit</h2>
       <p>
-        The contact form may ask for your name, email address, organization or community, and the question or context you choose to share.
+        The contact form may ask for your name, email address, organization or community, and the question or context you choose to share. The optional feedback form asks only for your comment and a limited reference to the topic or campaign you explored.
       </p>
       <h2>Website operations</h2>
       <p>
-        The site may use standard hosting, security, performance, and analytics services needed to operate and improve the public website.
+        The site may use standard hosting, security, performance, and analytics services needed to operate and improve the public website. Marketing pages may recognize a limited, non-personal campaign identifier, referring source, and audience choice. These are not school, student, family-application, or employment records.
       </p>
       <h2>Student information</h2>
       <p>
