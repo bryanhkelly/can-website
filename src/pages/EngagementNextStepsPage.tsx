@@ -32,6 +32,7 @@ export function EngagementNextStepsPage() {
 
   async function submitFeedback(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    if (!journey) return
     if (status === 'submitting' || !choice || choice.action !== 'feedback' ||
       feedback.trim().length < 10 || feedback.trim().length > 1500) return
     setStatus('submitting')
