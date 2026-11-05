@@ -67,7 +67,7 @@ export function EngagementNextStepsPage() {
       </div>
     </header>
     <div className="mx-auto grid max-w-6xl gap-9 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[minmax(0,1fr)_17rem]">
-      <main className="min-w-0">
+      <div className="min-w-0">
         <p className="text-xs font-bold uppercase tracking-[.16em] text-teal-700">Your choice, your pace</p>
         <h1 className="editorial-heading mt-4 max-w-3xl text-5xl leading-[1.08] text-navy-950 sm:text-6xl">{journey.next.title}</h1>
         <p className="mt-6 max-w-3xl text-lg leading-8 text-navy-700">{journey.next.description}</p>
@@ -145,7 +145,7 @@ export function EngagementNextStepsPage() {
             )}
           </section>
         )}
-      </main>
+      </div>
       <aside className="space-y-4 lg:pt-14">
         <div className="bg-navy-950 p-6 text-white">
           <MessageCircle size={26} className="text-gold-400" aria-hidden="true" />
