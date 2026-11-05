@@ -4,6 +4,13 @@ export type AnalyticsEvent =
   | 'contact_submit'
   | 'contact_success'
   | 'contact_error'
+  | 'engagement_landing_click'
+  | 'engagement_contact_click'
+  | 'engagement_launch_click'
+  | 'engagement_next_choice'
+  | 'engagement_feedback_submit'
+  | 'engagement_feedback_success'
+  | 'engagement_feedback_error'
 
 export function trackEvent(name: AnalyticsEvent, params: Record<string, string> = {}) {
   if (typeof window === 'undefined') return
