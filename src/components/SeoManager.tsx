@@ -16,12 +16,14 @@ export function SeoManager() {
 
   useEffect(() => {
     const meta = getSocialMeta(location.pathname)
+    const isNextStep = location.pathname.startsWith('/next/')
     const canonical = `${window.location.origin}${location.pathname}`
     const partner = new URLSearchParams(location.search).get('partner')
     const shareUrl = partner ? `${canonical}?partner=${encodeURIComponent(partner)}` : canonical
     const image = socialImageUrl(window.location.origin, meta.image)
 
     document.title = meta.title
+    ensureMeta('meta[name="robots"]', { name: 'robots', content: isNextStep ? 'noindex,nofollow' : 'index,follow' })
 
     ensureMeta('meta[name="description"]', { name: 'description', content: meta.description })
     ensureMeta('meta[property="og:type"]', { property: 'og:type', content: 'website' })
