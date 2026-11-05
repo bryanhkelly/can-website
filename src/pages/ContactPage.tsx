@@ -4,9 +4,11 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom'
 import { CheckCircle2 } from 'lucide-react'
 import { partnerIds, withPartnerContext } from '../lib/nav'
 import { trackEvent } from '../lib/analytics'
+import { validatedContactContext, journeyHref } from '../lib/engagement'
 
 const AUDIENCE_LABELS: Record<string, string> = {
   parent: 'Parents',
+  teacher: 'Prospective teachers',
   pastor: 'Pastors and church leaders',
   'school-leader': 'Christian school leaders',
   homeschool: 'Homeschool families',
@@ -15,6 +17,7 @@ const AUDIENCE_LABELS: Record<string, string> = {
 
 const AUDIENCE_PROMPTS: Record<string, string> = {
   parent: 'Is CAN potentially right for your child and family?',
+  teacher: 'What teaching opportunities or instructional roles would you like to understand?',
   pastor: 'Could your church responsibly host or participate in a CAN Academy?',
   'school-leader': 'Could CAN expand your school\'s educational capacity?',
   homeschool: 'How might your family or homeschool community participate?',
@@ -38,6 +41,16 @@ const TOPIC_LABELS: Record<string, string> = {
   terms: 'Website terms',
   accountability: 'Trust & Accountability',
   locations: 'Locations & Launch',
+  'school-partnership': 'Church school partnership',
+  economics: 'School economics and funding',
+  'launch-readiness': 'School launch readiness',
+  'teacher-recruitment': 'Teacher recruitment interest',
+  'teacher-qualifications': 'Teacher roles and qualifications',
+  'family-admissions': 'Family admissions questions',
+  'school-expansion': 'School expansion',
+  'expansion-feasibility': 'School expansion feasibility',
+  'network-pilot': 'Church network pilot',
+  'network-leadership': 'Network leadership conversation',
   difference: 'How CAN Is Different',
 }
 
@@ -46,6 +59,7 @@ export function ContactPage() {
   const [searchParams] = useSearchParams()
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
+  const { journey, choice, context } = validatedContactContext(location.search)
   const audience = searchParams.get('audience') ?? ''
   const topic = searchParams.get('topic') ?? ''
   const partner = partnerIds.find((id) => id === searchParams.get('partner')) ?? ''
@@ -54,7 +68,7 @@ export function ContactPage() {
   const audiencePrompt = audience ? AUDIENCE_PROMPTS[audience] : undefined
   const topicLabel = topic ? TOPIC_LABELS[topic] : undefined
   const partnerLabel = partner ? PARTNER_LABELS[partner] : undefined
-  const conversationLabel = partnerLabel ?? audienceLabel ?? topicLabel
+  const conversationLabel = choice?.title ?? partnerLabel ?? audienceLabel ?? topicLabel
   const stateLabel = state ? state.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()) : undefined
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -91,6 +105,7 @@ export function ContactPage() {
         <p className="destination-eyebrow">Start a conversation</p>
         <h1 className="editorial-heading">Tell us what you are exploring.</h1>
         <p>Share your context and the question that matters most. A member of the CAN Academy team can follow up from there.</p>
+        {journey && <p className="contact-context">You are exploring: <strong>{journey.audience}</strong>. Your message is a request for conversation, not a completed application or school-launch commitment.</p>}
         {conversationLabel && <p className="contact-context">Conversation context: <strong>{conversationLabel}</strong>{stateLabel ? <> · {stateLabel}</> : null}</p>}
         {audiencePrompt && <p className="contact-audience-prompt">{audiencePrompt}</p>}
       </div>
@@ -100,7 +115,7 @@ export function ContactPage() {
           <CheckCircle2 aria-hidden="true" />
           <h2>Thank you.</h2>
           <p>Your message was submitted. The CAN Academy team can follow up using the email address you provided.</p>
-          <Link to={withPartnerContext('/story/explore-can', location.search)}>Continue exploring CAN</Link>
+          <Link to={journey ? journeyHref(`/next/${journey.id}`, location.search) : withPartnerContext('/story/explore-can', location.search)}>Continue exploring CAN</Link>
         </section>
       ) : (
         <form
@@ -116,6 +131,10 @@ export function ContactPage() {
           <input type="hidden" name="topic" value={topic} />
           <input type="hidden" name="partner" value={partner} />
           <input type="hidden" name="state" value={state} />
+          <input type="hidden" name="journey" value={journey?.id ?? ''} />
+          <input type="hidden" name="intent" value={choice?.id ?? ''} />
+          <input type="hidden" name="campaign" value={context.campaign ?? ''} />
+          <input type="hidden" name="utm_source" value={context.source ?? ''} />
           <p className="contact-honeypot">
             <label>Do not fill this out: <input name="bot-field" /></label>
           </p>
