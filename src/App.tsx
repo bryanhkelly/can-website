@@ -56,6 +56,8 @@ import {
   FloridaSelectionPage,
 } from './pages/FloridaDeepDivePages'
 import { RoleDoorwayPage } from './components/RoleDoorwayPage'
+import { EngagementLandingPage } from './pages/EngagementLandingPage'
+import { EngagementNextStepsPage } from './pages/EngagementNextStepsPage'
 import { roleDoorways } from './data/pageContent'
 import {
   AcademicsPage,
@@ -194,6 +196,9 @@ function App() {
         <Route path="/partners/the-journey-church" element={<PartnerPage partner="the-journey-church" />} />
         <Route path="/partners/cogic" element={<PartnerPage partner="cogic" />} />
         <Route path="/partners/cogbf" element={<PartnerPage partner="cogbf" />} />
+        <Route path="/landing" element={<EngagementLandingPage />} />
+        <Route path="/landing/:journeyId" element={<EngagementLandingPage />} />
+        <Route path="/next/:journeyId" element={<EngagementNextStepsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/accessibility" element={<AccessibilityPage />} />
