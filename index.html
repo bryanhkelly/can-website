@@ -38,6 +38,20 @@
       <input type="text" name="topic" />
       <input type="text" name="partner" />
       <input type="text" name="state" />
+      <input type="text" name="journey" />
+      <input type="text" name="intent" />
+      <input type="text" name="campaign" />
+      <input type="text" name="utm_source" />
+      <input type="text" name="bot-field" />
+    </form>
+    <!-- Netlify discovers these definitions at deploy; the React forms post to /. -->
+    <form name="can-engagement-feedback" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="journey" />
+      <input type="text" name="choice" />
+      <input type="text" name="campaign" />
+      <input type="text" name="source" />
+      <input type="text" name="partner" />
+      <textarea name="feedback"></textarea>
       <input type="text" name="bot-field" />
     </form>
     <div id="root"></div>
