@@ -33,7 +33,9 @@ Routes:
 - /partners/cogic
 - /partners/cogbf
 
-Keep these pages concise. They establish relevance and hand into the shared story.
+Keep the Journey Church and COGBF partner pages concise. They establish relevance and hand into the shared story.
+
+The COGIC route is a user-authorized exception: a seven-module editorial founding educational partner proposal implemented in `src/pages/CogicPartnerPage.tsx`, with six custom detail pages under `/partners/cogic/:section` in `src/pages/CogicAcademyDetailPages.tsx` and scoped CSS. The concept name is **proposed COGIC National Academy**, not an authorized or existing COGIC school system. The COGIC-specific Founding Educational Partnership page has its own inquiry form, registered via the `public/__forms.html` Netlify Forms skeleton. Invitations from the COGIC homepage must link to the COGIC founding partnership route, never the generic `/contact` page. It remains a prospective independent CAN proposal, not a COGIC endorsement, contract, approved school network, or a confirmed ten-site pilot. Financial figures are explicitly illustrative, and one-hour configuration is not authorization to open. Historical claims link to official COGIC sources. Avoid quoting current leaders without an authenticated statement and do not suggest any proposed bishop devotional has been recorded or authorized. Image rights must be reviewed before externally promoting the page.
 
 ## Newer content requiring explicit editorial approval before major expansion
 
@@ -103,3 +105,15 @@ The public marketing pages at `/locations/:state` are owned by the CAN Academy w
 - The state page's market-development status (`In development`, `Exploring partnerships`) is distinct from research review status, funding participation and school-opening authorization.
 - Full legal and CAN-specific operational decisions are handled separately under independently reviewed CAN OS jurisdiction policies. Public marketing pages must not draw from unverified CAN OS drafts or expose private review material.
 - Marketing state research should help a prospective church or family identify questions to discuss, not supply a compliance checklist deemed ready for an actual school opening.
+
+### COGIC proposal page map
+
+- `/partners/cogic` — seven-module executive overview
+- `/partners/cogic/legacy` — COGIC historical context and verified official sources
+- `/partners/cogic/national-academy` — the core proposed COGIC National Academy institutional model, roles and governance
+- `/partners/cogic/student-experience` — faith distinctives, proposed weekly bishop's homeroom, asynchronous academics and live support
+- `/partners/cogic/how-it-works` — stub-to-launch studio, invitations, family interest, compliance and transition into school operations
+- `/partners/cogic/economics` — illustrative financial sensitivity model, no predicted surplus or school revenue allocation
+- `/partners/cogic/founding-partnership` — COGIC-only founding invitation and inquiry form; no general contact CTA
+
+Main CAN site deep links are permitted for academic, launch, economic and governance details, but COGIC module entry points must first reach the COGIC-specific deep pages. Form submission must match a statically declared Netlify skeleton and must not claim success before a successful response. Copyrighted portrait usage remains subject to permissions review.

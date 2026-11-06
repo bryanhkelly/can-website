@@ -6,6 +6,7 @@ import { ShareMenu } from './ShareMenu'
 
 export function SiteFooter() {
   const location = useLocation()
+  const isCogicAcademy = location.pathname === '/partners/cogic' || location.pathname.startsWith('/partners/cogic/')
   return (
     <footer className="bg-navy-950 text-navy-100">
       <div className="mx-auto max-w-7xl px-5 py-9 sm:px-8">
@@ -25,10 +26,10 @@ export function SiteFooter() {
             <Link to="/terms">Terms</Link>
             <Link to="/accessibility">Accessibility</Link>
             <Link
-              to={withPartnerContext('/contact', location.search)}
+              to={isCogicAcademy ? '/partners/cogic/founding-partnership' : withPartnerContext('/contact', location.search)}
               className="font-semibold text-gold-400 transition-colors hover:text-gold-500"
             >
-              Start a conversation →
+              {isCogicAcademy ? 'Explore COGIC founding partnership' : 'Start a conversation'} →
             </Link>
           </div>
         </div>
