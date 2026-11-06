@@ -7,6 +7,7 @@ import { academicPromises, networkProvides, partnersProvide } from '../data/acad
 import { partnershipIs, partnershipIsNot, partnershipPrinciples } from '../data/partnershipDeepContent'
 import { CurrentLaunchSummary, LaunchDeepLinks } from './LaunchDeepDivePages'
 import type { PartnerId } from '../lib/nav'
+import { CogicPartnerPage } from './CogicPartnerPage'
 
 const ACADEMIC_COMPONENTS = [
   {
@@ -418,6 +419,7 @@ export function EvidencePage() {
 }
 
 export function PartnerPage({ partner }: { partner: PartnerId }) {
+  if (partner === 'cogic') return <CogicPartnerPage />
   const page = PARTNER_PAGES[partner]
   return (
     <article className="partner-front-door">
