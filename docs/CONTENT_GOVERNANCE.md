@@ -33,7 +33,9 @@ Routes:
 - /partners/cogic
 - /partners/cogbf
 
-Keep these pages concise. They establish relevance and hand into the shared story.
+Keep the Journey Church and COGBF partner pages concise. They establish relevance and hand into the shared story.
+
+The COGIC route is a user-authorized exception: a seven-module editorial founding educational partner proposal implemented in `src/pages/CogicPartnerPage.tsx` and scoped CSS. It remains a prospective independent CAN proposal, not a COGIC endorsement, contract, approved school network, or a confirmed ten-site pilot. Financial figures are explicitly illustrative, and one-hour configuration is not authorization to open. Historical claims link to official COGIC sources. Avoid quoting current leaders without an authenticated statement and do not suggest any proposed bishop devotional has been recorded or authorized. Image rights must be reviewed before externally promoting the page.
 
 ## Newer content requiring explicit editorial approval before major expansion
 
