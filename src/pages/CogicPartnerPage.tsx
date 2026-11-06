@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowDownRight, ArrowRight, BookOpen, CheckCircle2, Church,
@@ -52,7 +53,7 @@ function money(value: number) {
   }).format(value)
 }
 
-function ModuleLabel({ number, children }: { number: string; children: React.ReactNode }) {
+function ModuleLabel({ number, children }: { number: string; children: ReactNode }) {
   return <p className="cogic-module-label"><span>{number}</span> / {children}</p>
 }
 
