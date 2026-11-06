@@ -172,10 +172,10 @@ const META: Record<string, SocialMeta> = {
     imageAlt: 'Students outside a local church and school community.',
   },
   '/partners/cogic': {
-    title: 'CAN Academy × Church of God in Christ',
-    description: 'Explore a CAN Academy conversation shaped for Church of God in Christ.',
+    title: 'A National Education Vision for COGIC | CAN Academy',
+    description: 'Explore CAN Academy’s independent invitation to help COGIC create a connected Christian school network rooted in its faith, history, and local churches.',
     image: '/images/05_rooted_locally_community.png',
-    imageAlt: 'Students and trusted adults gathered in a local church community.',
+    imageAlt: 'Students and adults gathered in a local school community.',
   },
   '/partners/cogbf': {
     title: 'CAN Academy × Church of God by Faith',
