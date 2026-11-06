@@ -2,7 +2,7 @@ import { useState } from 'react'
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowDownRight, ArrowRight, BookOpen, CheckCircle2, Church,
+  ArrowRight, BookOpen, CheckCircle2, Church,
   GraduationCap, Landmark, PlayCircle, ShieldCheck, Users,
 } from 'lucide-react'
 import './cogic-partner.css'
@@ -72,8 +72,8 @@ export function CogicPartnerPage() {
       <div className="cogic-container">
         <header className="cogic-introduction">
           <p className="cogic-kicker">CAN Academy / A denominational education vision</p>
-          <h1>Church of God in Christ <span>COGIC</span></h1>
-          <p>A proposed national academy, rooted in COGIC's faith, history, traditions, and communities.</p>
+          <h1>COGIC National Academy <span>Church of God in Christ</span></h1>
+          <p>One connected education system. Many local church schools. A founding vision rooted in COGIC's faith, history, traditions, and leadership.</p>
           <p className="cogic-proposal-flag">An independent CAN founding-partnership invitation. Not affiliated with, approved by, or endorsed by COGIC.</p>
         </header>
 
@@ -99,7 +99,7 @@ export function CogicPartnerPage() {
               <span>U.S. Catholic schools in 2025–26. A benchmark for institutional ambition, not a prediction for COGIC.</span>
               <a href={sources.catholic} target="_blank" rel="noopener noreferrer">Source: NCEA, March 2026 <ArrowRight aria-hidden="true" /></a>
             </div>
-            <a className="cogic-text-link" href="#vision">Imagine what a COGIC network could become <ArrowDownRight aria-hidden="true" /></a>
+            <Link className="cogic-text-link" to="/partners/cogic/national-academy">Explore the COGIC National Academy vision <ArrowRight aria-hidden="true" /></Link>
           </div>
         </section>
 
@@ -121,6 +121,7 @@ export function CogicPartnerPage() {
                 <a href={sources.founder} target="_blank" rel="noopener noreferrer">COGIC founder history <ArrowRight aria-hidden="true" /></a>
                 <a href={sources.commission} target="_blank" rel="noopener noreferrer">Education Commission history <ArrowRight aria-hidden="true" /></a>
               </div>
+              <Link className="cogic-text-link" to="/partners/cogic/legacy">Explore the COGIC legacy <ArrowRight aria-hidden="true" /></Link>
             </div>
           </section>
 
@@ -130,7 +131,7 @@ export function CogicPartnerPage() {
             </div>
             <div className="cogic-card-copy">
               <ModuleLabel number="03">The vision</ModuleLabel>
-              <h2 id="cogic-vision-heading">100 churches. One connected school network.</h2>
+              <h2 id="cogic-vision-heading">COGIC National Academy. One connected school network.</h2>
               <p>Each participating congregation remains a local school community. A COGIC academy could connect schools through common faith programming and national purpose, with CAN supplying the academic backbone.</p>
               <div className="cogic-network-diagram" aria-label="Illustrative proposed relationship between national leadership, jurisdictions, church schools and CAN">
                 <div><Landmark aria-hidden="true" /><strong>COGIC academy leadership</strong><small>Identity and approved programming</small></div>
@@ -139,6 +140,7 @@ export function CogicPartnerPage() {
                 <span aria-hidden="true">+</span>
                 <div><GraduationCap aria-hidden="true" /><strong>CAN shared infrastructure</strong><small>Academics, records, platform and support</small></div>
               </div>
+              <Link className="cogic-text-link" to="/partners/cogic/national-academy">Explore the national academy model <ArrowRight aria-hidden="true" /></Link>
             </div>
           </section>
         </div>
@@ -197,6 +199,7 @@ export function CogicPartnerPage() {
               )}
             </div>
           </div>
+          <Link className="cogic-text-link" to="/partners/cogic/student-experience">See the complete COGIC student experience <ArrowRight aria-hidden="true" /></Link>
           <p className="cogic-module-note">All academy and bishop-homeroom programming shown here is proposed. Content, participation, doctrine, branding, and production would require denominational approval.</p>
         </section>
 
@@ -206,7 +209,7 @@ export function CogicPartnerPage() {
             <h2 id="cogic-model-heading">Your churches. Your traditions. One shared academic backbone.</h2>
             <p>CAN is being designed to let church leaders configure a proposed school workspace in about an hour, then follow a structured path to build the team, recruit families, satisfy opening requirements and prepare for launch.</p>
             <p className="cogic-model-callout"><ShieldCheck aria-hidden="true" /> One-hour configuration is not the same as being authorized or ready to open a school.</p>
-            <Link className="cogic-text-link" to="/launch-approach">Explore CAN's launch approach <ArrowRight aria-hidden="true" /></Link>
+            <Link className="cogic-text-link" to="/partners/cogic/how-it-works">See how the COGIC academy would launch <ArrowRight aria-hidden="true" /></Link>
           </div>
           <ol className="cogic-launch-steps">
             <li><span>01</span><strong>Establish your school</strong><small>Create a basic school profile and local identity.</small></li>
@@ -262,19 +265,19 @@ export function CogicPartnerPage() {
               <p className="cogic-economic-caution">Assumes full enrollment, complete tuition collection and a 10–20% hypothetical allocation. Figures are before academic delivery, staffing, site expenses, aid and other operating costs. Actual arrangements require a validated financial model.</p>
             </div>
           </div>
-          <Link className="cogic-text-link" to="/economic-breakthrough">Understand the shared-economics model <ArrowRight aria-hidden="true" /></Link>
+          <Link className="cogic-text-link" to="/partners/cogic/economics">Explore COGIC academy economics <ArrowRight aria-hidden="true" /></Link>
         </section>
 
         <section id="invitation" className="cogic-module cogic-invitation" aria-labelledby="cogic-invitation-heading">
           <div className="cogic-invitation-copy">
             <ModuleLabel number="07">The invitation</ModuleLabel>
             <h2 id="cogic-invitation-heading">Let's build the first ten schools together.</h2>
-            <p>Explore a Founding Educational Partnership that connects national vision with a carefully selected cohort of local churches.</p>
+            <p>Explore the COGIC National Academy Founding Educational Partnership, including a dedicated leadership invitation, ten-church pilot plan, and COGIC-specific inquiry.</p>
             <div className="cogic-invitation-actions">
-              <Link className="cogic-primary-action" to="/contact?partner=cogic&audience=denomination&topic=founding-partner">
+              <Link className="cogic-primary-action" to="/partners/cogic/founding-partnership">
                 Discuss a founding partnership <ArrowRight aria-hidden="true" />
               </Link>
-              <Link className="cogic-secondary-action" to="/partnership-model">Explore partnership responsibilities</Link>
+              <Link className="cogic-secondary-action" to="/partners/cogic/founding-partnership#cogic-founding-inquiry">Open the COGIC leadership inquiry</Link>
             </div>
           </div>
           <div className="cogic-pilot-card">
