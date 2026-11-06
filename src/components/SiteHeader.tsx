@@ -10,6 +10,7 @@ export function SiteHeader() {
   const labels = ['Stakes', 'Possibility', 'Curriculum', 'Platform', 'Rooted Locally', 'Student Experience', 'Why It Can Work', 'Explore CAN']
   const [storyOpen, setStoryOpen] = useState(false)
   const isStory = location.pathname.startsWith('/story/')
+  const isCogicAcademy = location.pathname === '/partners/cogic' || location.pathname.startsWith('/partners/cogic/')
   const currentIndex = navSlugs.findIndex((slug) => location.pathname === `/story/${slug}`)
   const currentLabel = currentIndex >= 0 ? labels[currentIndex] : 'Explore CAN'
 
@@ -31,7 +32,7 @@ export function SiteHeader() {
         <nav className="public-site-nav" aria-label="Primary navigation">
           <Link to={withPartnerContext('/story/stakes', location.search)}>The CAN story</Link>
           <Link to={withPartnerContext('/story/explore-can', location.search)}>Explore</Link>
-          <Link to={withPartnerContext('/contact', location.search)} className="public-site-nav-cta">Start a conversation</Link>
+          <Link to={isCogicAcademy ? '/partners/cogic/founding-partnership' : withPartnerContext('/contact', location.search)} className="public-site-nav-cta">{isCogicAcademy ? 'Explore COGIC founding partnership' : 'Start a conversation'}</Link>
         </nav>
       )}
       {isStory && <div className="story-mobile-shell sm:hidden">
