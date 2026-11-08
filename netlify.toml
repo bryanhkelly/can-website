@@ -1,3 +1,11 @@
 [[edge_functions]]
 function = "social-meta"
 path = "/*"
+
+# Netlify's SPA fallback belongs here, not in public/_redirects.
+# Keeping it out of Vite's output avoids a Cloudflare Workers redirect loop.
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+force = false
