@@ -10,6 +10,9 @@ export function SiteHeader() {
   const labels = ['Stakes', 'Possibility', 'Curriculum', 'Platform', 'Rooted Locally', 'Student Experience', 'Why It Can Work', 'Explore CAN']
   const [storyOpen, setStoryOpen] = useState(false)
   const isStory = location.pathname.startsWith('/story/')
+  const isCogicAcademy = location.pathname === '/partners/cogic' || location.pathname.startsWith('/partners/cogic/')
+  const isJourneyProposal = location.pathname === '/partners/the-journey-church' || location.pathname.startsWith('/partners/the-journey-church/')
+  const fromJourneyProposal = !isJourneyProposal && new URLSearchParams(location.search).get('partner') === 'the-journey-church'
   const currentIndex = navSlugs.findIndex((slug) => location.pathname === `/story/${slug}`)
   const currentLabel = currentIndex >= 0 ? labels[currentIndex] : 'Explore CAN'
 
@@ -27,11 +30,17 @@ export function SiteHeader() {
           {brandTagline}
         </p>
       </div>
+      {fromJourneyProposal && (
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 border-t border-navy-100/80 px-4 py-2 text-xs sm:px-6">
+          <span>Exploring CAN as part of <strong>The Journey Church school proposal</strong></span>
+          <Link to="/partners/the-journey-church" className="font-semibold text-teal-700 underline underline-offset-4">Return to The Journey proposal →</Link>
+        </div>
+      )}
       {!isStory && (
         <nav className="public-site-nav" aria-label="Primary navigation">
           <Link to={withPartnerContext('/story/stakes', location.search)}>The CAN story</Link>
           <Link to={withPartnerContext('/story/explore-can', location.search)}>Explore</Link>
-          <Link to={withPartnerContext('/contact', location.search)} className="public-site-nav-cta">Start a conversation</Link>
+          <Link to={isCogicAcademy ? '/partners/cogic/founding-partnership' : isJourneyProposal || fromJourneyProposal ? '/partners/the-journey-church/founding-partnership#journey-inquiry' : withPartnerContext('/contact', location.search)} className="public-site-nav-cta">{isCogicAcademy ? 'Explore COGIC founding partnership' : isJourneyProposal || fromJourneyProposal ? 'Explore Journey founding partnership' : 'Start a conversation'}</Link>
         </nav>
       )}
       {isStory && <div className="story-mobile-shell sm:hidden">

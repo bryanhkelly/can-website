@@ -11,6 +11,8 @@ import { EconomicsPage } from './pages/EconomicsPage'
 import { EconomicBreakthroughPage } from './pages/EconomicBreakthroughPage'
 import { ExplorePage } from './pages/ExplorePage'
 import { ContactPage } from './pages/ContactPage'
+import { CogicAcademyDetailPage } from './pages/CogicAcademyDetailPages'
+import { JourneyDetailPage } from './pages/JourneyDetailPages'
 import { HomePage } from './pages/HomePage'
 import { AccessibilityPage, NotFoundPage, PrivacyPage, TermsPage } from './pages/StaticPages'
 import { AccountabilityPage } from './pages/AccountabilityPage'
@@ -192,7 +194,13 @@ function App() {
         <Route path="/homeschool" element={<RoleDoorwayPage page={roleDoorways.homeschool} />} />
         <Route path="/denominations" element={<RoleDoorwayPage page={roleDoorways.denominations} />} />
         <Route path="/partners/the-journey-church" element={<PartnerPage partner="the-journey-church" />} />
+        {(["opportunity", "journey-story", "academy", "student-experience", "how-it-works", "founding-partnership"] as const).map((section) => (
+          <Route key={section} path={`/partners/the-journey-church/${section}`} element={<JourneyDetailPage section={section} />} />
+        ))}
         <Route path="/partners/cogic" element={<PartnerPage partner="cogic" />} />
+        {(["legacy", "national-academy", "student-experience", "how-it-works", "economics", "founding-partnership"] as const).map((section) => (
+          <Route key={section} path={`/partners/cogic/${section}`} element={<CogicAcademyDetailPage section={section} />} />
+        ))}
         <Route path="/partners/cogbf" element={<PartnerPage partner="cogbf" />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
