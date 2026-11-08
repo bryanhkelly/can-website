@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { FormEvent, ReactNode } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, CheckCircle2, Church, ClipboardCheck, GraduationCap, HeartHandshake, Mail, ShieldCheck } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpen, CheckCircle2, Church, ClipboardCheck, GraduationCap, HeartHandshake, Mail, ShieldCheck, Users } from 'lucide-react'
 import { trackEvent } from '../lib/analytics'
 import { journeyBase } from './JourneyPartnerPage'
 import './cogic-partner.css'
