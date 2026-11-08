@@ -179,7 +179,7 @@ const META: Record<string, SocialMeta> = {
   },
   '/partners/the-journey-church/journey-story': {
     title: 'The Journey Story | The Journey Church × CAN Academy',
-    description: 'The Journey's founding history, local ministry and community vision behind a proposed education conversation.',
+    description: 'The Journey\'s founding history, local ministry and community vision behind a proposed education conversation.',
     image: '/images/05_rooted_locally_community.png',
     imageAlt: 'Illustrative CAN Academy school image.',
   },
@@ -197,7 +197,7 @@ const META: Record<string, SocialMeta> = {
   },
   '/partners/the-journey-church/how-it-works': {
     title: 'How It Works | The Journey Church × CAN Academy',
-    description: 'Distinct responsibilities for The Journey and CAN, local authority, and the school's readiness path.',
+    description: 'Distinct responsibilities for The Journey and CAN, local authority, and the school\'s readiness path.',
     image: '/images/04_platform_local_campus.png',
     imageAlt: 'Illustrative CAN Academy school image.',
   },
