@@ -63,3 +63,42 @@ approximations, and a local italic serif rather than enlarging reference crops.
 These substitutions are not pixel-identical to the comps. Exact asset matching
 requires those additional production assets; 2x retina delivery at large desktop
 sizes also requires larger source photography.
+
+## Deploying the same website to Cloudflare Workers and Netlify
+
+The public site is a Vite + React single-page application. All nested page routes
+(e.g. `/partners/the-journey-church/academy`) must serve the built `index.html`
+on an initial browser request so React Router can render the correct page.
+
+**Cloudflare Workers (Workers Builds, connected to this GitHub repository)**
+
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+- Root directory: `/`
+- Wrangler configuration: `wrangler.jsonc`
+- Project/script name: `can-website`
+
+The Worker serves `./dist` as static assets and uses
+`assets.not_found_handling = "single-page-application"`. No Worker entry point,
+Cloudflare Vite plugin, or Netlify redirect rule is needed for this static SPA.
+
+**Netlify**
+
+- Build command: `npm run build`
+- Publish directory: `dist`
+- SPA fallback: `[[redirects]]` in `netlify.toml`
+- Netlify's existing social metadata edge function and Netlify Forms integration
+  remain configured for the Netlify deployment.
+
+**Do not recreate `public/_redirects`.** Vite copies files in `public/`
+into `dist/`. A Netlify-style `/* /index.html 200` rewrite in the deployed
+Cloudflare asset directory causes Wrangler to reject the deployment with
+`Invalid _redirects configuration: Infinite loop detected`.
+
+CI checks both deployment configurations after the production Vite build with
+`node scripts/check-dual-host-routing.mjs`. Build and deploy configuration
+are platform-specific; application source and page URLs remain shared.
+
+Cloudflare does not automatically handle Netlify Forms submissions. The
+Journey and COGIC proposal inquiry forms require a verified, host-aware form
+submission backend before they can be used on the Cloudflare hostname.
