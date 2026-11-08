@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, BookOpen, CheckCircle2, Church, GraduationCap, HeartHandshake, ShieldCheck, Users } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Church, GraduationCap, HeartHandshake, ShieldCheck } from 'lucide-react'
 import './cogic-partner.css'
 import './cogic-academy-pages.css'
 import './journey-partner.css'
