@@ -117,3 +117,17 @@ The public marketing pages at `/locations/:state` are owned by the CAN Academy w
 - `/partners/cogic/founding-partnership` — COGIC-only founding invitation and inquiry form; no general contact CTA
 
 Main CAN site deep links are permitted for academic, launch, economic and governance details, but COGIC module entry points must first reach the COGIC-specific deep pages. Form submission must match a statically declared Netlify skeleton and must not claim success before a successful response. Copyrighted portrait usage remains subject to permissions review.
+
+
+## The Journey Church proposed academy (independent CAN proposal)
+
+Route `/partners/the-journey-church` is a local-church, single-campus editorial proposal and not an official Journey Church school announcement. The six authored chapters at `/partners/the-journey-church/{opportunity,journey-story,academy,student-experience,how-it-works,founding-partnership}` retain the proposal's context and point to shared CAN academics, student experience, launch, governance and research pages without duplicating those canonical materials.
+
+Editorial and permissions rules:
+- Cite church history and ministries from official Journey Church pages; do not imply that ministry participation, campus availability, staff, sponsorship or school authorization are already agreed.
+- Label all CAN illustrative student/campus imagery; do not represent AI-generated or stock-style images as actual Journey facilities, pastors or students. Replace with approved Journey photographs only after permission.
+- Speak of one potential founding school site (grades 6–12 proposed), not a church-wide denominational network.
+- Do not imply Nassau County public schools are underperforming; the district's 2026 A grade is acknowledged.
+- Enrollment calculators are assumptions, not actual tuition pricing, financial forecasts, scholarship commitments or church revenue.
+- The dedicated `journey-founding-partner` Netlify form collects a leadership conversation request, not a school application or authorization. Confirm Netlify form processing and notification recipients before distribution.
+- A CAN Academy relationship with The Journey Church is *not established*. Church name and brand usage require approval before any public campaign.
