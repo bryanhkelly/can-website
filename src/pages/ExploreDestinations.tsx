@@ -8,6 +8,7 @@ import { partnershipIs, partnershipIsNot, partnershipPrinciples } from '../data/
 import { CurrentLaunchSummary, LaunchDeepLinks } from './LaunchDeepDivePages'
 import type { PartnerId } from '../lib/nav'
 import { CogicPartnerPage } from './CogicPartnerPage'
+import { JourneyPartnerPage } from './JourneyPartnerPage'
 
 const ACADEMIC_COMPONENTS = [
   {
@@ -420,6 +421,7 @@ export function EvidencePage() {
 
 export function PartnerPage({ partner }: { partner: PartnerId }) {
   if (partner === 'cogic') return <CogicPartnerPage />
+  if (partner === 'the-journey-church') return <JourneyPartnerPage />
   const page = PARTNER_PAGES[partner]
   return (
     <article className="partner-front-door">
