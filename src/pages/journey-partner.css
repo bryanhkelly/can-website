@@ -1,0 +1,112 @@
+/* A single-church editorial proposal. Shares COGIC layout primitives, never denomination positioning. */
+.journey-page {
+  --cogic-ink: #172b36;
+  --cogic-green: #123e38;
+  --cogic-night: #172a35;
+  --cogic-gold: #b78d3b;
+  --cogic-paper: #fcfaf6;
+  --cogic-line: #dfdad0;
+}
+.journey-page .cogic-module-label {color:#a77826}
+.journey-introduction {text-align:center;padding:9px 0 24px}
+.journey-introduction h1 {font:500 clamp(40px,5.2vw,66px)/1.04 Georgia,serif;letter-spacing:-.045em;margin:13px 0}
+.journey-introduction h1 span {display:block;margin-top:9px;color:#926e3e;font:700 clamp(12px,1.2vw,15px)/1.45 Arial,sans-serif;text-transform:uppercase;letter-spacing:.16em}
+.journey-introduction > p:not(.cogic-kicker) {max-width:735px;margin:10px auto;color:#465a59;font-size:17px;line-height:1.58}
+.journey-introduction > p.journey-disclaimer {max-width:830px;color:#78736a;font-size:12px;line-height:1.5}
+.journey-page .cogic-detail-hero {background:#152d34}
+.journey-page .cogic-detail-hero-photo::before {background:linear-gradient(90deg,#152d34,transparent 46%)}
+.journey-editorial-hero {position:relative;isolation:isolate;overflow:hidden;border-radius:22px;background:#122e32;color:white;min-height:525px;display:grid;align-items:end}
+.journey-editorial-hero-image {position:absolute;inset:0;z-index:-1}
+.journey-editorial-hero-image img {width:100%;height:100%;object-fit:cover;object-position:68% 43%}
+.journey-editorial-hero-image:after {content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,31,33,.97) 0%,rgba(10,38,40,.88) 37%,rgba(15,37,45,.18) 100%)}
+.journey-editorial-hero-image span {position:absolute;right:15px;bottom:14px;z-index:2;color:white;font-size:11px;background:#102328c8;padding:7px 10px;border-radius:5px}
+.journey-editorial-hero-copy {padding:clamp(27px,5.2vw,70px);max-width:850px}
+.journey-editorial-hero-copy .cogic-module-label {color:#edc67d}
+.journey-editorial-hero-copy h2 {font:500 clamp(43px,6.3vw,83px)/1.04 Georgia,serif;letter-spacing:-.05em;color:#fff;max-width:850px;margin:16px 0}
+.journey-editorial-hero-copy > p:not(.cogic-module-label) {font-size:clamp(16px,1.7vw,20px);line-height:1.55;max-width:685px;color:#f4f5ec}
+.journey-editorial-hero-copy .cogic-invitation-actions {margin-top:23px}
+.journey-editorial-hero .cogic-primary-action {background:#e7b864;color:#182b23}
+.journey-editorial-hero .cogic-secondary-action {color:#fff;border-color:#ffffff9c}
+.journey-chapter {scroll-margin-top:140px}
+.journey-opportunity {display:grid;grid-template-columns:minmax(0,1.15fr) minmax(290px,.85fr);gap:clamp(22px,4vw,55px);margin-top:18px;padding:clamp(26px,4.1vw,50px);background:#fffdf8;border:1px solid var(--cogic-line);border-radius:20px}
+.journey-opportunity h2 {font-size:clamp(36px,4.5vw,60px);line-height:1.12;margin:12px 0 15px}
+.journey-opportunity p:not(.cogic-module-label) {color:#4d5f5f;font-size:16px;max-width:730px}
+.journey-opportunity-facts {display:grid;gap:0;align-content:center;border-left:1px solid #d8d3c9;padding-left:26px}
+.journey-opportunity-facts > div {display:grid;grid-template-columns:90px 1fr;align-items:center;gap:10px;border-bottom:1px solid #dad5cb;padding:13px 0}
+.journey-opportunity-facts strong {font:500 47px/.95 Georgia,serif;color:#144b42}
+.journey-opportunity-facts span {font-size:13px;line-height:1.45;color:#45565d}
+.journey-source-link {display:inline-flex;align-items:center;gap:6px;color:#1c5b4c;font-size:12px;font-weight:750;text-decoration:underline;margin:10px 0}
+.journey-source-link svg {width:15px;height:15px}
+.journey-two-features .cogic-legacy,.journey-two-features .cogic-vision {min-width:0}
+.journey-two-features .cogic-legacy-image img,.journey-two-features .cogic-vision-image img {object-fit:cover}
+.journey-card-tags {display:flex;flex-wrap:wrap;gap:7px;margin:16px 0}
+.journey-card-tags span {background:#eef1e9;border-radius:6px;padding:7px 10px;font-size:11px;font-weight:700;color:#315b4a}
+.journey-model-visual {display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;padding:22px 10px}
+.journey-model-visual > div {flex:1 1 180px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:11px;min-height:220px;padding:22px;border-radius:50%;background:#164e40;color:#fff}
+.journey-model-visual > div:nth-of-type(2) {background:#f8f4e9;color:#17463c;border:1px solid #c7ab71}
+.journey-model-visual > div svg {height:35px;width:35px}
+.journey-model-visual > div strong {font:500 26px/1 Georgia,serif}
+.journey-model-visual > div span {font-size:12px;line-height:1.4}
+.journey-model-plus {color:#a27831;font:500 35px Georgia,serif}
+.journey-model-visual > p {width:100%;text-align:center;font-size:12px;color:#586c62}
+.journey-quick-scenarios {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0 5px}
+.journey-quick-scenarios > div {background:#fffdf8;padding:21px;border:1px solid #d6d5cb;border-radius:12px;display:grid;gap:8px}
+.journey-quick-scenarios span {font-weight:800;color:#4c5a54;font-size:12px}
+.journey-quick-scenarios strong {font:500 clamp(28px,3vw,47px)/1 Georgia,serif;color:#17523f;overflow-wrap:anywhere}
+.journey-quick-scenarios small {font-size:11px;color:#5b655d;line-height:1.45}
+.journey-invitation-card {border:1px solid #ffffff70;border-radius:13px;padding:clamp(20px,3vw,35px);background:#ffffff11}
+.journey-invitation-card svg {width:38px;height:38px;color:#ebc483}
+.journey-invitation-card h3 {font-size:clamp(29px,3vw,40px);line-height:1.16;color:white;margin:12px 0}
+.journey-invitation-card p,.journey-invitation-card li {color:#e6efe9;font-size:14px;line-height:1.5}
+.journey-invitation-card ul {list-style:disc;margin:16px 0 0;padding-left:17px}
+.journey-invitation-card li {margin:7px 0}
+.journey-source-note {display:grid;grid-template-columns:1.3fr .7fr;gap:35px;border-top:1px solid #dad4c7;margin-top:23px;padding:30px 8px}
+.journey-source-note h2 {font:500 32px/1.15 Georgia,serif;letter-spacing:-.035em;margin:10px 0}
+.journey-source-note p:not(.cogic-overline) {font-size:12px;color:#5a6961}
+.journey-source-links {display:flex;flex-direction:column;align-items:start;justify-content:center}
+.journey-detail .journey-image-label {position:absolute;z-index:2;bottom:12px;right:12px;background:#14262cba;color:white;padding:6px 9px;border-radius:5px;font-size:10px}
+.journey-page .cogic-detail-dark {background:#173d35;color:#fff}
+.journey-page .cogic-detail-dark h2 {color:white}
+.journey-page .cogic-detail-dark a {color:#eed39c}
+.journey-story-panel {background:#eef0e7;padding:clamp(24px,3.2vw,44px);border-radius:16px}
+.journey-story-panel h3 {font-size:clamp(31px,3.5vw,48px);line-height:1.15}
+.journey-story-panel p {color:#405b52;line-height:1.6}
+.journey-evidence-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.journey-evidence-grid > div {display:flex;flex-direction:column;align-items:start;gap:10px;background:#f4f4ed;border:1px solid #deded4;border-radius:12px;padding:24px}
+.journey-evidence-grid strong {font:500 26px/1.12 Georgia,serif;color:#183d34}
+.journey-evidence-grid p {font-size:14px;color:#536259;line-height:1.55}
+.journey-evidence-grid a {margin-top:auto}
+.journey-page .cogic-detail-thesis {background:#173c32}
+.journey-page .cogic-detail-hero-photo img {object-fit:cover}
+.journey-page .cogic-economics-status {align-items:start}
+.journey-economics-notes {display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:22px}
+.journey-economics-notes > div {background:#f3f4ee;border:1px solid #dadcd2;padding:20px;border-radius:10px}
+.journey-economics-notes strong {font:500 24px Georgia,serif}
+.journey-economics-notes p {font-size:13px;color:#56635d;line-height:1.55}
+.journey-detail #journey-inquiry {scroll-margin-top:110px}
+.journey-detail #economics {scroll-margin-top:110px}
+@media(max-width:900px){
+ .journey-opportunity {grid-template-columns:1fr}
+ .journey-opportunity-facts {border-left:none;padding-left:0}
+ .journey-quick-scenarios {grid-template-columns:1fr}
+ .journey-source-note {grid-template-columns:1fr}
+ .journey-evidence-grid {grid-template-columns:1fr}
+ .journey-editorial-hero {min-height:465px}
+ .journey-editorial-hero-image:after {background:linear-gradient(90deg,rgba(9,31,33,.96),rgba(10,38,40,.76),rgba(15,37,45,.32))}
+}
+@media(max-width:650px){
+ .journey-introduction h1 {font-size:41px}
+ .journey-introduction h1 span {font-size:11px;letter-spacing:.11em}
+ .journey-editorial-hero {min-height:570px}
+ .journey-editorial-hero-copy {padding:26px 21px 40px}
+ .journey-editorial-hero-copy h2 {font-size:42px}
+ .journey-editorial-hero-image img {object-position:62% center}
+ .journey-editorial-hero-image:after {background:linear-gradient(0deg,rgba(9,31,33,.96) 5%,rgba(9,31,33,.73) 64%,rgba(9,31,33,.34) 100%)}
+ .journey-editorial-hero-image span {font-size:9px;right:9px;bottom:7px}
+ .journey-opportunity-facts > div {grid-template-columns:60px 1fr}
+ .journey-opportunity-facts strong {font-size:38px}
+ .journey-opportunity h2 {font-size:40px}
+ .journey-model-visual > div {flex:1 1 100%;border-radius:15px;min-height:155px}
+ .journey-model-plus {width:100%;text-align:center}
+ .journey-economics-notes {grid-template-columns:1fr}
+}
