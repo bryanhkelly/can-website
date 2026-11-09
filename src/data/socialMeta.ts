@@ -243,6 +243,12 @@ const META: Record<string, SocialMeta> = {
     image: '/images/07_economics_leadership_meeting.png',
     imageAlt: 'COGIC National Academy proposal illustration.',
   },
+  '/partners/cogic/academics': {
+    title: 'Academic Excellence & COGIC Scholars | CAN Academy',
+    description: 'Explore a proposed integrated COGIC academic model: rigorous courses, faith and heritage, targeted intervention, acceleration, research and college preparation.',
+    image: '/images/03_curriculum_student_study.png',
+    imageAlt: 'Student focused on academic learning.',
+  },
   '/partners/cogic/founding-partnership': {
     title: 'COGIC Founding Educational Partnership | CAN Academy',
     description: 'A customized proposed ten-church founding cohort, denominational governance, implementation milestones and leadership inquiry.',
