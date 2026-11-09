@@ -229,3 +229,24 @@
 .cogic-academic-pathway {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;}
 @media(max-width:900px){.cogic-academic-growth{grid-template-columns:repeat(2,minmax(0,1fr))}.cogic-academic-pathway{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.cogic-academic-subjects,.cogic-academic-growth,.cogic-academic-pathway{grid-template-columns:1fr}}
+
+/* Proposed COGIC national share: educational financial model. */
+.cogic-economics-controls > .cogic-share-guidance {
+  margin: -4px 0 4px;
+  background: #e7efe5;
+  padding: 12px;
+  border-left: 3px solid #35644a;
+  border-radius: 7px;
+  color: #375243;
+  font-size: 12px;
+  line-height: 1.55;
+}
+.cogic-economics-results > .cogic-economics-share-range {
+  padding: 12px 14px;
+  margin: 15px 0 0;
+  background: #ffffff18;
+  border: 1px solid #ffffff36;
+  border-radius: 9px;
+  line-height: 1.5;
+}
+.cogic-economics-share-range strong { display: block; color: #f0d6aa; margin-top: 5px; font-size: clamp(17px, 2vw, 22px); }
