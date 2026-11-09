@@ -24,7 +24,7 @@ const experienceContent = {
   curriculum: {
     eyebrow: 'Formation within academic rigor',
     heading: 'Our history. Our theology. Our traditions.',
-    description: 'A COGIC-approved instructional layer could bring Holiness-Pentecostal heritage, denominational history, scripture, worship, and service into the school experience alongside standards-aligned academics.',
+    description: 'Subject-by-subject lessons could connect COGIC history, African and Black intellectual traditions, faith and community research to rigorous standards-aligned academic work.',
     details: ['COGIC-reviewed faith content', 'Academic courses retain their required standards', 'Students access approved teacher and course options'],
   },
   community: {
@@ -41,6 +41,7 @@ const modules = [
   { href: '#challenge', label: 'The challenge' },
   { href: '#legacy', label: 'The legacy' },
   { href: '#vision', label: 'The vision' },
+  { href: '#academics', label: 'The academics' },
   { href: '#experience', label: 'The experience' },
   { href: '#model', label: 'The model' },
   { href: '#opportunity', label: 'The opportunity' },
@@ -145,17 +146,38 @@ export function CogicPartnerPage() {
           </section>
         </div>
 
+
+        <section id="academics" className="cogic-module cogic-academics-overview" aria-labelledby="cogic-academics-heading">
+          <div className="cogic-academics-overview-copy">
+            <ModuleLabel number="04">Academic excellence</ModuleLabel>
+            <h2 id="cogic-academics-heading">Every child deserves the opportunity to rise.</h2>
+            <p>Some students arrive ready for advanced work. Others need to rebuild foundational reading or mathematics skills. All deserve rigorous instruction, individual support and a pathway toward meaningful achievement.</p>
+            <p>Imagine standards-aligned academics enriched by COGIC history, Black and African intellectual traditions, and faith; targeted interventions when students need them; and a proposed COGIC Scholars Program for original research, leadership and college preparation.</p>
+            <div className="cogic-academics-overview-pillars">
+              <div><BookOpen aria-hidden="true" /><strong>Learn</strong><span>Rigorous courses and distinctive perspectives</span></div>
+              <div><GraduationCap aria-hidden="true" /><strong>Grow</strong><span>Academic recovery, mastery and acceleration</span></div>
+              <div><Users aria-hidden="true" /><strong>Achieve</strong><span>Research, leadership and student portfolios</span></div>
+            </div>
+            <Link className="cogic-text-link" to="/partners/cogic/academics">Explore academics and the COGIC Scholars pathway <ArrowRight aria-hidden="true" /></Link>
+            <p className="cogic-module-note">Illustrative academic and Scholars concepts, subject to educational design, qualified staffing and denominational approval.</p>
+          </div>
+          <div className="cogic-academics-overview-photo">
+            <img src="/images/03_curriculum_student_study.png" alt="Student engaged in focused academic work" loading="lazy" />
+            <div><span>Proposed COGIC National Academy</span><strong>Faith. Heritage. Academic excellence.</strong></div>
+          </div>
+        </section>
+
         <section id="experience" className="cogic-module cogic-experience" aria-labelledby="cogic-experience-heading">
           <div className="cogic-experience-header">
             <div>
-              <ModuleLabel number="04">The student experience</ModuleLabel>
+              <ModuleLabel number="05">The student experience</ModuleLabel>
               <h2 id="cogic-experience-heading">An education distinctly COGIC.</h2>
-              <p>A national educational identity that students could recognize in everyday school life, not just on the sign outside.</p>
+              <p>A local church community connected to a national academic mission, shared COGIC formation and student opportunities beyond the classroom.</p>
             </div>
             <div className="cogic-experience-switcher" aria-label="Explore proposed student experiences">
               {([
                 ['homeroom', 'Bishop’s homeroom'],
-                ['curriculum', 'Curriculum'],
+                ['curriculum', 'Faith & learning'],
                 ['community', 'Community'],
               ] as const).map(([value, label]) => (
                 <button key={value} type="button" aria-pressed={experience === value} onClick={() => setExperience(value)}>{label}</button>
@@ -205,7 +227,7 @@ export function CogicPartnerPage() {
 
         <section id="model" className="cogic-module cogic-model" aria-labelledby="cogic-model-heading">
           <div className="cogic-model-copy">
-            <ModuleLabel number="05">The operating model</ModuleLabel>
+            <ModuleLabel number="06">The operating model</ModuleLabel>
             <h2 id="cogic-model-heading">Your churches. Your traditions. One shared academic backbone.</h2>
             <p>CAN is being designed to let church leaders configure a proposed school workspace in about an hour, then follow a structured path to build the team, recruit families, satisfy opening requirements and prepare for launch.</p>
             <p className="cogic-model-callout"><ShieldCheck aria-hidden="true" /> One-hour configuration is not the same as being authorized or ready to open a school.</p>
@@ -226,7 +248,7 @@ export function CogicPartnerPage() {
 
         <section id="opportunity" className="cogic-module cogic-opportunity" aria-labelledby="cogic-opportunity-heading">
           <div className="cogic-finance-intro">
-            <ModuleLabel number="06">The opportunity</ModuleLabel>
+            <ModuleLabel number="07">The opportunity</ModuleLabel>
             <h2 id="cogic-opportunity-heading">A national education mission with the potential to strengthen local churches.</h2>
             <p>Explore the scale of a coordinated network. These numbers illustrate possible tuition flows, not profits, guaranteed payments, funding eligibility or a CAN forecast.</p>
           </div>
@@ -270,7 +292,7 @@ export function CogicPartnerPage() {
 
         <section id="invitation" className="cogic-module cogic-invitation" aria-labelledby="cogic-invitation-heading">
           <div className="cogic-invitation-copy">
-            <ModuleLabel number="07">The invitation</ModuleLabel>
+            <ModuleLabel number="08">The invitation</ModuleLabel>
             <h2 id="cogic-invitation-heading">Let's build the first ten schools together.</h2>
             <p>Explore the COGIC National Academy Founding Educational Partnership, including a dedicated leadership invitation, ten-church pilot plan, and COGIC-specific inquiry.</p>
             <div className="cogic-invitation-actions">
