@@ -305,3 +305,15 @@
   .cogic-experience-description { padding: 22px; }
   .cogic-model, .cogic-opportunity, .cogic-invitation { padding: 24px 21px; }
 }
+
+/* National revenue share: keep tiers clearly separate from total tuition. */
+.cogic-calculator-controls .cogic-share-guidance {
+  color: #576a5c;
+  background: #edf2e9;
+  border-radius: 8px;
+  padding: 11px 13px;
+  line-height: 1.5;
+  font-size: 12px;
+  margin: 7px 0 0;
+}
+.cogic-economic-grid strong { overflow-wrap: normal; word-break: normal; }
