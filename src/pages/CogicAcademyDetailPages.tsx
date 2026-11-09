@@ -14,10 +14,11 @@ const base = '/partners/cogic'
 export const cogicSections = [
   { slug: 'legacy', name: 'The Legacy', short: 'Legacy', number: '01' },
   { slug: 'national-academy', name: 'COGIC National Academy', short: 'National Academy', number: '02' },
-  { slug: 'student-experience', name: 'The Student Experience', short: 'Student Experience', number: '03' },
-  { slug: 'how-it-works', name: 'How It Works', short: 'How It Works', number: '04' },
-  { slug: 'economics', name: 'The Economics', short: 'Economics', number: '05' },
-  { slug: 'founding-partnership', name: 'Founding Educational Partnership', short: 'Founding Partnership', number: '06' },
+  { slug: 'academics', name: 'Academic Excellence', short: 'Academics', number: '03' },
+  { slug: 'student-experience', name: 'The Student Experience', short: 'Student Experience', number: '04' },
+  { slug: 'how-it-works', name: 'How It Works', short: 'How It Works', number: '05' },
+  { slug: 'economics', name: 'The Economics', short: 'Economics', number: '06' },
+  { slug: 'founding-partnership', name: 'Founding Educational Partnership', short: 'Founding Partnership', number: '07' },
 ] as const
 
 export type CogicSection = typeof cogicSections[number]['slug']
@@ -81,7 +82,7 @@ function Shell({ section, eyebrow, title, intro, image, imageAlt, children }: {
           <div className="cogic-detail-footer-actions">
             <PageLink to={base + '/founding-partnership'}>Explore the founding invitation</PageLink>
             {next ? <Link className="cogic-detail-next" to={base + '/' + next.slug}>Next: {next.name} <ArrowRight aria-hidden="true" /></Link>
-              : <Link className="cogic-detail-next" to={base}>Return to all seven modules <ArrowRight aria-hidden="true" /></Link>}
+              : <Link className="cogic-detail-next" to={base}>Return to the COGIC proposal <ArrowRight aria-hidden="true" /></Link>}
           </div>
         </footer>
       </div>
@@ -188,7 +189,90 @@ export function CogicNationalAcademyPage() {
     <section className="cogic-detail-related">
       <SectionTitle eyebrow="Why now">Make the first chapter achievable.</SectionTitle>
       <p>COGIC does not need to replicate every administrative office and full-time teaching staff that conventional school expansion would require at each location. CAN proposes shared infrastructure and a disciplined, site-by-site launch process. The economics and educational model still need to be validated.</p>
-      <div className="cogic-detail-actions"><PageLink to={base+'/how-it-works'}>How the academy would operate</PageLink><PageLink secondary to={base+'/founding-partnership'}>The first ten-school proposal</PageLink></div>
+      <div className="cogic-detail-actions"><PageLink to={base+'/academics'}>Explore the academic model</PageLink><PageLink secondary to={base+'/founding-partnership'}>The first ten-school proposal</PageLink></div>
+    </section>
+  </Shell>
+}
+
+
+const cogicAcademicSubjects = [
+  { name: 'English & Language Arts', example: 'Analyze a COGIC sermon and a Frederick Douglass speech as persuasive rhetoric; develop a source-based argument about audience, evidence and biblical allusion.' },
+  { name: 'Mathematics & Data', example: 'Use algebra to model a hypothetical youth program budget, then apply statistics to responsibly analyze a simulated community dataset.' },
+  { name: 'Science', example: 'Use environmental measurements or a supplied dataset to investigate heat and shade near a community learning site; explain evidence and limitations.' },
+  { name: 'U.S. History', example: 'Study the Great Migration and the role of congregations in community formation, comparing oral histories with census and archival evidence.' },
+  { name: 'World History', example: 'Investigate early Christianity in Alexandria, Carthage and Aksum alongside African kingdoms, intellectual traditions and global history.' },
+  { name: 'Government & Economics', example: 'Research religious liberty, civic institutions and Black mutual-aid traditions; prepare an evidence-based policy or financial brief.' },
+  { name: 'Bible & Theology', example: 'Study biblical texts alongside approved COGIC historical and theological materials, distinguishing denominational interpretation from historical evidence.' },
+]
+
+const cogicScholarProjects = [
+  { title: 'COGIC National History Archive', field: 'History · English · Digital humanities', detail: 'Interview elders with consent, verify congregation records and publish a faculty-reviewed digital exhibit with student attribution.' },
+  { title: 'Community Data Lab', field: 'Mathematics · Computer science · Economics', detail: 'Analyze approved or simulated datasets, explain the limitations of the evidence and present actionable findings.' },
+  { title: 'Environmental Research', field: 'Biology · Chemistry · Environmental science', detail: 'Develop research questions, collect safe measurements under supervision and communicate evidence-based recommendations.' },
+  { title: 'Community Enterprise Challenge', field: 'Algebra · Economics · Leadership', detail: 'Model the feasibility of a school or service initiative and defend assumptions before a review panel.' },
+  { title: 'Oral History & Storytelling', field: 'English · History · Media', detail: 'Create carefully sourced interviews, histories or documentary projects with appropriate permissions.' },
+]
+
+export function CogicAcademicsPage() {
+  return <Shell section="academics" eyebrow="03 / Academic excellence" title="Every child deserves the opportunity to rise." intro="A proposed education built on rigorous academics, COGIC's faith and heritage, personalized academic support, and opportunities for research, leadership and college preparation." image="/images/03_curriculum_student_study.png" imageAlt="Student studying academic materials">
+    <section className="cogic-detail-thesis">
+      <Kicker>One integrated academic experience</Kicker>
+      <h2>Meet students where they are. Help them reach what's possible.</h2>
+      <p>Some students enter ready for advanced work. Others need help rebuilding essential reading or mathematics skills. Every learner deserves age-respectful, challenging instruction, clear goals and access to meaningful projects. The COGIC Scholars Program is part of this educational vision, not a separate track reserved for top-performing students.</p>
+      <div className="cogic-detail-thesis-stats">
+        <div><strong>01</strong><span>Standards-aligned academics</span></div>
+        <div><strong>02</strong><span>Personalized progress and intervention</span></div>
+        <div><strong>03</strong><span>Research, leadership and college readiness</span></div>
+      </div>
+    </section>
+    <section className="cogic-detail-section" id="academic-foundation">
+      <SectionTitle eyebrow="Academic foundation">Rigorous courses. Distinctive perspectives.</SectionTitle>
+      <p className="cogic-detail-intro">Students study the major academic disciplines while encountering COGIC history, Black intellectual life, African civilizations, church history and faith where the connection strengthens the lesson. Religious formation complements rather than replaces academic standards or scientific inquiry.</p>
+      <div className="cogic-academic-subjects">{cogicAcademicSubjects.map((subject) => <article key={subject.name}><h3>{subject.name}</h3><p>{subject.example}</p></article>)}</div>
+      <p className="cogic-detail-micro">Illustrative lesson concepts only. Subject specialists would validate academic standards and assessments; authorized COGIC leadership would review denominational doctrine and historical materials.</p>
+    </section>
+    <section className="cogic-detail-section" id="academic-growth">
+      <SectionTitle eyebrow="Academic recovery and acceleration">A starting point is not a ceiling.</SectionTitle>
+      <p className="cogic-detail-intro">A ninth grader reading below grade level should receive explicit, targeted literacy support without losing access to age-appropriate ideas, peers, science, history or projects. A student ready for advanced mathematics should have room to move forward. Growth requires more than self-paced software.</p>
+      <div className="cogic-academic-growth">
+        <article><span>01 / Understand</span><h3>Assess specific strengths and gaps</h3><p>Use appropriate diagnostic information to identify priority skills, without reducing the student to a single grade-equivalent label.</p></article>
+        <article><span>02 / Plan</span><h3>Set individual learning goals</h3><p>Establish measurable goals, accessible materials, appropriate challenge and family communication.</p></article>
+        <article><span>03 / Support</span><h3>Provide targeted teaching</h3><p>Qualified educators deliver structured literacy, mathematics intervention, tutoring or specialized services as needed, alongside the asynchronous academic core.</p></article>
+        <article><span>04 / Monitor</span><h3>Adjust based on progress</h3><p>Check skill mastery regularly and change the intervention when evidence shows it is not working.</p></article>
+        <article><span>05 / Extend</span><h3>Accelerate and enrich</h3><p>Make advanced courses and meaningful research available when students show readiness, including across different subjects.</p></article>
+      </div>
+      <div className="cogic-academic-example"><strong>Three students. One commitment to growth.</strong><p><b>Rebuilding foundations:</b> a Grade 9 student receives explicit reading support while completing accessible, age-appropriate coursework. <b>On track:</b> another student completes grade-level courses and participates in a history research project. <b>Ready to accelerate:</b> a third student advances in mathematics while exploring community data analysis.</p><small>Hypothetical scenarios, not implemented services or guaranteed outcomes. Specialized support, accessibility and disability-related obligations depend on the legally authorized operating model and qualified staff.</small></div>
+    </section>
+    <section className="cogic-detail-section" id="cogic-scholars">
+      <SectionTitle eyebrow="The proposed COGIC Scholars Program">From curiosity to original work, leadership and contribution.</SectionTitle>
+      <p className="cogic-detail-intro">A four-year progression could help students build research skills and create increasingly substantive work. Students needing academic support are not excluded from inquiry, service or creative achievement.</p>
+      <div className="cogic-academic-pathway">
+        {[
+          ['09','Discover','Learn research skills, explore community history and begin a portfolio.'],
+          ['10','Investigate','Formulate questions, evaluate evidence and complete a substantive project.'],
+          ['11','Lead','Pursue advanced inquiry, mentor peers or collaborate with a community partner.'],
+          ['12','Contribute','Produce a capstone, publish or present reviewed work, and reflect on next steps.'],
+        ].map(([grade,title,description]) => <article key={grade}><span>Grade {grade}</span><h3>{title}</h3><p>{description}</p></article>)}
+      </div>
+    </section>
+    <section className="cogic-detail-section" id="signature-projects">
+      <SectionTitle eyebrow="Signature learning experiences">The classroom can create work worth sharing.</SectionTitle>
+      <div className="cogic-academic-subjects">{cogicScholarProjects.map(project => <article key={project.title}><span className="cogic-overline">{project.field}</span><h3>{project.title}</h3><p>{project.detail}</p></article>)}</div>
+      <p className="cogic-detail-micro">Publication, interviews, fieldwork and any public showcase require faculty review, age-appropriate safeguarding, student privacy and informed consent.</p>
+    </section>
+    <section className="cogic-detail-section" id="college-readiness">
+      <SectionTitle eyebrow="College and career readiness">Help students demonstrate what they can do.</SectionTitle>
+      <div className="cogic-detail-three">
+        <article><BookOpen aria-hidden="true" /><h3>Verified student portfolio</h3><p>Collect authentic projects, drafts, reflections and faculty feedback with clear individual attribution.</p></article>
+        <article><GraduationCap aria-hidden="true" /><h3>Preparation for next steps</h3><p>Support academic planning, career exploration, college applications and scholarship preparation.</p></article>
+        <article><Users aria-hidden="true" /><h3>National research community</h3><p>Explore optional showcases, mentorship and collaboration across participating jurisdictions.</p></article>
+      </div>
+      <p className="cogic-detail-micro">Coursework, extracurricular achievements and academic distinctions must be recorded accurately. No admission, scholarship, college credit or publication outcome is guaranteed.</p>
+    </section>
+    <section className="cogic-detail-section">
+      <SectionTitle eyebrow="How the model would operate">National standards, accountable academics, trusted local relationships.</SectionTitle>
+      <p className="cogic-detail-intro">CAN's proposed shared academic infrastructure would provide course design, assessments, progress tools and pathways for qualified teacher support. Authorized academic leadership would own educational quality and grading; COGIC leadership would approve denominational content; local church sites would provide supervision and community. The actual intervention services, staffing, disability accommodations and school-of-record duties must be validated before launch.</p>
+      <div className="cogic-detail-actions"><PageLink to={base+'/student-experience'}>Explore student life</PageLink><PageLink secondary to={base+'/founding-partnership'}>Discuss the founding cohort</PageLink></div>
     </section>
   </Shell>
 }
@@ -196,13 +280,13 @@ export function CogicNationalAcademyPage() {
 const weeklyRhythm = [
   {time:'Monday',title:'A shared opening',body:'A proposed 15-minute prerecorded homeroom devotional from the Presiding Bishop. A local facilitator may lead reflection.'},
   {time:'Daily',title:'Students choose their academic path',body:'Students work through standards-aligned, teacher-developed asynchronous content and can select approved teachers and course experiences where available.'},
-  {time:'When needed',title:'Live support without mandatory live lectures',body:'Tutors, subject specialists, academic coaches and other qualified staff help students with questions, feedback and interventions.'},
+  {time:'When needed',title:'Live support without mandatory live lectures',body:'Qualified educators would provide targeted literacy or mathematics intervention, tutoring, feedback and academic coaching where needed, with progress monitored over time.'},
   {time:'Throughout the week',title:'Belonging close to home',body:'Local adults supervise the school day, connect with families, host Circles, activities and service opportunities.'},
 ]
 
 export function CogicStudentExperiencePage() {
   const [active,setActive] = useState<'homeroom'|'faith'|'community'>('homeroom')
-  return <Shell section="student-experience" eyebrow="03 / The student experience" title="An education that feels distinctly COGIC." intro="The student would have the reach of a shared academic network and the care of a local church community, with COGIC's identity represented in approved programming." image="/images/06_student_experience_portrait.png" imageAlt="Student looking forward with confidence">
+  return <Shell section="student-experience" eyebrow="04 / The student experience" title="An education that feels distinctly COGIC." intro="The student would have the reach of a shared academic network and the care of a local church community, with COGIC's identity represented in approved programming." image="/images/06_student_experience_portrait.png" imageAlt="Student looking forward with confidence">
     <section className="cogic-detail-section">
       <SectionTitle eyebrow="A signature shared experience">Homeroom with the Presiding Bishop.</SectionTitle>
       <div className="cogic-student-stage">
@@ -224,11 +308,11 @@ export function CogicStudentExperiencePage() {
     </section>
     <section className="cogic-detail-section"><SectionTitle eyebrow="How learning actually works">Recorded teaching. Live help. Real local community.</SectionTitle><div className="cogic-detail-timeline">{weeklyRhythm.map(item=><article key={item.time}><span>{item.time}</span><h3>{item.title}</h3><p>{item.body}</p></article>)}</div></section>
     <section className="cogic-detail-three cogic-detail-section">
-      <article><GraduationCap aria-hidden="true" /><h3>Academic rigor</h3><p>Coherent courses, assessment, grades and progress. Religious distinctives complement, not replace, academic requirements.</p></article>
+      <article><GraduationCap aria-hidden="true" /><h3>Academic rigor and growth</h3><p>Standards-aligned courses, diagnostic assessment, targeted academic recovery, acceleration and progress monitoring, subject to qualified staffing and validation.</p></article>
       <article><Church aria-hidden="true" /><h3>Local formation</h3><p>Pastors and trusted adults provide community and faith programming appropriate to school policies and family choice.</p></article>
       <article><ShieldCheck aria-hidden="true" /><h3>Student well-being</h3><p>Qualified support, safeguarding, accessibility and clear family expectations must be designed and validated for the actual school model.</p></article>
     </section>
-    <section className="cogic-detail-related"><SectionTitle eyebrow="Continue on CAN">Go deeper into the academic foundation.</SectionTitle><div className="cogic-detail-actions"><PageLink to={base+'/national-academy'}>The COGIC academy vision</PageLink><PageLink secondary to="/academics/how-learning-works">CAN academic model</PageLink></div></section>
+    <section className="cogic-detail-related"><SectionTitle eyebrow="Continue on CAN">Go deeper into the academic foundation.</SectionTitle><div className="cogic-detail-actions"><PageLink to={base+'/national-academy'}>The COGIC academy vision</PageLink><PageLink secondary to={base+'/academics'}>Academics and COGIC Scholars</PageLink></div></section>
   </Shell>
 }
 
@@ -394,6 +478,7 @@ export function CogicAcademyDetailPage({section}:{section:CogicSection}) {
   switch(section){
     case 'legacy':return <CogicLegacyPage/>
     case 'national-academy':return <CogicNationalAcademyPage/>
+    case 'academics':return <CogicAcademicsPage/>
     case 'student-experience':return <CogicStudentExperiencePage/>
     case 'how-it-works':return <CogicHowItWorksPage/>
     case 'economics':return <CogicEconomicsPage/>
