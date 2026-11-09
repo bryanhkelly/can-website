@@ -179,3 +179,21 @@
   .cogic-page a, .cogic-page button { transition: background-color .15s ease, color .15s ease; }
   .cogic-page { scroll-behavior: smooth; }
 }
+
+/* COGIC home: academic excellence and Scholars section. */
+.cogic-academics-overview{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(24px,4vw,60px);align-items:center;background:#f5f3e9;border-radius:20px;padding:clamp(26px,5vw,66px);margin:30px 0;}
+.cogic-academics-overview h2{font-family:var(--font-serif),Georgia,serif;color:#19382c;font-size:clamp(34px,4.3vw,58px);line-height:1.08;letter-spacing:-.04em;font-weight:500;margin:14px 0 21px;}
+.cogic-academics-overview-copy>p:not(.cogic-module-label):not(.cogic-module-note){color:#43584a;line-height:1.7;margin:0 0 15px;font-size:16px;}
+.cogic-academics-overview-pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:26px 0;}
+.cogic-academics-overview-pillars>div{padding:16px 12px;border:1px solid #d9ddcf;border-radius:12px;background:#fffdf7;display:flex;flex-direction:column;gap:8px;}
+.cogic-academics-overview-pillars svg{width:23px;height:23px;color:#946d33;}
+.cogic-academics-overview-pillars strong{font-size:15px;color:#19382c;}
+.cogic-academics-overview-pillars span{font-size:12px;line-height:1.45;color:#586a5c;}
+.cogic-academics-overview-photo{position:relative;min-height:470px;height:100%;border-radius:14px;overflow:hidden;background:#d8d9d0;}
+.cogic-academics-overview-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;}
+.cogic-academics-overview-photo:after{content:'';position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(15,41,31,.83));}
+.cogic-academics-overview-photo>div{position:absolute;bottom:25px;left:26px;right:26px;z-index:1;color:white;display:flex;flex-direction:column;gap:7px;}
+.cogic-academics-overview-photo span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;}
+.cogic-academics-overview-photo strong{font-family:var(--font-serif),Georgia,serif;font-size:clamp(27px,3vw,41px);line-height:1.12;}
+@media(max-width:900px){.cogic-academics-overview{grid-template-columns:1fr}.cogic-academics-overview-photo{min-height:320px}}
+@media(max-width:530px){.cogic-academics-overview-pillars{grid-template-columns:1fr}.cogic-academics-overview-pillars>div{display:grid;grid-template-columns:28px 1fr;align-items:center}.cogic-academics-overview-pillars span{grid-column:2}}
