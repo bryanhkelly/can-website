@@ -353,37 +353,51 @@ export function CogicEconomicsPage() {
   const [academicCost,setAcademicCost]=useState(5000)
   const [siteCost,setSiteCost]=useState(150000)
   const [otherCost,setOtherCost]=useState(1000)
-  const total=sites*students*tuition
-  const academics=sites*students*academicCost
+  const [cogicShareRate,setCogicShareRate]=useState(15)
+  const totalEnrollment=sites*students
+  const total=totalEnrollment*tuition
+  const academics=totalEnrollment*academicCost
   const local=sites*siteCost
-  const other=sites*students*otherCost
-  const remaining=total-academics-local-other
-  const lineItems=[{name:'Shared academic and support costs',value:academics},{name:'Local site operations',value:local},{name:'Other estimated costs',value:other},{name:'Unallocated balance before reserves and other obligations',value:remaining}]
-  return <Shell section="economics" eyebrow="05 / Economics" title="What could a national academy make possible?" intro="A school system can strengthen local congregations only when it educates children well and can support its own academic, operating and accountability obligations." image="/images/07_economics_leadership_meeting.png" imageAlt="Church and education leaders discussing the economics of schools">
+  const other=totalEnrollment*otherCost
+  const cogicShare=total*cogicShareRate/100
+  const remaining=total-academics-local-other-cogicShare
+  const lineItems=[
+    {name:'COGIC national revenue share ('+cogicShareRate+'% scenario)',value:cogicShare},
+    {name:'Shared academic and support costs',value:academics},
+    {name:'Local site operations',value:local},
+    {name:'Other estimated costs',value:other},
+    {name:'Unallocated balance after share and modeled costs',value:remaining},
+  ]
+  return <Shell section="economics" eyebrow="06 / Economics" title="What could a national academy make possible?" intro="A school system can strengthen local congregations only when it educates children well and can support its own academic, operating and accountability obligations." image="/images/07_economics_leadership_meeting.png" imageAlt="Church and education leaders discussing the economics of schools">
     <section className="cogic-detail-section">
-      <SectionTitle eyebrow="Interactive planning model">From headline tuition to the obligations underneath.</SectionTitle>
-      <p className="cogic-detail-intro">Adjust the assumptions to explore a future network. These are editable illustrations, not actual CAN pricing, COGIC participation, scholarship commitments or projected profits.</p>
+      <SectionTitle eyebrow="Interactive planning model">Total tuition generated. A separate COGIC national share.</SectionTitle>
+      <p className="cogic-detail-intro">Explore total generated tuition revenue, the proposed 5%–20% COGIC national revenue share, and resources remaining after modeled costs. The applicable percentage would depend on total network enrollment; exact enrollment thresholds remain to be agreed. Figures are illustrations, not approved terms or profit forecasts.</p>
       <div className="cogic-economics-workbench">
         <div className="cogic-economics-controls">
           <fieldset><legend>Participating churches</legend><div className="cogic-site-choices">{[10,100,500].map(n=><button type="button" aria-pressed={n===sites} onClick={()=>setSites(n)} key={n}>{n}</button>)}</div></fieldset>
-          <label>Students per church<select value={students} onChange={e=>setStudents(+e.target.value)}><option value={25}>25 students</option><option value={50}>50 students</option><option value={75}>75 students</option></select></label>
+          <label>Enrolled students per church<select value={students} onChange={e=>setStudents(+e.target.value)}><option value={25}>25 students</option><option value={50}>50 students</option><option value={75}>75 students</option></select></label>
           <label>Collected tuition per student<select value={tuition} onChange={e=>setTuition(+e.target.value)}><option value={8000}>$8,000</option><option value={10000}>$10,000</option><option value={12000}>$12,000</option></select></label>
+          <label>COGIC share rate · scenario<select value={cogicShareRate} onChange={e=>setCogicShareRate(+e.target.value)}><option value={5}>5%</option><option value={10}>10%</option><option value={15}>15%</option><option value={20}>20%</option></select></label>
+          <p className="cogic-share-guidance">COGIC's proposed share increases within a 5%–20% range based on enrolled students across the network. Select a rate for illustration; the actual enrollment breakpoints have not yet been defined.</p>
           <label>Illustrative shared academic cost per student<select value={academicCost} onChange={e=>setAcademicCost(+e.target.value)}><option value={4000}>$4,000</option><option value={5000}>$5,000</option><option value={6000}>$6,000</option></select></label>
           <label>Illustrative local operating cost per school<select value={siteCost} onChange={e=>setSiteCost(+e.target.value)}><option value={100000}>$100,000</option><option value={150000}>$150,000</option><option value={200000}>$200,000</option></select></label>
           <label>Illustrative other cost per student<select value={otherCost} onChange={e=>setOtherCost(+e.target.value)}><option value={500}>$500</option><option value={1000}>$1,000</option><option value={1500}>$1,500</option></select></label>
         </div>
         <div className="cogic-economics-results" aria-live="polite" aria-atomic="true">
-          <Kicker>Hypothetical annual gross tuition</Kicker><strong className="cogic-economics-gross">{formatMoney(total)}</strong><p>{(sites*students).toLocaleString('en-US')} students across {sites} churches</p>
+          <Kicker>Total generated annual tuition revenue · Illustrative</Kicker>
+          <strong className="cogic-economics-gross">{formatMoney(total)}</strong>
+          <p>{totalEnrollment.toLocaleString('en-US')} enrolled students across {sites} churches. This is total network revenue, not COGIC's share.</p>
+          <p className="cogic-economics-share-range">COGIC share at 5%–20%: <strong>{formatMoney(total*0.05)} – {formatMoney(total*0.20)}</strong></p>
           <div className="cogic-economics-rows">{lineItems.map(item=><div key={item.name}><span>{item.name}</span><strong className={item.value<0?'is-negative':''}>{formatMoney(item.value)}</strong></div>)}</div>
-          <div className="cogic-economics-status">{remaining<0 ? <><CircleHelp aria-hidden="true"/><span>Under these assumptions, the modeled budget has a shortfall. The educational model would need changes before launch.</span></> : <><ShieldCheck aria-hidden="true"/><span>This is an unallocated balance, not an available church distribution or operating profit. Additional costs and reserves must be assessed.</span></>}</div>
+          <div className="cogic-economics-status">{remaining<0 ? <><CircleHelp aria-hidden="true"/><span>The modeled budget has a shortfall after the chosen COGIC share and operating costs. The financial and educational plan would require changes before launch.</span></> : <><ShieldCheck aria-hidden="true"/><span>This is a modeled balance after the selected COGIC revenue share, not profit or a local-church distribution. Additional obligations, aid, collections and reserves must be assessed.</span></>}</div>
         </div>
       </div>
     </section>
     <section className="cogic-detail-section">
-      <SectionTitle eyebrow="Before making economic promises">Four things a national partner should validate.</SectionTitle>
+      <SectionTitle eyebrow="Before making economic promises">Three things a national partner should validate.</SectionTitle>
       <div className="cogic-detail-three cogic-econ-principles">
         <article><h3>Academic quality</h3><p>A shared system should be measured on learning outcomes, service delivery and student support, not only cost reduction.</p></article>
-        <article><h3>Actual net resources</h3><p>Any church or national allocation must come after the agreed cost of educational delivery and legally required operations.</p></article>
+        <article><h3>Revenue sharing and viability</h3><p>The proposed 5%–20% COGIC national share is modeled against tuition revenue, not net profit. Final enrollment thresholds, eligible revenue, payment timing, operating costs and reserves require an agreement.</p></article>
         <article><h3>Eligibility and affordability</h3><p>State funding programs, school eligibility, family demand and tuition collections need case-by-case validation.</p></article>
       </div>
     </section>
