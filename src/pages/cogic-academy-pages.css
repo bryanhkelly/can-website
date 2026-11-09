@@ -214,3 +214,18 @@
   .cogic-student-selector button { flex:1; }
   .cogic-detail-footer { padding:26px 5px; }
 }
+
+/* Integrated COGIC academic model: curriculum, growth and Scholars. */
+.cogic-academic-subjects {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.cogic-academic-subjects article,.cogic-academic-growth article,.cogic-academic-pathway article {padding:23px;background:#f5f4ed;border:1px solid #e4dfd3;border-radius:13px;}
+.cogic-academic-subjects h3,.cogic-academic-growth h3,.cogic-academic-pathway h3 {margin:0 0 10px;color:#193a2e;font-size:19px;line-height:1.3;}
+.cogic-academic-subjects p,.cogic-academic-growth p,.cogic-academic-pathway p {margin:0;color:#52635a;line-height:1.6;font-size:14px;}
+.cogic-academic-subjects .cogic-overline {font-size:11px;display:block;margin-bottom:12px;}
+.cogic-academic-growth {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+.cogic-academic-growth article>span,.cogic-academic-pathway article>span {display:block;color:#926d38;font-size:12px;font-weight:800;margin-bottom:13px;}
+.cogic-academic-example {background:#e9efe7;border-left:4px solid #27533a;border-radius:11px;margin-top:20px;padding:24px;color:#193a2e;}
+.cogic-academic-example p {line-height:1.7;margin:12px 0;}
+.cogic-academic-example small {display:block;color:#4e6455;line-height:1.6;}
+.cogic-academic-pathway {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;}
+@media(max-width:900px){.cogic-academic-growth{grid-template-columns:repeat(2,minmax(0,1fr))}.cogic-academic-pathway{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.cogic-academic-subjects,.cogic-academic-growth,.cogic-academic-pathway{grid-template-columns:1fr}}
