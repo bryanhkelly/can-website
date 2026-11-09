@@ -198,7 +198,7 @@ function App() {
           <Route key={section} path={`/partners/the-journey-church/${section}`} element={<JourneyDetailPage section={section} />} />
         ))}
         <Route path="/partners/cogic" element={<PartnerPage partner="cogic" />} />
-        {(["legacy", "national-academy", "student-experience", "how-it-works", "economics", "founding-partnership"] as const).map((section) => (
+        {(["legacy", "national-academy", "academics", "student-experience", "how-it-works", "economics", "founding-partnership"] as const).map((section) => (
           <Route key={section} path={`/partners/cogic/${section}`} element={<CogicAcademyDetailPage section={section} />} />
         ))}
         <Route path="/partners/cogbf" element={<PartnerPage partner="cogbf" />} />
