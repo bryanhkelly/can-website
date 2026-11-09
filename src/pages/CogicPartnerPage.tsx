@@ -48,6 +48,12 @@ const modules = [
   { href: '#invitation', label: 'The invitation' },
 ]
 
+function compactMoney(value: number) {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency', currency: 'USD', notation: 'compact', maximumFractionDigits: 1,
+  }).format(value)
+}
+
 function money(value: number) {
   return new Intl.NumberFormat('en-US', {
     style: 'currency', currency: 'USD', maximumFractionDigits: 0,
@@ -63,9 +69,10 @@ export function CogicPartnerPage() {
   const [sites, setSites] = useState(100)
   const [students, setStudents] = useState(50)
   const [tuition, setTuition] = useState(10000)
-  const [churchAllocation, setChurchAllocation] = useState(15)
-  const grossTuition = sites * students * tuition
-  const illustrativeChurchAllocation = grossTuition * churchAllocation / 100
+  const [cogicShareRate, setCogicShareRate] = useState(15)
+  const totalEnrollment = sites * students
+  const grossTuition = totalEnrollment * tuition
+  const cogicShareValue = grossTuition * cogicShareRate / 100
   const currentExperience = experienceContent[experience]
 
   return (
@@ -250,7 +257,7 @@ export function CogicPartnerPage() {
           <div className="cogic-finance-intro">
             <ModuleLabel number="07">The opportunity</ModuleLabel>
             <h2 id="cogic-opportunity-heading">A national education mission with the potential to strengthen local churches.</h2>
-            <p>Explore the scale of a coordinated network. These numbers illustrate possible tuition flows, not profits, guaranteed payments, funding eligibility or a CAN forecast.</p>
+            <p>Explore total tuition revenue generated across a potential school network and a separate proposed COGIC national share of 5%–20%, with the applicable rate tied to enrolled student counts. These figures are illustrations, not confirmed funding or distributions.</p>
           </div>
           <div className="cogic-calculator">
             <div className="cogic-calculator-controls">
@@ -273,18 +280,19 @@ export function CogicPartnerPage() {
                 <option value={10000}>$10,000</option>
                 <option value={12000}>$12,000</option>
               </select>
-              <label htmlFor="cogic-share">Hypothetical church allocation: {churchAllocation}% of tuition</label>
-              <input id="cogic-share" type="range" min="10" max="20" step="5" value={churchAllocation} onChange={(event) => setChurchAllocation(Number(event.target.value))} />
+              <label htmlFor="cogic-share">Illustrative COGIC national revenue share: {cogicShareRate}%</label>
+              <input id="cogic-share" type="range" min="5" max="20" step="5" value={cogicShareRate} onChange={(event) => setCogicShareRate(Number(event.target.value))} />
+              <p className="cogic-share-guidance">Proposed rate range: 5%–20%, determined by total enrolled students. Exact enrollment thresholds have not yet been set; this control compares rate scenarios, not approved tiers.</p>
             </div>
             <div className="cogic-calculator-result" aria-live="polite" aria-atomic="true">
-              <p className="cogic-overline">Illustrative gross annual tuition</p>
+              <p className="cogic-overline">Total generated tuition revenue · Illustrative annual scenario</p>
               <strong className="cogic-big-money">{money(grossTuition)}</strong>
-              <p>{(sites * students).toLocaleString('en-US')} students at {sites} participating schools</p>
+              <p>{totalEnrollment.toLocaleString('en-US')} enrolled students across {sites} participating schools</p>
               <div className="cogic-economic-grid">
-                <div><span>Hypothetical network-wide church allocation</span><strong>{money(illustrativeChurchAllocation)}</strong></div>
-                <div><span>Average per participating church</span><strong>{money(illustrativeChurchAllocation / sites)}</strong></div>
+                <div><span>Proposed COGIC national share at {cogicShareRate}%</span><strong>{money(cogicShareValue)}</strong></div>
+                <div><span>COGIC national share at 5%–20%</span><strong>{compactMoney(grossTuition * 0.05)}–{compactMoney(grossTuition * 0.20)}</strong></div>
               </div>
-              <p className="cogic-economic-caution">Assumes full enrollment, complete tuition collection and a 10–20% hypothetical allocation. Figures are before academic delivery, staffing, site expenses, aid and other operating costs. Actual arrangements require a validated financial model.</p>
+              <p className="cogic-economic-caution">Gross tuition is total network-generated revenue, not COGIC revenue or profit. The proposed COGIC share is 5%–20% of modeled tuition revenue, with the tier determined by network enrollment once thresholds are agreed. Assumes full enrollment and collection, before academic delivery, staffing, local site costs, aid, and other obligations. No local church distribution or final agreement is implied.</p>
             </div>
           </div>
           <Link className="cogic-text-link" to="/partners/cogic/economics">Explore COGIC academy economics <ArrowRight aria-hidden="true" /></Link>
