@@ -197,3 +197,111 @@
 .cogic-academics-overview-photo strong{font-family:var(--font-serif),Georgia,serif;font-size:clamp(27px,3vw,41px);line-height:1.12;}
 @media(max-width:900px){.cogic-academics-overview{grid-template-columns:1fr}.cogic-academics-overview-photo{min-height:320px}}
 @media(max-width:530px){.cogic-academics-overview-pillars{grid-template-columns:1fr}.cogic-academics-overview-pillars>div{display:grid;grid-template-columns:28px 1fr;align-items:center}.cogic-academics-overview-pillars span{grid-column:2}}
+
+/* Compact desktop reading rhythm: preserve the editorial design without
+   making every homepage chapter taller than the viewport. */
+@media (min-width: 1024px) {
+  .cogic-container { padding-top: 26px; }
+  .cogic-introduction { padding-top: 0; padding-bottom: 16px; }
+  .cogic-chapter-nav { margin-bottom: 16px; padding: 7px 0; }
+
+  /* Hero: image and proposition share one viewport instead of stacking. */
+  .cogic-container > .cogic-challenge {
+    display: grid;
+    grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+    min-height: 450px;
+  }
+  .cogic-container > .cogic-challenge .cogic-challenge-visual {
+    height: auto;
+    min-height: 450px;
+  }
+  .cogic-container > .cogic-challenge .cogic-challenge-visual img {
+    position: absolute;
+    inset: 0;
+    object-position: 57% center;
+  }
+  .cogic-container > .cogic-challenge .cogic-challenge-copy {
+    padding: 34px clamp(30px, 3.5vw, 46px);
+    align-self: center;
+  }
+  .cogic-container > .cogic-challenge h2 {
+    font-size: clamp(38px, 3.7vw, 54px);
+    line-height: 1.06;
+    margin: 10px 0 14px;
+  }
+  .cogic-container > .cogic-challenge .cogic-challenge-copy > p:not(.cogic-module-label) { font-size: 16px; line-height: 1.52; }
+  .cogic-container > .cogic-challenge .cogic-catholic-proof { margin: 18px 0 10px; padding: 13px 0; }
+  .cogic-container > .cogic-challenge .cogic-catholic-proof strong { font-size: 43px; }
+
+  .cogic-two-modules { margin-top: 14px; gap: 14px; }
+  .cogic-two-modules .cogic-legacy-image,
+  .cogic-two-modules .cogic-vision-image { height: 175px; }
+  .cogic-two-modules .cogic-card-copy { padding: 22px 26px 24px; }
+  .cogic-two-modules .cogic-card-copy h2 { font-size: clamp(28px, 2.65vw, 35px); margin: 8px 0 10px; }
+  .cogic-two-modules .cogic-card-copy > p:not(.cogic-module-label) { font-size: 14px; line-height: 1.48; }
+  .cogic-two-modules .cogic-network-diagram { margin-top: 13px; gap: 3px; }
+  .cogic-two-modules .cogic-network-diagram > div { padding: 8px 12px; }
+  .cogic-two-modules .cogic-network-diagram strong { font-size: 12px; }
+  .cogic-two-modules .cogic-network-diagram small { font-size: 11px; }
+  .cogic-two-modules .cogic-source-links { margin-top: 12px; }
+
+  .cogic-academics-overview { margin: 14px 0; padding: 30px 36px; gap: 32px; grid-template-columns: 1.1fr .9fr; }
+  .cogic-academics-overview h2 { font-size: clamp(34px, 3.4vw, 46px); margin: 9px 0 12px; }
+  .cogic-academics-overview-copy > p:not(.cogic-module-label):not(.cogic-module-note) { font-size: 14px; line-height: 1.54; margin-bottom: 10px; }
+  .cogic-academics-overview-photo { min-height: 350px; }
+  .cogic-academics-overview-pillars { margin: 16px 0; gap: 7px; }
+  .cogic-academics-overview-pillars > div { padding: 10px; gap: 5px; }
+  .cogic-academics-overview-pillars span { font-size: 11px; }
+
+  .cogic-experience { margin-top: 14px; padding: 26px 32px; }
+  .cogic-experience-header { margin-bottom: 15px; }
+  .cogic-experience-header h2 { font-size: 43px; margin: 7px 0; }
+  .cogic-experience-panel { min-height: 290px; }
+  .cogic-experience-visual { min-height: 290px; }
+  .cogic-experience-description { padding: 23px 28px; }
+  .cogic-experience-description h3 { font-size: 33px; }
+  .cogic-experience-description > p:not(.cogic-overline) { margin: 9px 0 13px; line-height: 1.5; font-size: 14px; }
+  .cogic-experience-description ul { gap: 6px; }
+  .cogic-bishop-overlay { padding: 17px 20px; }
+
+  .cogic-model, .cogic-opportunity, .cogic-invitation { margin-top: 14px; padding: 30px 34px; }
+  .cogic-model { gap: 20px 34px; }
+  .cogic-model-copy h2, .cogic-finance-intro h2 { font-size: 42px; }
+  .cogic-model-copy > p:not(.cogic-module-label) { font-size: 14px; line-height: 1.55; }
+  .cogic-launch-steps { gap: 8px; }
+  .cogic-launch-steps li { padding: 13px; gap: 5px; }
+  .cogic-launch-steps strong { font-size: 20px; }
+  .cogic-model-responsibilities { padding-top: 16px; gap: 14px; }
+  .cogic-calculator { margin-top: 17px; }
+  .cogic-calculator-controls, .cogic-calculator-result { padding: 22px; }
+  .cogic-invitation h2 { font-size: 54px; }
+  .cogic-pilot-card > strong { font-size: 95px; }
+}
+@media (min-width: 651px) and (max-width: 1023px) {
+  .cogic-challenge-visual { height: 290px; }
+  .cogic-challenge-copy { padding: 30px 36px; }
+  .cogic-challenge h2 { font-size: clamp(42px, 5.3vw, 58px); }
+  .cogic-two-modules .cogic-legacy-image, .cogic-two-modules .cogic-vision-image { height: 185px; }
+  .cogic-two-modules .cogic-card-copy { padding: 22px; }
+  .cogic-two-modules .cogic-card-copy h2 { font-size: 30px; }
+  .cogic-academics-overview { padding: 28px; margin: 15px 0; }
+  .cogic-academics-overview-photo { min-height: 260px; }
+  .cogic-experience { padding: 26px; }
+  .cogic-experience-visual { height: 290px; min-height: 290px; }
+  .cogic-model, .cogic-opportunity, .cogic-invitation { padding: 28px; }
+}
+@media (max-width: 650px) {
+  .cogic-challenge-visual { height: 190px; }
+  .cogic-challenge-copy { padding: 24px 22px; }
+  .cogic-challenge h2 { font-size: clamp(33px, 8.5vw, 43px); }
+  .cogic-legacy-image, .cogic-vision-image { height: 190px; }
+  .cogic-card-copy { padding: 20px; }
+  .cogic-card-copy h2 { font-size: 30px; }
+  .cogic-academics-overview { margin: 12px 0; padding: 22px; gap: 19px; }
+  .cogic-academics-overview-photo { min-height: 235px; }
+  .cogic-experience { padding: 22px; }
+  .cogic-experience-visual { height: 260px; min-height: 260px; }
+  .cogic-experience-panel { min-height: 0; }
+  .cogic-experience-description { padding: 22px; }
+  .cogic-model, .cogic-opportunity, .cogic-invitation { padding: 24px 21px; }
+}
