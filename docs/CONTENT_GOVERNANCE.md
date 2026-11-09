@@ -113,7 +113,7 @@ The public marketing pages at `/locations/:state` are owned by the CAN Academy w
 - `/partners/cogic/national-academy` — the core proposed COGIC National Academy institutional model, roles and governance
 - `/partners/cogic/student-experience` — faith distinctives, proposed weekly bishop's homeroom, asynchronous academics and live support
 - `/partners/cogic/how-it-works` — stub-to-launch studio, invitations, family interest, compliance and transition into school operations
-- `/partners/cogic/economics` — illustrative financial sensitivity model, no predicted surplus or school revenue allocation
+- `/partners/cogic/economics` — illustrative total network-generated tuition revenue and proposed 5%–20% COGIC national revenue share, with the applicable enrollment tier thresholds not yet agreed; modeled operating costs are separate, and no profit or local-school distribution is implied
 - `/partners/cogic/founding-partnership` — COGIC-only founding invitation and inquiry form; no general contact CTA
 
 Main CAN site deep links are permitted for academic, launch, economic and governance details, but COGIC module entry points must first reach the COGIC-specific deep pages. Form submission must match a statically declared Netlify skeleton and must not claim success before a successful response. Copyrighted portrait usage remains subject to permissions review.
