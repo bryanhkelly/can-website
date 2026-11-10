@@ -40,6 +40,24 @@ export function EconomicBreakthroughPage() {
           ))}
         </section>
 
+        <section aria-labelledby="church-host-economics-heading">
+          <p className="destination-eyebrow">For churches considering a hosted academy</p>
+          <h2 className="deep-section-title" id="church-host-economics-heading">Your church hosts the school. CAN compensates the church for agreed local services.</h2>
+          <p>In CAN's proposed church-hosted model, the congregation brings approved facilities, trusted relationships, and defined on-site support. CAN coordinates the shared academic and operating infrastructure. Rather than paying CAN to buy an entire school program, an approved host would receive compensation for the work it agrees to provide.</p>
+          <div className="deep-two-grid">
+            <article>
+              <h3>What the church contributes</h3>
+              <p>Suitable weekday space, community relationships, and the agreed local leadership or supervision needed to support students safely.</p>
+            </article>
+            <article>
+              <h3>What the church receives</h3>
+              <p>Negotiated host payments tied to its defined responsibilities. The ministry's net benefit is what remains after its own staffing, utilities, insurance, and other incremental costs.</p>
+            </article>
+          </div>
+          <p className="deep-warning">This is a proposed partnership model, not a guaranteed payment or approved school. Compensation, funding eligibility, legal responsibilities, and school readiness require a viable written agreement. Existing independent schools purchasing CAN services may have a different arrangement.</p>
+          <p><Link to="/partnership-model/ways-to-partner">Explore the church-hosted partnership structure →</Link></p>
+        </section>
+
         <section className="economic-equation-deep">
           <p className="destination-eyebrow">The equation</p>
           <p>
