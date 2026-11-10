@@ -221,6 +221,7 @@ function JourneyEconomics(){
  const cost=deliveryTotal+siteFixed+other
  const remaining=gross-cost
  return <section className="cogic-detail-section" id="economics"><SectionHeading tag="06 / Economics — illustrative, not a forecast" description="The scenarios below are for one proposed site. All financial inputs are adjustable hypotheses, not quoted CAN pricing, verified local costs or commitments.">What would it take to be financially responsible?</SectionHeading>
+   <p className="cogic-detail-intro">The proposed church-hosted arrangement would pay an approved local congregation for agreed facilities and support services, not charge it to purchase the entire academic program. This calculator estimates school costs and the unallocated balance; it does not estimate a host payment. Actual compensation, local expenses, staffing obligations, and payment timing must be negotiated before any launch.</p>
    <div className="cogic-economics-workbench">
      <div className="cogic-economics-controls">
        <Kicker>One local campus / hypothetical scenario</Kicker>
@@ -310,7 +311,7 @@ function JourneyInquiry(){
 }
 export function JourneyFoundingPartnershipPage(){
  return <Shell section="founding-partnership" eyebrow="06 / Stewardship and invitation" title="What could The Journey build for the next generation?" intro="A proposed single-campus school is worth exploring only if it serves students well, protects the church's mission and resources, and can operate responsibly." image="/images/07_economics_leadership_meeting.png" imageAlt="Illustrative education leadership meeting">
-   <section className="cogic-detail-thesis"><Kicker>The founding proposition</Kicker><h2>One school community. A carefully considered beginning.</h2><p>CAN invites The Journey's designated leaders to explore a potential Christian school rooted in one local community. The first decision is not a launch date. It is whether to undertake a disciplined feasibility study.</p>
+   <section className="cogic-detail-thesis"><Kicker>The founding proposition</Kicker><h2>One school community. A carefully considered beginning.</h2><p>CAN invites The Journey's designated leaders to explore a potential Christian school rooted in one local community, with compensation for approved local hosting services as a proposed part of the model. The first decision is not a launch date or an assumed payment. It is whether to undertake a disciplined feasibility study.</p>
      <div className="cogic-detail-thesis-stats"><div><strong>1</strong><span>Proposed local school community</span></div><div><strong>6–12</strong><span>Proposed grade span to test</span></div><div><strong>0</strong><span>Partnership commitments presumed</span></div></div>
    </section>
    <JourneyEconomics/>
