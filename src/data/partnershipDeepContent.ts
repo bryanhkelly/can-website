@@ -474,6 +474,8 @@ export const deploymentModels: DeploymentModel[] = [
     title: "Church-Hosted CAN Academy",
     description:
       "A congregation hosts a CAN-branded or appropriately co-branded academy in an approved local facility.",
+    promise:
+      "Under the proposed CAN-operated hosting model, the church would be compensated for agreed facilities and local services, rather than buying an academic-services subscription. Final payments, costs, and responsibilities require a viable signed agreement.",
     bestSuitedFor: [
       "Communities with limited high-school choice",
       "Churches with suitable weekday capacity",
@@ -824,7 +826,8 @@ export const brandQuestions = [
 export const economicQuestions = [
   "Tuition and scholarship revenue",
   "Revenue collection",
-  "Partner compensation",
+  "Partner compensation and payment timing",
+  "Whether the local partner is a paid host or a purchaser of services",
   "Facility contribution",
   "Local staffing costs",
   "Central-service costs",
