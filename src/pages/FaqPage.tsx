@@ -45,6 +45,11 @@ const sections = [
         links: [['See where CAN fits','/how-can-is-different']],
       },
       {
+        q: 'Does our church pay CAN, or would CAN pay our church?',
+        a: "For the proposed CAN-operated, church-hosted academy, an approved congregation would be compensated for agreed facilities and local support. The intent is not for the church to purchase a school-services subscription or independently operate the academic program. Payment amounts, timing, staffing, expenses, and the church's net benefit depend on funding, readiness, and a written agreement. An existing school choosing to buy CAN services may have different terms.",
+        links: [['For pastors','/pastors'],['Church partnership economics','/economic-breakthrough'],['Ways to partner','/partnership-model/ways-to-partner']],
+      },
+      {
         q: 'Does a church have to build an entire school system?',
         a: 'That is the problem CAN is designed to address. A local partner can contribute trust, relationships, facilities, leadership, and community while CAN provides shared academic and operating capabilities that would be difficult for every site to recreate independently.',
         links: [['Partnership Model','/partnership-model'],['Why partner','/partnership-model/why-partner']],

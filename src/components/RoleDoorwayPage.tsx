@@ -185,11 +185,14 @@ export function RoleDoorwayPage({ page }: { page: RoleDoorway }) {
         {page.audience === 'pastor' && (
           <section className="pastor-economics-philosophy">
             <p className="destination-eyebrow">The economic philosophy</p>
-            <h2>A ministry opportunity, not a real-estate monetization scheme.</h2>
+            <h2>Your church contributes the place. CAN pays for the agreed hosting work.</h2>
             <p>
-              CAN is designed so a church can contribute what it already has—trusted relationships, local leadership, weekday space, and ministry presence—without being asked to build and operate an entire school system. Shared academic and operating capabilities reduce duplication, while partnership economics should help keep local participation sustainable.
+              In CAN's proposed church-hosted academy model, an approved church would receive compensation for defined facilities and local services. Rather than buying a school-services subscription, the congregation helps provide a trusted daily home for students while CAN coordinates the shared academic and operating foundation.
             </p>
-            <Link to="/economic-breakthrough">See why sharing changes the economics <ArrowRight aria-hidden="true" /></Link>
+            <p>
+              Payments are not guaranteed or fixed in advance. Before opening, both parties must agree on local staffing, safeguarding, site costs, responsibilities, funding, and compensation. What benefits the ministry is the net result after its own costs, not gross school revenue.
+            </p>
+            <Link to="/economic-breakthrough">Understand the proposed hosting economics <ArrowRight aria-hidden="true" /></Link>
           </section>
         )}
 

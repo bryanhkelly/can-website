@@ -75,18 +75,18 @@ export function EconomicsPage() {
       <section className="church-economics-section">
         <div>
           <p className="destination-eyebrow">For local partners</p>
-          <h2 className="editorial-heading">The economics should support the ministry, not turn the church into a landlord.</h2>
+          <h2 className="editorial-heading">A church should be paid to host a school, not billed to build one.</h2>
           <p>
-            CAN's partnership philosophy starts with resources a local community may already have: trusted relationships, weekday space, local leadership, and ministry presence. The goal is to avoid asking a church or school to finance and operate an entire standalone high school before it can serve students.
+            Under CAN's proposed church-hosted academy model, a congregation provides agreed space and local support. CAN coordinates the shared academic and operating foundation and would compensate the church for its hosting services under a written agreement. That is different from an independent school purchasing CAN technology or academic services.
           </p>
         </div>
         <div className="church-economics-grid">
-          <article><strong>Use what already exists</strong><p>Existing facilities and community assets can reduce the need for large upfront real-estate investment.</p></article>
-          <article><strong>Share the expensive capabilities</strong><p>Teachers, curriculum, records, student support, technology, and operations do not have to be recreated independently at every site.</p></article>
-          <article><strong>Keep the partnership sustainable</strong><p>Local partnership economics should help offset participation costs and allow value created by the school community to support the local mission.</p></article>
-          <article><strong>Test before scaling</strong><p>Discovery and pilot stages should make the model smaller, staged, and evidence-driven before a community takes on a larger commitment.</p></article>
+          <article><strong>The church brings a trusted home</strong><p>Approved space, local relationships, and agreed on-site supervision or support, with responsibilities defined before launch.</p></article>
+          <article><strong>CAN brings shared school capacity</strong><p>Academic instruction, curriculum, records, student support, and technology are coordinated across the network rather than purchased and rebuilt at every congregation.</p></article>
+          <article><strong>The host receives compensation</strong><p>The intended arrangement pays a participating church for its agreed facilities and local services. The amount and payment timing require a signed, financially viable agreement.</p></article>
+          <article><strong>Measure the net benefit</strong><p>Church receipts are not the same as church earnings. Staffing, utilities, insurance, maintenance, and other incremental costs must be considered.</p></article>
         </div>
-        <p className="church-economics-note">Specific fees, funding, partner economics, and financial terms depend on the market and approved partnership agreement.</p>
+        <p className="church-economics-note">The host-compensation model is a proposal, not an existing payment offer. Funding eligibility, school authorization, staffing responsibilities, payment terms, and financial viability must be confirmed for each partnership. Other CAN models, such as an existing school's purchase of selected services, may have different economics.</p>
       </section>
 
       <RefrainBar text={refrain} transition={transition} current="why-it-can-work" />

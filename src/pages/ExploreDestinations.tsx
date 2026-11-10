@@ -294,6 +294,12 @@ export function PartnershipModelPage() {
             <p>Local leadership, identity, ministry, culture, and community relationships remain central to how the school is expressed.</p>
           </article>
         </section>
+        <section className="source-backed-section partnership-source-intro">
+          <p className="destination-eyebrow">For churches considering a hosted academy</p>
+          <h2 className="editorial-heading">The church hosts. CAN provides the school foundation. The church is compensated.</h2>
+          <p>In the proposed CAN-operated, church-hosted model, an approved congregation would receive payment for agreed facilities and local support instead of purchasing an academic-services subscription. Before opening, the parties would establish who employs local staff, who bears facility and safety costs, how funding works, and when host payments are made. The arrangement must be financially viable and authorized.</p>
+          <p>Different partnerships have different economics. An existing school adopting selected CAN services may pay for those services rather than receive host compensation.</p>
+        </section>
         <section className="destination-note">
           <h2>From conversation to partnership</h2>
           <p>An initial conversation is a chance to share context, ask questions, and explore fit. A formal partnership calls for a clearer shared understanding of roles, resources, and local needs. Specific terms and requirements are discussed directly with each community.</p>

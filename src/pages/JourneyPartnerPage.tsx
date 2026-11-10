@@ -171,8 +171,8 @@ export function JourneyPartnerPage() {
       <section id="economics" className="cogic-module cogic-opportunity journey-economics" aria-labelledby="journey-economics-heading">
         <div className="cogic-finance-intro">
           <ModuleLabel number="06">A sustainable ministry</ModuleLabel>
-          <h2 id="journey-economics-heading">A school that serves families for generations.</h2>
-          <p>A local school needs enough enrollment and funding to pay for the academics, on-site team, student services, facilities and reserves. Compare illustrative gross tuition scenarios—never mistaken for church revenue or profit.</p>
+          <h2 id="journey-economics-heading">A school that serves families and strengthens the host community.</h2>
+          <p>CAN's proposed church-hosted model would compensate an approved congregation for agreed facilities and local support, rather than ask it to purchase and operate the full academic program. That requires a viable school budget, clear responsibilities, and a signed agreement. The tuition figures below are gross school revenue, not payments or profit for The Journey.</p>
         </div>
         <div className="journey-quick-scenarios">
           {[25,50,75].map(n=><div key={n}><span>{n} students</span><strong>{new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n*10000)}</strong><small>Gross annual tuition at an illustrative $10,000 per student; expenses not deducted</small></div>)}
