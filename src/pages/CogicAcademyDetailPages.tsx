@@ -364,14 +364,14 @@ export function CogicEconomicsPage() {
   const lineItems=[
     {name:'COGIC national revenue share ('+cogicShareRate+'% scenario)',value:cogicShare},
     {name:'Shared academic and support costs',value:academics},
-    {name:'Local site operations',value:local},
+    {name:'Local site operating costs (not a host payment estimate)',value:local},
     {name:'Other estimated costs',value:other},
     {name:'Unallocated balance after share and modeled costs',value:remaining},
   ]
   return <Shell section="economics" eyebrow="06 / Economics" title="What could a national academy make possible?" intro="A school system can strengthen local congregations only when it educates children well and can support its own academic, operating and accountability obligations." image="/images/07_economics_leadership_meeting.png" imageAlt="Church and education leaders discussing the economics of schools">
     <section className="cogic-detail-section">
       <SectionTitle eyebrow="Interactive planning model">Total tuition generated. A separate COGIC national share.</SectionTitle>
-      <p className="cogic-detail-intro">Explore total generated tuition revenue, the proposed 5%–20% COGIC national revenue share, and resources remaining after modeled costs. The applicable percentage would depend on total network enrollment; exact enrollment thresholds remain to be agreed. Figures are illustrations, not approved terms or profit forecasts.</p>
+      <p className="cogic-detail-intro">Explore total generated tuition revenue, the proposed 5%–20% national COGIC share, and the cost of providing a viable school network. Local church host compensation is a separate agreement for facilities and services, not a distribution of the national share or the unallocated balance. Exact national tiers, host payments, funding eligibility, and operating terms remain to be agreed. All figures are illustrative.</p>
       <div className="cogic-economics-workbench">
         <div className="cogic-economics-controls">
           <fieldset><legend>Participating churches</legend><div className="cogic-site-choices">{[10,100,500].map(n=><button type="button" aria-pressed={n===sites} onClick={()=>setSites(n)} key={n}>{n}</button>)}</div></fieldset>
@@ -389,7 +389,7 @@ export function CogicEconomicsPage() {
           <p>{totalEnrollment.toLocaleString('en-US')} enrolled students across {sites} churches. This is total network revenue, not COGIC's share.</p>
           <p className="cogic-economics-share-range">COGIC share at 5%–20%: <strong>{formatMoney(total*0.05)} – {formatMoney(total*0.20)}</strong></p>
           <div className="cogic-economics-rows">{lineItems.map(item=><div key={item.name}><span>{item.name}</span><strong className={item.value<0?'is-negative':''}>{formatMoney(item.value)}</strong></div>)}</div>
-          <div className="cogic-economics-status">{remaining<0 ? <><CircleHelp aria-hidden="true"/><span>The modeled budget has a shortfall after the chosen COGIC share and operating costs. The financial and educational plan would require changes before launch.</span></> : <><ShieldCheck aria-hidden="true"/><span>This is a modeled balance after the selected COGIC revenue share, not profit or a local-church distribution. Additional obligations, aid, collections and reserves must be assessed.</span></>}</div>
+          <div className="cogic-economics-status">{remaining<0 ? <><CircleHelp aria-hidden="true"/><span>The modeled budget has a shortfall after the chosen COGIC share and operating costs. The financial and educational plan would require changes before launch.</span></> : <><ShieldCheck aria-hidden="true"/><span>This modeled balance is not profit or a local-church payment. Local hosting services would have their own negotiated compensation and cost responsibilities. Additional obligations, aid, collections, and reserves must be assessed.</span></>}</div>
         </div>
       </div>
     </section>
@@ -397,7 +397,7 @@ export function CogicEconomicsPage() {
       <SectionTitle eyebrow="Before making economic promises">Three things a national partner should validate.</SectionTitle>
       <div className="cogic-detail-three cogic-econ-principles">
         <article><h3>Academic quality</h3><p>A shared system should be measured on learning outcomes, service delivery and student support, not only cost reduction.</p></article>
-        <article><h3>Revenue sharing and viability</h3><p>The proposed 5%–20% COGIC national share is modeled against tuition revenue, not net profit. Final enrollment thresholds, eligible revenue, payment timing, operating costs and reserves require an agreement.</p></article>
+        <article><h3>Revenue sharing and viability</h3><p>The proposed 5%–20% national COGIC share is separate from any payments to local host congregations. National tiers, local hosting rates, eligible revenue, payment timing, costs, and reserves all require agreement.</p></article>
         <article><h3>Eligibility and affordability</h3><p>State funding programs, school eligibility, family demand and tuition collections need case-by-case validation.</p></article>
       </div>
     </section>
