@@ -257,7 +257,7 @@ export function CogicPartnerPage() {
           <div className="cogic-finance-intro">
             <ModuleLabel number="07">The opportunity</ModuleLabel>
             <h2 id="cogic-opportunity-heading">A national education mission with the potential to strengthen local churches.</h2>
-            <p>Explore total tuition revenue generated across a potential school network and a separate proposed COGIC national share of 5%–20%, with the applicable rate tied to enrolled student counts. These figures are illustrations, not confirmed funding or distributions.</p>
+            <p>A national network could create two distinct economic benefits: a proposed 5%–20% national COGIC share tied to network enrollment, and separately negotiated compensation for participating congregations that host local schools. The calculator below shows total tuition and the proposed national share, not payments or net earnings for an individual church.</p>
           </div>
           <div className="cogic-calculator">
             <div className="cogic-calculator-controls">
@@ -292,7 +292,7 @@ export function CogicPartnerPage() {
                 <div><span>Proposed COGIC national share at {cogicShareRate}%</span><strong>{money(cogicShareValue)}</strong></div>
                 <div><span>COGIC national share at 5%–20%</span><strong>{compactMoney(grossTuition * 0.05)}–{compactMoney(grossTuition * 0.20)}</strong></div>
               </div>
-              <p className="cogic-economic-caution">Gross tuition is total network-generated revenue, not COGIC revenue or profit. The proposed COGIC share is 5%–20% of modeled tuition revenue, with the tier determined by network enrollment once thresholds are agreed. Assumes full enrollment and collection, before academic delivery, staffing, local site costs, aid, and other obligations. No local church distribution or final agreement is implied.</p>
+              <p className="cogic-economic-caution">Gross tuition is total network-generated revenue, not COGIC revenue or profit. The proposed COGIC share is 5%–20% of modeled tuition revenue, with the tier determined by network enrollment once thresholds are agreed. Assumes full enrollment and collection, before academic delivery, staffing, local site costs, aid, and other obligations. Local host compensation would be negotiated separately for approved facilities and services; it is not calculated here. No payment or final agreement is implied.</p>
             </div>
           </div>
           <Link className="cogic-text-link" to="/partners/cogic/economics">Explore COGIC academy economics <ArrowRight aria-hidden="true" /></Link>
