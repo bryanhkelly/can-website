@@ -143,7 +143,7 @@ const META: Record<string, SocialMeta> = {
   },
   '/pastors': {
     title: 'For Pastors & Church Leaders | CAN Academy',
-    description: 'Explore how Christian education could become part of how a church serves families throughout the week.',
+    description: 'Explore a proposed CAN church-hosted academy: shared school infrastructure and compensation for agreed local hosting services, subject to partnership terms.',
     image: '/images/roles/02_churches_ministries.png',
     imageAlt: 'Church and ministry leaders in conversation.',
   },
