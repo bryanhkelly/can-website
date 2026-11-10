@@ -244,7 +244,7 @@ export const roleDoorways = {
     eyebrow: 'For Pastors & Church Leaders',
     heading: 'Your church can be home to a school without having to build one.',
     intro:
-      'Your church already knows the families who could benefit from another excellent school close to home. In CAN's proposed church-hosted model, a congregation provides agreed space and local support, CAN brings the shared academic foundation, and the church is compensated for its contribution.',
+      "Your church already knows the families who could benefit from another excellent school close to home. In CAN's proposed church-hosted model, a congregation provides agreed space and local support, CAN brings the shared academic foundation, and the church is compensated for its contribution.",
     refrain: 'Serve more families through the week. Strengthen the ministry already rooted there.',
     body:
       'This is not a request for the church to purchase an academic-services package or independently operate a high school. It is an opportunity to turn existing relationships, space, and local leadership into a lasting educational partnership.',
